@@ -34,8 +34,7 @@ export default function Home() {
                 <i className="fas fa-bars"></i>
               </span>
               <span className="capitalize ml-2 text-white font-sourceSansPro"
-              >All Categories</span
-              >
+              >All Categories</span>
               <div
                 className="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible"
               >
