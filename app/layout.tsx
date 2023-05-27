@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
+import Header from './header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +24,11 @@ export default function RootLayout({
         defer
       />
       <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin="anonymous"></Script>
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
