@@ -1,5 +1,4 @@
 import './globals.css'
-import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -18,20 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossOrigin="anonymous"
-      referrerPolicy="no-referrer"
-    />
-      </Head>
       <Script
         src="https://static.elfsight.com/platform/platform.js"
         data-use-service-core
         defer
       />
+      <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin="anonymous"></Script>
       <body className={inter.className}>{children}</body>
     </html>
   )
