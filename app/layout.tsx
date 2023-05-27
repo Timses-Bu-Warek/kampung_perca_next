@@ -1,4 +1,4 @@
-import './globals.css'
+import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
@@ -22,6 +22,7 @@ export default function RootLayout({
         data-use-service-core
         defer
       />
+      <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin="anonymous"></Script>
       <body className={inter.className}>{children}</body>
     </html>
   )
