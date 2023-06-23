@@ -81,8 +81,8 @@ export default function Header() {
                     href="/about-us"
                     className="text-gray-200 hover:text-primary transition"
                   >About Us</Link>
-                  <Link href="/procedure" className="text-gray-200 hover:text-primary transition"
-                  >Procedure</Link>
+                  <Link href="/sudut-edukasi" className="text-gray-200 hover:text-primary transition"
+                  >Sudut Edukasi</Link>
                 </div>
                 <div className="w-1/2 h-10 max-w-xl justify-between relative flex">
                   <span className="absolute left-4 top-2 text-lg text-gray-400">

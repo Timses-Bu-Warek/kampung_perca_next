@@ -28,7 +28,7 @@ export default function Home() {
           </p>
           <div className="mt-12">
             <Link
-              href="/public/shop.html"
+              href="/shop"
               className="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md hover:bg-transparent hover:text-primary transition font-inter"
             >Shop at Kampung Perca</Link>
           </div>
@@ -42,7 +42,7 @@ export default function Home() {
           <div
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
-            <i className="fa-solid fa-truck w-32 h-32 object-contain"></i>
+            <i className="fa-solid fa-truck object-contain" style={{fontSize:"2rem"}}></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">Free Shopping</h4>
               <p className="text-gray-500 text-sx">order over IDR5000</p>
@@ -52,7 +52,7 @@ export default function Home() {
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
             <i
-              className="fa-solid fa-hand-holding-dollar w-32 h-32 object-contain"
+              className="fa-solid fa-hand-holding-dollar object-contain" style={{fontSize:"2rem"}}
             ></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">Money Returns</h4>
@@ -62,7 +62,7 @@ export default function Home() {
           <div
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
-            <i className="fa-solid fa-clock w-32 h-32 object-contain"></i>
+            <i className="fa-solid fa-clock object-contain" style={{fontSize:"2rem"}}></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">24/7 Support</h4>
               <p className="text-gray-500 text-sx">Support Customer</p>
