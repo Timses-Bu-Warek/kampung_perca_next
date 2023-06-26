@@ -3,11 +3,12 @@ import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Script from 'next/script'
 import Header from './header'
+import { Metadata } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Design Web Kampung Perca',
+export const metadata : Metadata = {
+  title: 'Kampung Perca',
   description: 'Design Web Kampung Perca oleh Intan Permata Sari dan Michael Mervin Ruswan',
 }
 
