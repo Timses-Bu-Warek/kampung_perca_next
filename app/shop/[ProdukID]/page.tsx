@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 
-export default function View() {
+export default function DetailedProduct({ params }: { params: { NamaProduk: string } }) {
     // const objObject = {
     //     quantity: 1
     // }
