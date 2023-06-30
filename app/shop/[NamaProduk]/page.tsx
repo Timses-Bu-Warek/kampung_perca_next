@@ -1,31 +1,73 @@
 "use client"
 
 import Link from "next/link"
+import useSWR from "swr"
+import axios from "axios"
 import { useState } from "react"
+import { useRouter } from "next/router";
+import getProduct from "@/lib/getProduct";
 
-export default function DetailedProduct({ params }: { params: { NamaProduk: string } }) {
+// export const dynamic = 'force-dynamic';
+
+const fetcher = async (address: string) => {
+    const response = await fetch(address)
+    // const data = await response.json()
+    // return data
+    return response.json();
+}
+
+
+export default function DetailedProduct({ params }: { params: { NamaProduk: string } }, { url, className }: { url?: string; className?: string }) {
     // const objObject = {
     //     quantity: 1
     // }
-    const [quantity, setQuantity] = useState(1);
-    const [name, setName] = useState("Baju Perca");
 
-    function increaseQuantity (){
-        setQuantity( quantity + 1 );
+    // const router = useRouter();
+    // 	// if url is not provided, use the current url
+    // const queryUrl = url || router.query.url;
+
+    const [quantity, setQuantity] = useState(1);
+    const [name, setName] = useState(params.NamaProduk);
+    const [harga, setHarga] = useState('');
+
+    // const fetcher = getProduct(params.NamaProduk)
+    // const fetcher = async(url: string) => {
+    //      fetch(url).then(r => r.json())
+    // }
+
+    function increaseQuantity() {
+        setQuantity(quantity => quantity + 1);
     }
 
-    function decreaseQuantity (){
-        if(quantity > 1){
-            setQuantity (quantity - 1 );
+    function decreaseQuantity() {
+        if (quantity > 1) {
+            setQuantity(quantity => quantity - 1);
         }
     }
 
-    const waAPI = "https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + quantity + " " + name; 
+    const waAPI = "https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + quantity + " " + name;
+
+    const address = `/api/shop/${params.NamaProduk}`;
+    const NamaProduk = params.NamaProduk;
+    // const fetcher = (url: string) => fetch(url).then((res) => res.json());
+    const { data, error } = useSWR(address, fetcher);
+    // const { data, error } = useSWR(getProduct(params.NamaProduk));
+
+    if (error) return <div>Failed to fetch product</div>
+    if (!data) return <div>Loading....</div>
+    console.log("address: " + address)
+    console.log("fetcher: " + fetcher)
+    console.log("data: " + data);
+
+    // const productsData: Promise<Products> = getProduct(params.NamaProduk);
+    // const detailedProduct = useSWR(productsData);
+    // const detailedProduct = await productsData;
+    // console.log(detailedProduct);
     return (
         <main>
             {/* <!-- breadcrums --> */}
             <div className="container py-4 flex items-center gap-4">
-                <Link href="/public/index.html" className="text-primary text-base">
+                <Link href="/" className="text-primary text-base" passHref>
                     <i className="fas fa-home"></i>
                 </Link>
                 <span className="text-sm text-gray-400">
@@ -70,9 +112,9 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                 {/* <!-- produk konten --> */}
                 <div>
                     <h2 className="text-3xl font-montserrat font-semibold uppercase mb-2">
-                        Baju perca K
+                        {data.NamaProduk}
                     </h2>
-                    <div className="flex items-center mb-3">
+                    {/* <div className="flex items-center mb-3">
                         <div className="flex gap-1 text-sm text-yellow-400">
                             <span><i className="fas fa-star"></i></span>
                             <span><i className="fas fa-star"></i></span>
@@ -81,7 +123,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                             <span><i className="fas fa-star"></i></span>
                         </div>
                         <div className="text-sm text-gray-500 ml-3">(70 Reviews)</div>
-                    </div>
+                    </div> */}
                     <div className="space-y-2">
                         <p className="text-gray-800 font-semibold font-inter space-x-2">
                             <span>Avilability : </span>
@@ -89,7 +131,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         </p>
                         <p className="text-gray-800 font-semibold font-inter space-x-2">
                             <span>Brands : </span>
-                            <span className="text-gray-600">Perca Hass</span>
+                            <span className="text-gray-600">Perca Has</span>
                         </p>
                         <p className="text-gray-800 font-semibold font-inter space-x-2">
                             <span>Category : </span>
@@ -110,47 +152,17 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     {/* <!-- size --> */}
                     <div className="pt-4">
                         <h3 className="text-gray-800 uppercase font-inter pt-4">Size</h3>
+
                         <div className="flex items-center gap-2">
-                            {/* <!-- single size --> */}
-                            <div className="size-selector">
-                                <input type="radio" name="size" className="hidden" id="size-xs" />
-                                <label
-                                    htmlFor="size-xs"
-                                    className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                >XS</label>
-                            </div>
-                            {/* <!-- single size --> */}
-                            <div className="size-selector">
-                                <input type="radio" name="size" className="hidden" id="size-s" />
-                                <label
-                                    htmlFor="size-s"
-                                    className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                >S</label>
-                            </div>
-                            {/* <!-- single size --> */}
-                            <div className="size-selector">
-                                <input type="radio" name="size" className="hidden" id="size-m" />
-                                <label
-                                    htmlFor="size-m"
-                                    className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                >M</label>
-                            </div>
-                            {/* <!-- single size --> */}
-                            <div className="size-selector">
-                                <input type="radio" name="size" className="hidden" id="size-l" />
-                                <label
-                                    htmlFor="size-l"
-                                    className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                >L</label>
-                            </div>
-                            {/* <!-- single size --> */}
-                            <div className="size-selector">
-                                <input type="radio" name="size" className="hidden" id="size-xl" />
-                                <label
-                                    htmlFor="size-xl"
-                                    className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                >XL</label>
-                            </div>
+                            {data.Ukuran.map((size) =>
+                                <div className="size-selector" key = {size}>
+                                    <input type="radio" name="size" className="hidden" id={"size-"+size} />
+                                    <label
+                                        htmlFor={"size-"+size}
+                                        className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                                    >{size}</label>
+                                </div>
+                            )}
                         </div>
                     </div>
                     {/* <!-- end size --> */}
@@ -168,6 +180,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                                 -
                             </button>
                             <div className="h-8 w-8 text-base flex items-center justify-center">
+                                {/* <input type="number" name="" id="" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} /> */}
                                 {quantity}
                             </div>
                             <button
@@ -183,17 +196,19 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     {/* <!-- cart button --> */}
                     <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
                         <Link
-                            href= {waAPI}
+                            href={waAPI}
                             title="Hubungi Saya"
                             rel="noopener"
                             target="_blank"
                             className="bg-primary border border-primary text-white px-8 py-2 font-medium font-inter rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition"
+                            passHref
                         >
                             <i className="fas fa-shopping-bag"></i>Order
                         </Link>
                         <Link
                             href="#"
                             className="border border-gray-300 text-gray-600 px-8 py-2 font-medium font-inter rounded uppercase flex items-center gap-2 hover:text-primary transition"
+                            passHref
                         >
                             <i className="fas fa-heart"></i>like
                         </Link>
@@ -208,7 +223,11 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                             </p>
                         </span>
                         <span>
-                            <Link href="#" className="hover:text-gray-500 h-8 w-8">
+                            <Link
+                                href="#"
+                                className="hover:text-gray-500 h-8 w-8"
+                                passHref
+                            >
                                 <i className="fab fa-instagram"></i> </Link>
                         </span>
                     </div>
@@ -245,30 +264,30 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         className="table-auto border-collapse text-left text-gray-600 text-sm mt-6"
                     >
                         <tbody>
-                        <tr>
-                            <td
-                                className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
-                            >
-                                Weight
-                            </td>
-                            <td className="py-2 px-4 border border-gray-300">55 Kg</td>
-                        </tr>
-                        <tr>
-                            <td
-                                className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
-                            >
-                                Weight
-                            </td>
-                            <td className="py-2 px-4 border border-gray-300">55 Kg</td>
-                        </tr>
-                        <tr>
-                            <td
-                                className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
-                            >
-                                Weight
-                            </td>
-                            <td className="py-2 px-4 border border-gray-300">55 Kg</td>
-                        </tr>
+                            <tr>
+                                <td
+                                    className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
+                                >
+                                    Weight
+                                </td>
+                                <td className="py-2 px-4 border border-gray-300">55 Kg</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
+                                >
+                                    Weight
+                                </td>
+                                <td className="py-2 px-4 border border-gray-300">55 Kg</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
+                                >
+                                    Weight
+                                </td>
+                                <td className="py-2 px-4 border border-gray-300">55 Kg</td>
+                            </tr>
                         </tbody>
                     </table>
                     {/* <!-- end table detail --> */}
@@ -300,12 +319,14 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-search"></i>
                                 </Link>
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-heart"></i>
                                 </Link>
@@ -315,7 +336,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
 
                         {/* <!-- produk konten --> */}
                         <div className="pt-4 pb-3 px-4">
-                            <Link href="#">
+                            <Link href="#" passHref>
                                 <h4
                                     className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                                 >
@@ -363,12 +384,14 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-search"></i>
                                 </Link>
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-heart"></i>
                                 </Link>
@@ -378,7 +401,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
 
                         {/* <!-- produk konten --> */}
                         <div className="pt-4 pb-3 px-4">
-                            <Link href="#">
+                            <Link href="#" passHref>
                                 <h4
                                     className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                                 >
@@ -426,12 +449,14 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-search"></i>
                                 </Link>
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-heart"></i>
                                 </Link>
@@ -441,7 +466,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
 
                         {/* <!-- produk konten --> */}
                         <div className="pt-4 pb-3 px-4">
-                            <Link href="#">
+                            <Link href="#" passHref>
                                 <h4
                                     className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                                 >
@@ -489,12 +514,14 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-search"></i>
                                 </Link>
                                 <Link
                                     href="#"
                                     className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                                    passHref
                                 >
                                     <i className="fas fa-heart"></i>
                                 </Link>
@@ -504,7 +531,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
 
                         {/* <!-- produk konten --> */}
                         <div className="pt-4 pb-3 px-4">
-                            <Link href="#">
+                            <Link href="#" passHref>
                                 <h4
                                     className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                                 >

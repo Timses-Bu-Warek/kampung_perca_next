@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { ObjectId } from "mongodb";
 
 // export async function GET(request : Request, context : { params : {id: number} }) {
-export async function GET(request : Request, context : { params : {id: string} }) {
+export async function GET(request : Request, context : { params : {NamaProduk: string} }) {
   try {
     // const id = req.query.id;
     const id = request.url.slice(request.url.lastIndexOf('/') + 1);
@@ -11,11 +11,11 @@ export async function GET(request : Request, context : { params : {id: string} }
     const db = client.db("KampungPercaDB");
     // console.log(id);
     // console.log(context);
-    const angka = context.params.id;
-    console.log(angka);
+    const NamaProduk = context.params.NamaProduk;
+    console.log(NamaProduk);
 
   
-    const oneProduct = await db.collection("Products").findOne({ NamaProduk: angka  });
+    const oneProduct = await db.collection("Products").findOne({ NamaProduk: NamaProduk  });
     console.log(oneProduct)
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     if(oneProduct) {

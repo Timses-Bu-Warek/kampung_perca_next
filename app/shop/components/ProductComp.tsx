@@ -35,20 +35,20 @@ export default async function ProductComp() {
                 >
                   <i className="fas fa-search"></i>
                 </Link>
-                <Link
+                {/* <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                   passHref
                 >
                   <i className="fas fa-heart"></i>
-                </Link>
+                </Link> */}
               </div>
             </div>
             {/* <!-- produk image --> */}
 
             {/* <!-- produk konten --> */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/${id}" passHref>
+              <Link href={`/shop/${product.NamaProduk}`} passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   {product.NamaProduk}
                 </h4>

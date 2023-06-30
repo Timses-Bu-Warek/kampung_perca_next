@@ -37,14 +37,14 @@ export default function modal() {
 
         {/* <!-- alamat --> */}
         <div>
-          <label htmlFor="alamat" className="text-sm">Alamat</label>
+          {/* <label htmlFor="alamat" className="text-sm">Alamat</label>
           <input
             placeholder="Blok/Jalan/No Rumah/RT-RW"
             type="text"
             name=""
             id="alamat"
             className="h-full w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
-          />
+          /> */}
 
           <div id="alamat_lengkap" className="flex flex-row mt-2">
             <div id="provinsi" className="w-1/2 mr-1">
@@ -75,8 +75,8 @@ export default function modal() {
           <div id="provinsi" className="w-1/2 mr-1">
             <label htmlFor="provinsi" className="text-sm">Usia</label>
             <input
-              placeholder="Tuliskan usia anda"
-              type="text"
+              placeholder="Masukkan usia anda"
+              type="number"
               name=""
               id="provinsi"
               className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"

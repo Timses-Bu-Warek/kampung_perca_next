@@ -1,18 +1,18 @@
 // `pages` directory
  
-export async function getServerSideProps() {
-    const res = await fetch(`https://...`)
-    const projects = await res.json()
+// export async function getServerSideProps() {
+//     const res = await fetch(`https://...`)
+//     const projects = await res.json()
    
-    return { props: { projects } }
-  }
+//     return { props: { projects } }
+//   }
    
-  export default function Dashboard({ projects }) {
-    return (
-      <ul>
-        {projects.map((project) => (
-          <li key={project.id}>{project.name}</li>
-        ))}
-      </ul>
-    )
-  }
+//   export default function Dashboard({ projects }) {
+//     return (
+//       <ul>
+//         {projects.map((project) => (
+//           <li key={project.id}>{project.name}</li>
+//         ))}
+//       </ul>
+//     )
+//   }
