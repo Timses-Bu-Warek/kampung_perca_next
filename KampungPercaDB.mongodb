@@ -12,4 +12,29 @@
 // Select the database to use.
 use('KampungPercaDB');
 
-db.Products.find();
+// db.Products.find();
+
+// db.Visitors.insertMany([
+//     {  nama: "Michael Mervin Ruswan",
+//     provinsi: "Jawa Barat",
+//     kota: "Kota Bogor",
+//     gender: "Laki-Laki",
+//     umur: "21"},
+//     {  nama: "Intan Permatasari",
+//     provinsi: "Jawa Barat",
+//     kota: "Kota Bogor",
+//     gender: "Perempuan",
+//     umur: "21"},
+//     {  nama: "Tubagus Ahda",
+//     provinsi: "Jawa Barat",
+//     kota: "Kota Bogor",
+//     gender: "Laki-Laki",
+//     umur: "21"},
+//     {  nama: "Accasia Miranda L",
+//     provinsi: "Jawa Barat",
+//     kota: "Kota Bogor",
+//     gender: "Perempuan",
+//     umur: "20"}
+// ])
+
+db.Visitors.find()

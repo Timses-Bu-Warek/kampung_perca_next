@@ -3,15 +3,22 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <header className="mb-0 shadow-sm bg-white">
-          <div className="container flex items-center justify-between">
-            <Link href="#">
-              <h3
-                className="font-montserrat text-secondary w-full font-bold text-xl uppercase py-8"
-              >
-                Sistem Informasi Kampung Perca
-              </h3>
+          {/* <div className="container flex items-center justify-between">
+            <Link href="#" passHref>
+              <div className='py-8'>
+                <h3
+                  className="font-montserrat text-secondary w-full font-bold text-xl uppercase"
+                >
+                  Kampung Perca
+                </h3>
+                <h2
+                  className="font-montserrat text-primary w-full font-bold text-xl uppercase"
+                >
+                  Binaan IBI Kesatuan
+                </h2>
+              </div>
             </Link>
-          </div>
+          </div> */}
           {/* Navbar  */}
           <nav className="bg-gray-800">
             <div className="container flex">
@@ -30,6 +37,7 @@ export default function Header() {
                   <Link
                     href="#"
                     className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+                    passHref
                   >
                     <i className="fa-solid fa-shirt w-5 h-5 object-contain"></i>
                     <span className="ml-6 text-gray-600 text-sm">Shirt</span>
@@ -37,6 +45,7 @@ export default function Header() {
                   <Link
                     href="#"
                     className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+                    passHref
                   >
                     <i
                       className="fa-solid fa-bag-shopping w-5 h-5 object-contain"
@@ -46,6 +55,7 @@ export default function Header() {
                   <Link
                     href="#"
                     className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+                    passHref
                   >
                     <i className="fa-solid fa-shirt w-5 h-5 object-contain"></i>
                     <span className="ml-6 text-gray-600 text-sm">Shirt</span>
@@ -53,6 +63,7 @@ export default function Header() {
                   <Link
                     href="#"
                     className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+                    passHref
                   >
                     <i className="fa-solid fa-shirt w-5 h-5 object-contain"></i>
                     <span className="ml-6 text-gray-600 text-sm">Shirt</span>
@@ -60,6 +71,7 @@ export default function Header() {
                   <Link
                     href="#"
                     className="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+                    passHref
                   >
                     <i className="fa-solid fa-shirt w-5 h-5 object-contain"></i>
                     <span className="ml-6 text-gray-600 text-sm">Shirt</span>
@@ -84,7 +96,7 @@ export default function Header() {
                   <Link href="/sudut-edukasi" className="text-gray-200 hover:text-primary transition"
                   >Sudut Edukasi</Link>
                 </div>
-                <div className="w-1/2 h-10 max-w-xl justify-between relative flex">
+                {/* <div className="w-1/2 h-10 max-w-xl justify-between relative flex">
                   <span className="absolute left-4 top-2 text-lg text-gray-400">
                     <i className="fas fa-search"></i>
                   </span>
@@ -98,7 +110,7 @@ export default function Header() {
                   >
                     Cari
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
           </nav>

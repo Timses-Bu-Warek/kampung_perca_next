@@ -29,6 +29,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
     const [quantity, setQuantity] = useState(1);
     const [name, setName] = useState(params.NamaProduk);
     const [harga, setHarga] = useState('');
+    const [ukuran, setUkuran] = useState("");
 
     // const fetcher = getProduct(params.NamaProduk)
     // const fetcher = async(url: string) => {
@@ -45,7 +46,9 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
         }
     }
 
-    const waAPI = "https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + quantity + " " + name;
+    const onOptionChange = (e : any) => {
+        setUkuran(e.target.value)
+      }
 
     const address = `/api/shop/${params.NamaProduk}`;
     const NamaProduk = params.NamaProduk;
@@ -58,6 +61,13 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
     console.log("address: " + address)
     console.log("fetcher: " + fetcher)
     console.log("data: " + data);
+
+    let waAPI;
+    if (data.Ukuran) {
+        waAPI = "https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + quantity + " " + name + " dengan ukuran " + ukuran
+    } else {
+        waAPI = "https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + quantity + " " + name
+    }
 
     // const productsData: Promise<Products> = getProduct(params.NamaProduk);
     // const detailedProduct = useSWR(productsData);
@@ -143,28 +153,28 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         <p className="text-base text-gray-400 line-through">Rp. 123.000</p>
                     </div>
                     <p className="mt-4 text-gray-600">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis,
-                        nesciunt. Vitae, at officiis. Amet odit eius quaerat. Harum possimus
-                        quidem provident tenetur placeat, corporis, molestias nisi ipsam,
-                        animi deserunt quod.
+                        {data.Keterangan}
                     </p>
 
                     {/* <!-- size --> */}
-                    <div className="pt-4">
-                        <h3 className="text-gray-800 uppercase font-inter pt-4">Size</h3>
+                    {data.Ukuran ?
+                        <div className="pt-4">
+                            <h3 className="text-gray-800 uppercase font-inter pt-4">Size</h3>
 
-                        <div className="flex items-center gap-2">
-                            {data.Ukuran.map((size) =>
-                                <div className="size-selector" key = {size}>
-                                    <input type="radio" name="size" className="hidden" id={"size-"+size} />
-                                    <label
-                                        htmlFor={"size-"+size}
-                                        className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                    >{size}</label>
-                                </div>
-                            )}
+                            <div className="flex items-center gap-2">
+                                {data.Ukuran.map((size: any) =>
+                                    <div className="size-selector" key={size}>
+                                        <input type="radio" name="size" className="hidden" id={"size-" + size} value={size} checked={ukuran === size} onChange={onOptionChange}/>
+                                        <label
+                                            htmlFor={"size-" + size}
+                                            className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                                        >{size}</label>
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                    </div>
+                        : ""
+                    }
                     {/* <!-- end size --> */}
 
                     {/* <!-- quantity --> */}
@@ -205,13 +215,13 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         >
                             <i className="fas fa-shopping-bag"></i>Order
                         </Link>
-                        <Link
+                        {/* <Link
                             href="#"
                             className="border border-gray-300 text-gray-600 px-8 py-2 font-medium font-inter rounded uppercase flex items-center gap-2 hover:text-primary transition"
                             passHref
                         >
                             <i className="fas fa-heart"></i>like
-                        </Link>
+                        </Link> */}
                     </div>
                     {/* <!-- end cart button --> */}
 
@@ -224,7 +234,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         </span>
                         <span>
                             <Link
-                                href="#"
+                                href="https://www.instagram.com/kampungperca_kotabogor/"
                                 className="hover:text-gray-500 h-8 w-8"
                                 passHref
                             >
@@ -246,18 +256,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                 </h3>
                 <div className="w-3/5 pt-4">
                     <div className="text-gray-600 space-y-3">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                            ullam deleniti iusto impedit nobis ex repellendus, voluptas maxime
-                            autem ducimus, consequatur cum fuga voluptatum quod sint unde ab
-                            aspernatur et?
-                        </p>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia optio
-                            numquam recusandae omnis alias velit, nostrum ipsam. Iste minima
-                            quam unde sit error voluptatum itaque a ea nihil quisquam.
-                            Repudiandae.
-                        </p>
+                        {data.Keterangan}
                     </div>
                     {/* <!-- table detail --> */}
                     <table
