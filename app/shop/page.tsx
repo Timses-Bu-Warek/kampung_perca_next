@@ -21,9 +21,9 @@ export default function Shop() {
   return (
     <main>
       {/* <!-- breadcrums --> */}
-      {/* <Breadcrumbs params={{
+      <Breadcrumbs params={{
         slug: "Shop"
-      }} /> */}
+      }} />
       {/* <!-- end breadcrums --> */}
 
       {/* <!-- shop wrapper --> */}
@@ -65,7 +65,7 @@ export default function Shop() {
                   >
                     Baju
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(15)</div>
+                  {/* <div className="ml-auto text-gray-600 text-sm">(15)</div> */}
                 </div>
                 <div className="flex items-center">
                   <input
@@ -79,7 +79,7 @@ export default function Shop() {
                   >
                     Celana
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(20)</div>
+                  {/* <div className="ml-auto text-gray-600 text-sm">(20)</div> */}
                 </div>
                 <div className="flex items-center">
                   <input
@@ -93,7 +93,7 @@ export default function Shop() {
                   >
                     Tas
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(30)</div>
+                  {/* <div className="ml-auto text-gray-600 text-sm">(30)</div> */}
                 </div>
                 <div className="flex items-center">
                   <input
@@ -107,7 +107,7 @@ export default function Shop() {
                   >
                     Souvenir
                   </label>
-                  <div className="ml-auto text-gray-600 text-sm">(40)</div>
+                  {/* <div className="ml-auto text-gray-600 text-sm">(40)</div> */}
                 </div>
               </div>
             </div>

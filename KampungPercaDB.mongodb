@@ -12,7 +12,7 @@
 // Select the database to use.
 use('KampungPercaDB');
 
-db.Products.find();
+db.Products.find({NamaProduk: /Tas/});
 
 // db.Visitors.insertMany([
 //     {  nama: "Michael Mervin Ruswan",

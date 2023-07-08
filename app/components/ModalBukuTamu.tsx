@@ -51,7 +51,7 @@ export default function ModalBukuTamu() {
       sessionStorage.setItem("isiBukuTamu", "true")
     }
     // bukuFill = "true";
-    router.refresh
+    router.refresh();
   }
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -89,6 +89,7 @@ export default function ModalBukuTamu() {
                 name="nama"
                 id="fname"
                 className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
+                required
                 value={data.nama}
                 onChange={handleChange}
               />
@@ -119,10 +120,11 @@ export default function ModalBukuTamu() {
               <div id="provinsiDiv" className="w-1/2 mr-1">
                 <label htmlFor="provinsi" className="text-sm">Provinsi</label>
                 <input
-                  placeholder="Tulis Provinsi Anda"
+                  placeholder="Tulis Asal Provinsi Anda"
                   type="text"
                   name="provinsi"
                   id="provinsi"
+                  required
                   className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
                   value={data.provinsi}
                   onChange={handleChange}
@@ -131,10 +133,11 @@ export default function ModalBukuTamu() {
               <div id="kotaDiv" className="w-1/2 mr-1 mb-4">
                 <label htmlFor="kota" className="text-sm">Kota</label>
                 <input
-                  placeholder="Tulis Kota Anda"
+                  placeholder="Tulis Asal Kota Anda"
                   type="text"
                   name="kota"
                   id="kota"
+                  required
                   className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
                   value={data.kota}
                   onChange={handleChange}
@@ -152,6 +155,7 @@ export default function ModalBukuTamu() {
                 type="number"
                 name="umur"
                 id="umur"
+                required
                 value={data.umur}
                 onChange={handleChange}
                 className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
@@ -165,6 +169,7 @@ export default function ModalBukuTamu() {
                   type="radio"
                   name="gender"
                   id="Laki-Laki"
+                  required
                   value={data.gender}
                   onChange={handleChange}
                   className="text-sm mx-1"
@@ -178,6 +183,7 @@ export default function ModalBukuTamu() {
                   name="gender"
                   id="Perempuan"
                   className="text-sm mx-1"
+                  required
                   value={data.gender}
                   onChange={handleChange}
                   // checked
