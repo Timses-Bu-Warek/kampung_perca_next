@@ -46,9 +46,9 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
         }
     }
 
-    const onOptionChange = (e : any) => {
+    const onOptionChange = (e: any) => {
         setUkuran(e.target.value)
-      }
+    }
 
     const address = `/api/shop/${params.NamaProduk}`;
     const NamaProduk = params.NamaProduk;
@@ -83,14 +83,16 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                 <span className="text-sm text-gray-400">
                     <i className="fas fa-chevron-right"></i>
                 </span>
-                <p className="text-gray-600 font-medium">Product View</p>
+                <p className="text-gray-600 font-medium">Shop</p>
             </div>
             {/* <!-- end breadcrums --> */}
 
             {/* <!-- product view --> */}
             <div className="container grid grid-cols-2 gap-6">
                 <div>
-                    <img src="/img/Produk/contoh_baju.jpg" className="w-full" alt="Contoh Baju" />
+                    {data.FotoProduk ?
+                        <img src={data.FotoProduk} className="w-full" alt="Contoh Baju" />
+                    : <div className="w-full">Tidak ada foto</div>}
                     <div className="grid grid-cols-5 gap-4 mt-4">
                         <img
                             src="/img/Produk/rekomen.jpg"
@@ -149,8 +151,8 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         </p>
                     </div>
                     <div className="flex items-baseline mb-1 space-x-2 font-inter mt-4">
-                        <p className="text-xl text-primary font-semibold">Rp. 50.000</p>
-                        <p className="text-base text-gray-400 line-through">Rp. 123.000</p>
+                        <p className="text-xl text-primary font-semibold">Rp {Intl.NumberFormat("id-ID").format(data.Harga)}</p>
+                        {/* <p className="text-base text-gray-400 line-through">Rp. 123.000</p> */}
                     </div>
                     <p className="mt-4 text-gray-600">
                         {data.Keterangan}
@@ -164,7 +166,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                             <div className="flex items-center gap-2">
                                 {data.Ukuran.map((size: any) =>
                                     <div className="size-selector" key={size}>
-                                        <input type="radio" name="size" className="hidden" id={"size-" + size} value={size} checked={ukuran === size} onChange={onOptionChange}/>
+                                        <input type="radio" name="size" className="hidden" id={"size-" + size} value={size} checked={ukuran === size} onChange={onOptionChange} />
                                         <label
                                             htmlFor={"size-" + size}
                                             className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"

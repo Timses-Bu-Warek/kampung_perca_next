@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import getAllProducts from "@/lib/getAllProducts";
 import ProductComp from "./components/ProductComp";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Shop Kampung Perca Products",
@@ -20,15 +21,9 @@ export default function Shop() {
   return (
     <main>
       {/* <!-- breadcrums --> */}
-      <div className="container py-4 flex items-center gap-4">
-        <Link href="/public/index.html" className="text-primary text-base">
-          <i className="fas fa-home"></i>
-        </Link>
-        <span className="text-sm text-gray-400">
-          <i className="fas fa-chevron-right"></i>
-        </span>
-        <p className="text-gray-600 font-medium">Shop</p>
-      </div>
+      {/* <Breadcrumbs params={{
+        slug: "Shop"
+      }} /> */}
       {/* <!-- end breadcrums --> */}
 
       {/* <!-- shop wrapper --> */}
@@ -36,6 +31,21 @@ export default function Shop() {
         {/* <!-- side bar --> */}
         <div className="col-span-1 bg-white px-4 pb-6 shadow rounded overflow-hidden">
           <div className="divide-y divide-gray-200 space-y-5">
+            <div className="w-full my-3 h-10 max-w-xl justify-between relative flex">
+              <span className="absolute left-4 top-2 text-lg text-gray-400">
+                <i className="fas fa-search"></i>
+              </span>
+              <input
+                type="text"
+                className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-none"
+                placeholder="Cari"
+              />
+              <button
+                className="bg-primary border border-primary text-secondary px-8 rounded-r-md hover:bg-transparent hover:text-primary transition"
+              >
+                Cari
+              </button>
+            </div>
             {/* <!-- category filter --> */}
             <div>
               <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">

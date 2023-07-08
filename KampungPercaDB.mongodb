@@ -12,7 +12,7 @@
 // Select the database to use.
 use('KampungPercaDB');
 
-// db.Products.find();
+db.Products.find();
 
 // db.Visitors.insertMany([
 //     {  nama: "Michael Mervin Ruswan",
@@ -37,4 +37,4 @@ use('KampungPercaDB');
 //     umur: "20"}
 // ])
 
-db.Visitors.find()
+// db.Visitors.find()

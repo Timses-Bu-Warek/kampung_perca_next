@@ -20,7 +20,7 @@ export default function Home() {
       {/*  Banner  */}
       <div
         className="bg-cover bg-no-repeat bg-center py-36"
-        style={{ backgroundImage: "url(/img/bg.jpg)" }}
+        style={{ background: "linear-gradient(0deg, rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(/img/bg-no-overlay.png)", backgroundSize: "cover"  }}
       >
         <div className="p-5 text-white z-[2] mt-[-5rem] lg:ml-9">
           <h1 className="text-5xl font-bold mb-4 capitalize font-montserrat">

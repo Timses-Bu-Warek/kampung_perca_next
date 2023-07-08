@@ -3,6 +3,7 @@ type Products = {
     NamaProduk: string;
     Harga: number;
     Ukuran: [];
+    FotoProduk: string;
 }
 
 type Users = {
