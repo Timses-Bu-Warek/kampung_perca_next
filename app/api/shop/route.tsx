@@ -1,3 +1,6 @@
+// Shop API
+// localhost:3000/api/shop
+
 import { connectToDatabase } from "@/lib/mongo";
 import { NextRequest, NextResponse } from "next/server";
 
