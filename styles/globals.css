@@ -49,6 +49,12 @@ body {
   }
 }
 
+.fbButton {
+  position: fixed;
+  right: 2em;
+  bottom: 4em;
+}
+
 
 
 

@@ -5,30 +5,38 @@ import Contoh_Baju from '../public/img/Produk/contoh_baju.jpg'
 import Iklan from '../public/img/ads.jpg'
 import Rekomendasi from '../public/img/Produk/rekomen.jpg'
 import Link from 'next/link'
+import ReactModal from 'react-modal'
+import ModalBukuTamu from './components/ModalBukuTamu'
 
 export default function Home() {
+  // sessionStorage.setItem("halo", "true")
+  // let isFilled = "false";
+  // if (typeof window !== 'undefined') {
+  //   // Perform sessionStorage.
+  //   sessionStorage.setItem("kunci", "true")
+  // }
   return (
     <main>
       {/*  Banner  */}
       <div
         className="bg-cover bg-no-repeat bg-center py-36"
-        style={{ backgroundImage: "url(/img/bg.jpg)" }}
+        style={{ background: "linear-gradient(0deg, rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(/img/bg-no-overlay.png)", backgroundSize: "cover"  }}
       >
         <div className="p-5 text-white z-[2] mt-[-5rem] lg:ml-9">
           <h1 className="text-5xl font-bold mb-4 capitalize font-montserrat">
-            SISTEM INFORMASI WISATA KAMPUNG PERCA
+            KAMPUNG PERCA
           </h1>
           <p className="py-5 text-base max-w-4xl font-inter">
             Kampung Perca Sindangsari, sebuah kampung tematik baru yang
             menambahkan destinasi wisata di kota Bogor dan merupakan binaan
             <Link href="https://www.ibik.ac.id/" rel="noopener noreferrer" target="_blank" className="text-primary"
-            >Institut Bisnis dan Informatika Kesatuan Bogor.</Link>
+            > Institut Bisnis dan Informatika Kesatuan Bogor.</Link>
             <br />
             Berlokasi di Kelurahan Sindangsari Kecamatan Bogor Timur, Kota Bogor
           </p>
           <div className="mt-12">
             <Link
-              href="/public/shop.html"
+              href="/shop"
               className="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md hover:bg-transparent hover:text-primary transition font-inter"
             >Shop at Kampung Perca</Link>
           </div>
@@ -42,7 +50,7 @@ export default function Home() {
           <div
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
-            <i className="fa-solid fa-truck w-32 h-32 object-contain"></i>
+            <i className="fa-solid fa-truck object-contain" style={{ fontSize: "2rem" }}></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">Free Shopping</h4>
               <p className="text-gray-500 text-sx">order over IDR5000</p>
@@ -52,7 +60,7 @@ export default function Home() {
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
             <i
-              className="fa-solid fa-hand-holding-dollar w-32 h-32 object-contain"
+              className="fa-solid fa-hand-holding-dollar object-contain" style={{ fontSize: "2rem" }}
             ></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">Money Returns</h4>
@@ -62,7 +70,7 @@ export default function Home() {
           <div
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
-            <i className="fa-solid fa-clock w-32 h-32 object-contain"></i>
+            <i className="fa-solid fa-clock object-contain" style={{ fontSize: "2rem" }}></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">24/7 Support</h4>
               <p className="text-gray-500 text-sx">Support Customer</p>
@@ -73,7 +81,7 @@ export default function Home() {
       {/* end features  */}
 
       {/* categories  */}
-      <div className="container py-16">
+      {/* <div className="container py-16">
         <h2 className="text-lg font-montserrat text-black mb-6 font-bold">
           Shop by Categories
         </h2>
@@ -121,7 +129,7 @@ export default function Home() {
             >Baju</Link>
           </div>
         </div>
-      </div>
+      </div> */}
       {/*  end categories  */}
 
       {/*  produk wrapper  */}

@@ -1,6 +1,7 @@
 import Script from "next/script"
 import Link from "next/link"
 import Image from "next/image"
+import Breadcrumbs from "../components/Breadcrumbs"
 // import MyMapComponent from "./MyMapComponent";
 
 // import { Wrapper, Status } from "@googlemaps/react-wrapper";
@@ -23,7 +24,7 @@ export default function About_us() {
         <main>
             {/* breadcrumbs */}
             <div className="container py-4 flex items-center gap-4">
-                <Link href="/public/index.html" className="text-primary text-base">
+                <Link href="/" className="text-primary text-base">
                     <i className="fas fa-home"></i>
                 </Link>
                 <span className="text-sm text-gray-400">
@@ -31,18 +32,10 @@ export default function About_us() {
                 </span>
                 <p className="text-gray-600 font-medium">About Us</p>
             </div>
+            {/* <Breadcrumbs params={{
+                slug: "About Us"
+            }} /> */}
             {/* end breadcrumbs  */}
-            {/* <div
-                id="map"
-                className="w-full sm:w-1/2 p-6 mt-6 border-primary border-8"
-            > */}
-                {/* <MyApp />    */}
-                {/* <Script
-                    async
-                    defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2z_q_YqnXOw5K6mrDt4_57-0rYPpPr1c&callback=initMap"
-                ></Script> */}
-            {/* </div> */}
             {/* tentang kami  */}
             <section className="bg-white border-b py-8">
                 <div className="container max-w-5xl mx-auto m-8">
@@ -51,13 +44,15 @@ export default function About_us() {
                     >
                         Tentang Kami
                     </h1>
-                    <iframe
-                        title="Video Kunjungan Kampung Perca"
-                        src="https://www.youtube.com/embed/TRoKZ-4m5C0"
-                        width="990"
-                        height="400"
-                        className="mb-6 border-primary border-8"
-                    ></iframe>
+                    <div className="sm:max-w-sm md:max-w-screen-md lg:h-96 lg:translate-x-32 mb-4">
+                        <iframe
+                            title="Video Kunjungan Kampung Perca"
+                            src="https://www.youtube.com/embed/TRoKZ-4m5C0"
+                            // width="990"
+                            // height="400"
+                            className="mb-6 border-primary border-8 w-full h-full justify-center"
+                        ></iframe>
+                    </div>
                     <div className="flex flex-wrap">
                         <div className="w-5/6 sm:w-1/2 p-6">
                             <h3 className="text-3xl text-secondary font-bold leading-none mb-3">
@@ -75,12 +70,12 @@ export default function About_us() {
                                 <br />
                                 <br />
 
-                                Find Us on
+                                Find us on &nbsp;
 
                                 <Link
                                     className="text-pink-500 underline"
                                     href="https://www.instagram.com/kampungperca_kotabogor/"
-                                >instagram</Link>
+                                >Instagram</Link>
                             </p>
                         </div>
                         <div className="w-full sm:w-1/2 p-6">
@@ -95,6 +90,27 @@ export default function About_us() {
                         {/* lokasi  */}
                     </div>
                     <div className="flex flex-wrap flex-col-reverse sm:flex-row">
+                        <div
+                            id="map"
+                            className="w-full sm:w-1/2 p-1 mt-6 border-primary border-8"
+                        >
+                            {/* <MyApp />    */}
+                            {/* <Script
+                    async
+                    defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2z_q_YqnXOw5K6mrDt4_57-0rYPpPr1c&callback=initMap"
+                ></Script> */}
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15851.809306758589!2d106.8458125!3d-6.6528315!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c94d3ea29d31%3A0xac59c511b4fc118b!2sKampung%20Perca%20Sindangsari!5e0!3m2!1sid!2sid!4v1688749774352!5m2!1sid!2sid"
+                                // width="480"
+                                // height="202"
+                                // style={{ border: 0 }}
+                                allowFullScreen={false}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="w-full h-full"
+                            ></iframe>
+                        </div>
                         <div className="w-full sm:w-1/2 p-6 mt-6">
                             <div className="align-middle">
                                 <h3
@@ -108,7 +124,7 @@ export default function About_us() {
                                     <br />
                                     <br />
 
-                                    See on
+                                    See on &nbsp;
 
                                     <Link
                                         className="text-pink-500 underline"

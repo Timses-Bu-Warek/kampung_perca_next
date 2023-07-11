@@ -1,6 +1,26 @@
+"use client"
+
 import Link from "next/link"
+import { useState } from "react"
 
 export default function View() {
+    // const objObject = {
+    //     quantity: 1
+    // }
+    const [quantity, setQuantity] = useState(1);
+    const [name, setName] = useState("Baju Perca");
+
+    function increaseQuantity (){
+        setQuantity( quantity + 1 );
+    }
+
+    function decreaseQuantity (){
+        if(quantity > 1){
+            setQuantity (quantity - 1 );
+        }
+    }
+
+    const waAPI = "https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + quantity + " " + name; 
     return (
         <main>
             {/* <!-- breadcrums --> */}
@@ -50,7 +70,7 @@ export default function View() {
                 {/* <!-- produk konten --> */}
                 <div>
                     <h2 className="text-3xl font-montserrat font-semibold uppercase mb-2">
-                        Baju perca
+                        Baju perca K
                     </h2>
                     <div className="flex items-center mb-3">
                         <div className="flex gap-1 text-sm text-yellow-400">
@@ -105,8 +125,7 @@ export default function View() {
                                 <label
                                     htmlFor="size-s"
                                     className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                >S</label
-                                >
+                                >S</label>
                             </div>
                             {/* <!-- single size --> */}
                             <div className="size-selector">
@@ -142,19 +161,21 @@ export default function View() {
                         <div
                             className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max"
                         >
-                            <div
+                            <button
+                                type="button"
                                 className="h-8 w-8 text-lg flex items-center justify-center cursor-pointer select-none"
-                            >
+                                onClick={decreaseQuantity} >
                                 -
-                            </div>
+                            </button>
                             <div className="h-8 w-8 text-base flex items-center justify-center">
-                                6
+                                {quantity}
                             </div>
-                            <div
+                            <button
+                                type="button"
                                 className="h-8 w-8 text-lg flex items-center justify-center cursor-pointer select-none"
-                            >
+                                onClick={increaseQuantity} >
                                 +
-                            </div>
+                            </button>
                         </div>
                     </div>
                     {/* <!-- end quantity --> */}
@@ -162,7 +183,7 @@ export default function View() {
                     {/* <!-- cart button --> */}
                     <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
                         <Link
-                            href="https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : (isi dengan pesananmu atau screenshot produk)"
+                            href= {waAPI}
                             title="Hubungi Saya"
                             rel="noopener"
                             target="_blank"
@@ -223,30 +244,32 @@ export default function View() {
                     <table
                         className="table-auto border-collapse text-left text-gray-600 text-sm mt-6"
                     >
+                        <tbody>
                         <tr>
-                            <th
+                            <td
                                 className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
                             >
                                 Weight
-                            </th>
+                            </td>
                             <td className="py-2 px-4 border border-gray-300">55 Kg</td>
                         </tr>
                         <tr>
-                            <th
+                            <td
                                 className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
                             >
                                 Weight
-                            </th>
+                            </td>
                             <td className="py-2 px-4 border border-gray-300">55 Kg</td>
                         </tr>
                         <tr>
-                            <th
+                            <td
                                 className="py-2 px-4 border border-gray-300 w-40 font-inter font-medium"
                             >
                                 Weight
-                            </th>
+                            </td>
                             <td className="py-2 px-4 border border-gray-300">55 Kg</td>
                         </tr>
+                        </tbody>
                     </table>
                     {/* <!-- end table detail --> */}
                 </div>
@@ -315,7 +338,7 @@ export default function View() {
                             </div>
                         </div>
                         <Link
-                            href="https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : (isi dengan pesananmu atau screenshot produk)"
+                            href={waAPI}
                             title="Hubungi Saya"
                             rel="noopener"
                             target="_blank"
@@ -378,7 +401,7 @@ export default function View() {
                             </div>
                         </div>
                         <Link
-                            href="https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : (isi dengan pesananmu atau screenshot produk)"
+                            href={waAPI}
                             title="Hubungi Saya"
                             rel="noopener"
                             target="_blank"
@@ -441,7 +464,7 @@ export default function View() {
                             </div>
                         </div>
                         <Link
-                            href="https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : (isi dengan pesananmu atau screenshot produk)"
+                            href={waAPI}
                             title="Hubungi Saya"
                             rel="noopener"
                             target="_blank"
@@ -504,7 +527,7 @@ export default function View() {
                             </div>
                         </div>
                         <Link
-                            href="https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : (isi dengan pesananmu atau screenshot produk)"
+                            href={waAPI}
                             title="Hubungi Saya"
                             rel="noopener"
                             target="_blank"
