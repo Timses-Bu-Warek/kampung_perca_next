@@ -12,7 +12,7 @@ import Breadcrumbs from "@/app/components/Breadcrumbs"
 // export const dynamic = 'force-dynamic';
 
 const fetcher = async (address: string) => {
-    const response = await fetch(address)
+    const response = await fetch(address+"?API_SECRET_KEY="+process.env.API_SECRET_KEY)
     // const data = await response.json()
     // return data
     return response.json();
@@ -30,7 +30,6 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
 
     const [quantity, setQuantity] = useState(1);
     const [name, setName] = useState(params.NamaProduk);
-    const [harga, setHarga] = useState('');
     const [ukuran, setUkuran] = useState("");
 
     // const fetcher = getProduct(params.NamaProduk)
@@ -58,12 +57,13 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
     const { data, error } = useSWR(address, fetcher);
     // const { data, error } = useSWR(getProduct(params.NamaProduk));
 
+    // console.log("address: " + address)
+    console.log("fetcher: " + fetcher)
+    // console.log("data: " + data);
+
     if (error) return <div>Failed to fetch product</div>
     // if (!data) return <div>Loading....</div>
     if (!data) return <div><Skeleton /></div>
-    console.log("address: " + address)
-    console.log("fetcher: " + fetcher)
-    console.log("data: " + data);
 
     let waAPI;
     if (data.Ukuran) {

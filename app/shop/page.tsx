@@ -5,6 +5,11 @@ import getAllProducts from "@/lib/getAllProducts";
 import ProductComp from "./components/ProductComp";
 import Breadcrumbs from "../components/Breadcrumbs";
 
+import getSearchProducts from "@/lib/getSearchProducts";
+import ProductsSearch from "./components/ProductsSearch";
+import { Suspense } from "react";
+import Loading from "./loading"
+
 export const metadata: Metadata = {
   title: "Shop Kampung Perca Products",
   description: "Beli produk kampung perca",
@@ -17,7 +22,30 @@ export const metadata: Metadata = {
 //     return products;
 // };
 
+// const [message, setMessage] = useState("Hello World");
+// const chooseMessage = (message) => {
+//   setMessage(message);
+// };
+// return (
+//   <div>
+//     <h1>{message}</h1>
+//     <Child chooseMessage={chooseMessage} />
+//   </div>
+// );
+
 export default function Shop() {
+
+
+  // const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
+  //   const nama = e.target.name
+
+  //   setSearch(prevData => ({
+  //     ...prevData,
+  //     [nama]: e.target.value
+  //   }))
+  // }
+
   return (
     <main>
       {/* <!-- breadcrums --> */}
@@ -31,21 +59,10 @@ export default function Shop() {
         {/* <!-- side bar --> */}
         <div className="col-span-1 bg-white px-4 pb-6 shadow rounded overflow-hidden">
           <div className="divide-y divide-gray-200 space-y-5">
-            <div className="w-full my-3 h-10 max-w-xl justify-between relative flex">
-              <span className="absolute left-4 top-2 text-lg text-gray-400">
-                <i className="fas fa-search"></i>
-              </span>
-              <input
-                type="text"
-                className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-none"
-                placeholder="Cari"
-              />
-              <button
-                className="bg-primary border border-primary text-secondary px-8 rounded-r-md hover:bg-transparent hover:text-primary transition"
-              >
-                Cari
-              </button>
-            </div>
+            {/* <!-- search --> */}
+            <ProductsSearch />
+            {/* <!-- end search --> */}
+
             {/* <!-- category filter --> */}
             <div>
               <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">
@@ -298,7 +315,9 @@ export default function Shop() {
           {/* <!-- sorting end --> */}
 
           {/* <!-- produk grid --> */}
-          <ProductComp />
+          <Suspense fallback={<Loading />}>
+            <ProductComp />
+          </Suspense>
           {/* <!-- end produk grid --> */}
         </div>
       </div>

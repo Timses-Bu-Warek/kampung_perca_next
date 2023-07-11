@@ -8,6 +8,12 @@ import { ObjectId } from "mongodb";
 
 // export async function GET(request : Request, context : { params : {id: number} }) {
 export async function GET(request : Request, context : { params : {NamaProduk: string} }) {
+  // const { searchParams } = new URL(request.url);
+  // const API_SECRET_KEY = searchParams.get("API_SECRET_KEY")
+  // if(API_SECRET_KEY !== process.env.API_SECRET_KEY) {
+  //   return new Response("Not Authorized", { status: 500 })
+  // }
+
   try {
     // const id = req.query.id;
     const id = request.url.slice(request.url.lastIndexOf('/') + 1);

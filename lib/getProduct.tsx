@@ -1,5 +1,5 @@
-export default async function getProduct(NamaProduk : string) {
-    const res = await fetch (`http://localhost:3000/api/shop/${NamaProduk}`,
+export default async function getProduct(NamaProduk : string, API_SECRET_KEY : string) {
+    const res = await fetch (`http://localhost:3000/api/shop/${NamaProduk}?=${API_SECRET_KEY}`,
         {cache: 'force-cache'}
     )
 

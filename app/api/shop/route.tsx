@@ -4,7 +4,12 @@
 import { connectToDatabase } from "@/lib/mongo";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(request : Request) {
+  // const { searchParams } = new URL(request.url);
+  // const API_SECRET_KEY = searchParams.get("API_SECRET_KEY")
+  // if(API_SECRET_KEY !== process.env.API_SECRET_KEY) {
+  //   return new Response("Not Authorized", { status: 500 })
+  // }
   try {
     const client = await connectToDatabase();
     const db = client.db("KampungPercaDB");
