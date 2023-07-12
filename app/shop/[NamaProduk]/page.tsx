@@ -7,7 +7,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useRouter } from "next/router";
 import getProduct from "@/lib/getProduct";
-import Breadcrumbs from "@/app/components/Breadcrumbs"
+import Breadcrumbs from "@/app/components/breadcrumbs"
 
 // export const dynamic = 'force-dynamic';
 

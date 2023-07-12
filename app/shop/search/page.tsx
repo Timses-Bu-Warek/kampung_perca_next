@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import getAllProducts from "@/lib/getAllProducts";
 import ProductCompSearch from "../components/ProductCompSearch";
-import Breadcrumbs from "@/app/components/Breadcrumbs";
+import Breadcrumbs from "@/app/components/breadcrumbs";
 
 import getSearchProducts from "@/lib/getSearchProducts";
 import ProductsSearchBar from "../components/ProductsSearchBar";

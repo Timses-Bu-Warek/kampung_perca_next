@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from '../components/breadcrumbs';
 
 export default function Sudut_edukasi() {
     return (
