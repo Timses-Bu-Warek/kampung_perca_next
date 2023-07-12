@@ -27,14 +27,14 @@ export default function Shop() {
       {/* <!-- shop wrapper --> */}
       <div className="container grid md:grid-cols-4 gap-6 pt-4 pb-16 items-start">
         {/* <!-- side bar --> */}
-        <div className="col-span-1 bg-white px-4 pb-6 shadow rounded">
+        <div className="bg-white px-4 pb-6 shadow rounded">
           <div className="divide-y divide-gray-200 space-y-5">
             {/* <!-- search --> */}
             <ProductsSearchBar />
             {/* <!-- end search --> */}
 
             {/* <!-- category filter --> */}
-            <div className="hidden">
+            <div>
               <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">
                 Categories
               </h3>
@@ -152,7 +152,7 @@ export default function Shop() {
           <!-- end category filter 2 --> */}
 
             {/* <!-- price filter --> */}
-            <div className="hidden pt-4">
+            <div className="pt-4">
               <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium pt-6">
                 Price
               </h3>
@@ -257,7 +257,7 @@ export default function Shop() {
         {/* <!-- product wrapper --> */}
         <div className="col-span-3">
           {/* <!-- sorting --> */}
-          <div className="sm:hidden flex items-center mb-4">
+          <div className="flex items-center mb-4">
             <select
               title="Sorting"
               className="w-44 text-sm text-gray-600 px-4 py-3 border-gray-300 shadow-sm rounded focus:ring-primary focus:border-primary"
@@ -268,11 +268,11 @@ export default function Shop() {
               <option>Latest product</option>
             </select>
 
-            <div className="sm:hidden flex gap-2 ml-auto">
+            <div className="flex gap-2 ml-auto">
               <div className="border border-primary w-10 h-9 flex items-center justify-center text-white bg-primary rounded cursor-pointer">
                 <i className="fas fa-th"></i>
               </div>
-              <div className="sm:hidden border border-gray-300 w-10 h-9 flex items-center justify-center text-gray-600 rounded cursor-pointer">
+              <div className="border border-gray-300 w-10 h-9 flex items-center justify-center text-gray-600 rounded cursor-pointer">
                 <i className="fas fa-list"></i>
               </div>
             </div>

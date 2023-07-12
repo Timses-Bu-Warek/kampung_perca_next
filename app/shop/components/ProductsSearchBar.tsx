@@ -11,6 +11,12 @@ export default function ProductsSearchBar() {
         e.preventDefault();
         router.push(`/shop/search?NamaProduk=${search}`);
     }
+    const handleKeyDown = (event : any) => {
+        if (event.key === 'Enter') {
+          // 👇 Get input value
+          getSearchProducts(event);
+        }
+      };
     return (
         <form onSubmit={getSearchProducts}>
             <div className="w-full my-3 h-10 max-w-xl justify-between relative flex">
@@ -23,6 +29,7 @@ export default function ProductsSearchBar() {
                     placeholder="Cari"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
+                    onKeyDown={handleKeyDown}
                 />
                 <button
                     className="bg-primary border border-primary text-secondary px-8 rounded-r-md hover:bg-transparent hover:text-primary transition"

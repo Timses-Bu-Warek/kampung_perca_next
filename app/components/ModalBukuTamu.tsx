@@ -46,7 +46,6 @@ export default function ModalBukuTamu() {
         kesanPesan
       })
     })
-    // bukuFill = "true";
     router.refresh();
   }
 

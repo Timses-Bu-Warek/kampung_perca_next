@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 // import getAllProducts from "@/lib/getAllProducts";
 import getSearchProducts from "@/lib/getSearchProducts"
+import ImageContoh from "@/public/img/Produk/contoh_baju.jpg"
 
 export default async function ProductCompSearch({ params }: { params: { searchNama: string } } ) {
 
@@ -12,7 +13,7 @@ export default async function ProductCompSearch({ params }: { params: { searchNa
   // console.log(products);
 
   return (
-    <div className="grid grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {products.map((product) => (
         <div
           className="bg-white shadow rounded overflow-hidden group"
@@ -24,11 +25,18 @@ export default async function ProductCompSearch({ params }: { params: { searchNa
               <Image
               src={product.FotoProduk}
               alt={product.NamaProduk}
-              width={150}
-              height={150}
-              className="w-full"
+              width={100}
+              height={100}
+              className="object-cover h-[100px] w-[100px]"
             />
-              : <div className="w-full">Tidak ada foto</div>}
+              : <Image
+                  src={ImageContoh}
+                  alt={product.NamaProduk}
+                  width={100}
+                  height={100}
+                  className="object-cover h-[100px] w-[100px]"
+                />
+            }
             {/* {console.log(product.FotoProduk)} */}
             {/* <Image
               src="/img/Produk/contoh_baju.jpg"

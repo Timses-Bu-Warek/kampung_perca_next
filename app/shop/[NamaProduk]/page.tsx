@@ -58,7 +58,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
     // const { data, error } = useSWR(getProduct(params.NamaProduk));
 
     // console.log("address: " + address)
-    console.log("fetcher: " + fetcher)
+    // console.log("fetcher: " + fetcher)
     // console.log("data: " + data);
 
     if (error) return <div>Failed to fetch product</div>
@@ -87,8 +87,8 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
             {/* <!-- end breadcrums --> */}
 
             {/* <!-- product view --> */}
-            <div className="container grid grid-cols-2 gap-6">
-                <div>
+            <div className="container flex flex-col md:grid md:grid-cols-4 gap-6">
+                <div className="md:col-span-2">
                     {data.FotoProduk ?
                         <img src={data.FotoProduk} className="w-full" alt="Contoh Baju" />
                         : <div className="w-full">Tidak ada foto</div>}
@@ -121,7 +121,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     </div> */}
                 </div>
                 {/* <!-- produk konten --> */}
-                <div>
+                <div className="md:col-span-2">
                     <h2 className="text-3xl font-montserrat font-semibold uppercase mb-2">
                         {data.NamaProduk}
                     </h2>
@@ -146,7 +146,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         </p>
                         <p className="text-gray-800 font-semibold font-inter space-x-2">
                             <span>Category : </span>
-                            <span className="text-gray-600">Baju</span>
+                            <span className="text-gray-600">{data.Kategori}</span>
                         </p>
                     </div>
                     <div className="flex items-baseline mb-1 space-x-2 font-inter mt-4">
@@ -156,62 +156,63 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     <p className="mt-4 text-gray-600">
                         {data.Keterangan}
                     </p>
+                    <div className="grid grid-cols-2 md:block">
+                        {/* <!-- size --> */}
+                        {data.Ukuran ?
+                            <div className="pt-4">
+                                <h3 className="text-gray-800 uppercase font-inter pt-4">Size</h3>
 
-                    {/* <!-- size --> */}
-                    {data.Ukuran ?
-                        <div className="pt-4">
-                            <h3 className="text-gray-800 uppercase font-inter pt-4">Size</h3>
+                                <div className="flex items-center gap-2">
+                                    {data.Ukuran.map((size: any) =>
+                                        <div className="size-selector" key={size}>
+                                            <input type="radio" name="size" className="hidden" id={"size-" + size} value={size} checked={ukuran === size} onChange={onOptionChange} />
+                                            <label
+                                                htmlFor={"size-" + size}
+                                                className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
+                                            >{size}</label>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                            : ""
+                        }
+                        {/* <!-- end size --> */}
 
-                            <div className="flex items-center gap-2">
-                                {data.Ukuran.map((size: any) =>
-                                    <div className="size-selector" key={size}>
-                                        <input type="radio" name="size" className="hidden" id={"size-" + size} value={size} checked={ukuran === size} onChange={onOptionChange} />
-                                        <label
-                                            htmlFor={"size-" + size}
-                                            className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                        >{size}</label>
-                                    </div>
-                                )}
+                        {/* <!-- quantity --> */}
+                        <div className="mt-4">
+                            <h3 className="text-gray-800 uppercase font-inter pt-4">Quantity</h3>
+                            <div
+                                className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max"
+                            >
+                                <button
+                                    type="button"
+                                    className="h-8 w-full md:w-8 text-lg flex items-center justify-center cursor-pointer select-none"
+                                    onClick={decreaseQuantity} >
+                                    -
+                                </button>
+                                <div className="h-8 w-8 text-base flex items-center justify-center">
+                                    {/* <input type="number" name="" id="" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} /> */}
+                                    {quantity}
+                                </div>
+                                <button
+                                    type="button"
+                                    className="h-8 w-full md:w-8 text-lg flex items-center justify-center cursor-pointer select-none"
+                                    onClick={increaseQuantity} >
+                                    +
+                                </button>
                             </div>
                         </div>
-                        : ""
-                    }
-                    {/* <!-- end size --> */}
-
-                    {/* <!-- quantity --> */}
-                    <div className="mt-4">
-                        <h3 className="text-gray-800 uppercase font-inter pt-4">Quantity</h3>
-                        <div
-                            className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max"
-                        >
-                            <button
-                                type="button"
-                                className="h-8 w-8 text-lg flex items-center justify-center cursor-pointer select-none"
-                                onClick={decreaseQuantity} >
-                                -
-                            </button>
-                            <div className="h-8 w-8 text-base flex items-center justify-center">
-                                {/* <input type="number" name="" id="" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} /> */}
-                                {quantity}
-                            </div>
-                            <button
-                                type="button"
-                                className="h-8 w-8 text-lg flex items-center justify-center cursor-pointer select-none"
-                                onClick={increaseQuantity} >
-                                +
-                            </button>
-                        </div>
+                        {/* <!-- end quantity --> */}
                     </div>
-                    {/* <!-- end quantity --> */}
 
                     {/* <!-- cart button --> */}
-                    <div className="flex gap-3 border-b border-gray-200 pb-5 mt-6">
+                    <div className="flex gap-3 border-b text-center border-gray-200 pb-5 mt-6">
                         <Link
                             href={waAPI}
                             title="Hubungi Saya"
                             rel="noopener"
                             target="_blank"
-                            className="bg-primary border border-primary text-white px-8 py-2 font-medium font-inter rounded uppercase flex items-center gap-2 hover:bg-transparent hover:text-primary transition"
+                            className="bg-primary border border-primary text-white px-8 py-2 w-full md:w-40 font-medium font-inter rounded uppercase flex justify-center items-center gap-2 hover:bg-transparent hover:text-primary transition"
                             passHref
                         >
                             <i className="fas fa-shopping-bag"></i>Order
@@ -260,7 +261,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                         {data.Keterangan}
                     </div>
                     {/* <!-- table detail --> */}
-                    <table
+                    {/* <table
                         className="table-auto border-collapse text-left text-gray-600 text-sm mt-6"
                     >
                         <tbody>
@@ -289,7 +290,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                                 <td className="py-2 px-4 border border-gray-300">55 Kg</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table> */}
                     {/* <!-- end table detail --> */}
                 </div>
             </div>
@@ -303,7 +304,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     Related product
                 </h2>
                 {/* <!-- produk grid --> */}
-                <div className="grid grid-cols-4 gap-6">
+                <div className="flex flex-col md:grid md:grid-cols-4 gap-6">
                     {/* <!-- single produk --> */}
                     <div className="bg-white shadow rounded overflow-hidden group">
                         {/* <!-- produk image --> */}

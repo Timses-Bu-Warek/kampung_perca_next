@@ -38,7 +38,7 @@ export default function Sudut_edukasi() {
                         </div>
                     </div>
                     <div className="flex flex-wrap">
-                        <div className="hidden md:flex md:w-3/6 p-6">
+                        <div className="w-full p-6">
                             <img
                                 src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/11/19/1041984400.jpg"
                                 className=""
@@ -57,7 +57,7 @@ export default function Sudut_edukasi() {
                                 <br />
                             </p>
                         </div>
-                        <div className="w-full md:hidden p-6">
+                        <div className="w-1/2 md:hidden p-6">
                             <img
                                 src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/11/19/1041984400.jpg"
                                 className=""

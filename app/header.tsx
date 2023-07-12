@@ -1,38 +1,60 @@
+"use client"
+
 import Link from 'next/link'
+import { useState } from 'react';
 
 export default function Header() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     // <header className="mb-0 shadow-sm sticky top-0 bg-transparent z-40">
-    <header className="mb-0 shadow-sm">
-      {/* <nav className="bg-gray"> */}
-      <nav className="bg-transparent">
-        <div className="container flex-none flex xs:flex-col md:flex-row py-4">
-          <div className="flex flex-none text-sky-500 sm:justify-center bg-white">
-            <Link
+    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white">
+    <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+      <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start text-primary">
+      <Link
               href="/"
-              className="text-center"
+              className="text-center text-lg leading-relaxed inline-block mr-4 py-2 whitespace-nowrap"
               passHref
             ><b>Kampung Perca</b></Link>
-          </div>
-          <div className="flex xs:flex-col md:flex-row flex-auto justify-end md:space-x-6 capitalize bg-white">
+        <button
+          className="text-primary cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+          type="button"
+          title="menuButton"
+          onClick={() => setNavbarOpen(!navbarOpen)}
+        >
+          <i className="fas fa-bars"></i>
+        </button>
+      </div>
+      <div
+        className={
+          "lg:flex flex-grow items-center md:space-x-32 text-primary" +
+          (navbarOpen ? " flex" : " hidden")
+        }
+      >
+        <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
+          <li className="nav-item">
             <Link
               href="/shop"
-              className="text-sky-500 hover:text-primary transition"
+              className="px-3 py-2 text-sky-500 font-bold hover:text-primary transition leading-lg opacity-75"
               passHref
-            ><b>Shop</b></Link>
+            ><i className="fa fa-shop"></i><span className="ml-2">Shop</span></Link>
+          </li>
+          <li className="nav-item">
             <Link
-              href="/about-us"
-              className="text-sky-500 hover:text-primary transition"
-              passHref
-            ><b>About Us</b></Link>
-            <Link 
-              href="/sudut-edukasi" 
-              className="text-sky-500 hover:text-primary transition"
-              passHref
-            ><b>Sudut Edukasi</b></Link>
-          </div>
-        </div>
-      </nav>
-    </header >
+                href="/about-us"
+                className="px-3 py-2 text-sky-500 font-bold hover:text-primary transition leading-lg opacity-75"
+                passHref
+              ><i className="fa fa-info text-lg leading-lg  opacity-75"></i><span className="ml-2">About Us</span></Link>
+          </li>
+          <li className="nav-item">
+            <Link
+                href="/sudut-edukasi"
+                className="px-3 py-2 text-sky-500 font-bold hover:text-primary transition leading-lg opacity-75"
+                passHref
+              ><i className="fa fa-chalkboard text-lg leading-lg  opacity-75"></i><span className="ml-2">Sudut Edukasi</span></Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   )
 }

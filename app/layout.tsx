@@ -50,7 +50,7 @@ export default function RootLayout({
           data-use-service-core
           defer
         ></Script>
-        <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin=""></Script>
+        <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin="anonymous"></Script>
         <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
         <Header />
         {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
