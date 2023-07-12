@@ -53,7 +53,7 @@ export default function RootLayout({
         <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin="anonymous"></Script>
         <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
         <Header />
-        {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
+        {isFilled === true ? "" : <ModalBukuTamu />}
         {children}
         <Link href="#" passHref><FloatingButton /></Link>
       </body>
