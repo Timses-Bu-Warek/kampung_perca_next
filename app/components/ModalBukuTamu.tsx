@@ -9,7 +9,8 @@ type BukuTamu = {
   provinsi: string,
   kota: string,
   gender: string,
-  umur: number
+  umur: number,
+  kesanPesan : string
 }
 
 const initState : BukuTamu = {
@@ -17,7 +18,8 @@ const initState : BukuTamu = {
   provinsi: "",
   kota: "",
   gender: "",
-  umur: 0
+  umur: 0,
+  kesanPesan: ""
 }
 
 export default function ModalBukuTamu() {
@@ -27,7 +29,7 @@ export default function ModalBukuTamu() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     console.log(JSON.stringify(data))
-    const { nama, provinsi, kota, gender, umur } = data
+    const { nama, provinsi, kota, gender, umur, kesanPesan } = data
 
     // Send data to API Route
     const res = await fetch('http://localhost:3000/api/buku-tamu', {
@@ -40,16 +42,10 @@ export default function ModalBukuTamu() {
         provinsi,
         kota,
         gender,
-        umur
+        umur,
+        kesanPesan
       })
     })
-    const resJson = await res.json()
-    console.log(resJson)
-    if (typeof window !== 'undefined') {
-      // Perform localStorage action
-      localStorage.setItem("isiBukuTamu", "true")
-      sessionStorage.setItem("isiBukuTamu", "true")
-    }
     // bukuFill = "true";
     router.refresh();
   }
@@ -68,7 +64,7 @@ export default function ModalBukuTamu() {
 
   return (
     <div
-      className="h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 z-50"
+      className="h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 z-500"
     >
       <div
         className="block bg-slate-50 p-6 rounded-xl  w-90"
@@ -81,7 +77,7 @@ export default function ModalBukuTamu() {
           <h2 className="font-inter text-sm mt-4 mb-4">
             Harap mengisi buku tamu di bawah ya
           </h2>
-          <div id="fullname" className="flex flex-row">
+          <div id="fullname" className="flex flex-col">
             <div id="firstname" className="w-full mr-1">
               <label htmlFor="fname" className="text-sm">Nama</label>
               <input
@@ -94,27 +90,6 @@ export default function ModalBukuTamu() {
                 onChange={handleChange}
               />
             </div>
-            {/* <div id="lastname" className="w-1/2 mr-1 mb-4">
-              <label htmlFor="lname" className="text-sm">Nama Belakang</label>
-              <input
-                type="text"
-                name=""
-                id="lname"
-                className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
-              />
-            </div> */}
-          </div>
-
-          {/* <!-- alamat --> */}
-          <div>
-            {/* <label htmlFor="alamat" className="text-sm">Alamat</label>
-          <input
-            placeholder="Blok/Jalan/No Rumah/RT-RW"
-            type="text"
-            name=""
-            id="alamat"
-            className="h-full w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
-          /> */}
 
             <div id="alamat_lengkap" className="flex flex-row mt-2">
               <div id="provinsiDiv" className="w-1/2 mr-1">
@@ -170,7 +145,7 @@ export default function ModalBukuTamu() {
                   name="gender"
                   id="Laki-Laki"
                   required
-                  value={data.gender}
+                  value="Laki-Laki"
                   onChange={handleChange}
                   className="text-sm mx-1"
                   // checked
@@ -184,13 +159,28 @@ export default function ModalBukuTamu() {
                   id="Perempuan"
                   className="text-sm mx-1"
                   required
-                  value={data.gender}
+                  value="Perempuan"
                   onChange={handleChange}
                   // checked
                 />
               </label>
             </div>
           </div>
+          <div id="kesanPesan" className="flex flex-row">
+            <div id="kesan" className="w-full mr-1">
+              <label htmlFor="kPesan" className="text-sm">Kesan dan Pesan</label>
+              <input
+                type="text"
+                name="kesanPesan"
+                id="kPesan"
+                className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
+                required
+                value={data.kesanPesan}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          
 
           {/* <!-- button submit --> */}
           <div className="flex justify-end items-center w-100 border-t p-3">

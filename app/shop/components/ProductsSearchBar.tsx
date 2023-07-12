@@ -4,15 +4,12 @@ import React from 'react'
 import { useState, FormEvent, ChangeEvent  } from 'react';
 import { useRouter } from "next/navigation";
 
-export default function ProductsSearch() {
+export default function ProductsSearchBar() {
     const [search, setSearch] = useState("");
     const router = useRouter();
     const getSearchProducts = async (e: any) => {
         e.preventDefault();
-        const data = await fetch(`http://localhost:3000/api/shop/search?NamaProduk=${search}`);
-        const products = await data.json();
-        console.log(products);
-        router.push(`/shop?${search}`);
+        router.push(`/shop/search?NamaProduk=${search}`);
     }
     return (
         <form onSubmit={getSearchProducts}>

@@ -1,10 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
-import getAllProducts from "@/lib/getAllProducts";
+// import getAllProducts from "@/lib/getAllProducts";
+import getSearchProducts from "@/lib/getSearchProducts"
 
-export default async function ProductComp() {
+export default async function ProductCompSearch({ params }: { params: { searchNama: string } } ) {
 
-  const productsData: Promise<Products[]> = getAllProducts();
+  const productsData: Promise<Products[]> = getSearchProducts(params.searchNama);
 
 
   const products = await productsData;

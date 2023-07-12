@@ -19,7 +19,7 @@ const fetcher = async (address: string) => {
 }
 
 
-export default function DetailedProduct({ params }: { params: { NamaProduk: string } }, { url, className }: { url?: string; className?: string }) {
+export default function DetailedProduct({ params }: { params: { NamaProduk: string } }) {
     // const objObject = {
     //     quantity: 1
     // }

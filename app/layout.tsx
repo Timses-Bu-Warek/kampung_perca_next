@@ -1,5 +1,3 @@
-"use client"
-
 import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
@@ -9,6 +7,7 @@ import { Metadata } from 'next'
 import ModalBukuTamu from './components/ModalBukuTamu'
 import FloatingButton from './components/FloatingButton'
 import Link from 'next/link'
+import { cookies } from "next/headers";
 // import ReactModal from 'react-modal'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -26,7 +25,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   // sessionStorage.setItem("halo", "true")
-  let isFilled = localStorage.getItem("isiBukuTamu");
+  const cookiesBukuTamu = cookies()
+  let isFilled = cookiesBukuTamu.has('isBukuTamu')
+  // if (typeof window !== 'undefined') {
+  //   console.log('You are on the browser')
+  //   // 👉️ can use localStorage here
+  
+  //   isFilled = localStorage.getItem("isiBukuTamu");
+  // } else {
+  //   console.log('You are on the server')
+  //   // 👉️ can't use localStorage
+  // }
   // if (typeof window !== 'undefined') {
   //   // Perform localStorage action
   //   // Perform sessionStorage.
@@ -41,25 +50,10 @@ export default function RootLayout({
           data-use-service-core
           defer
         ></Script>
-        <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin="anonymous"></Script>
+        <Script src="https://kit.fontawesome.com/e8fc9e0274.js" crossOrigin=""></Script>
         <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
         <Header />
-        {/* {isFilled == "true" ? 
-                  <ReactModal
-                  isOpen={true}
-                  contentLabel="Buku Tamu"
-                >
-                  <ModalBukuTamu />
-                </ReactModal> :
-          <ReactModal
-          isOpen={false}
-          contentLabel="Buku Tamu"
-        >
-          <ModalBukuTamu />
-        </ReactModal>
-        } */}
-        {isFilled === "true" ? "" : <ModalBukuTamu />}
-        {/* {bukuFill === "true" ? "" : <ModalBukuTamu />} */}
+        {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
         {children}
         <Link href="#" passHref><FloatingButton /></Link>
       </body>

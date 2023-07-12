@@ -1,19 +1,15 @@
+"use client"
+
 import Link from "next/link"
-import Breadcrumbs from './../components/Breadcrumbs';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Sudut_edukasi() {
     return (
         <div>
             <section className="bg-white border-b py-8">
-                <div className="container py-4 flex items-center gap-4">
-                    <Link href="/" className="text-primary text-base">
-                        <i className="fas fa-home"></i>
-                    </Link>
-                    <span className="text-sm text-gray-400">
-                        <i className="fas fa-chevron-right"></i>
-                    </span>
-                    <p className="text-gray-600 font-medium">Sudut Edukasi</p>
-                </div>
+                <Breadcrumbs params={{
+                    slug: "Sudut Edukasi"
+                }} />
                 <h1
                     className="w-full mb-6 my-2 text-4xl font-montserrat font-bold text-center text-secondary"
                 >

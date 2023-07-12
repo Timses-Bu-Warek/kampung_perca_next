@@ -2,6 +2,7 @@ import Script from "next/script"
 import Link from "next/link"
 import Image from "next/image"
 import Breadcrumbs from "../components/Breadcrumbs"
+
 // import MyMapComponent from "./MyMapComponent";
 
 // import { Wrapper, Status } from "@googlemaps/react-wrapper";
@@ -23,15 +24,9 @@ export default function About_us() {
     return (
         <main>
             {/* breadcrumbs */}
-            <div className="container py-4 flex items-center gap-4">
-                <Link href="/" className="text-primary text-base">
-                    <i className="fas fa-home"></i>
-                </Link>
-                <span className="text-sm text-gray-400">
-                    <i className="fas fa-chevron-right"></i>
-                </span>
-                <p className="text-gray-600 font-medium">About Us</p>
-            </div>
+            <Breadcrumbs params={{
+                slug: "About Us"
+            }} />
             {/* <Breadcrumbs params={{
                 slug: "About Us"
             }} /> */}

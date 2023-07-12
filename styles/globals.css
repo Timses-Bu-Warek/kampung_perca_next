@@ -55,6 +55,10 @@ body {
   bottom: 4em;
 }
 
+.z-500 {
+  z-index: 500;
+}
+
 
 
 

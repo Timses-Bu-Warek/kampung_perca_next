@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import getAllProducts from "@/lib/getAllProducts";
 import ProductComp from "./components/ProductComp";
-import Breadcrumbs from "../components/Breadcrumbs";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 import getSearchProducts from "@/lib/getSearchProducts";
-import ProductsSearch from "./components/ProductsSearch";
+import ProductsSearchBar from "./components/ProductsSearchBar";
 import { Suspense } from "react";
 import Loading from "./loading"
 
@@ -15,37 +15,7 @@ export const metadata: Metadata = {
   description: "Beli produk kampung perca",
 };
 
-// const getProducts = async (): Promise<Products[]> => {
-//     const data = await fetch("http://localhost:3000/shop/api");
-//     const products = await data.json();
-
-//     return products;
-// };
-
-// const [message, setMessage] = useState("Hello World");
-// const chooseMessage = (message) => {
-//   setMessage(message);
-// };
-// return (
-//   <div>
-//     <h1>{message}</h1>
-//     <Child chooseMessage={chooseMessage} />
-//   </div>
-// );
-
 export default function Shop() {
-
-
-  // const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-
-  //   const nama = e.target.name
-
-  //   setSearch(prevData => ({
-  //     ...prevData,
-  //     [nama]: e.target.value
-  //   }))
-  // }
-
   return (
     <main>
       {/* <!-- breadcrums --> */}
@@ -60,7 +30,7 @@ export default function Shop() {
         <div className="col-span-1 bg-white px-4 pb-6 shadow rounded overflow-hidden">
           <div className="divide-y divide-gray-200 space-y-5">
             {/* <!-- search --> */}
-            <ProductsSearch />
+            <ProductsSearchBar />
             {/* <!-- end search --> */}
 
             {/* <!-- category filter --> */}

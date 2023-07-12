@@ -2,6 +2,7 @@
 // localhost:3000/api/buku-tamu
 
 import { connectToDatabase } from "@/lib/mongo";
+import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
 type BukuTamu = {
@@ -33,6 +34,8 @@ type BukuTamu = {
 // }
 
 export async function POST(request : Request) {
+  const cookiesBukuTamu = cookies()
+  cookiesBukuTamu.set('isBukuTamu', 'true', { secure: true })
   try {
     const client = await connectToDatabase();
     const db = client.db("KampungPercaDB");
@@ -42,6 +45,7 @@ export async function POST(request : Request) {
   
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     return NextResponse.json(allProducts);
+
   } catch (error) {
     return new Response("Failed to fetch all prompts", { status: 500 })
   }
