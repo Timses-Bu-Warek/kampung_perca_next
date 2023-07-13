@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     screens: {
-      xs:"320px",
+      xs: "320px",
       sm: "576px",
       md: "768px",
       lg: "992px",
@@ -30,7 +30,7 @@ module.exports = {
         sourceSansPro: "'Source Sans Pro', sans-serif",
       },
       colors: {
-        primary: "#38bdf8",
+        primary: "#1d4ed8",
         secondary: "#020617",
       },
     },
