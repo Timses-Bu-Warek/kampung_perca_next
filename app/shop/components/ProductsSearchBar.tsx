@@ -32,7 +32,7 @@ export default function ProductsSearchBar() {
                     onKeyDown={handleKeyDown}
                 />
                 <button
-                    className="bg-primary border border-primary text-secondary px-8 rounded-r-md hover:bg-transparent hover:text-primary transition"
+                    className="bg-primary border border-primary text-white px-4 rounded-r-md hover:bg-transparent hover:text-primary transition"
                 >
                     Cari
                 </button>

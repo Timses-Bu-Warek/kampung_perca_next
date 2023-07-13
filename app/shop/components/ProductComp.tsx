@@ -26,14 +26,14 @@ export default async function ProductComp() {
               alt={product.NamaProduk}
               width={100}
               height={100}
-              className="object-cover h-[100px] w-[100px]"
+              className="w-full"
             />
               : <Image
                   src={ImageContoh}
                   alt={product.NamaProduk}
                   width={100}
                   height={100}
-                  className="object-cover h-[100px] w-[100px]"
+                  className="w-full"
                 />
             }
             {/* {console.log(product.FotoProduk)} */}

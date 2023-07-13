@@ -30,7 +30,7 @@ module.exports = {
         sourceSansPro: "'Source Sans Pro', sans-serif",
       },
       colors: {
-        primary: "#38bdf8",
+        primary: "#1d4ed8",
         secondary: "#020617",
       },
     },
