@@ -44,7 +44,8 @@ export default function ModalBukuTamu() {
         gender,
         umur,
         kesanPesan
-      })
+      }),
+      mode:"cors"
     })
     router.refresh();
   }
@@ -121,8 +122,8 @@ export default function ModalBukuTamu() {
           </div>
 
 
-          <div id="usia" className="flex flex-row mt-2">
-            <div id="ageDiv" className="w-1/2 mr-1">
+          <div id="usia" className="flex flex-col md:flex-row mt-2">
+            <div id="ageDiv" className="w-full md:w-1/2 mr-1">
               <label htmlFor="age" className="text-sm">Usia</label>
               <input
                 placeholder="Masukkan usia anda"
