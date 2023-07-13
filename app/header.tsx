@@ -26,7 +26,7 @@ export default function Header() {
       </div>
       <div
         className={
-          "lg:flex flex-grow items-center md:space-x-32 text-primary" +
+          "lg:flex flex-grow items-center md:space-x-32" +
           (navbarOpen ? " flex" : " hidden")
         }
       >
@@ -34,21 +34,21 @@ export default function Header() {
           <li className="nav-item">
             <Link
               href="/shop"
-              className="px-3 py-2 text-sky-500 font-bold hover:text-primary transition leading-lg opacity-75"
+              className="px-3 py-2font-bold text-primary hover:text-blue-500 transition leading-lg opacity-75"
               passHref
             ><i className="fa fa-shop"></i><span className="ml-2">Shop</span></Link>
           </li>
           <li className="nav-item">
             <Link
                 href="/about-us"
-                className="px-3 py-2 text-sky-500 font-bold hover:text-primary transition leading-lg opacity-75"
+                className="px-3 py-2 text-primary hover:text-blue-500 transition leading-lg opacity-75"
                 passHref
               ><i className="fa fa-info text-lg leading-lg  opacity-75"></i><span className="ml-2">About Us</span></Link>
           </li>
           <li className="nav-item">
             <Link
                 href="/sudut-edukasi"
-                className="px-3 py-2 text-sky-500 font-bold hover:text-primary transition leading-lg opacity-75"
+                className="px-3 py-2 text-primary hover:text-blue-500 transition leading-lg opacity-75"
                 passHref
               ><i className="fa fa-chalkboard text-lg leading-lg  opacity-75"></i><span className="ml-2">Sudut Edukasi</span></Link>
           </li>

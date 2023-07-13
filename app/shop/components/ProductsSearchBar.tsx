@@ -25,13 +25,13 @@ export default function ProductsSearchBar() {
         </span>
         <input
           type="text"
-          className="w-full text-gray-300 bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-none"
+          className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-none"
           placeholder="Cari"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleKeyDown}
         />
-        <button className="bg-primary border border-primary text-white px-4 rounded-r-md hover:bg-transparent hover:text-primary transition">
+        <button className="bg-primary border border-primary text-secondary px-8 rounded-r-md hover:bg-transparent hover:text-primary transition">
           Cari
         </button>
       </div>
