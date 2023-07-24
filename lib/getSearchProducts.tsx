@@ -1,8 +1,9 @@
-export default async function getSearchProducts(request : any) {
+export default async function getSearchProducts(req : string) {
     // const { searchParams } = new URL(request.url);
     // const nama = searchParams.get("NamaProduk")
-    const res = await fetch (`http://localhost:3000/api/shop/search?NamaProduk=${request}`,
-    )
+    const res = process.env.NODE_ENV === 'production' ?
+        await fetch (`http://localhost:3000/api/shop/search?NamaProduk=${req}`) :
+        await fetch (`http://localhost:3000/api/shop/search?NamaProduk=${req}`)
 
     const products = await res.json()
 

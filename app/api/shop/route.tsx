@@ -10,6 +10,7 @@ export async function GET(request : Request) {
   // if(API_SECRET_KEY !== process.env.API_SECRET_KEY) {
   //   return new Response("Not Authorized", { status: 500 })
   // }
+  const origin = request.headers.get('origin')
   try {
     const client = await connectToDatabase();
     const db = client.db("KampungPercaDB");
@@ -17,7 +18,12 @@ export async function GET(request : Request) {
     const allProducts = await db.collection("Products").find().toArray();
   
     // return new Response(JSON.stringify(allProducts), { status: 200 });
-    return NextResponse.json(allProducts);
+    return new NextResponse(JSON.stringify(allProducts), {
+      headers: {
+          'Access-Control-Allow-Origin': origin || "*",
+          'Content-Type': 'application/json',
+      }
+  })
   } catch (error) {
     return new Response("Failed to fetch all prompts", { status: 500 })
   }

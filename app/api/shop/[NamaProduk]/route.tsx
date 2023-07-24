@@ -13,7 +13,8 @@ export async function GET(request : Request, context : { params : {NamaProduk: s
   // if(API_SECRET_KEY !== process.env.API_SECRET_KEY) {
   //   return new Response("Not Authorized", { status: 500 })
   // }
-
+  const origin = request.headers.get('origin')
+  
   try {
     // const id = req.query.id;
     const id = request.url.slice(request.url.lastIndexOf('/') + 1);
@@ -29,9 +30,14 @@ export async function GET(request : Request, context : { params : {NamaProduk: s
     console.log(oneProduct)
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     if(oneProduct) {
-      return NextResponse.json(oneProduct)
+      return new NextResponse(JSON.stringify(oneProduct), {
+        headers: {
+            'Access-Control-Allow-Origin': origin || "*",
+            'Content-Type': 'application/json',
+        }
+    })
     } else {
-      return NextResponse.json({message: "Failed to fetch the product", status: 500})
+      return NextResponse.json({message: "Gagal memuat produk", status: 500})
     }
   } catch (error) {
     // console.log(error);

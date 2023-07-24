@@ -4,6 +4,7 @@
 import { connectToDatabase } from "@/lib/mongo";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
+import { limiter } from "../config/limiter";
 
 type BukuTamu = {
   nama: "",
@@ -23,9 +24,9 @@ type BukuTamu = {
 //   try {
 //     const client = await connectToDatabase();
 //     const db = client.db("KampungPercaDB");
-  
+
 //     const allVisitors = await db.collection("Visitors").find().toArray();
-  
+
 //     // return new Response(JSON.stringify(allProducts), { status: 200 });
 //     return NextResponse.json(allVisitors);
 //   } catch (error) {
@@ -33,18 +34,38 @@ type BukuTamu = {
 //   }
 // }
 
-export async function POST(request : Request) {
+export async function POST(request: Request) {
   const cookiesBukuTamu = cookies()
   cookiesBukuTamu.set('isBukuTamu', 'true', { secure: true })
+  const origin = request.headers.get('origin')
+
+  const remaining = await limiter.removeTokens(1)
+  console.log('remaining: ', remaining)
+
   try {
     const client = await connectToDatabase();
     const db = client.db("KampungPercaDB");
-    const data : BukuTamu = await request.json();
-  
+    const data: BukuTamu = await request.json();
+
     const allProducts = await db.collection("Visitors").insertOne(data);
-  
+
     // return new Response(JSON.stringify(allProducts), { status: 200 });
-    return NextResponse.json(allProducts);
+    if (remaining < 0) {
+      return new NextResponse(null, {
+        status: 429,
+        statusText: "Too Many Requests",
+        headers: {
+          'Access-Control-Allow-Origin': origin || '*',
+          'Content-Type': 'text/plain',
+        }
+      })
+    }
+    return new NextResponse(JSON.stringify(allProducts), {
+      headers: {
+        'Access-Control-Allow-Origin': origin || "*",
+        'Content-Type': 'application/json',
+      }
+    })
 
   } catch (error) {
     return new Response("Failed to fetch all prompts", { status: 500 })
@@ -52,4 +73,3 @@ export async function POST(request : Request) {
 }
 
 
-  

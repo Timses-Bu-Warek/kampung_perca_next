@@ -45,7 +45,6 @@ export default function ModalBukuTamu() {
         umur,
         kesanPesan
       }),
-      mode:"cors"
     })
     router.refresh();
   }
