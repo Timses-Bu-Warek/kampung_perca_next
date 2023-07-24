@@ -32,20 +32,35 @@ export default function ModalBukuTamu() {
     const { nama, provinsi, kota, gender, umur, kesanPesan } = data
 
     // Send data to API Route
-    const res = await fetch('http://localhost:3000/api/buku-tamu', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        nama,
-        provinsi,
-        kota,
-        gender,
-        umur,
-        kesanPesan
-      }),
-    })
+    const res = process.env.NODE_ENV === 'production' ? 
+      await fetch('https://kampung-perca.vercel.app/api/buku-tamu', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nama,
+          provinsi,
+          kota,
+          gender,
+          umur,
+          kesanPesan
+        }),
+      }) :
+      await fetch('http://localhost:3000/api/buku-tamu', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          nama,
+          provinsi,
+          kota,
+          gender,
+          umur,
+          kesanPesan
+        }),
+      })
     router.refresh();
   }
 
