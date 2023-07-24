@@ -1,5 +1,6 @@
 // Buku Tamu API
-// localhost:3000/api/buku-tamu
+// http://localhost:3000/api/buku-tamu
+// https://kampung-perca.vercel.app/api/buku-tamu
 
 import { connectToDatabase } from "@/lib/mongo";
 import { cookies } from "next/headers";

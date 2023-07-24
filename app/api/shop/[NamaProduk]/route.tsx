@@ -1,6 +1,7 @@
 // Dynamic Route API [NamaProduk]
-// localhost:3000/api/shop/[NamaProduk]
-// contoh: localhost:3000/api/shop/Baju%20Pangsi
+// http://localhost:3000/api/shop/[NamaProduk]
+// https://kampung-perca.vercel.app/api/shop/[NamaProduk]
+// contoh: http://localhost:3000/api/shop/Baju%20Pangsi
 
 import { connectToDatabase } from "@/lib/mongo";
 import { NextRequest, NextResponse } from "next/server";

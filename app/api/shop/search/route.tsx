@@ -1,3 +1,7 @@
+// SEARCH SHOP API
+// http://localhost:3000/api/shop/search?=[NamaProduk]
+// https://kampung-perca.vercel.app/api/shop/search?=[NamaProduk]
+
 import { connectToDatabase } from "@/lib/mongo";
 import { MongoClient, Filter } from "mongodb";
 import { NextRequest, NextResponse } from "next/server";

@@ -1,5 +1,6 @@
 // Shop API
-// localhost:3000/api/shop
+// http://localhost:3000/api/shop
+// https://kampung-perca.vercel.app/api/shop
 
 import { connectToDatabase } from "@/lib/mongo";
 import { NextRequest, NextResponse } from "next/server";

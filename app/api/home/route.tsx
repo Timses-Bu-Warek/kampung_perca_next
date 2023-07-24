@@ -1,5 +1,6 @@
 // Home Recommended API
-// localhost:3000/api/home
+// http://localhost:3000/api/home
+// https://kampung-perca.vercel.app/api/home
 
 import { connectToDatabase } from "@/lib/mongo";
 import { NextRequest, NextResponse } from "next/server";
