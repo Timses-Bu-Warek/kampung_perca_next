@@ -13,7 +13,7 @@ export default function ProductsSearchBar() {
   };
   const handleKeyDown = (event: any) => {
     if (event.key === "Enter") {
-      // 👇 Get input value
+      // Get input value
       getSearchProducts(event);
     }
   };
@@ -31,7 +31,7 @@ export default function ProductsSearchBar() {
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleKeyDown}
         />
-        <button className="bg-primary border border-primary text-secondary px-8 rounded-r-md hover:bg-transparent hover:text-primary transition">
+        <button className="bg-primary border border-primary text-white px-8 rounded-r-md hover:bg-transparent hover:text-primary transition">
           Cari
         </button>
       </div>
