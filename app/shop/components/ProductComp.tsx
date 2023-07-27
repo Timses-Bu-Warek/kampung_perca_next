@@ -71,8 +71,8 @@ export default async function ProductComp() {
                     product.NamaProduk.length <= 8
                       ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
                       : product.NamaProduk.length >= 15
-                      ? `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
-                      : `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                      ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                      : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                   }
                 >
                   {product.NamaProduk}
