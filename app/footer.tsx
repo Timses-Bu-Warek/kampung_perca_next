@@ -110,7 +110,7 @@ export default function Footer() {
             href="https://ibik.ac.id/"
             target="_blank"
           >
-            IBI Kesatuan Bogor
+            <span className="cursor-pointer"> {""}IBI Kesatuan Bogor</span>
           </Link>
         </div>
       </div>
