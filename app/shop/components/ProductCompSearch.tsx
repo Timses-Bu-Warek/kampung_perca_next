@@ -1,13 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 // import getAllProducts from "@/lib/getAllProducts";
-import getSearchProducts from "@/lib/getSearchProducts"
-import ImageContoh from "@/public/img/Produk/contoh_baju.jpg"
+import getSearchProducts from "@/lib/getSearchProducts";
+import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
 
-export default async function ProductCompSearch({ params }: { params: { searchNama: string } } ) {
-
-  const productsData: Promise<Products[]> = getSearchProducts(params.searchNama);
-
+export default async function ProductCompSearch({
+  params,
+}: {
+  params: { searchNama: string };
+}) {
+  const productsData: Promise<Products[]> = getSearchProducts(
+    params.searchNama
+  );
 
   const products = await productsData;
   // console.log(products);
@@ -16,27 +20,28 @@ export default async function ProductCompSearch({ params }: { params: { searchNa
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {products.map((product) => (
         <div
-          className="bg-white shadow rounded overflow-hidden group"
+          className="bg-white shadow rounded overflow-hidden group flex justify-between flex-col"
           key={product.ProdukID}
         >
           {/* <!-- produk image --> */}
           <div className="relative">
-            {product.FotoProduk ?
+            {product.FotoProduk ? (
               <Image
-              src={product.FotoProduk}
-              alt={product.NamaProduk}
-              width={100}
-              height={100}
-              className="w-full"
-            />
-              : <Image
-                  src={ImageContoh}
-                  alt={product.NamaProduk}
-                  width={100}
-                  height={100}
-                  className="w-full"
-                />
-            }
+                src={product.FotoProduk}
+                alt={product.NamaProduk}
+                width={100}
+                height={100}
+                className="w-full min-h-[200px]"
+              />
+            ) : (
+              <Image
+                src={ImageContoh}
+                alt={product.NamaProduk}
+                width={100}
+                height={100}
+                className="w-full min-h-full"
+              />
+            )}
             {/* {console.log(product.FotoProduk)} */}
             {/* <Image
               src="/img/Produk/contoh_baju.jpg"
@@ -67,7 +72,15 @@ export default async function ProductCompSearch({ params }: { params: { searchNa
           {/* <!-- produk konten --> */}
           <div className="pt-4 pb-3 px-4">
             <Link href={`/shop/${product.NamaProduk}`} passHref>
-              <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
+              <h4
+                className={
+                  product.NamaProduk.length <= 8
+                    ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
+                    : product.NamaProduk.length >= 15
+                    ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                    : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
+                }
+              >
                 {product.NamaProduk}
               </h4>
             </Link>
@@ -113,5 +126,5 @@ export default async function ProductCompSearch({ params }: { params: { searchNa
         </div>
       ))}
     </div>
-  )
+  );
 }
