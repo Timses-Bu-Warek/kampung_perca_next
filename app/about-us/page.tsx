@@ -45,10 +45,21 @@ export default function About_us() {
               src="https://www.youtube.com/embed/TRoKZ-4m5C0"
               // width="990"
               // height="400"
-              className="mb-6  w-full h-full justify-center"
+              className="mb-6 w-full h-full justify-center shadow-xl shadow-gray-400 rounded-xl"
             ></iframe>
+            <h4 className="font-inter italic text-black items-center justify-center text-center">
+              Sumber :{" "}
+              <a
+                href="https://www.youtube.com/@bimaarya1921"
+                target="_blank"
+                rel="noreferrer"
+                className="font-bold text-blue-500"
+              >
+                Channel Youtube Bima Arya tahun 2022
+              </a>
+            </h4>
           </div>
-          <div className="flex flex-wrap">
+          <div className="flex flex-wrap mt-32">
             <div className="w-5/6 sm:w-1/2 p-6">
               <h3 className="text-3xl text-secondary font-bold leading-none mb-3">
                 Kampung Perca Kota Bogor
@@ -77,7 +88,7 @@ export default function About_us() {
             <div className="w-full sm:w-1/2 p-6">
               <img
                 src="https://jadesta.kemenparekraf.go.id/imgpost/97853.jpg"
-                className=""
+                className="shadow-xl shadow-gray-400 rounded-xl"
                 alt="Foto Kampung Perca"
               />
             </div>
@@ -85,7 +96,7 @@ export default function About_us() {
 
             {/* lokasi  */}
           </div>
-          <div className="flex flex-wrap flex-col-reverse sm:flex-row">
+          <div className="flex flex-wrap flex-col-reverse sm:flex-row mb-32">
             <div id="map" className="w-full sm:w-1/2 p-1 mt-6 ">
               {/* <MyApp />    */}
               {/* <Script
@@ -101,7 +112,7 @@ export default function About_us() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
+                className="w-full h-full shadow-xl shadow-gray-400 rounded-xl"
               ></iframe>
             </div>
             <div className="w-full sm:w-1/2 p-6 mt-6">
