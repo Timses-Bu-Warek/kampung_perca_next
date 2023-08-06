@@ -15,58 +15,216 @@ export default function Sudut_edukasi() {
         <h1 className="w-full mb-6 my-2 text-4xl font-montserrat font-bold text-center text-secondary">
           Sudut Edukasi
         </h1>
-        <div className="container max-w-5xl mx-auto m-8">
-          <div className="flex flex-wrap">
-            <div className="w-5/6 sm:w-1/2 p-6">
-              <h2 className="text-3xl text-secondary font-bold leading-none mb-3">
-                Apa itu Kampung Tematik?
-              </h2>
-              <p className="text-gray-600 mb-8 font-inter text-justify">
-                Kampung tematik adalah kampung wisata kecil yang dibentuk dari
-                kebutuhan untuk menghasilkan sumber pendapatan alternatif dan
-                menumbuhkan rasa kebersamaan dan kebanggaan di daerah pedesaan
-                yang menurun
-                <br />
-                <br />
-              </p>
+
+        {/* Konten kain perca */}
+        <div className="container my-24 mx-auto md:px-6">
+          <section className="mb-32">
+            <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+              <div className="flex flex-wrap items-center">
+                <div className="hidden shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
+                  <img
+                    src="/img/contoh.jpg"
+                    alt="Trendy Pants and Shoes"
+                    className="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                  />
+                </div>
+                <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
+                  <div className="px-6 py-12 md:px-12">
+                    <h2 className="mb-4 text-2xl font-bold">
+                      Apa itu Kain Perca ?
+                    </h2>
+                    <p className="mb-6 text-neutral-800 text-justify">
+                      Kain perca adalah potongan-potongan kecil atau sisa-sisa
+                      kain yang tersisa setelah pemotongan kain dalam proses
+                      pembuatan pakaian atau proyek jahitan lainnya. Kain perca
+                      sering kali merupakan hasil dari potongan-potongan kain
+                      yang tidak digunakan lagi dalam produksi atau proyek
+                      tertentu. Potongan-potongan ini bisa berasal dari berbagai
+                      jenis kain, warna, dan pola yang berbeda.
+                    </p>
+                    <p className="mb-6 text-neutral-800 text-justify">
+                      Kain perca sering digunakan dalam berbagai cara kreatif,
+                      seperti dalam seni kerajinan tangan, quilting, jahitan,
+                      dan proyek-proyek DIY. Banyak orang mengumpulkan kain
+                      perca untuk membuat barang-barang seperti selimut lapis,
+                      bantal, gantungan dinding, tas, dan banyak lagi. Kain
+                      perca memungkinkan kreativitas dalam membuat desain yang
+                      unik, karena Anda dapat menggabungkan berbagai potongan
+                      kain dengan pola dan warna yang berbeda-beda.
+                    </p>
+                    <p className="mb-6 text-neutral-800 text-justify">
+                      Selain digunakan dalam kerajinan tangan, kain perca juga
+                      bisa berfungsi untuk mengurangi limbah dalam industri
+                      tekstil dengan memanfaatkan potongan-potongan kecil yang
+                      mungkin sebelumnya akan dibuang.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="w-full sm:w-1/2 p-6">
-              <img
-                src="https://jadesta.kemenparekraf.go.id/imgpost/97853.jpg"
-                className=""
-                alt="Foto Kampung Perca"
-              />
-            </div>
-          </div>
-          <div className="flex flex-wrap">
-            <div className="hidden md:flex md:w-3/6 p-6">
-              <img
-                src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/11/19/1041984400.jpg"
-                className=""
-                alt="Foto Kain Perca"
-              />
-            </div>
-            <div className="w-5/6 sm:w-1/2 p-6">
-              <h2 className="text-3xl text-secondary font-bold leading-none mb-3">
-                Apa itu Kain Perca?
-              </h2>
-              <p className="text-gray-600 mb-8 font-inter text-justify">
-                Kain perca yaitu kain sisa atau limbah dari konveksi, pabrik
-                atau garmen yang memproduksi pakaian, sprei dan lain sebagainya
-                yang menggunakan bahan dasar kain.
-                <br />
-                <br />
-              </p>
-            </div>
-            <div className="w-full md:hidden p-6">
-              <img
-                src="https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/11/19/1041984400.jpg"
-                className=""
-                alt="Foto Kain Perca"
-              />
-            </div>
-          </div>
+          </section>
         </div>
+        {/* end content kain perca */}
+
+        {/* Konten kain perca */}
+        <div className="container my-24 mx-auto md:px-6">
+          <section className="mb-32">
+            <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+              <div className="flex flex-wrap items-center">
+                <div className=" lg:flex lg:w-6/12 xl:w-4/12">
+                  <img
+                    src="/img/manfaat.jpg"
+                    alt="Trendy Pants and Shoes"
+                    className="w-full h-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                  />
+                </div>
+                <div className="w-full lg:w-6/12 xl:w-8/12">
+                  <div className="px-6 py-12 md:px-12">
+                    <h2 className="mb-4 text-2xl font-bold">
+                      Dampak Positif Pengelolaan Kain Perca
+                    </h2>
+                    <p className="mb-6 text-neutral-800 text-justify">
+                      Dalam upaya untuk menjaga keseimbangan antara manfaat dan
+                      dampaknya, penting untuk menggunakan kain perca dengan
+                      bijak, mengutamakan praktik daur ulang, dan
+                      mempertimbangkan implikasi lingkungan dan sosial dari
+                      keputusan kita. Penggunaan kain perca memiliki beberapa
+                      dampak positif dari pemanfaatan kain perca:
+                    </p>
+                    <ul className="list-decimal text-justify">
+                      <li>
+                        <b>Pemanfaatan Limbah:</b> Penggunaan kain perca
+                        membantu mengurangi limbah tekstil yang dihasilkan dari
+                        industri pakaian dan proyek jahitan. Ini dapat
+                        mengurangi beban sampah dan dampak negatif lingkungan
+                        dari pembuangan limbah tekstil.
+                      </li>
+                      <li>
+                        <b>Kreativitas dan Seni:</b> Penggunaan kain perca dapat
+                        merangsang kreativitas dan seni. Orang dapat menciptakan
+                        berbagai kreasi unik dan orisinal dengan memadukan
+                        berbagai warna, pola, dan tekstur kain.
+                      </li>
+                      <li>
+                        <b>Kemampuan Mendaur Ulang:</b> Kain perca dapat menjadi
+                        sumber bahan untuk berbagai proyek DIY, seperti
+                        patchwork, quilting, dan kerajinan tangan lainnya. Ini
+                        mempromosikan praktik daur ulang dan mengurangi
+                        kebutuhan akan bahan baru.
+                      </li>
+                      <li>
+                        <b>Energi dan Sumber Daya:</b> Dengan menggunakan kain
+                        perca, Anda dapat mengurangi permintaan akan bahan baru,
+                        yang pada gilirannya dapat mengurangi konsumsi energi,
+                        air, dan sumber daya lain yang diperlukan untuk
+                        memproduksi kain baru.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        {/* end content kain perca */}
+
+        {/* Konten kain perca */}
+        <div className="container my-24 mx-auto md:px-6">
+          <section className="mb-32">
+            <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
+              <div className="flex items-center">
+                <div className=" lg:flex lg:w-6/12 xl:w-4/12">
+                  <img
+                    src="/img/potensi.jpg"
+                    alt="Trendy Pants and Shoes"
+                    className="w-full h-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                  />
+                </div>
+                <div className="w-full lg:w-6/12 xl:w-8/12">
+                  <div className="px-6 py-12 md:px-12">
+                    <h2 className="mb-4 text-2xl font-bold">
+                      Potensi Kain Perca di Kota Bogor
+                    </h2>
+                    <p className="mb-6 text-neutral-800 text-justify">
+                      Potensi penggunaan kain perca di Kota Bogor, atau di mana
+                      pun, dapat bervariasi tergantung pada faktor-faktor
+                      seperti pasar lokal, minat masyarakat, dan perkembangan
+                      industri kreatif di daerah tersebut. Berikut beberapa
+                      potensi penggunaan kain perca di Kota Bogor:
+                    </p>
+                    <ul className="list-decimal text-justify">
+                      <li className="mb-2">
+                        <b>Pendidikan dan Pelatihan:</b> Kain perca bisa
+                        digunakan dalam program pelatihan dan pendidikan jahitan
+                        untuk masyarakat lokal. Sekolah atau lembaga pelatihan
+                        dapat mengajarkan teknik jahitan dan kerajinan dengan
+                        menggunakan kain perca. Ini dapat memberikan
+                        keterampilan baru kepada warga, mendorong kreativitas,
+                        dan memberikan peluang untuk menghasilkan produk
+                        bernilai dari kain sisa.
+                      </li>
+                      <li className="mb-2">
+                        <b>Industri Kerajinan:</b> Penggunaan kain perca bisa
+                        mendukung perkembangan industri kerajinan tangan di Kota
+                        Bogor. Pelaku usaha dan pengrajin lokal dapat
+                        memanfaatkan kain perca untuk membuat berbagai produk
+                        unik seperti tas, dompet, aksesori, dan hiasan rumah
+                        tangga. Ini dapat membantu meningkatkan ekonomi lokal
+                        dan menciptakan produk dengan nilai tambah.
+                      </li>
+                      <li className="mb-2">
+                        <b>Pariwisata dan Souvenir:</b> Jika kota memiliki
+                        pariwisata yang kuat, kain perca dapat digunakan untuk
+                        menciptakan souvenir khas daerah. Pengunjung dapat
+                        membeli produk-produk unik yang menggunakan kain perca
+                        sebagai kenang-kenangan dari kunjungan mereka ke Kota
+                        Bogor.
+                      </li>
+                      <li className="mb-2">
+                        <b>Kelas Kreatif dan Workshop:</b> Mengadakan kelas
+                        kreatif atau workshop yang mengajarkan cara menggunakan
+                        kain perca dapat menjadi peluang bisnis. Ini bisa
+                        melibatkan berbagai kelompok usia dan tingkat
+                        keterampilan, dari anak-anak hingga orang dewasa, yang
+                        ingin belajar membuat kerajinan dengan bahan yang ramah
+                        lingkungan.
+                      </li>
+                      <li className="mb-2">
+                        <b>Kemitraan dengan Industri Fashion:</b> Jika ada
+                        industri fashion yang berkembang di Kota Bogor, kain
+                        perca dapat digunakan dalam proyek kolaborasi dengan
+                        desainer lokal. Ini bisa menghasilkan koleksi unik yang
+                        berfokus pada keberlanjutan dan kreativitas.
+                      </li>
+                      <li className="mb-2">
+                        <b>Kampanye Lingkungan dan Sosial:</b> Penggunaan kain
+                        perca juga dapat menjadi bagian dari kampanye lingkungan
+                        dan sosial. Ini dapat meningkatkan kesadaran akan
+                        praktik berkelanjutan, pengurangan limbah, dan
+                        pentingnya daur ulang dalam masyarakat.
+                      </li>
+                      <li className="mb-2">
+                        <b>Kampanye Lingkungan dan Sosial:</b> Penggunaan kain
+                        perca juga dapat menjadi bagian dari kampanye lingkungan
+                        dan sosial. Ini dapat meningkatkan kesadaran akan
+                        praktik berkelanjutan, pengurangan limbah, dan
+                        pentingnya daur ulang dalam masyarakat.
+                      </li>
+                      <li className="mb-2">
+                        <b>Kegiatan Komunitas:</b> Komunitas seni dan kerajinan
+                        di Kota Bogor dapat menggunakan kain perca untuk
+                        proyek-proyek bersama. Ini bisa menciptakan ikatan
+                        sosial dalam komunitas, sambil menciptakan produk
+                        kreatif.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        {/* end content kain perca */}
       </section>
 
       {/* edukasi lainnya */}
@@ -88,8 +246,9 @@ export default function Sudut_edukasi() {
                   Potensi Kain Perca di Kota Bogor
                 </div>
                 <p className="text-gray-800 text-base px-6 mb-5 font-inter">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                  Potensi kain perca di Kota Bogor terletak pada penggunaan
+                  kreatif dalam industri kerajinan tangan dan pembuatan produk
+                  unik seperti quilting, tas, dan lainnya.
                 </p>
               </Link>
             </div>
@@ -108,11 +267,12 @@ export default function Sudut_edukasi() {
                 className="flex flex-wrap no-underline hover:no-underline"
               >
                 <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
-                  Apa itu kain perca ?
+                  Apa itu Kain Perca ?
                 </div>
-                <p className="text-gray-800 text-base px-6 mb-5 font-inter">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                <p className="text-gray-800 text-base px-6 mb-5 font-inter ">
+                  Kain perca adalah potongan kecil sisa kain yang digunakan
+                  dalam kerajinan tangan atau quilting untuk menciptakan
+                  berbagai proyek kreatif.
                 </p>
               </Link>
             </div>
@@ -131,11 +291,12 @@ export default function Sudut_edukasi() {
                 className="flex flex-wrap no-underline hover:no-underline"
               >
                 <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
-                  Apa itu Kampung Tematik ?
+                  Manfaat Kain Perca
                 </div>
                 <p className="text-gray-800 text-base px-6 mb-5 font-inter">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
+                  Kain perca memiliki manfaat dalam mengurangi limbah tekstil,
+                  menciptakan kerajinan tangan kreatif, dan mendukung praktik
+                  daur ulang dan ramah lingkungan.
                 </p>
               </Link>
             </div>
