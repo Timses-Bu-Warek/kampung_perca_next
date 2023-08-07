@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       {/* <!-- Footer section with social media icons and newsletter sign-up --> */}
-      <div className="bg-neutral-900 text-center text-white">
+      <div className="bg-neutral-900 text-center absolute w-full text-white">
         <div className="container px-6 pt-6">
           {/* <!-- Social media icons container --> */}
           <div className="mb-6 flex justify-center">
@@ -33,7 +33,7 @@ export default function Footer() {
               className="m-1 h-9 w-9 rounded-full border-2 border-white uppercase leading-normal text-white transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
               data-te-ripple-init
               data-te-ripple-color="light"
-              rel="noreferrer"
+              rel="noreferrer noopener"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
