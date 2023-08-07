@@ -7,17 +7,16 @@ import Link from "next/link";
 import getAllProducts from "@/lib/getAllProducts";
 import ProductCompSearch from "../components/ProductCompSearch";
 import Breadcrumbs from "@/app/components/breadcrumbs";
-
+import { useSearchParams } from "next/navigation";
 import ProductsSearchBar from "../components/ProductsSearchBar";
 import { Suspense, useCallback } from "react";
 import Loading from "./loading"
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ProductSortSearch } from "../components/ProductSortSearch";
 
-export const metadata: Metadata = {
-  title: "Shop Kampung Perca Products",
-  description: "Beli produk kampung perca",
-};
+// export const metadata: Metadata = {
+//   title: "Shop Kampung Perca Products",
+//   description: "Beli produk kampung perca",
+// };
 
 
 export default function Shop() {
@@ -306,7 +305,7 @@ export default function Shop() {
           {/* <!-- produk grid --> */}
           <Suspense fallback={<Loading />}>
             <ProductCompSearch params={{
-              searchNama: searchNamaProdukValues,
+              NamaProduk: searchNamaProdukValues,
               sort: sortValues
             }} />
           </Suspense>

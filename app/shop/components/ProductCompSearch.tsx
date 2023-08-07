@@ -7,10 +7,10 @@ import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
 export default async function ProductCompSearch({
   params,
 }: {
-  params: { searchNama: string | null; sort: string | null };
+  params: { NamaProduk: string | null; sort: string | null };
 }) {
   const productsData: Promise<Products[]> = getSearchProducts(
-    params.searchNama, params.sort
+    params.NamaProduk, params.sort
   );
 
   const products = await productsData;
