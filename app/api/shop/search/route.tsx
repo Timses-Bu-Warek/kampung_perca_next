@@ -94,25 +94,68 @@ const pipeline = []
 //   return NextResponse.json(array)
 // }
 
-export async function GET(request : Request) {
+export async function GET(request: Request) {
   // const searchQuery = req.query.query as string
   const origin = request.headers.get('origin')
   const { searchParams } = new URL(request.url);
-  const searchQuery = searchParams.get("NamaProduk")
+  const searchQueryNamaProduk = searchParams.get("NamaProduk")
+  const searchQuerySort = searchParams.get("sort")
 
   const client = await connectToDatabase();
   const db = client.db("KampungPercaDB");
   const collection = db.collection("Products");
   // const collection = db.collection<Products>("Products")
-  await collection.createIndexes([{name: 'NamaProduk_text', key: {NamaProduk: 'text'}}])
-  const result = await collection.find({NamaProduk: {$regex: searchQuery, $options: 'i'}}).toArray()
-  
-  return new NextResponse(JSON.stringify(result), {
-    headers: {
+  await collection.createIndexes([{ name: 'NamaProduk_text', key: { NamaProduk: 'text' } }])
+  if ((!searchQuerySort || searchQuerySort === "default")&& searchQueryNamaProduk) {
+    const result = await collection.find({ NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } }).toArray()
+    return new NextResponse(JSON.stringify(result), {
+      headers: {
         'Access-Control-Allow-Origin': origin || "*",
         'Content-Type': 'application/json',
-    }
-})
+      }
+    })
+  } else if ((!searchQuerySort || searchQuerySort === "default") && !searchQueryNamaProduk) {
+    const result = await collection.find().toArray()
+    return new NextResponse(JSON.stringify(result), {
+      headers: {
+        'Access-Control-Allow-Origin': origin || "*",
+        'Content-Type': 'application/json',
+      }
+    })
+  } else if (searchQuerySort === "lowHigh" && searchQueryNamaProduk) {
+    const result = await collection.aggregate([{ $match: { NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } } }, { $sort: { Harga: 1 } }]).toArray()
+    return new NextResponse(JSON.stringify(result), {
+      headers: {
+        'Access-Control-Allow-Origin': origin || "*",
+        'Content-Type': 'application/json',
+      }
+    })
+  } 
+  else if (searchQuerySort === "lowHigh" && !searchQueryNamaProduk) {
+    const result = await collection.aggregate([{ $sort: { Harga: 1 } }]).toArray()
+    return new NextResponse(JSON.stringify(result), {
+      headers: {
+        'Access-Control-Allow-Origin': origin || "*",
+        'Content-Type': 'application/json',
+      }
+    })
+  } else if (searchQuerySort === "highLow" && searchQueryNamaProduk) {
+    const result = await collection.aggregate([{ $match: { NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } } }, { $sort: { Harga: -1 } }]).toArray()
+    return new NextResponse(JSON.stringify(result), {
+      headers: {
+        'Access-Control-Allow-Origin': origin || "*",
+        'Content-Type': 'application/json',
+      }
+    })
+  } else if (searchQuerySort === "highLow" && !searchQueryNamaProduk) {
+    const result = await collection.aggregate([{ $match: { NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } } }, { $sort: { Harga: -1 } }]).toArray()
+    return new NextResponse(JSON.stringify(result), {
+      headers: {
+        'Access-Control-Allow-Origin': origin || "*",
+        'Content-Type': 'application/json',
+      }
+    })
+  }
 }
 // async function createSearchIndex() {
 //   const userSearchIndex = await findIndexByName(USER_SEARCH_INDEX_NAME)
