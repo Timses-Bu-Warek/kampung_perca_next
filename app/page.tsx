@@ -19,8 +19,7 @@ export default function Home() {
     <main>
       {/*  Banner  */}
       <div
-        className="bg-cover bg-no-repeat bg-center py-36"
-        style={{ background: "linear-gradient(0deg, rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(/img/bg-no-overlay.png)", backgroundSize: "cover"  }}
+        className="bg-cover bg-no-repeat bg-center py-36 imageBackgroundCarousel"
       >
         <div className="p-5 text-white z-[2] mt-[-5rem] lg:ml-9">
           <h1 className="text-5xl font-bold mb-4 capitalize font-montserrat">
@@ -50,7 +49,7 @@ export default function Home() {
           <div
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
-            <i className="fa-solid fa-truck object-contain" style={{ fontSize: "2rem" }}></i>
+            <i className="fa-solid fa-truck object-contain text-4xl"></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">Free Shopping</h4>
               <p className="text-gray-500 text-sx">order over IDR5000</p>
@@ -60,7 +59,7 @@ export default function Home() {
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
             <i
-              className="fa-solid fa-hand-holding-dollar object-contain" style={{ fontSize: "2rem" }}
+              className="fa-solid fa-hand-holding-dollar object-contain text-4xl"
             ></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">Money Returns</h4>
@@ -70,7 +69,7 @@ export default function Home() {
           <div
             className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5"
           >
-            <i className="fa-solid fa-clock object-contain" style={{ fontSize: "2rem" }}></i>
+            <i className="fa-solid fa-clock object-contain text-4xl"></i>
             <span>
               <h4 className="font-semibold capitalize text-lg">24/7 Support</h4>
               <p className="text-gray-500 text-sx">Support Customer</p>
@@ -155,12 +154,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -171,7 +172,7 @@ export default function Home() {
 
             {/*  produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -211,7 +212,7 @@ export default function Home() {
 
       {/*  ads section  */}
       <div className="container pb-16">
-        <Link href="#">
+        <Link href="#" passHref>
           <Image src={Iklan} alt="Iklan" className="w-full" />
         </Link>
       </div>
@@ -240,12 +241,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -256,7 +259,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -304,12 +307,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -320,7 +325,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -368,12 +373,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -384,7 +391,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -432,12 +439,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -448,7 +457,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -496,12 +505,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -512,7 +523,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -560,12 +571,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -576,7 +589,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -624,12 +637,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -640,7 +655,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >
@@ -688,12 +703,14 @@ export default function Home() {
               >
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
+                  passHref
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
                 >
                   <i className="fas fa-heart"></i>
@@ -704,7 +721,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4
                   className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
                 >

@@ -59,6 +59,14 @@ body {
   z-index: 500;
 }
 
+.imageBackgroundCarousel {
+  background: linear-gradient(0deg, rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url("/img/bg-no-overlay.png");
+  background-size: cover;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 
 
 
