@@ -114,7 +114,7 @@ export default async function ProductCompSearch({
               </div> */}
           </div>
           <Link
-            href="https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : (isi dengan pesananmu atau screenshot produk)"
+            href={"https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + product.NamaProduk}
             title="Hubungi Saya"
             rel="noopener"
             target="_blank"

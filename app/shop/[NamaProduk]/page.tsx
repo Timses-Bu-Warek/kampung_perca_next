@@ -2,17 +2,17 @@
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Link from "next/link"
+import Image from 'next/image'
 import useSWR from "swr"
-import axios from "axios"
+import ImageContoh from "@/public/img/Produk/contoh_baju.jpg"
 import { useState } from "react"
-import { useRouter } from "next/router";
-import getProduct from "@/lib/getProduct";
 import Breadcrumbs from "@/app/components/breadcrumbs"
+import RecommendationComp from '@/app/components/RecommendationComp'
 
 // export const dynamic = 'force-dynamic';
 
 const fetcher = async (address: string) => {
-    const response = await fetch(address+"?API_SECRET_KEY="+process.env.API_SECRET_KEY)
+    const response = await fetch(address + "?API_SECRET_KEY=" + process.env.API_SECRET_KEY)
     // const data = await response.json()
     // return data
     return response.json();
@@ -90,8 +90,8 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
             <div className="container flex flex-col md:grid md:grid-cols-4 gap-6">
                 <div className="md:col-span-2">
                     {data.FotoProduk ?
-                        <img src={data.FotoProduk} className="w-full" alt="Contoh Baju" />
-                        : <div className="w-full">Tidak ada foto</div>}
+                        <Image src={data.FotoProduk} width={500} height={500} sizes="100vw" className="w-full h-auto" alt={data.NamaProduk} />
+                        : <Image src={ImageContoh} width={500} height={500} sizes="100vw" className="w-full h-auto" alt="Contoh Produk" />}
                     {/* <div className="grid grid-cols-5 gap-4 mt-4">
                         <img
                             src="/img/Produk/rekomen.jpg"
@@ -138,7 +138,9 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     <div className="space-y-2">
                         <p className="text-gray-800 font-semibold font-inter space-x-2">
                             <span>Avilability : </span>
-                            <span className="text-green-600">In Stock</span>
+                            {data.FotoProduk ?
+                                <span className="text-green-600">In Stock</span>
+                                : <span className="text-red-600">Out of Stock</span>}
                         </p>
                         <p className="text-gray-800 font-semibold font-inter space-x-2">
                             <span>Brands : </span>
@@ -304,268 +306,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     Related product
                 </h2>
                 {/* <!-- produk grid --> */}
-                <div className="flex flex-col md:grid md:grid-cols-4 gap-6">
-                    {/* <!-- single produk --> */}
-                    <div className="bg-white shadow rounded overflow-hidden group">
-                        {/* <!-- produk image --> */}
-                        <div className="relative">
-                            <img
-                                src="/img/Produk/contoh_baju.jpg"
-                                alt="Baju Perca"
-                                className="w-full"
-                            />
-                            <div
-                                className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                            >
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-search"></i>
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-heart"></i>
-                                </Link>
-                            </div>
-                        </div>
-                        {/* <!-- produk image --> */}
-
-                        {/* <!-- produk konten --> */}
-                        <div className="pt-4 pb-3 px-4">
-                            <Link href="#" passHref>
-                                <h4
-                                    className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
-                                >
-                                    Baju Perca
-                                </h4>
-                            </Link>
-                            <div className="flex items-baseline mb-1 space-x-2 font-inter">
-                                <p className="text-xl text-primary font-semibold">Rp. 50.000</p>
-                                <p className="text-sm text-gray-400 line-through">Rp. 123.000</p>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="flex gap-1 text-sm text-yellow-400">
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                </div>
-                                <div className="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        <Link
-                            href={waAPI}
-                            title="Hubungi Saya"
-                            rel="noopener"
-                            target="_blank"
-                            className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                        >
-                            Order</Link>
-                        {/* <!-- produk konten --> */}
-                    </div>
-                    {/* <!-- single produk --> */}
-                    {/* <!-- single produk --> */}
-                    <div className="bg-white shadow rounded overflow-hidden group">
-                        {/* <!-- produk image --> */}
-                        <div className="relative">
-                            <img
-                                src="/img/Produk/contoh_baju.jpg"
-                                alt="Baju Perca"
-                                className="w-full"
-                            />
-                            <div
-                                className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                            >
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-search"></i>
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-heart"></i>
-                                </Link>
-                            </div>
-                        </div>
-                        {/* <!-- produk image --> */}
-
-                        {/* <!-- produk konten --> */}
-                        <div className="pt-4 pb-3 px-4">
-                            <Link href="#" passHref>
-                                <h4
-                                    className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
-                                >
-                                    Baju Perca
-                                </h4>
-                            </Link>
-                            <div className="flex items-baseline mb-1 space-x-2 font-inter">
-                                <p className="text-xl text-primary font-semibold">Rp. 50.000</p>
-                                <p className="text-sm text-gray-400 line-through">Rp. 123.000</p>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="flex gap-1 text-sm text-yellow-400">
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                </div>
-                                <div className="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        <Link
-                            href={waAPI}
-                            title="Hubungi Saya"
-                            rel="noopener"
-                            target="_blank"
-                            className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                        >
-                            Order</Link>
-                        {/* <!-- produk konten --> */}
-                    </div>
-                    {/* <!-- single produk --> */}
-                    {/* <!-- single produk --> */}
-                    <div className="bg-white shadow rounded overflow-hidden group">
-                        {/* <!-- produk image --> */}
-                        <div className="relative">
-                            <img
-                                src="/img/Produk/contoh_baju.jpg"
-                                alt="Baju Perca"
-                                className="w-full"
-                            />
-                            <div
-                                className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                            >
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-search"></i>
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-heart"></i>
-                                </Link>
-                            </div>
-                        </div>
-                        {/* <!-- produk image --> */}
-
-                        {/* <!-- produk konten --> */}
-                        <div className="pt-4 pb-3 px-4">
-                            <Link href="#" passHref>
-                                <h4
-                                    className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
-                                >
-                                    Baju Perca
-                                </h4>
-                            </Link>
-                            <div className="flex items-baseline mb-1 space-x-2 font-inter">
-                                <p className="text-xl text-primary font-semibold">Rp. 50.000</p>
-                                <p className="text-sm text-gray-400 line-through">Rp. 123.000</p>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="flex gap-1 text-sm text-yellow-400">
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                </div>
-                                <div className="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        <Link
-                            href={waAPI}
-                            title="Hubungi Saya"
-                            rel="noopener"
-                            target="_blank"
-                            className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                        >
-                            Order</Link>
-                        {/* <!-- produk konten --> */}
-                    </div>
-                    {/* <!-- single produk --> */}
-                    {/* <!-- single produk --> */}
-                    <div className="bg-white shadow rounded overflow-hidden group">
-                        {/* <!-- produk image --> */}
-                        <div className="relative">
-                            <img
-                                src="/img/Produk/contoh_baju.jpg"
-                                alt="Baju Perca"
-                                className="w-full"
-                            />
-                            <div
-                                className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition"
-                            >
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-search"></i>
-                                </Link>
-                                <Link
-                                    href="#"
-                                    className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                                    passHref
-                                >
-                                    <i className="fas fa-heart"></i>
-                                </Link>
-                            </div>
-                        </div>
-                        {/* <!-- produk image --> */}
-
-                        {/* <!-- produk konten --> */}
-                        <div className="pt-4 pb-3 px-4">
-                            <Link href="#" passHref>
-                                <h4
-                                    className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition"
-                                >
-                                    Baju Perca
-                                </h4>
-                            </Link>
-                            <div className="flex items-baseline mb-1 space-x-2 font-inter">
-                                <p className="text-xl text-primary font-semibold">Rp. 50.000</p>
-                                <p className="text-sm text-gray-400 line-through">Rp. 123.000</p>
-                            </div>
-                            <div className="flex items-center">
-                                <div className="flex gap-1 text-sm text-yellow-400">
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                    <span><i className="fas fa-star"></i></span>
-                                </div>
-                                <div className="text-xs text-gray-500 ml-3">(150)</div>
-                            </div>
-                        </div>
-                        <Link
-                            href={waAPI}
-                            title="Hubungi Saya"
-                            rel="noopener"
-                            target="_blank"
-                            className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
-                        >
-                            Order</Link>
-                        {/* <!-- produk konten --> */}
-                    </div>
-                    {/* <!-- single produk --> */}
-                </div>
+                <RecommendationComp />
                 {/* <!-- end produk grid --> */}
             </div>
             {/* <!-- end produk wrapper --> */}

@@ -1,7 +1,9 @@
-"use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
+import FotoContoh from "@/public/img/contoh.jpg"
+import FotoManfaat from "@/public/img/manfaat.jpg"
+import FotoPotensi from "@/public/img/potensi.jpg"
 
 export default function Sudut_edukasi() {
   return (
@@ -22,10 +24,14 @@ export default function Sudut_edukasi() {
             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
               <div className="flex flex-wrap items-center">
                 <div className="hidden shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
-                  <img
-                    src="/img/contoh.jpg"
+                  <Image
+                    src={FotoContoh}
+                    width={500}
+                    height={500}
+                    placeholder="blur"
+                    sizes="100vw"
                     alt="Trendy Pants and Shoes"
-                    className="w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                    className="w-full h-auto rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
                   />
                 </div>
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
@@ -72,8 +78,12 @@ export default function Sudut_edukasi() {
             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
               <div className="flex flex-wrap items-center">
                 <div className=" lg:flex lg:w-6/12 xl:w-4/12">
-                  <img
-                    src="/img/manfaat.jpg"
+                  <Image
+                    src={FotoManfaat}
+                    width={500}
+                    height={500}
+                    placeholder="blur"
+                    sizes="100vw"
                     alt="Trendy Pants and Shoes"
                     className="w-full h-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
                   />
@@ -134,8 +144,12 @@ export default function Sudut_edukasi() {
             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
               <div className="flex items-center">
                 <div className=" lg:flex lg:w-6/12 xl:w-4/12">
-                  <img
-                    src="/img/potensi.jpg"
+                  <Image
+                    src={FotoPotensi}
+                    width={500}
+                    height={500}
+                    placeholder="blur"
+                    sizes="100vw"
                     alt="Trendy Pants and Shoes"
                     className="w-full h-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
                   />
@@ -241,6 +255,7 @@ export default function Sudut_edukasi() {
               <Link
                 href="#"
                 className="flex flex-wrap no-underline hover:no-underline"
+                passHref
               >
                 <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
                   Potensi Kain Perca di Kota Bogor
@@ -265,6 +280,7 @@ export default function Sudut_edukasi() {
               <Link
                 href="#"
                 className="flex flex-wrap no-underline hover:no-underline"
+                passHref
               >
                 <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
                   Apa itu Kain Perca ?
@@ -289,6 +305,7 @@ export default function Sudut_edukasi() {
               <Link
                 href="#"
                 className="flex flex-wrap no-underline hover:no-underline"
+                passHref
               >
                 <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
                   Manfaat Kain Perca

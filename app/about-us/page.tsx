@@ -66,7 +66,7 @@ export default function About_us() {
             </h1>
             <Image
               src={SO}
-              alt="struktur organisasi"
+              alt="Struktur Organisasi"
               width={700}
               height={475}
               placeholder="blur"

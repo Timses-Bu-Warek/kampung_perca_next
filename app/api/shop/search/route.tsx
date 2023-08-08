@@ -115,7 +115,7 @@ export async function GET(request: Request) {
       }
     })
   } else if ((!searchQuerySort || searchQuerySort === "default") && !searchQueryNamaProduk) {
-    const result = await collection.find().toArray()
+    const result = await collection.aggregate([{ $sort: { NamaProduk: 1 } }]).toArray()
     return new NextResponse(JSON.stringify(result), {
       headers: {
         'Access-Control-Allow-Origin': origin || "*",

@@ -1,6 +1,6 @@
-// Shop API
-// http://localhost:3000/api/shop
-// https://kampung-perca.vercel.app/api/shop
+// Home Recommended API
+// http://localhost:3000/api/home
+// https://kampung-perca.vercel.app/api/home
 
 import { connectToDatabase } from "@/lib/mongo";
 import { NextRequest, NextResponse } from "next/server";
@@ -12,11 +12,12 @@ export async function GET(request : Request) {
   //   return new Response("Not Authorized", { status: 500 })
   // }
   const origin = request.headers.get('origin')
+  
   try {
     const client = await connectToDatabase();
     const db = client.db("KampungPercaDB");
   
-    const allProducts = await db.collection("Products").aggregate([{ $sort: { NamaProduk: 1 } }]).toArray();
+    const allProducts = await db.collection("Products").aggregate([{$sort: {ProdukID: -1}}]).limit(4).toArray();
   
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     return new NextResponse(JSON.stringify(allProducts), {

@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import getAllProducts from "@/lib/getAllProducts";
+import getNewProductRec from "@/lib/getNewProductRec";
 import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
 
-export default async function ProductComp() {
-  const productsData: Promise<Products[]> = getAllProducts();
+export default async function NewArrivalComp() {
+  const recData: Promise<Products[]> = getNewProductRec();
 
-  const products = await productsData;
+  const recProducts = await recData;
   // console.log(products);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {products.map((product) => (
+    <div className="flex flex-col md:grid md:grid-cols-4 gap-6">
+      {recProducts.map((product) => (
         <div
           className="bg-white shadow rounded overflow-hidden group flex justify-between flex-col"
           key={product.ProdukID}
