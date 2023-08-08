@@ -1,16 +1,14 @@
 export default async function getAllProducts() {
     // const API_SECRET_KEY = process.env.API_SECRET_KEY;
 
-    const res = process.env.NODE_ENV === 'production' ? 
-        await fetch (`https://kampung-perca.vercel.app/api/shop`,{
-                cache: "force-cache",
+    const res = process.env.NODE_ENV === 'production' ?
+        await fetch(`https://kampung-perca.vercel.app/api/shop`, {
+                next: { revalidate: 10 }
             }
-            // { next: { revalidate: 10 }  }
         ) :
-        await fetch (`http://localhost:3000/api/shop`,{
-                cache: "force-cache",
+        await fetch(`http://localhost:3000/api/shop`, {
+                next: { revalidate: 10 }
             }
-            // { next: { revalidate: 10 }  }
         )
 
     const products = await res.json()
