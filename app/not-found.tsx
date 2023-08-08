@@ -2,12 +2,16 @@ import Link from 'next/link'
  
 export default function NotFound() {
   return (
-    <div className="container bg-slate-900 mt-8 text-white">
-      <h2 className="text-center">404 Not Found</h2>
-      <p>Maaf, sepertinya halaman yang diminta tidak ada :(</p>
-      <p>
-        Kembali ke <a href="/" className="text-blue-500">halaman utama</a>
+    <div className="  flex items-center justify-center h-screen">
+    <div className="  text-center">
+      <h1 className="text-4xl font-semibold mb-4">Oops!</h1>
+      <p className="text-gray-600">
+        Mohon maaf, website tujuanmu belum tersedia.
       </p>
+      <a href="/" className="mt-4 text-blue-500 hover:underline">
+        Back to Home
+      </a>
     </div>
+  </div>
   )
 }

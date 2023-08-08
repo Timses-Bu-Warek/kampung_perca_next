@@ -19,12 +19,7 @@ export default function Home() {
     <main>
       {/*  Banner  */}
       <div
-        className="bg-cover bg-no-repeat bg-center py-36"
-        style={{
-          background:
-            "linear-gradient(0deg, rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(/img/bg-no-overlay.png)",
-          backgroundSize: "cover",
-        }}
+        className="bg-cover bg-no-repeat bg-center py-36 imageBackgroundCarousel"
       >
         <div className="p-5 text-white z-[2] mt-[-5rem] lg:ml-9">
           <h1 className="text-5xl font-bold mb-4 capitalize font-montserrat">
@@ -102,10 +97,17 @@ export default function Home() {
           <div className="flex flex-wrap">
             <div className="mb-12 w-full lg:mb-0 lg:w-5/12">
               <div className="flex lg:py-12">
-                <img
+                <Image
                   src="https://pakar.stakcdn.com/app/assets/2021/12/17130606/IMG-20211217-WA0042.jpg"
                   className="z-0 w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]"
                   alt="image"
+                  width={500}
+                  height={500}
+                  sizes="100vw"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
                 />
               </div>
             </div>
@@ -148,6 +150,7 @@ export default function Home() {
               // style={{ border: 0 }}
               allowFullScreen={false}
               loading="lazy"
+              title="Map Kota Bogor"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full h-full shadow-xl shadow-gray-400 rounded-xl"
             ></iframe>
@@ -247,12 +250,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -262,7 +267,7 @@ export default function Home() {
 
             {/*  produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -313,7 +318,7 @@ export default function Home() {
 
       {/*  ads section  */}
       <div className="container pb-16">
-        <Link href="#">
+        <Link href="#" passHref>
           <Image src={Iklan} alt="Iklan" className="w-full" />
         </Link>
       </div>
@@ -335,12 +340,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -350,7 +357,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -404,12 +411,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -419,7 +428,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -473,12 +482,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -488,7 +499,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -542,12 +553,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -557,7 +570,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -611,12 +624,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -626,7 +641,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -680,12 +695,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -695,7 +712,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -749,12 +766,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -764,7 +783,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
@@ -818,12 +837,14 @@ export default function Home() {
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-search"></i>
                 </Link>
                 <Link
                   href="#"
                   className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  passHref
                 >
                   <i className="fas fa-heart"></i>
                 </Link>
@@ -833,7 +854,7 @@ export default function Home() {
 
             {/* produk konten  */}
             <div className="pt-4 pb-3 px-4">
-              <Link href="/view">
+              <Link href="/view" passHref>
                 <h4 className="uppercase font-medium font-montserrat text-xl mb-2 text-gray-800 hover:text-primary transition">
                   Baju Perca
                 </h4>
