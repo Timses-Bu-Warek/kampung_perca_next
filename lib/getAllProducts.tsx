@@ -2,7 +2,11 @@ export default async function getAllProducts() {
     // const API_SECRET_KEY = process.env.API_SECRET_KEY;
 
     const res = process.env.NODE_ENV === 'production' ?
-        await fetch(`https://kampung-perca.vercel.app/api/shop`, {
+        // await fetch(`https://kampung-perca.vercel.app/api/shop`, {
+        //         next: { revalidate: 10 }
+        //     }
+        // ) 
+        await fetch(`https://www.michaelmervinruswan.my.id/api/shop`, {
                 next: { revalidate: 10 }
             }
         ) :

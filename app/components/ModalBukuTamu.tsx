@@ -35,21 +35,36 @@ export default function ModalBukuTamu() {
     // Send data to API Route
     const res =
       process.env.NODE_ENV === "production"
-        ? await fetch("https://kampung-perca.vercel.app/api/buku-tamu", {
-            method: "POST",
-            headers: {
-              'Access-Control-Allow-Origin': origin || '*',
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              nama,
-              provinsi,
-              kota,
-              gender,
-              umur,
-              kesanPesan,
-            }),
-          })
+        ? await fetch("https://www.michaelmervinruswan.my.id/api/buku-tamu", {
+          method: "POST",
+          headers: {
+            'Access-Control-Allow-Origin': origin || '*',
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nama,
+            provinsi,
+            kota,
+            gender,
+            umur,
+            kesanPesan,
+          }),
+        })
+        // await fetch("https://kampung-perca.vercel.app/api/buku-tamu", {
+        //     method: "POST",
+        //     headers: {
+        //       'Access-Control-Allow-Origin': origin || '*',
+        //       "Content-Type": "application/json",
+        //     },
+        //     body: JSON.stringify({
+        //       nama,
+        //       provinsi,
+        //       kota,
+        //       gender,
+        //       umur,
+        //       kesanPesan,
+        //     }),
+        //   })
         : await fetch("http://localhost:3000/api/buku-tamu", {
             method: "POST",
             headers: {
