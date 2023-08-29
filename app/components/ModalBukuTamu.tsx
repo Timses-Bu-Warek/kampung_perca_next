@@ -38,6 +38,7 @@ export default function ModalBukuTamu() {
         ? await fetch("https://kampung-perca.vercel.app/api/buku-tamu", {
             method: "POST",
             headers: {
+              'Access-Control-Allow-Origin': origin || '*',
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
@@ -52,6 +53,7 @@ export default function ModalBukuTamu() {
         : await fetch("http://localhost:3000/api/buku-tamu", {
             method: "POST",
             headers: {
+              'Access-Control-Allow-Origin': origin || '*',
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
