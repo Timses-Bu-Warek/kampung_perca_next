@@ -9,6 +9,7 @@ import getSearchProducts from "@/lib/getSearchProducts";
 import ProductsSearchBar from "./components/ProductsSearchBar";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { ProductSort } from "./components/ProductSort";
 
 export const metadata: Metadata = {
   title: "Shop Kampung Perca Products",
@@ -260,16 +261,8 @@ export default function Shop() {
           {/* <!-- product wrapper --> */}
           <div className="col-span-3">
             {/* <!-- sorting --> */}
-            <div className="sm:hidden flex items-center mb-4">
-              <select
-                title="Sorting"
-                className="w-44 text-sm text-gray-600 px-4 py-3 border-gray-300 shadow-sm rounded focus:ring-primary focus:border-primary"
-              >
-                <option>Default sorting</option>
-                <option>Price low-high</option>
-                <option>Price high-low</option>
-                <option>Latest product</option>
-              </select>
+            <div className="flex items-center mb-4">
+            <ProductSort />
 
               <div className="sm:hidden flex gap-2 ml-auto">
                 <div className="border border-primary w-10 h-9 flex items-center justify-center text-white bg-primary rounded cursor-pointer">

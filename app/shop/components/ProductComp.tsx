@@ -108,7 +108,7 @@ export default async function ProductComp() {
                 <div className="text-xs text-gray-500 ml-3">(150)</div>
               </div> */}
             <Link
-              href="https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : (isi dengan pesananmu atau screenshot produk)"
+              href={"https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + product.NamaProduk}
               title="Hubungi Saya"
               rel="noopener"
               target="_blank"

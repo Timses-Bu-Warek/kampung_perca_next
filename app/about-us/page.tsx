@@ -2,6 +2,7 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
+import SO from "@/public/img/SO.jpg"
 
 // import MyMapComponent from "./MyMapComponent";
 
@@ -52,7 +53,7 @@ export default function About_us() {
               <a
                 href="https://www.youtube.com/@bimaarya1921"
                 target="_blank"
-                rel="noreferrer"
+                rel="noreferrer noopener"
                 className="font-bold text-blue-500"
               >
                 Channel Youtube Bima Arya tahun 2022
@@ -63,9 +64,17 @@ export default function About_us() {
             <h1 className="text-4xl font-montserrat font-bold text-center text-secondary">
               Struktur Organisasi
             </h1>
-            <img
-              src="/img/SO.jpg"
-              alt="struktur organisasi"
+            <Image
+              src={SO}
+              alt="Struktur Organisasi"
+              width={700}
+              height={475}
+              placeholder="blur"
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
               className="shadow-xl shadow-gray-400 rounded-xl"
             />
           </div>

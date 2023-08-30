@@ -12,7 +12,7 @@
 // Select the database to use.
 use('KampungPercaDB');
 
-db.Products.find({NamaProduk: /Tas/});
+// db.Products.find({NamaProduk: /Tas/});
 
 // db.Visitors.insertMany([
 //     {  nama: "Michael Mervin Ruswan",
@@ -38,3 +38,427 @@ db.Products.find({NamaProduk: /Tas/});
 // ])
 
 // db.Visitors.find()
+
+db.Products.updateOne(
+    { ProdukID: 1 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/01-Rompi/Rompi-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 2 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/02-Baju Pangsi/Baju Pangsi-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 3 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/03-Baju Pangsi Besar/Baju Pangsi-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 4 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/04-Outer Pendek/Outer Pendek-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 5 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/05-Outer Pendek Besar/Outer Pendek-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 6 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/06-Blouse/Blouse-1.webp"
+        }
+    }
+)
+
+
+
+db.Products.updateOne(
+    { ProdukID: 8 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/08-Baju Tidur Perempuan/Baju Tidur Perempuan-1.webp"
+        }
+    }
+)
+db.Products.updateOne(
+    { ProdukID: 9 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/09-Apron Grade A/Apron-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 10 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/10-Apron Grade B/Apron-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 11 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/11-Apron Grade C/Apron-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 12 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/12-Totopong/Totopong-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 13 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/13-Rok/Rok-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 14 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/14-Daster/Daster-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 15 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/15-Tas Ngaji/Tas Ngaji-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 16 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/16-Tas HP Kecil/Tas HP Kecil-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 17 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/17-Tas HP Besar/Tas HP Besar-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 18 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/18-Baju Anak Perempuan Kecil/Baju Anak Perempuan Kecil-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 19 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/19-Baju Anak Perempuan Besar/Baju Anak Perempuan Besar-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 20 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/20-Tempat Jarum/Tempat Jarum-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 21 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/21-Gantungan Kunci/Gantungan Kunci-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 22 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/22-Ikat Rambut/Ikat Rambut-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 23 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/23-Lap Tangan/Lap Tangan-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 24 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/24-Sapu Tebah/Sapu Tebah-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 25 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/25-Cempal Ayam/Cempal Ayam-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 26 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/26-Tempat Tisu Kecil/Tempat Tisu Kecil-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 27 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/27-Tempat Tisu Besar/Tempat Tisu Besar-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 28 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/28-Notebook A5/Notebook A5-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 29 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/29-Pouch Besar/Pouch Besar-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 30 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/30-Pouch Kecil/Pouch Kecil-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 31 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/31-Keset Love/Keset Love-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 32 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/32-Keset Love/Keset Love-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 33 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/33-Keset Kotak/Keset Kotak-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 34 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/34-Keset Kotak/Keset Kotak-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 35 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/35-Masker/Masker-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 36 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/36-Tempat Pensil/Tempat Pensil-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 37 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/37-Sajadah Muka/Sajadah Muka-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 38 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/38-Taplak Meja/Taplak Meja-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 39 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/39-Bantal Duduk/Bantal Duduk-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 40 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/40-Bantal Kursi/Bantal Kursi-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 41 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/41-Alas Mangkuk Besar/Alas Mangkuk Besar-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 42 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/42-Alas Mangkuk Kecil/Alas Mangkuk Kecil-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 43 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/43-Dompet Koin/Dompet Koin-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 44 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/44-Goodie Bag Prepet/Goodie Bag Prepet-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 45 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/45-Goodie Bag Ritsleting/Goodie Bag Ritsleting-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 46 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/46-Tas Selempang/Tas Selempang-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 47 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/47-Tote Bag/Tote Bag-1.webp"
+        }
+    }
+)
+
+db.Products.updateOne(
+    { ProdukID: 48 },
+    {
+        $set: {
+            FotoProduk: "/img/Produk/48-Tas Ketupat/Tas Ketupat-1.webp"
+        }
+    }
+)

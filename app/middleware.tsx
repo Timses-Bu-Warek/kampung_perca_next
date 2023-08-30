@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
 
 const allowedOrigins = process.env.NODE_ENV === 'production'
-    ? ['https://kampung-perca.vercel.app']
+    ? ['https://www.kampungperca.id']
     : ['http://localhost:3000']
 
 export function middleware(request: Request) {

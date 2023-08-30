@@ -7,7 +7,7 @@ export default function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     // <header className="mb-0 shadow-sm sticky top-0 bg-transparent z-40">
-    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-secondary">
+    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white">
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start text-primary">
           <Link
