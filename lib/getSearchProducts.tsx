@@ -2,25 +2,14 @@ export default async function getSearchProducts(namaProdukParams: string | null,
     // const { searchParams } = new URL(request.url);
     // const nama = searchParams.get("NamaProduk")
     if (process.env.NODE_ENV === 'production') {
-        // if (namaProdukParams && !sortParams) {
-        //     const res = await fetch(`https://kampung-perca.vercel.app/api/shop/search?NamaProduk=${namaProdukParams}`)
-        //     return responseJSON(res)
-        // } else if (namaProdukParams && sortParams) {
-        //     const res = await fetch(`https://kampung-perca.vercel.app/api/shop/search?NamaProduk=${namaProdukParams}&sort=${sortParams}`)
-        //     return responseJSON(res)
-        // } else if (!namaProdukParams && sortParams) {
-        //     const res = await fetch(`https://kampung-perca.vercel.app/api/shop/search?sort=${sortParams}`)
-        //     return responseJSON(res)
-        // } 
-
         if (namaProdukParams && !sortParams) {
-            const res = await fetch(`https://www.michaelmervinruswan.my.id/api/shop/search?NamaProduk=${namaProdukParams}`)
+            const res = await fetch(`https://www.kampungperca.id/api/shop/search?NamaProduk=${namaProdukParams}`)
             return responseJSON(res)
         } else if (namaProdukParams && sortParams) {
-            const res = await fetch(`https://www.michaelmervinruswan.my.id/api/shop/search?NamaProduk=${namaProdukParams}&sort=${sortParams}`)
+            const res = await fetch(`https://www.kampungperca.id/api/shop/search?NamaProduk=${namaProdukParams}&sort=${sortParams}`)
             return responseJSON(res)
         } else if (!namaProdukParams && sortParams) {
-            const res = await fetch(`https://www.michaelmervinruswan.my.id/api/shop/search?sort=${sortParams}`)
+            const res = await fetch(`https://www.kampungperca.id/api/shop/search?sort=${sortParams}`)
             return responseJSON(res)
         } 
     } else {
