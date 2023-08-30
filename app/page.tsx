@@ -2,7 +2,7 @@ import Image from "next/image";
 import Background from "../public/img/bg.jpg";
 import Baju_Categories from "../public/img/baju_categories.jpg";
 import Contoh_Baju from "../public/img/Produk/contoh_baju.jpg";
-import Iklan from "../public/img/ads.jpg";
+import Iklan from "../public/img/ads.png";
 import Rekomendasi from "../public/img/Produk/rekomen.jpg";
 import Link from "next/link";
 import ReactModal from "react-modal";
@@ -98,6 +98,43 @@ export default function Home() {
       </div> */}
 
       <div className="container my-24 mx-auto md:px-6">
+        {/*  ads section  */}
+        <div className="container pb-16 mb-24">
+          <Link href="https://ibik.ac.id" target="_blank">
+            <Image
+              src={Iklan}
+              alt="Iklan"
+              className="w-full shadow shadow-md rounded-md"
+            />
+          </Link>
+        </div>
+        {/*  end ads section  */}
+
+        {/* vid */}
+        <h1 className="w-full mb-6 text-4xl justify-center items-center font-montserrat font-bold text-center text-secondary">
+          Peresmian Kampung Perca
+        </h1>
+        <div className="sm:max-w-sm md:max-w-screen-md lg:h-96  lg:translate-x-48 mb-32">
+          <iframe
+            title="Video Kunjungan Kampung Perca"
+            src="https://www.youtube.com/embed/TRoKZ-4m5C0"
+            // width="990"
+            // height="400"
+            className="mb-6 w-full h-full justify-center shadow-xl shadow-gray-400 rounded-xl"
+          ></iframe>
+          <h4 className="font-inter italic text-black items-center justify-center text-center">
+            Sumber :{" "}
+            <a
+              href="https://www.youtube.com/@bimaarya1921"
+              target="_blank"
+              rel="noreferrer"
+              className="font-bold text-blue-500"
+            >
+              Channel Youtube Bima Arya tahun 2022
+            </a>
+          </h4>
+        </div>
+        {/* end vid */}
         <section className="mb-32">
           <div className="flex flex-wrap">
             <div className="mb-12 w-full lg:mb-0 lg:w-5/12">
@@ -310,14 +347,6 @@ export default function Home() {
         {/* end produk grid  */}
       </div>
       {/*  end produk wrapper  */}
-
-      {/*  ads section  */}
-      <div className="container pb-16">
-        <Link href="#">
-          <Image src={Iklan} alt="Iklan" className="w-full" />
-        </Link>
-      </div>
-      {/*  end ads section  */}
 
       {/*  produk recommended  */}
       <div className="container pb-16">
