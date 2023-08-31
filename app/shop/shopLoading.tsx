@@ -1,4 +1,4 @@
-export default function Loading() {
+export default function shopLoading() {
   return (
     <main>
       <div className="container grid md:grid-cols-4 gap-6 pt-16 pb-16 items-start">

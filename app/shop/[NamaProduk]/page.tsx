@@ -5,9 +5,11 @@ import Link from "next/link"
 import Image from 'next/image'
 import useSWR from "swr"
 import ImageContoh from "@/public/img/Produk/contoh_baju.jpg"
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 import Breadcrumbs from "@/app/components/breadcrumbs"
 import RecommendationComp from '@/app/components/RecommendationComp'
+import QuantityComp from './components/QuantityComp'
+import SizeComp from './components/SizeComp'
 
 // export const dynamic = 'force-dynamic';
 
@@ -29,27 +31,23 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
     // const queryUrl = url || router.query.url;
 
     const [quantity, setQuantity] = useState(1);
+
+    const chooseQuantity = (quantity: SetStateAction<number>) => {
+        setQuantity(quantity);
+    };
+
+
     const [name, setName] = useState(params.NamaProduk);
     const [ukuran, setUkuran] = useState("");
+
+    const chooseUkuran = (ukuran: any) => {
+        setUkuran(ukuran);
+    };
 
     // const fetcher = getProduct(params.NamaProduk)
     // const fetcher = async(url: string) => {
     //      fetch(url).then(r => r.json())
     // }
-
-    function increaseQuantity() {
-        setQuantity(quantity => quantity + 1);
-    }
-
-    function decreaseQuantity() {
-        if (quantity > 1) {
-            setQuantity(quantity => quantity - 1);
-        }
-    }
-
-    const onOptionChange = (e: any) => {
-        setUkuran(e.target.value)
-    }
 
     const address = `/api/shop/${params.NamaProduk}`;
     const NamaProduk = params.NamaProduk;
@@ -160,50 +158,16 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     </p>
                     <div className="grid grid-cols-2 md:block">
                         {/* <!-- size --> */}
-                        {data.Ukuran ?
-                            <div className="pt-4">
-                                <h3 className="text-gray-800 uppercase font-inter pt-4">Size</h3>
-
-                                <div className="flex items-center gap-2">
-                                    {data.Ukuran.map((size: any) =>
-                                        <div className="size-selector" key={size}>
-                                            <input type="radio" name="size" className="hidden" id={"size-" + size} value={size} checked={ukuran === size} onChange={onOptionChange} />
-                                            <label
-                                                htmlFor={"size-" + size}
-                                                className="text-lg border border-gray-200 rounded-sm h-6 w-6 flexl items-center justify-center cursor-pointer shadow-sm text-gray-600"
-                                            >{size}</label>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                            : ""
-                        }
+                        {data.Ukuran ? <SizeComp params={{
+                            dataUkuran: data.Ukuran,
+                            chooseUkuran: chooseUkuran
+                        }} /> : ""}
                         {/* <!-- end size --> */}
 
                         {/* <!-- quantity --> */}
-                        <div className="mt-4">
-                            <h3 className="text-gray-800 uppercase font-inter pt-4">Quantity</h3>
-                            <div
-                                className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max"
-                            >
-                                <button
-                                    type="button"
-                                    className="h-8 w-full md:w-8 text-lg flex items-center justify-center cursor-pointer select-none"
-                                    onClick={decreaseQuantity} >
-                                    -
-                                </button>
-                                <div className="h-8 w-8 text-base flex items-center justify-center">
-                                    {/* <input type="number" name="" id="" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} /> */}
-                                    {quantity}
-                                </div>
-                                <button
-                                    type="button"
-                                    className="h-8 w-full md:w-8 text-lg flex items-center justify-center cursor-pointer select-none"
-                                    onClick={increaseQuantity} >
-                                    +
-                                </button>
-                            </div>
-                        </div>
+                        <QuantityComp params={{
+                            quantity: chooseQuantity
+                        }} />
                         {/* <!-- end quantity --> */}
                     </div>
 
@@ -306,7 +270,7 @@ export default function DetailedProduct({ params }: { params: { NamaProduk: stri
                     Related product
                 </h2>
                 {/* <!-- produk grid --> */}
-                <RecommendationComp />
+                {/* <RecommendationComp /> */}
                 {/* <!-- end produk grid --> */}
             </div>
             {/* <!-- end produk wrapper --> */}

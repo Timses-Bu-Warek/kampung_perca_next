@@ -8,7 +8,7 @@ import Breadcrumbs from "@/app/components/breadcrumbs";
 import getSearchProducts from "@/lib/getSearchProducts";
 import ProductsSearchBar from "./components/ProductsSearchBar";
 import { Suspense } from "react";
-import Loading from "./loading";
+import Loading from "./shopLoading";
 import { ProductSort } from "./components/ProductSort";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function Shop() {
   return (
-    <Suspense fallback={<Loading />} unstable_expectedLoadTime={10000}>
+    <Suspense fallback={<Loading />}>
       <main>
         {/* <!-- breadcrums --> */}
         <Breadcrumbs
