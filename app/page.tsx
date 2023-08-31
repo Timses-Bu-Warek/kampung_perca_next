@@ -2,7 +2,7 @@ import Image from "next/image";
 import Background from "../public/img/bg.jpg";
 import Baju_Categories from "../public/img/baju_categories.jpg";
 import Contoh_Baju from "../public/img/Produk/contoh_baju.jpg";
-import Iklan from "@/public/img/ads.png";
+import FotoBinaanIBIK from "@/public/img/ads.png";
 import Rekomendasi from "../public/img/Produk/rekomen.jpg";
 import Link from "next/link";
 import ReactModal from "react-modal";
@@ -97,8 +97,12 @@ export default function Home() {
         <div className="container pb-16 mb-16">
           <Link href="https://ibik.ac.id" target="_blank">
             <Image
-              src={Iklan}
-              alt="Iklan"
+              src={FotoBinaanIBIK}
+              width={500}
+              height={500}
+              placeholder="blur"
+              sizes="100vw"
+              alt="Sistem Informasi Kampung Perca di bawah binaan IBI Kesatuan"
               className="w-full shadow shadow-md rounded-md"
             />
           </Link>
