@@ -2,7 +2,7 @@ import Image from "next/image";
 import Background from "../public/img/bg.jpg";
 import Baju_Categories from "../public/img/baju_categories.jpg";
 import Contoh_Baju from "../public/img/Produk/contoh_baju.jpg";
-import Iklan from "../public/img/ads.png";
+import Iklan from "@/public/img/ads.png";
 import Rekomendasi from "../public/img/Produk/rekomen.jpg";
 import Link from "next/link";
 import ReactModal from "react-modal";
