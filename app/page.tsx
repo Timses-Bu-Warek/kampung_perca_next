@@ -94,7 +94,7 @@ export default function Home() {
 
       <div className="container my-24 mx-auto md:px-6">
         {/*  ads section  */}
-        <div className="container pb-16 mb-24">
+        <div className="container pb-16 mb-16">
           <Link href="https://ibik.ac.id" target="_blank">
             <Image
               src={Iklan}
@@ -282,13 +282,6 @@ export default function Home() {
       </div>
       {/*  end produk wrapper  */}
 
-      {/*  ads section  */}
-      <div className="container pb-16">
-        <Link href="#">
-          <Image src={Iklan} alt="Iklan" className="w-full" />
-        </Link>
-      </div>
-      {/*  end ads section  */}
 
       {/*  produk recommended  */}
       <div className="container pb-16">
