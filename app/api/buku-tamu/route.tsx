@@ -38,7 +38,7 @@ type BukuTamu = {
 export async function POST(request: Request) {
   const cookiesBukuTamu = cookies()
   const threeDay = 1000 * 60 * 60 * 24 * 3;
-  cookiesBukuTamu.set('isBukuTamu', 'true', { secure: true, expires: Date.now() - threeDay }, )
+  cookiesBukuTamu.set({name: 'isBukuTamu', value: 'true', secure: true, expires: Date.now() - threeDay }, )
   const origin = request.headers.get('origin')
 
   const remaining = await limiter.removeTokens(1)

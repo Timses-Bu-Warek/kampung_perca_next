@@ -122,7 +122,7 @@ export default function Home() {
             <a
               href="https://www.youtube.com/@bimaarya1921"
               target="_blank"
-              rel="noreferrer"
+              rel="noreferrer noopener"
               className="font-bold text-blue-500"
             >
               Channel Youtube Bima Arya tahun 2022
