@@ -95,7 +95,7 @@ export default function Home() {
       <div className="container my-24 mx-auto md:px-6">
         {/*  ads section  */}
         <div className="container pb-16 mb-16">
-          <Link href="https://ibik.ac.id" target="_blank">
+          <Link href="https://ibik.ac.id" target="_blank" passHref>
             <Image
               src={FotoBinaanIBIK}
               width={500}
