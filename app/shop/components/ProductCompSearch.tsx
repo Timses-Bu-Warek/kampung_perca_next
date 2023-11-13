@@ -10,7 +10,8 @@ export default async function ProductCompSearch({
   params: { NamaProduk: string | null; sort: string | null };
 }) {
   const productsData: Promise<Products[]> = getSearchProducts(
-    params.NamaProduk, params.sort
+    params.NamaProduk,
+    params.sort
   );
 
   const products = await productsData;
@@ -114,7 +115,10 @@ export default async function ProductCompSearch({
               </div> */}
           </div>
           <Link
-            href={"https://api.whatsapp.com/send/?phone=6288973295464&text=Hai kak, aku mau pesan : " + product.NamaProduk}
+            href={
+              "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
+              product.NamaProduk
+            }
             title="Hubungi Saya"
             rel="noopener"
             target="_blank"
