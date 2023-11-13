@@ -9,6 +9,7 @@ import FloatingButton from "./components/FloatingButton";
 import Link from "next/link";
 import { cookies } from "next/headers";
 import Footer from "./footer";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 // import ReactModal from 'react-modal'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -45,26 +46,29 @@ export default function RootLayout({
   // }
   // console.log("LocalStorage: " + isFilled)
   return (
-    <html lang="en">
-      <body>
-        <Script
-          src="https://static.elfsight.com/platform/platform.js"
-          data-use-service-core
-          defer
-        ></Script>
-        <Script
-          src="https://kit.fontawesome.com/e8fc9e0274.js"
-          crossOrigin="anonymous"
-        ></Script>
-        <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
-        <Header />
-        {isFilled === true ? "" : <ModalBukuTamu />}
-        {children}
-        <Link href="#" passHref>
-          <FloatingButton />
-        </Link>
-        <Footer />
-      </body>
-    </html>
+    <>
+      <html lang="en">
+        <body>
+          <Script
+            src="https://static.elfsight.com/platform/platform.js"
+            data-use-service-core
+            defer
+          ></Script>
+          <Script
+            src="https://kit.fontawesome.com/e8fc9e0274.js"
+            crossOrigin="anonymous"
+          ></Script>
+          <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
+          <Header />
+          {isFilled === true ? "" : <ModalBukuTamu />}
+          {children}
+          <Link href="#" passHref>
+            <FloatingButton />
+          </Link>
+          <Footer />
+        </body>
+      </html>
+      <GoogleAnalytics measurementId="G-SNY7F7KQKF" />
+    </>
   );
 }
