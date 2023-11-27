@@ -12,7 +12,7 @@
 // Select the database to use.
 use('KampungPercaDB');
 
-// db.Products.find({NamaProduk: /Tas/});
+// db.products.find({NamaProduk: /Tas/});
 
 // db.Visitors.insertMany([
 //     {  nama: "Michael Mervin Ruswan",
@@ -39,7 +39,7 @@ use('KampungPercaDB');
 
 // db.Visitors.find()
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 1 },
     {
         $set: {
@@ -48,7 +48,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 2 },
     {
         $set: {
@@ -57,7 +57,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 3 },
     {
         $set: {
@@ -66,7 +66,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 4 },
     {
         $set: {
@@ -75,7 +75,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 5 },
     {
         $set: {
@@ -84,7 +84,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 6 },
     {
         $set: {
@@ -95,7 +95,7 @@ db.Products.updateOne(
 
 
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 8 },
     {
         $set: {
@@ -103,7 +103,7 @@ db.Products.updateOne(
         }
     }
 )
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 9 },
     {
         $set: {
@@ -112,7 +112,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 10 },
     {
         $set: {
@@ -121,7 +121,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 11 },
     {
         $set: {
@@ -130,7 +130,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 12 },
     {
         $set: {
@@ -139,7 +139,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 13 },
     {
         $set: {
@@ -148,7 +148,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 14 },
     {
         $set: {
@@ -157,7 +157,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 15 },
     {
         $set: {
@@ -166,7 +166,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 16 },
     {
         $set: {
@@ -175,7 +175,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 17 },
     {
         $set: {
@@ -184,7 +184,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 18 },
     {
         $set: {
@@ -193,7 +193,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 19 },
     {
         $set: {
@@ -202,7 +202,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 20 },
     {
         $set: {
@@ -211,7 +211,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 21 },
     {
         $set: {
@@ -220,7 +220,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 22 },
     {
         $set: {
@@ -229,7 +229,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 23 },
     {
         $set: {
@@ -238,7 +238,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 24 },
     {
         $set: {
@@ -247,7 +247,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 25 },
     {
         $set: {
@@ -256,7 +256,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 26 },
     {
         $set: {
@@ -265,7 +265,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 27 },
     {
         $set: {
@@ -274,7 +274,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 28 },
     {
         $set: {
@@ -283,7 +283,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 29 },
     {
         $set: {
@@ -292,7 +292,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 30 },
     {
         $set: {
@@ -301,7 +301,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 31 },
     {
         $set: {
@@ -310,7 +310,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 32 },
     {
         $set: {
@@ -319,7 +319,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 33 },
     {
         $set: {
@@ -328,7 +328,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 34 },
     {
         $set: {
@@ -337,7 +337,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 35 },
     {
         $set: {
@@ -346,7 +346,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 36 },
     {
         $set: {
@@ -355,7 +355,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 37 },
     {
         $set: {
@@ -364,7 +364,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 38 },
     {
         $set: {
@@ -373,7 +373,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 39 },
     {
         $set: {
@@ -382,7 +382,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 40 },
     {
         $set: {
@@ -391,7 +391,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 41 },
     {
         $set: {
@@ -400,7 +400,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 42 },
     {
         $set: {
@@ -409,7 +409,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 43 },
     {
         $set: {
@@ -418,7 +418,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 44 },
     {
         $set: {
@@ -427,7 +427,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 45 },
     {
         $set: {
@@ -436,7 +436,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 46 },
     {
         $set: {
@@ -445,7 +445,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 47 },
     {
         $set: {
@@ -454,7 +454,7 @@ db.Products.updateOne(
     }
 )
 
-db.Products.updateOne(
+db.products.updateOne(
     { ProdukID: 48 },
     {
         $set: {

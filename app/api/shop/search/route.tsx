@@ -28,7 +28,7 @@ const pipeline = []
 
 // export async function GET(request: Request) {
 //   try {
-//     // const query = await db.collection("Products").find(
+//     // const query = await db.collection("products").find(
 //     //   $text: {
 //     //   $search: nama,
 //     //   $caseSensitive: false,
@@ -59,7 +59,7 @@ const pipeline = []
 //   }
 
 //   // const db = client.db('tutorial')
-//   const collection = db.collection<Products>("Products")
+//   const collection = db.collection<products>("products")
 //   await collection.createIndexes([{name: 'NamaProduk_text', key: {NamaProduk: 'text'}}])
 
 //   const pipeline = []
@@ -103,8 +103,8 @@ export async function GET(request: Request) {
 
   const client = await connectToDatabase();
   const db = client.db("KampungPercaDB");
-  const collection = db.collection("Products");
-  // const collection = db.collection<Products>("Products")
+  const collection = db.collection("products");
+  // const collection = db.collection<products>("products")
   await collection.createIndexes([{ name: 'NamaProduk_text', key: { NamaProduk: 'text' } }])
   if ((!searchQuerySort || searchQuerySort === "default")&& searchQueryNamaProduk) {
     const result = await collection.find({ NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } }).toArray()
@@ -164,7 +164,7 @@ export async function GET(request: Request) {
 //       data: {
 //         name: USER_SEARCH_INDEX_NAME,
 //         database: "KampungPercaDB",
-//         collectionName: "Products",
+//         collectionName: "products",
 //         // https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#syntax
 //         mappings: {
 //           dynamic: true,
@@ -195,7 +195,7 @@ export async function GET(request: Request) {
 //       data: {
 //         name: USER_AUTOCOMPLETE_INDEX_NAME,
 //         database: "KampungPercaDB",
-//         collectionName: "Products",
+//         collectionName: "products",
 //         // https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#syntax
 //         mappings: {
 //           dynamic: true,
@@ -238,7 +238,7 @@ export async function GET(request: Request) {
 
 async function findIndexByName(indexName: string) {
   const allIndexesResponse = await request(
-    `${ATLAS_SEARCH_INDEX_API_URL}/KampungPercaDB/Products`,
+    `${ATLAS_SEARCH_INDEX_API_URL}/KampungPercaDB/products`,
     {
       dataType: 'json',
       contentType: 'application/json',
@@ -257,7 +257,7 @@ async function upsertSearchIndex() {
       data: {
         name: USER_SEARCH_INDEX_NAME,
         database: "KampungPercaDB",
-        collectionName: "Products",
+        collectionName: "products",
         // https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#syntax
         mappings: {
           dynamic: true,

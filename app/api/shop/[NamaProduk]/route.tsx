@@ -27,7 +27,7 @@ export async function GET(request : Request, context : { params : {NamaProduk: s
     console.log(NamaProduk);
 
   
-    const oneProduct = await db.collection("Products").findOne({ NamaProduk: NamaProduk  });
+    const oneProduct = await db.collection("products").findOne({ NamaProduk: NamaProduk  });
     console.log(oneProduct)
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     if(oneProduct) {
