@@ -16,7 +16,7 @@ export async function GET(request : Request) {
     const client = await connectToDatabase();
     const db = client.db("KampungPercaDB");
   
-    const allProducts = await db.collection("Products").aggregate([{ $sort: { NamaProduk: 1 } }]).toArray();
+    const allProducts = await db.collection("products").aggregate([{ $sort: { NamaProduk: 1 } }]).toArray();
   
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     return new NextResponse(JSON.stringify(allProducts), {
