@@ -48,6 +48,10 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
+        <meta
+          name="google-site-verification"
+          content="x7_XAorWrs5rebRXh7_DFkCMkj_vERwQnyulU71tNRI"
+        />
         <body>
           <Script
             src="https://static.elfsight.com/platform/platform.js"
