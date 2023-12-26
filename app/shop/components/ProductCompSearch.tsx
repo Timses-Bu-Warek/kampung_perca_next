@@ -4,15 +4,7 @@ import Link from "next/link";
 import getSearchProducts from "@/lib/getSearchProducts";
 import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
 
-import { v2 as cloudinary } from 'cloudinary';
 import CldImage from '@/app/components/CldImage';
-
-cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-  secure: true,
-})
 
 export default async function ProductCompSearch({
   params,
