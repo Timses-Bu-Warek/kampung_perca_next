@@ -4,6 +4,8 @@ import Link from "next/link";
 import getSearchProducts from "@/lib/getSearchProducts";
 import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
 
+import CldImage from '@/app/components/CldImage';
+
 export default async function ProductCompSearch({
   params,
 }: {
@@ -27,13 +29,20 @@ export default async function ProductCompSearch({
           {/* <!-- produk image --> */}
           <div className="relative">
             {product.FotoProduk ? (
-              <Image
-                src={product.FotoProduk}
-                alt={product.NamaProduk}
+              <CldImage
                 width={100}
                 height={100}
+                src={product.FotoProduk}
+                alt={product.NamaProduk}
                 className="w-full min-h-[200px]"
               />
+              // <Image
+              //   src={product.FotoProduk}
+              //   alt={product.NamaProduk}
+              //   width={100}
+              //   height={100}
+              //   className="w-full min-h-[200px]"
+              // />
             ) : (
               <Image
                 src={ImageContoh}
@@ -78,8 +87,8 @@ export default async function ProductCompSearch({
                   product.NamaProduk.length <= 8
                     ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
                     : product.NamaProduk.length >= 15
-                    ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
-                    : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
+                      ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                      : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                 }
               >
                 {product.NamaProduk}

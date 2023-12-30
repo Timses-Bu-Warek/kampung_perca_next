@@ -10,6 +10,7 @@ import Breadcrumbs from "@/app/components/breadcrumbs";
 import RecommendationComp from "@/app/components/RecommendationComp";
 import QuantityComp from "./components/QuantityComp";
 import SizeComp from "./components/SizeComp";
+import CldImage from '@/app/components/CldImage';
 
 // export const dynamic = 'force-dynamic';
 
@@ -109,14 +110,21 @@ export default function DetailedProduct({
       <div className="container flex flex-col md:grid md:grid-cols-4 gap-6">
         <div className="md:col-span-2">
           {data.FotoProduk ? (
-            <Image
-              src={data.FotoProduk}
+            <CldImage
               width={500}
               height={500}
-              sizes="100vw"
-              className="w-full h-auto"
+              src={data.FotoProduk}
               alt={data.NamaProduk}
+              className="w-full min-h-[200px]"
             />
+            // <Image
+            //   src={data.FotoProduk}
+            //   width={500}
+            //   height={500}
+            //   sizes="100vw"
+            //   className="w-full h-auto"
+            //   alt={data.NamaProduk}
+            // />
           ) : (
             <Image
               src={ImageContoh}
