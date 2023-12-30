@@ -15,9 +15,12 @@ import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Kampung Perca",
+  title: {
+    default: "Kampung Perca Sindangsari Kota Bogor",
+    template: "%s - Kampung Perca Sindangsari Kota Bogor",
+  },
   description:
-    "Design Web Kampung Perca oleh Intan Permata Sari dan Michael Mervin Ruswan",
+    "Menelusuri pesona autentik Kampung Perca Sindangsari. Rasakan keindahan budaya lokal, saksikan tradisi yang memesona, dan nikmati kerajinan tangan yang unik. Temui komunitas ramah dan sambut suasana hidup sehari-hari yang penuh karakter. Jelajahi destinasi wisata istimewa di Kampung Perca Sindangsari, di mana setiap sudutnya memiliki cerita yang menarik.",
 };
 
 export let bukuFill: string;
