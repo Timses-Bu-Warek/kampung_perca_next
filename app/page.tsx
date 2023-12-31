@@ -9,6 +9,11 @@ import ReactModal from "react-modal";
 import ModalBukuTamu from "./components/ModalBukuTamu";
 import RecommendationComp from "./components/RecommendationComp";
 import NewArrivalComp from "./components/NewArrivalComp";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export default function Home() {
   // sessionStorage.setItem("halo", "true")
@@ -23,7 +28,8 @@ export default function Home() {
       <div className="bg-cover bg-no-repeat bg-center py-36 imageBackgroundCarousel">
         <div className="p-5 text-white z-[2] mt-[-5rem] lg:ml-9">
           <h1 className="text-5xl font-bold mb-4 capitalize font-montserrat">
-            KAMPUNG PERCA
+            Menjelajahi Keindahan Kampung Perca Sindangsari: Keunikan Tradisi
+            dan Kehidupan Lokal.
           </h1>
           <p className="py-5 text-base max-w-4xl font-inter">
             Kampung Perca Sindangsari, sebuah kampung tematik baru yang
@@ -285,7 +291,6 @@ export default function Home() {
         {/* end produk grid  */}
       </div>
       {/*  end produk wrapper  */}
-
 
       {/*  produk recommended  */}
       <div className="container pb-16">
