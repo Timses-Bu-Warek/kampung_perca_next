@@ -14,15 +14,6 @@ import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 // const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: {
-    default: "Kampung Perca Sindangsari Kota Bogor",
-    template: "%s - Kampung Perca Sindangsari Kota Bogor",
-  },
-  description:
-    "Menelusuri pesona autentik Kampung Perca Sindangsari. Rasakan keindahan budaya lokal, saksikan tradisi yang memesona, dan nikmati kerajinan tangan yang unik. Temui komunitas ramah dan sambut suasana hidup sehari-hari yang penuh karakter. Jelajahi destinasi wisata istimewa di Kampung Perca Sindangsari, di mana setiap sudutnya memiliki cerita yang menarik.",
-};
-
 export let bukuFill: string;
 
 export default function RootLayout({
@@ -67,7 +58,7 @@ export default function RootLayout({
           ></Script>
           <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
           <Header />
-          {isFilled === true ? "" : <ModalBukuTamu />}
+          {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
           {children}
           <Link href="#" passHref>
             <FloatingButton />
