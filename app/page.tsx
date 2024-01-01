@@ -23,6 +23,19 @@ export const metadata: Metadata = {
     follow: true,
     nocache: true,
   },
+  keywords: [
+    "Kampung Perca Sindangsari",
+    "Kampung Perca",
+    "Kampung Perca Bogor",
+    "Wisata Kampung Perca",
+    "Destinasi Wisata",
+    "Kampung Tematik",
+    "IBI Kesatuan",
+    "Perca",
+    "Industri Tekstil",
+    "Logo IBI Kesatuan",
+    "Struktur Organisasi",
+  ],
 };
 
 export default function Home() {
