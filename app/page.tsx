@@ -12,7 +12,17 @@ import NewArrivalComp from "./components/NewArrivalComp";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: {
+    default: "Kampung Perca Sindangsari Kota Bogor",
+    template: "%s - Kampung Perca Sindangsari",
+  },
+  description:
+    "Menelusuri pesona autentik Kampung Perca Sindangsari Kota Bogor. Rasakan keindahan budaya lokal, saksikan tradisi yang memesona, dan nikmati kerajinan tangan yang unik. Temui komunitas ramah dan sambut suasana hidup sehari-hari yang penuh karakter. Jelajahi destinasi wisata istimewa di Kampung Perca Sindangsari, di mana setiap sudutnya memiliki cerita yang menarik.",
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+  },
 };
 
 export default function Home() {
