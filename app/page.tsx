@@ -185,9 +185,9 @@ export default function Home() {
             <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
               <div className="flex h-full items-center rounded-lg bg-white shadow-xl p-6 text-center text-black lg:pl-12 lg:text-left">
                 <div className="lg:pl-12">
-                  <h2 className="mb-8 text-3xl font-bold">
-                    Kampung Perca Bogor
-                  </h2>
+                  <h1 className="mb-8 text-3xl font-bold">
+                    Kampung Perca Sindangsari Kota Bogor
+                  </h1>
                   <p className="mb-8 pb-2 lg:pb-0 text-justify">
                     Kampung Perca merupakan kampung tematik yang memproduksi
                     berbagai barang kerajinan dari kain perca. Kampung Perca
