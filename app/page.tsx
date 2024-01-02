@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "Menelusuri pesona autentik Kampung Perca Sindangsari Kota Bogor. Rasakan keindahan budaya lokal, saksikan tradisi yang memesona, dan nikmati kerajinan tangan yang unik. Temui komunitas ramah dan sambut suasana hidup sehari-hari yang penuh karakter. Jelajahi destinasi wisata istimewa di Kampung Perca Sindangsari, di mana setiap sudutnya memiliki cerita yang menarik.",
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
   },
@@ -227,9 +227,9 @@ export default function Home() {
           </div>
           <div className="w-full sm:w-1/2 p-6 mt-6">
             <div className="align-middle">
-              <h3 className="text-3xl text-secondary font-montserrat font-bold leading-none mb-3">
+              <h1 className="text-3xl text-secondary font-montserrat font-bold leading-none mb-3">
                 Lokasi Kampung Perca
-              </h3>
+              </h1>
               <p className="text-gray-600 mb-8 font-inter text-justify">
                 Kampung Perca terletak di perkampungan yang padat penduduk,
                 yaitu disebuah gang yang bernama Gang Raden Alibasyah, tepat di
