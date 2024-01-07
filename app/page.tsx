@@ -13,7 +13,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "Kampung Perca Sindangsari Kota Bogor",
+    default: "Website Resmi Kampung Perca Sindangsari Kota Bogor",
     template: "%s - Kampung Perca Sindangsari",
   },
   description:
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     "Kampung Perca",
     "Kampung Perca Bogor",
     "Wisata Kampung Perca",
+    "Desa Wisata",
     "Destinasi Wisata",
     "Kampung Tematik",
     "IBI Kesatuan",
@@ -35,6 +36,10 @@ export const metadata: Metadata = {
     "Industri Tekstil",
     "Logo IBI Kesatuan",
     "Struktur Organisasi",
+    "Website Resmi",
+    "Situs Resmi",
+    "Laman Resmi",
+    "Budaya Lokal",
   ],
 };
 
