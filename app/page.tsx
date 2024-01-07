@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s - Kampung Perca Sindangsari",
   },
   description:
-    "Menelusuri pesona autentik Kampung Perca Sindangsari Kota Bogor. Rasakan keindahan budaya lokal, saksikan tradisi yang memesona, dan nikmati kerajinan tangan yang unik. Temui komunitas ramah dan sambut suasana hidup sehari-hari yang penuh karakter. Jelajahi destinasi wisata istimewa di Kampung Perca Sindangsari, di mana setiap sudutnya memiliki cerita yang menarik.",
+    "Kampung Perca Sindangsari Kota Bogor adalah salah satu Desa Wisata dan juga Destinasi Wisata Populer di Kota Bogor. Kampung Perca juga merupakan salah satu Kampung Tematik yang di kembangkan oleh Pemerintah Kota Bogor. Kampung Perca Sindangsari memanfaatkan kain perca untuk di olah kembali menjadi produk bernilai dan bisa dijadikan oleh oleh khas Kota Bogor. ",
   robots: {
     index: true,
     follow: true,
@@ -27,19 +27,16 @@ export const metadata: Metadata = {
     "Kampung Perca Sindangsari",
     "Kampung Perca",
     "Kampung Perca Bogor",
-    "Wisata Kampung Perca",
     "Desa Wisata",
+    "Kain Perca",
     "Destinasi Wisata",
     "Kampung Tematik",
-    "IBI Kesatuan",
+    "Pemerintah Kota Bogor",
     "Perca",
     "Industri Tekstil",
-    "Logo IBI Kesatuan",
+    "Oleh Oleh Khas Kota Bogor",
     "Struktur Organisasi",
     "Website Resmi",
-    "Situs Resmi",
-    "Laman Resmi",
-    "Budaya Lokal",
   ],
 };
 
