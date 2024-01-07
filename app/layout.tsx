@@ -10,6 +10,7 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import Footer from "./footer";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 // import ReactModal from 'react-modal'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -64,6 +65,7 @@ export default function RootLayout({
             <FloatingButton />
           </Link>
           <Footer />
+          <SpeedInsights />
         </body>
       </html>
       <GoogleAnalytics measurementId="G-SNY7F7KQKF" />
