@@ -54,11 +54,14 @@ export default function Footer() {
           © 2023 Copyright:
           <Link
             className="text-slate-400"
-            href="https://ibik.ac.id/"
+            href="https://www.instagram.com/kampungperca_kotabogor/"
             target="_blank"
             passHref
           >
-            <span className="cursor-pointer"> {""}IBI Kesatuan Bogor</span>
+            <span className="cursor-pointer">
+              {" "}
+              {""}Kampung Perca Sindangsari Kota Bogor
+            </span>
           </Link>
         </div>
       </div>
