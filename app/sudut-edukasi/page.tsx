@@ -1,9 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
-import FotoContoh from "@/public/img/contoh.jpg"
-import FotoManfaat from "@/public/img/manfaat.jpg"
-import FotoPotensi from "@/public/img/potensi.jpg"
+import FotoContoh from "@/public/img/contoh.jpg";
+import FotoManfaat from "@/public/img/manfaat.jpg";
+import FotoPotensi from "@/public/img/potensi.jpg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sudut Edukasi",
+  description:
+    "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
+  keywords: [
+    "Dampak Positif Pengelolaan Kain Perca",
+    "Potensi Kain Perca di Kota Bogor",
+    "Apa itu Kain Perca ?",
+    "Kain Perca adalah",
+    "Perca",
+    "Kain Perca",
+  ],
+};
 
 export default function Sudut_edukasi() {
   return (
