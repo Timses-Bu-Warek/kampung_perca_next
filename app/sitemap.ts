@@ -19,6 +19,10 @@ export default async function sitemap() {
 
   return [
     {
+      url: baseUrl,
+      lastModified: new Date(),
+    },
+    {
       url: "https://kampungperca.id/shop",
       lastModified: new Date(),
     },
@@ -28,10 +32,6 @@ export default async function sitemap() {
     },
     {
       url: "https://kampungperca.id/sudut-edukasi",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://www.kampungperca.id/shop/Sarung%20Bantal%20Kursi",
       lastModified: new Date(),
     },
     ...productUrls,
