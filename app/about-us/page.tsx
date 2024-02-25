@@ -36,10 +36,10 @@ export default function About_us() {
             }} /> */}
       {/* end breadcrumbs  */}
       {/* tentang kami  */}
-      <section className="bg-white border-b py-0">
+      <section className="py-0 bg-white border-b">
         <div className="container max-w-5xl mx-auto">
-          <div className="mt-11 mb-24">
-            <h1 className="text-4xl font-montserrat font-bold text-center text-secondary">
+          <div className="mb-24 mt-11">
+            <h1 className="text-4xl font-bold text-center font-montserrat text-secondary">
               Struktur Organisasi
             </h1>
             <Image
@@ -56,7 +56,7 @@ export default function About_us() {
               className="shadow-xl shadow-gray-400 rounded-xl"
             />
           </div>
-          <div className="container my-24 mx-auto md:px-6">
+          <div className="container mx-auto my-24 md:px-6">
             <section className="mb-32">
               <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
                 <div className="flex flex-wrap items-center">
@@ -78,7 +78,7 @@ export default function About_us() {
                       </h2>
                       <h3><b>PEMBINA:</b></h3>
                       <h4>Tugas Pokok</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Memberikan arahan dan panduan strategis kepada seluruh anggota.
                         </li>
@@ -90,7 +90,7 @@ export default function About_us() {
                         </li>
                       </ul>
                       <h4>Fungsi:</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Mendorong kerjasama antara berbagai bagian dan anggota.
                         </li>
@@ -103,7 +103,7 @@ export default function About_us() {
                       </ul>
                       <h3 className="mt-6"><b>KETUA:</b></h3>
                       <h4>Tugas Pokok</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Memimpin dan mengarahkan seluruh kegiatan.
                         </li>
@@ -118,7 +118,7 @@ export default function About_us() {
                         </li>
                       </ul>
                       <h4>Fungsi:</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Mengoordinasikan kerja semua bagian dalam struktural.
                         </li>
@@ -131,7 +131,7 @@ export default function About_us() {
                       </ul>
                       <h3 className="mt-6"><b>BAGIAN ADMINISTRASI DAN KEUANGAN:</b></h3>
                       <h4>Tugas Pokok</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Mengelola administrasi umum, termasuk arsip, surat-menyurat, dan layanan umum
                         </li>
@@ -143,7 +143,7 @@ export default function About_us() {
                         </li>
                       </ul>
                       <h4>Fungsi:</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Memastikan kelancaran operasional sehari-hari organisasi.
                         </li>
@@ -156,7 +156,7 @@ export default function About_us() {
                       </ul>
                       <h3 className="mt-6"><b>BIDANG KOPERASI:</b></h3>
                       <h4>Tugas Pokok</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Mengembangkan program-program koperasi yang sesuai dengan tujuan usaha.
                         </li>
@@ -168,7 +168,7 @@ export default function About_us() {
                         </li>
                       </ul>
                       <h4>Fungsi:</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Membangun kerjasama dengan lembaga koperasi dan instansi terkait.
                         </li>
@@ -181,7 +181,7 @@ export default function About_us() {
                       </ul>
                       <h3 className="mt-6"><b>BIDANG UMKM:</b></h3>
                       <h4>Tugas Pokok</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Mengembangkan strategi penjualan untuk produk atau layanan usaha.
                         </li>
@@ -193,7 +193,7 @@ export default function About_us() {
                         </li>
                       </ul>
                       <h4>Fungsi:</h4>
-                      <ul className="list-decimal text-justify ml-1">
+                      <ul className="ml-1 text-justify list-decimal">
                         <li>
                           Membentuk tim penjualan yang efektif dan berkinerja tinggi.
                         </li>
