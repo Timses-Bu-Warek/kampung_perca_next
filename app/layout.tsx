@@ -10,10 +10,41 @@ import Link from "next/link";
 import { cookies } from "next/headers";
 import Footer from "./footer";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 // import ReactModal from 'react-modal'
 
 // const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.kampungperca.id/"),
+  title: {
+    default: "Website Resmi Kampung Perca Sindangsari Kota Bogor",
+    template: "%s - Kampung Perca Sindangsari",
+  },
+  description:
+    "Kampung Perca Sindangsari, Desa Wisata di Kota Bogor, menghasilkan oleh-oleh khas dengan memanfaatkan kain perca. Inisiatif Pemerintah Kota Bogor untuk memajukan kampung tematik ini.",
+  alternates: {
+    canonical: `https://www.kampungperca.id/`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
+  keywords: [
+    "Kampung Perca",
+    "kerajinan dari kain",
+    "kerajinan dari kain perca",
+    "kerajinan kain perca",
+    "barang dari kain perca",
+    "contoh kerajinan dari kain",
+    "contoh kerajinan dari kain perca",
+    "contoh kerajinan kain perca",
+    "gambar kerajinan kain perca",
+    "kain perca kerajinan",
+    "kerajinan dari bahan kain perca",
+  ],
+};
 
 export let bukuFill: string;
 
