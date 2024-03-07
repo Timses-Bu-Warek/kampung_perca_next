@@ -1,16 +1,24 @@
 import DetailedProduct from "./components/DetailedProduct";
 
-export async function generateMetadata ({
+export async function generateMetadata({
   params,
 }: {
-  params: { NamaProduk: string }
+  params: { NamaProduk: string; Keterangan: string };
 }) {
-  const decodedNamaProduk = decodeURIComponent(params.NamaProduk.replace("%20", " "));
-  
-  return{
-    title: `Beli Produk ${decodedNamaProduk} di Kampung Perca Sindangsari`,
-    description:
-      "Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.",
+  const decodedNamaProduk = decodeURIComponent(
+    params.NamaProduk.replace("%20", " ")
+  );
+
+  // const decodedKeterangan = decodeURIComponent(
+  //   params.Keterangan.replace("%20", " ")
+  // );
+
+  return {
+    title: `${decodedNamaProduk}`,
+    description: `Keterangan: ${params.Keterangan}`,
+    alternates: {
+      canonical: `/shop/${decodedNamaProduk}`,
+    },
     robots: {
       index: true,
       follow: true,
@@ -45,14 +53,14 @@ export async function generateMetadata ({
       "Jual Baju Tidur Perca",
       "Jual Tas Perca",
     ],
-  }
-};
+  };
+}
 
 export default function DynamicNameProduct({
   params,
 }: {
-  params: { NamaProduk: string }
-}){
+  params: { NamaProduk: string };
+}) {
   return (
     <main>
       <div>
@@ -60,4 +68,4 @@ export default function DynamicNameProduct({
       </div>
     </main>
   );
-};
+}
