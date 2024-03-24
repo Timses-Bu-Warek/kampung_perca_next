@@ -34,6 +34,18 @@ export default async function sitemap() {
       url: "https://kampungperca.id/sudut-edukasi",
       lastModified: new Date(),
     },
+    {
+      url: "https://www.kampungperca.id/sudut-edukasi/potensi-kain-perca",
+      lastModified: new Date(),
+    },
+    {
+      url: "https://www.kampungperca.id/sudut-edukasi/dampak-positif-kain-perca",
+      lastModified: new Date(),
+    },
+    {
+      url: "https://www.kampungperca.id/sudut-edukasi/manfaat-kain-perca",
+      lastModified: new Date(),
+    },
     ...productUrls,
   ];
 }
