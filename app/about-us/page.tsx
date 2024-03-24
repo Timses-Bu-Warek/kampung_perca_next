@@ -2,8 +2,9 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
-import SO from "@/public/img/SO.png"
-import FotoManfaat from "@/public/img/kp_perca.jpg"
+import SO from "@/public/img/SO.png";
+import FotoManfaat from "@/public/img/kp_perca.jpg";
+import { Metadata } from "next";
 
 // import MyMapComponent from "./MyMapComponent";
 
@@ -21,6 +22,33 @@ import FotoManfaat from "@/public/img/kp_perca.jpg"
 
 // let map: google.maps.Map;
 // const center: google.maps.LatLngLiteral = {lat: -6.652811848908671, lng: 106.8458424490772};
+
+export const metadata: Metadata = {
+  title: "Tentang",
+  description:
+    "Kampung Perca merupakan salah satu kampung wisata yang mempunyai konsep pemberdayaan masyarakat terutama perempuan dan ibu-ibu rumah tangga.",
+  alternates: {
+    canonical: `/about-us`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
+  keywords: [
+    "Kampung Perca",
+    "kerajinan dari kain",
+    "kerajinan dari kain perca",
+    "kerajinan kain perca",
+    "barang dari kain perca",
+    "contoh kerajinan dari kain",
+    "contoh kerajinan dari kain perca",
+    "contoh kerajinan kain perca",
+    "gambar kerajinan kain perca",
+    "kain perca kerajinan",
+    "kerajinan dari bahan kain perca",
+  ],
+};
 
 export default function About_us() {
   return (
@@ -50,8 +78,8 @@ export default function About_us() {
               placeholder="blur"
               sizes="100vw"
               style={{
-                width: '100%',
-                height: 'auto',
+                width: "100%",
+                height: "auto",
               }}
               className="shadow-xl shadow-gray-400 rounded-xl"
             />
@@ -76,39 +104,48 @@ export default function About_us() {
                       <h2 className="mb-4 text-2xl font-bold">
                         Job Description
                       </h2>
-                      <h3><b>PEMBINA:</b></h3>
+                      <h3>
+                        <b>PEMBINA:</b>
+                      </h3>
                       <h4>Tugas Pokok</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Memberikan arahan dan panduan strategis kepada seluruh anggota.
+                          Memberikan arahan dan panduan strategis kepada seluruh
+                          anggota.
                         </li>
                         <li>
-                          Mendukung pengembangan visi, misi, dan tujuan organisasi.
+                          Mendukung pengembangan visi, misi, dan tujuan
+                          organisasi.
                         </li>
                         <li>
-                          Mengadakan pertemuan dan diskusi untuk merumuskan langkah-langkah pengembangan.
+                          Mengadakan pertemuan dan diskusi untuk merumuskan
+                          langkah-langkah pengembangan.
                         </li>
                       </ul>
                       <h4>Fungsi:</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Mendorong kerjasama antara berbagai bagian dan anggota.
+                          Mendorong kerjasama antara berbagai bagian dan
+                          anggota.
                         </li>
                         <li>
-                          Menjalin hubungan dengan pihak eksternal seperti pemerintah, komunitas, dan lembaga terkait
+                          Menjalin hubungan dengan pihak eksternal seperti
+                          pemerintah, komunitas, dan lembaga terkait
                         </li>
                         <li>
-                          Menyusun rencana dan program kerja bersama anggota lainnya.
+                          Menyusun rencana dan program kerja bersama anggota
+                          lainnya.
                         </li>
                       </ul>
-                      <h3 className="mt-6"><b>KETUA:</b></h3>
+                      <h3 className="mt-6">
+                        <b>KETUA:</b>
+                      </h3>
                       <h4>Tugas Pokok</h4>
                       <ul className="ml-1 text-justify list-decimal">
+                        <li>Memimpin dan mengarahkan seluruh kegiatan.</li>
                         <li>
-                          Memimpin dan mengarahkan seluruh kegiatan.
-                        </li>
-                        <li>
-                          Mewujudkan visi, misi, dan tujuan dalam tindakan nyata.
+                          Mewujudkan visi, misi, dan tujuan dalam tindakan
+                          nyata.
                         </li>
                         <li>
                           Membuat keputusan strategis untuk perkembangan usaha.
@@ -123,42 +160,55 @@ export default function About_us() {
                           Mengoordinasikan kerja semua bagian dalam struktural.
                         </li>
                         <li>
-                          Membangun dan menjaga hubungan baik dengan anggota dan pihak eksternal.
+                          Membangun dan menjaga hubungan baik dengan anggota dan
+                          pihak eksternal.
                         </li>
                         <li>
-                          Mengawasi pelaksanaan program kerja dan memastikan pencapaian target.
+                          Mengawasi pelaksanaan program kerja dan memastikan
+                          pencapaian target.
                         </li>
                       </ul>
-                      <h3 className="mt-6"><b>BAGIAN ADMINISTRASI DAN KEUANGAN:</b></h3>
+                      <h3 className="mt-6">
+                        <b>BAGIAN ADMINISTRASI DAN KEUANGAN:</b>
+                      </h3>
                       <h4>Tugas Pokok</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Mengelola administrasi umum, termasuk arsip, surat-menyurat, dan layanan umum
+                          Mengelola administrasi umum, termasuk arsip,
+                          surat-menyurat, dan layanan umum
                         </li>
                         <li>
-                          Mengatur keuangan organisasi, termasuk pembayaran, pendapatan, dan anggaran.
+                          Mengatur keuangan organisasi, termasuk pembayaran,
+                          pendapatan, dan anggaran.
                         </li>
                         <li>
-                          Membuat laporan keuangan dan administrasi secara berkala.
+                          Membuat laporan keuangan dan administrasi secara
+                          berkala.
                         </li>
                       </ul>
                       <h4>Fungsi:</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Memastikan kelancaran operasional sehari-hari organisasi.
+                          Memastikan kelancaran operasional sehari-hari
+                          organisasi.
                         </li>
                         <li>
-                          Membuat rencana anggaran dan mengontrol pengeluaran sesuai dengan kebijakan bersama.
+                          Membuat rencana anggaran dan mengontrol pengeluaran
+                          sesuai dengan kebijakan bersama.
                         </li>
                         <li>
-                          Mengelola dokumentasi administrasi dan keuangan dengan tertib.
+                          Mengelola dokumentasi administrasi dan keuangan dengan
+                          tertib.
                         </li>
                       </ul>
-                      <h3 className="mt-6"><b>BIDANG KOPERASI:</b></h3>
+                      <h3 className="mt-6">
+                        <b>BIDANG KOPERASI:</b>
+                      </h3>
                       <h4>Tugas Pokok</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Mengembangkan program-program koperasi yang sesuai dengan tujuan usaha.
+                          Mengembangkan program-program koperasi yang sesuai
+                          dengan tujuan usaha.
                         </li>
                         <li>
                           Mengajukan rencana kegiatan dan pengembangan koperasi.
@@ -170,35 +220,39 @@ export default function About_us() {
                       <h4>Fungsi:</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Membangun kerjasama dengan lembaga koperasi dan instansi terkait.
+                          Membangun kerjasama dengan lembaga koperasi dan
+                          instansi terkait.
                         </li>
                         <li>
-                          Mengatur proses pendaftaran anggota koperasi dan memastikan pemenuhan hak-hak anggota.
+                          Mengatur proses pendaftaran anggota koperasi dan
+                          memastikan pemenuhan hak-hak anggota.
                         </li>
                         <li>
-                          Mengawasi pelaksanaan kegiatan koperasi dan memonitor perkembangan usaha.
+                          Mengawasi pelaksanaan kegiatan koperasi dan memonitor
+                          perkembangan usaha.
                         </li>
                       </ul>
-                      <h3 className="mt-6"><b>BIDANG UMKM:</b></h3>
+                      <h3 className="mt-6">
+                        <b>BIDANG UMKM:</b>
+                      </h3>
                       <h4>Tugas Pokok</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Mengembangkan strategi penjualan untuk produk atau layanan usaha.
+                          Mengembangkan strategi penjualan untuk produk atau
+                          layanan usaha.
                         </li>
-                        <li>
-                          Menyusun rencana pemasaran dan promosi.
-                        </li>
-                        <li>
-                          Memonitor perkembangan konsumen dan persaingan.
-                        </li>
+                        <li>Menyusun rencana pemasaran dan promosi.</li>
+                        <li>Memonitor perkembangan konsumen dan persaingan.</li>
                       </ul>
                       <h4>Fungsi:</h4>
                       <ul className="ml-1 text-justify list-decimal">
                         <li>
-                          Membentuk tim penjualan yang efektif dan berkinerja tinggi.
+                          Membentuk tim penjualan yang efektif dan berkinerja
+                          tinggi.
                         </li>
                         <li>
-                          Memonitor dan mengevaluasi pencapaian target penjualan.
+                          Memonitor dan mengevaluasi pencapaian target
+                          penjualan.
                         </li>
                       </ul>
                     </div>
