@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Beli Produk",
   description:
     "Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.",
+  alternates: {
+    canonical: `/shop`,
+  },
   robots: {
     index: true,
     follow: true,
