@@ -18,7 +18,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kampungperca.id/"),
   title: {
-    default: "Website Resmi Kampung Perca Sindangsari Kota Bogor",
+    default: "Desa Wisata Kampung Perca Sindangsari Kota Bogor",
     template: "%s - Kampung Perca",
   },
   openGraph: {
