@@ -162,11 +162,12 @@ export default function Home() {
                     Kampung Perca Sindangsari Kota Bogor
                   </h1>
                   <p className="mb-8 pb-2 lg:pb-0 text-justify">
-                    Kampung Perca merupakan kampung tematik yang memproduksi
-                    berbagai barang kerajinan dari kain perca. Kampung Perca
-                    yang berlokasi di Kelurahan Sindangsari, Kecamatan Bogor
-                    Timur dideklarasikan sebagai Kampung Gerakan Masyarakat
-                    Hidup dan Sehat (Germas). <br /> <br />
+                    Kampung Perca merupakan desa wisata Kota Bogor (kampung
+                    tematik) yang memproduksi berbagai barang kerajinan dari
+                    kain perca. Kampung Perca yang berlokasi di Kelurahan
+                    Sindangsari, Kecamatan Bogor Timur dideklarasikan sebagai
+                    Kampung Gerakan Masyarakat Hidup dan Sehat (Germas). <br />{" "}
+                    <br />
                     Latar belakang lahirnya Kampung Perca pun tak lepas dari
                     kebijakan pemerintah menerapakan pembatasan mobilitas warga
                     saat pandemi covid. Hal ini menyebabkan melambatnya
