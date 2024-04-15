@@ -18,14 +18,14 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kampungperca.id/"),
   title: {
-    default: "Desa Wisata Kampung Perca Sindangsari Kota Bogor",
+    default: "Desa Wisata Kampung Perca Kota Bogor",
     template: "%s - Kampung Perca",
   },
   openGraph: {
     title: "Kampung Perca Sindangsari Kota Bogor",
   },
   description:
-    "Kampung Perca Sindangsari, Desa Wisata di Kota Bogor, menghasilkan oleh-oleh khas dengan memanfaatkan kain perca. Inisiatif Pemerintah Kota Bogor untuk memajukan kampung tematik.",
+    "Website Resmi Kampung Perca Sindangsari, Desa Wisata di Kota Bogor, menghasilkan oleh-oleh khas dengan memanfaatkan kain perca. Inisiatif Pemerintah Kota Bogor untuk memajukan kampung tematik.",
   alternates: {
     canonical: `https://www.kampungperca.id/`,
   },
