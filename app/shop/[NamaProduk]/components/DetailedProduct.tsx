@@ -11,7 +11,7 @@ import Breadcrumbs from "@/app/components/breadcrumbs";
 import RecommendationComp from "@/app/components/RecommendationComp";
 import QuantityComp from "./QuantityComp";
 import SizeComp from "./SizeComp";
-import CldImage from '@/app/components/CldImage';
+import CldImage from "@/app/components/CldImage";
 
 // export const dynamic = 'force-dynamic';
 
@@ -25,7 +25,7 @@ const fetcher = async (address: string) => {
 };
 
 export default function DetailedProduct() {
-  const params = useParams<{ NamaProduk: string; }>()
+  const params = useParams<{ NamaProduk: string }>();
 
   const [quantity, setQuantity] = useState(1);
 
@@ -107,6 +107,7 @@ export default function DetailedProduct() {
               alt={data.NamaProduk}
               className="w-full min-h-[200px]"
             />
+          ) : (
             // <Image
             //   src={data.FotoProduk}
             //   width={500}
@@ -115,7 +116,6 @@ export default function DetailedProduct() {
             //   className="w-full h-auto"
             //   alt={data.NamaProduk}
             // />
-          ) : (
             <Image
               src={ImageContoh}
               width={500}
@@ -305,14 +305,6 @@ export default function DetailedProduct() {
       {/* <!-- end produk detail --> */}
 
       {/* <!-- produk wrapper --> */}
-      <div className="container pb-16">
-        <h2 className="mb-6 text-2xl font-bold text-gray-800 uppercase font-montserrat">
-          Related product
-        </h2>
-        {/* <!-- produk grid --> */}
-        {/* <RecommendationComp /> */}
-        {/* <!-- end produk grid --> */}
-      </div>
       {/* <!-- end produk wrapper --> */}
     </main>
   );
