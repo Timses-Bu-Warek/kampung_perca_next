@@ -13,7 +13,7 @@ export async function generateMetadata({
     title: `${decodedNamaProduk}`,
     description: `Keterangan: ${params.Keterangan}`,
     alternates: {
-      canonical: `https://www.kampungperca.id/shop`,
+      canonical: `https://kampungperca.id/shop`,
     },
     robots: {
       index: true,
