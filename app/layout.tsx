@@ -16,7 +16,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.kampungperca.id/"),
+  metadataBase: new URL("https://kampungperca.id/"),
   title: {
     default: "Desa Wisata Kampung Perca Kota Bogor",
     template: "%s - Kampung Perca",
