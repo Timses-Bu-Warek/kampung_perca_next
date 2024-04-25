@@ -6,7 +6,7 @@ export async function generateMetadata({
   params: { NamaProduk: string; Keterangan: string };
 }) {
   const decodedNamaProduk = decodeURIComponent(
-    params.NamaProduk.replace("%20", " ")
+    params.NamaProduk.replace("-", " ")
   );
 
   return {
