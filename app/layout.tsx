@@ -52,31 +52,13 @@ export const metadata: Metadata = {
   ],
 };
 
-export let bukuFill: string;
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // sessionStorage.setItem("halo", "true")
   const cookiesBukuTamu = cookies();
   let isFilled = cookiesBukuTamu.has("isBukuTamu");
-  // if (typeof window !== 'undefined') {
-  //   console.log('You are on the browser')
-  //   // 👉️ can use localStorage here
-
-  //   isFilled = localStorage.getItem("isiBukuTamu");
-  // } else {
-  //   console.log('You are on the server')
-  //   // 👉️ can't use localStorage
-  // }
-  // if (typeof window !== 'undefined') {
-  //   // Perform localStorage action
-  //   // Perform sessionStorage.
-  //   sessionStorage.setItem("kunci", "true")
-  // }
-  // console.log("LocalStorage: " + isFilled)
   return (
     <>
       <html lang="en">
