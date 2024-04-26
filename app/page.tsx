@@ -33,9 +33,9 @@ export default function Home() {
             <Link
               href="https://www.ibik.ac.id/"
               rel="noopener noreferrer"
-              passHref
               target="_blank"
               className="text-primary"
+              passHref
             >
               {" "}
               Institut Bisnis dan Informatika Kesatuan Bogor.
@@ -46,7 +46,9 @@ export default function Home() {
           <div className="mt-12">
             <Link
               href="/shop"
+              rel="noopener noreferrer"
               className="px-8 py-3 font-medium text-white transition border rounded-md bg-primary border-primary hover:bg-transparent hover:text-primary font-inter"
+              passHref
             >
               Shop at Kampung Perca
             </Link>
@@ -98,7 +100,7 @@ export default function Home() {
       <div className="container mx-auto my-24 md:px-6">
         {/*  ads section  */}
         <div className="container pb-16 mb-16">
-          <Link href="https://ibik.ac.id" target="_blank" passHref>
+          <Link href="https://ibik.ac.id" target="_blank" rel="noopener noreferrer" passHref>
             <Image
               src={FotoBinaanIBIK}
               width={500}
@@ -106,7 +108,7 @@ export default function Home() {
               placeholder="blur"
               sizes="100vw"
               alt="Sistem Informasi Kampung Perca di bawah binaan IBI Kesatuan"
-              className="w-full rounded-md shadow shadow-md"
+              className="w-full rounded-md shadow-md"
             />
           </Link>
         </div>
@@ -218,6 +220,8 @@ export default function Home() {
                 className="text-pink-500 underline"
                 href="https://goo.gl/maps/igidBQGP7yiBDYer5"
                 target="_blank"
+                rel="noopener noreferrer"
+                passHref
               >
                 Maps
               </Link>
@@ -237,42 +241,54 @@ export default function Home() {
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
+              rel="noopener noreferrer"
               className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
+              passHref
             >Baju</Link>
           </div>
           <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
+              rel="noopener noreferrer"
               className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
+              passHref
             >Baju</Link>
           </div>
           <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
+              rel="noopener noreferrer"
               className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
+              passHref
             >Baju</Link>
           </div>
           <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
+              rel="noopener noreferrer"
               className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
+              passHref
             >Baju</Link>
           </div>
           <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
+              rel="noopener noreferrer"
               className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
+              passHref
             >Baju</Link>
           </div>
           <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
+              rel="noopener noreferrer"
               className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
+              passHref
             >Baju</Link>
           </div>
         </div>
