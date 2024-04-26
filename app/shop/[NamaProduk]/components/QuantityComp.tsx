@@ -16,27 +16,27 @@ export default function QuantityComp(context: { params: { quantity: any }}) {
         }
     }
 
-    console.log("Quantity params: ", context.params.quantity);
+    // console.log("Quantity params: ", context.params.quantity);
 
     return (
         <div className="mt-4">
-            <h3 className="text-gray-800 uppercase font-inter pt-4">Quantity</h3>
+            <h3 className="pt-4 text-gray-800 uppercase font-inter">Quantity</h3>
             <div
-                className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max"
+                className="flex text-gray-600 border border-gray-300 divide-x divide-gray-300 w-max"
             >
                 <button
                     type="button"
-                    className="h-8 w-full md:w-8 text-lg flex items-center justify-center cursor-pointer select-none"
+                    className="flex items-center justify-center w-full h-8 text-lg cursor-pointer select-none md:w-8"
                     onClick={decreaseQuantity} >
                     -
                 </button>
-                <div className="h-8 w-8 text-base flex items-center justify-center">
+                <div className="flex items-center justify-center w-8 h-8 text-base">
                     {/* <input type="number" name="" id="" value={quantity} onChange={(e) => setQuantity(parseInt(e.target.value))} /> */}
                     {quantity}
                 </div>
                 <button
                     type="button"
-                    className="h-8 w-full md:w-8 text-lg flex items-center justify-center cursor-pointer select-none"
+                    className="flex items-center justify-center w-full h-8 text-lg cursor-pointer select-none md:w-8"
                     onClick={increaseQuantity} >
                     +
                 </button>

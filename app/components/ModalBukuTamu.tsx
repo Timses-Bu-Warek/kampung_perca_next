@@ -29,7 +29,7 @@ export default function ModalBukuTamu() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(JSON.stringify(data));
+    // console.log(JSON.stringify(data));
     const { nama, provinsi, kota, gender, umur, kesanPesan } = data;
 
     // Send data to API Route
@@ -86,7 +86,7 @@ export default function ModalBukuTamu() {
   const canSave = [...Object.values(data)].every(Boolean);
 
   return (
-    <div className="h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 z-500">
+    <div className="fixed top-0 left-0 flex items-center justify-center w-full h-screen bg-black bg-opacity-50 z-500">
       <div
         className={
           isLoading
@@ -97,14 +97,14 @@ export default function ModalBukuTamu() {
         <form onSubmit={handleSubmit} action="">
           {/* Render the spinner if loading is true */}
           {isLoading ? (
-            <div className="animate-spin rounded-full h-14 w-14 border-4 border-t-slate-500 border-l-slate-50 border-solid" />
+            <div className="border-4 border-solid rounded-full animate-spin h-14 w-14 border-t-slate-500 border-l-slate-50" />
           ) : (
             <>
-              <h1 className="font-montserrat text-2xl my-4">
+              <h1 className="my-4 text-2xl font-montserrat">
                 Selamat Datang di
-                <span className="text-primary font-bold"> Kampung Perca🌼</span>
+                <span className="font-bold text-primary"> Kampung Perca🌼</span>
               </h1>
-              <h2 className="font-inter text-sm mt-4 mb-4">
+              <h2 className="mt-4 mb-4 text-sm font-inter">
                 Harap mengisi buku tamu di bawah ya
               </h2>
               <div id="fullname" className="flex flex-col">
@@ -116,7 +116,7 @@ export default function ModalBukuTamu() {
                     type="text"
                     name="nama"
                     id="fname"
-                    className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
+                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
                     required
                     value={data.nama}
                     onChange={handleChange}
@@ -134,12 +134,12 @@ export default function ModalBukuTamu() {
                       name="provinsi"
                       id="provinsi"
                       required
-                      className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
+                      className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
                       value={data.provinsi}
                       onChange={handleChange}
                     />
                   </div>
-                  <div id="kotaDiv" className="w-1/2 mr-1 mb-4">
+                  <div id="kotaDiv" className="w-1/2 mb-4 mr-1">
                     <label htmlFor="kota" className="text-sm">
                       Kota
                     </label>
@@ -149,7 +149,7 @@ export default function ModalBukuTamu() {
                       name="kota"
                       id="kota"
                       required
-                      className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
+                      className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
                       value={data.kota}
                       onChange={handleChange}
                     />
@@ -157,8 +157,8 @@ export default function ModalBukuTamu() {
                 </div>
               </div>
 
-              <div id="usia" className="flex flex-col md:flex-row mt-2">
-                <div id="ageDiv" className="w-full md:w-1/2 mr-1">
+              <div id="usia" className="flex flex-col mt-2 md:flex-row">
+                <div id="ageDiv" className="w-full mr-1 md:w-1/2">
                   <label htmlFor="age" className="text-sm">
                     Usia
                   </label>
@@ -170,10 +170,10 @@ export default function ModalBukuTamu() {
                     required
                     value={data.umur}
                     onChange={handleChange}
-                    className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
+                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
                   />
                 </div>
-                <div id="gender" className="text-sm mb-6">
+                <div id="gender" className="mb-6 text-sm">
                   <p className="mt-2">Jenis Kelamin</p>
                   <label htmlFor="Laki-Laki">
                     Laki-Laki
@@ -184,7 +184,7 @@ export default function ModalBukuTamu() {
                       required
                       value="Laki-Laki"
                       onChange={handleChange}
-                      className="text-sm mx-1"
+                      className="mx-1 text-sm"
                       // checked
                     />
                   </label>
@@ -194,7 +194,7 @@ export default function ModalBukuTamu() {
                       type="radio"
                       name="gender"
                       id="Perempuan"
-                      className="text-sm mx-1"
+                      className="mx-1 text-sm"
                       required
                       value="Perempuan"
                       onChange={handleChange}
@@ -212,24 +212,24 @@ export default function ModalBukuTamu() {
                     type="text"
                     name="kesanPesan"
                     id="kPesan"
-                    className="h-8 w-full rounded-md border border-slate-300 text-sm pl-2 bg-transparent outline-primary shadow-sm"
+                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
                     required
                     value={data.kesanPesan}
                     onChange={handleChange}
                   />
                 </div>
               </div>
-              <div className="flex justify-end items-center w-100 border-t p-3">
+              <div className="flex items-center justify-end p-3 border-t w-100">
                 <button
                   type="reset"
-                  className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-white mr-1 font-inter"
+                  className="px-3 py-1 mr-1 text-white bg-red-600 rounded hover:bg-red-700 font-inter"
                   onClick={() => setData(initState)}
                 >
                   Reset
                 </button>
                 <button
                   type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white font-inter"
+                  className="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700 font-inter"
                 >
                   Submit
                 </button>
@@ -238,16 +238,16 @@ export default function ModalBukuTamu() {
           )}
 
           {/* <!-- button submit -->
-          <div className="flex justify-end items-center w-100 border-t p-3">
+          <div className="flex items-center justify-end p-3 border-t w-100">
             <button
               type="reset"
-              className="bg-red-600 hover:bg-red-700 px-3 py-1 rounded text-white mr-1 font-inter"
+              className="px-3 py-1 mr-1 text-white bg-red-600 rounded hover:bg-red-700 font-inter"
             >
               Reset
             </button>
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded text-white font-inter"
+              className="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700 font-inter"
             >
               Submit
             </button>

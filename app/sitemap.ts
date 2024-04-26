@@ -8,7 +8,7 @@ export default async function sitemap() {
 
   //Get All Post
   const product = await getAllProducts();
-  console.log(product);
+  // console.log(product);
   const productUrls =
     product?.map((products: { NamaProduk: any }) => {
       return {

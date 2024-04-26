@@ -21,18 +21,19 @@ export default function Home() {
   return (
     <main>
       {/*  Banner  */}
-      <div className="bg-cover bg-no-repeat bg-center py-36 imageBackgroundCarousel">
+      <div className="bg-center bg-no-repeat bg-cover py-36 imageBackgroundCarousel">
         <div className="p-5 text-white z-[2] mt-[-5rem] lg:ml-9">
-          <h1 className="text-5xl font-bold mb-4 capitalize font-montserrat">
+          <h1 className="mb-4 text-5xl font-bold capitalize font-montserrat">
             Menjelajahi Keindahan Kampung Perca Sindangsari: Keunikan Tradisi
             dan Kehidupan Lokal.
           </h1>
-          <p className="py-5 text-base max-w-4xl font-inter">
+          <p className="max-w-4xl py-5 text-base font-inter">
             Kampung Perca Sindangsari, sebuah kampung tematik baru yang
             menambahkan destinasi wisata di kota Bogor dan merupakan binaan
             <Link
               href="https://www.ibik.ac.id/"
               rel="noopener noreferrer"
+              passHref
               target="_blank"
               className="text-primary"
             >
@@ -45,7 +46,7 @@ export default function Home() {
           <div className="mt-12">
             <Link
               href="/shop"
-              className="bg-primary border border-primary text-white px-8 py-3 font-medium rounded-md hover:bg-transparent hover:text-primary transition font-inter"
+              className="px-8 py-3 font-medium text-white transition border rounded-md bg-primary border-primary hover:bg-transparent hover:text-primary font-inter"
             >
               Shop at Kampung Perca
             </Link>
@@ -56,45 +57,45 @@ export default function Home() {
 
       {/*  features  */}
       {/* <div className="container py-16">
-        <div className="w-10/12 flex flex-col md:grid md:grid-cols-3 gap-6 mx-auto justify-center">
-          <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+        <div className="flex flex-col justify-center w-10/12 gap-6 mx-auto md:grid md:grid-cols-3">
+          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-sm border-primary">
             <i
-              className="fa-solid fa-truck object-contain"
+              className="object-contain fa-solid fa-truck"
               style={{ fontSize: "2rem" }}
             ></i>
             <span>
-              <h4 className="font-semibold capitalize text-lg">
+              <h4 className="text-lg font-semibold capitalize">
                 Free Shopping
               </h4>
               <p className="text-gray-500 text-sx">order over IDR5000</p>
             </span>
           </div>
-          <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-sm border-primary">
             <i
-              className="fa-solid fa-hand-holding-dollar object-contain"
+              className="object-contain fa-solid fa-hand-holding-dollar"
               style={{ fontSize: "2rem" }}
             ></i>
             <span>
-              <h4 className="font-semibold capitalize text-lg">
+              <h4 className="text-lg font-semibold capitalize">
                 Money Returns
               </h4>
               <p className="text-gray-500 text-sx">30 days money return</p>
             </span>
           </div>
-          <div className="border border-primary rounded-sm px-3 py-6 flex justify-center items-center gap-5">
+          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-sm border-primary">
             <i
-              className="fa-solid fa-clock object-contain"
+              className="object-contain fa-solid fa-clock"
               style={{ fontSize: "2rem" }}
             ></i>
             <span>
-              <h4 className="font-semibold capitalize text-lg">24/7 Support</h4>
+              <h4 className="text-lg font-semibold capitalize">24/7 Support</h4>
               <p className="text-gray-500 text-sx">Support Customer</p>
             </span>
           </div>
         </div>
       </div> */}
 
-      <div className="container my-24 mx-auto md:px-6">
+      <div className="container mx-auto my-24 md:px-6">
         {/*  ads section  */}
         <div className="container pb-16 mb-16">
           <Link href="https://ibik.ac.id" target="_blank" passHref>
@@ -105,25 +106,25 @@ export default function Home() {
               placeholder="blur"
               sizes="100vw"
               alt="Sistem Informasi Kampung Perca di bawah binaan IBI Kesatuan"
-              className="w-full shadow shadow-md rounded-md"
+              className="w-full rounded-md shadow shadow-md"
             />
           </Link>
         </div>
         {/*  end ads section  */}
 
         {/* vid */}
-        <h1 className="w-full mb-6 text-4xl justify-center items-center font-montserrat font-bold text-center text-secondary">
+        <h1 className="items-center justify-center w-full mb-6 text-4xl font-bold text-center font-montserrat text-secondary">
           Peresmian Kampung Perca
         </h1>
-        <div className="sm:max-w-sm md:max-w-screen-md lg:h-96  lg:translate-x-48 mb-32">
+        <div className="mb-32 sm:max-w-sm md:max-w-screen-md lg:h-96 lg:translate-x-48">
           <iframe
             title="Video Kunjungan Kampung Perca"
             src="https://www.youtube.com/embed/TRoKZ-4m5C0"
             // width="990"
             // height="400"
-            className="mb-6 w-full h-full justify-center shadow-xl shadow-gray-400 rounded-xl"
+            className="justify-center w-full h-full mb-6 shadow-xl shadow-gray-400 rounded-xl"
           ></iframe>
-          <h4 className="font-inter italic text-black items-center justify-center text-center">
+          <h4 className="items-center justify-center italic text-center text-black font-inter">
             Sumber :{" "}
             <a
               href="https://www.youtube.com/@bimaarya1921"
@@ -138,7 +139,7 @@ export default function Home() {
         {/* end vid */}
         <section className="mb-32">
           <div className="flex flex-wrap">
-            <div className="mb-12 w-full lg:mb-0 lg:w-5/12">
+            <div className="w-full mb-12 lg:mb-0 lg:w-5/12">
               <div className="flex lg:py-12">
                 <Image
                   src="https://pakar.stakcdn.com/app/assets/2021/12/17130606/IMG-20211217-WA0042.jpg"
@@ -156,12 +157,12 @@ export default function Home() {
             </div>
 
             <div className="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-              <div className="flex h-full items-center rounded-lg bg-white shadow-xl p-6 text-center text-black lg:pl-12 lg:text-left">
+              <div className="flex items-center h-full p-6 text-center text-black bg-white rounded-lg shadow-xl lg:pl-12 lg:text-left">
                 <div className="lg:pl-12">
                   <h1 className="mb-8 text-3xl font-bold">
                     Kampung Perca Sindangsari Kota Bogor
                   </h1>
-                  <p className="mb-8 pb-2 lg:pb-0 text-justify">
+                  <p className="pb-2 mb-8 text-justify lg:pb-0">
                     Kampung Perca merupakan desa wisata Kota Bogor (kampung
                     tematik) yang memproduksi berbagai barang kerajinan dari
                     kain perca. Desa Wisata Kota Bogor, Kampung Perca yang
@@ -179,8 +180,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="flex flex-wrap flex-col-reverse sm:flex-row mb-32">
-          <div id="map" className="w-full sm:w-1/2 p-1 mt-6 ">
+        <div className="flex flex-col-reverse flex-wrap mb-32 sm:flex-row">
+          <div id="map" className="w-full p-1 mt-6 sm:w-1/2 ">
             {/* <MyApp />    */}
             {/* <Script
                     async
@@ -199,12 +200,12 @@ export default function Home() {
               className="w-full h-full shadow-xl shadow-gray-400 rounded-xl"
             ></iframe>
           </div>
-          <div className="w-full sm:w-1/2 p-6 mt-6">
+          <div className="w-full p-6 mt-6 sm:w-1/2">
             <div className="align-middle">
-              <h1 className="text-3xl text-secondary font-montserrat font-bold leading-none mb-3">
+              <h1 className="mb-3 text-3xl font-bold leading-none text-secondary font-montserrat">
                 Lokasi Kampung Perca
               </h1>
-              <p className="text-gray-600 mb-8 font-inter text-justify">
+              <p className="mb-8 text-justify text-gray-600 font-inter">
                 Kampung Perca terletak di perkampungan yang padat penduduk,
                 yaitu disebuah gang yang bernama Gang Raden Alibasyah, tepat di
                 Jalan Raya Wangun Atas RT 004 / RW 001, Kelurahan Sindangsari,
@@ -228,50 +229,50 @@ export default function Home() {
       {/* end features  */}
       {/* categories  */}
       {/* <div className="container py-16">
-        <h2 className="text-lg font-montserrat text-black mb-6 font-bold">
+        <h2 className="mb-6 text-lg font-bold text-black font-montserrat">
           Shop by Categories
         </h2>
         <div className="grid grid-cols-3 gap-3">
-          <div className="relative rounded-sm overflow-hidden group">
+          <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
-              className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-lg text-white font-inter group-hover:bg-opacity-60 transition"
+              className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
             >Baju</Link>
           </div>
-          <div className="relative rounded-sm overflow-hidden group">
+          <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
-              className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-lg text-white font-inter group-hover:bg-opacity-60 transition"
+              className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
             >Baju</Link>
           </div>
-          <div className="relative rounded-sm overflow-hidden group">
+          <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
-              className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-lg text-white font-inter group-hover:bg-opacity-60 transition"
+              className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
             >Baju</Link>
           </div>
-          <div className="relative rounded-sm overflow-hidden group">
+          <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
-              className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-lg text-white font-inter group-hover:bg-opacity-60 transition"
+              className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
             >Baju</Link>
           </div>
-          <div className="relative rounded-sm overflow-hidden group">
+          <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
-              className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-lg text-white font-inter group-hover:bg-opacity-60 transition"
+              className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
             >Baju</Link>
           </div>
-          <div className="relative rounded-sm overflow-hidden group">
+          <div className="relative overflow-hidden rounded-sm group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
-              className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-lg text-white font-inter group-hover:bg-opacity-60 transition"
+              className="absolute inset-0 flex items-center justify-center text-lg text-white transition bg-black bg-opacity-40 font-inter group-hover:bg-opacity-60"
             >Baju</Link>
           </div>
         </div>
@@ -280,7 +281,7 @@ export default function Home() {
 
       {/*  produk wrapper  */}
       <div className="container pb-16">
-        <h2 className="text-2xl text-gray-800 uppercase mb-6 font-montserrat font-bold">
+        <h2 className="mb-6 text-2xl font-bold text-gray-800 uppercase font-montserrat">
           New Arrival
         </h2>
         {/*  poduk grid  */}
@@ -291,7 +292,7 @@ export default function Home() {
 
       {/*  produk recommended  */}
       <div className="container pb-16">
-        <h2 className="text-2xl text-gray-800 uppercase mb-6 font-montserrat font-bold">
+        <h2 className="mb-6 text-2xl font-bold text-gray-800 uppercase font-montserrat">
           Recommended for you
         </h2>
         {/*  produk grid */}

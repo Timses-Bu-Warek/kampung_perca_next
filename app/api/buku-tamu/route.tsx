@@ -42,7 +42,7 @@ export async function POST(request: Request) {
   const origin = request.headers.get('origin')
 
   const remaining = await limiter.removeTokens(1)
-  console.log('remaining: ', remaining)
+  // console.log('remaining: ', remaining)
 
   try {
     const client = await connectToDatabase();
