@@ -6,28 +6,25 @@ import FotoManfaat from "@/public/img/manfaat.jpg";
 import FotoPotensi from "@/public/img/potensi.jpg";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Apa itu kain perca ?",
-  description:
-    "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
-  alternates: {
-    canonical: `/sudut-edukasi`,
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-  },
-  keywords: [
-    "Dampak Positif Pengelolaan Kain Perca",
-    "Potensi Kain Perca di Kota Bogor",
-    "Apa itu Kain Perca ?",
-    "Kain Perca adalah",
-    "Perca",
-    "Kain Perca",
-    "Manfaat Kain Perca,",
-  ],
-};
+// export const metadata: Metadata = {
+//   title: "Apa itu kain perca ?",
+//   description:
+//     "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
+//   robots: {
+//     index: true,
+//     follow: true,
+//     nocache: true,
+//   },
+//   keywords: [
+//     "Dampak Positif Pengelolaan Kain Perca",
+//     "Potensi Kain Perca di Kota Bogor",
+//     "Apa itu Kain Perca ?",
+//     "Kain Perca adalah",
+//     "Perca",
+//     "Kain Perca",
+//     "Manfaat Kain Perca,",
+//   ],
+// };
 
 export default function Sudut_edukasi() {
   return (
