@@ -10,6 +10,7 @@ import ModalBukuTamu from "./components/ModalBukuTamu";
 import RecommendationComp from "./components/RecommendationComp";
 import NewArrivalComp from "./components/NewArrivalComp";
 import { Metadata } from "next";
+import YoutubeFacade from "./components/youtubefacade";
 
 export default function Home() {
   // sessionStorage.setItem("halo", "true")
@@ -100,7 +101,12 @@ export default function Home() {
       <div className="container mx-auto my-24 md:px-6">
         {/*  ads section  */}
         <div className="container pb-16 mb-16">
-          <Link href="https://ibik.ac.id" target="_blank" rel="noopener noreferrer" passHref>
+          <Link
+            href="https://ibik.ac.id"
+            target="_blank"
+            rel="noopener noreferrer"
+            passHref
+          >
             <Image
               src={FotoBinaanIBIK}
               width={500}
@@ -119,13 +125,18 @@ export default function Home() {
           Peresmian Kampung Perca
         </h1>
         <div className="mb-32 sm:max-w-sm md:max-w-screen-md lg:h-96 lg:translate-x-48">
-          <iframe
+          <YoutubeFacade
+            id="TRoKZ-4m5C0"
+            title="Video Kunjungan Kampung Perca"
+          />
+
+          {/* <iframe
             title="Video Kunjungan Kampung Perca"
             src="https://www.youtube.com/embed/TRoKZ-4m5C0"
             // width="990"
             // height="400"
             className="justify-center w-full h-full mb-6 shadow-xl shadow-gray-400 rounded-xl"
-          ></iframe>
+          ></iframe> */}
           <h4 className="items-center justify-center italic text-center text-black font-inter">
             Sumber :{" "}
             <a
