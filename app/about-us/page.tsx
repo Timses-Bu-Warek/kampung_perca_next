@@ -2,8 +2,8 @@ import Script from "next/script";
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
-import SO from "@/public/img/SO.png";
-import FotoManfaat from "@/public/img/kp_perca.jpg";
+import SO from "@/public/img/SO.webp";
+import FotoManfaat from "@/public/img/kp_perca.webp";
 import { Metadata } from "next";
 
 // import MyMapComponent from "./MyMapComponent";

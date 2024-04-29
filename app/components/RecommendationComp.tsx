@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import getProductRec from "@/lib/getProductRec";
-import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
+import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
 import { v2 as cloudinary } from 'cloudinary';
 import CldImage from '@/app/components/CldImage';
 
@@ -20,10 +20,10 @@ export default async function RecommendationComp() {
   // console.log(products);
 
   return (
-    <div className="flex flex-col md:grid md:grid-cols-4 gap-6">
+    <div className="flex flex-col gap-6 md:grid md:grid-cols-4">
       {recProducts.map((product) => (
         <div
-          className="bg-white shadow rounded overflow-hidden group flex justify-between flex-col"
+          className="flex flex-col justify-between overflow-hidden bg-white rounded shadow group"
           key={product.ProdukID}
         >
           {/* <!-- produk image --> */}
@@ -54,23 +54,23 @@ export default async function RecommendationComp() {
             )}
             {/* {console.log(product.FotoProduk)} */}
             {/* <Image
-              src="/img/Produk/contoh_baju.jpg"
+              src="/img/Produk/contoh_baju.webp"
               alt="Baju Perca"
               width={150}
               height={150}
               className="w-full"
             /> */}
-            <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
+            <div className="absolute inset-0 flex items-center justify-center gap-2 transition bg-black opacity-0 bg-opacity-40 group-hover:opacity-100">
               <Link
                 href={`/shop/${product.NamaProduk}`}
-                className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                className="flex items-center justify-center h-8 text-lg text-white transition rounded-full w-9 bg-primary hover:bg-gray-800"
                 passHref
               >
                 <i className="fas fa-search"></i>
               </Link>
               {/* <Link
                   href="#"
-                  className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                  className="flex items-center justify-center h-8 text-lg text-white transition rounded-full w-9 bg-primary hover:bg-gray-800"
                   passHref
                 >
                   <i className="fas fa-heart"></i>
@@ -81,7 +81,7 @@ export default async function RecommendationComp() {
 
           {/* <!-- produk konten --> */}
           <div className="">
-            <div className="pt-4 pb-3 px-4">
+            <div className="px-4 pt-4 pb-3">
               <Link href={`/shop/${product.NamaProduk}`} passHref>
                 <h4
                   className={
@@ -96,7 +96,7 @@ export default async function RecommendationComp() {
                 </h4>
               </Link>
               <div className="flex items-baseline mb-1 space-x-2 font-inter">
-                <p className="text-lg text-primary font-semibold">
+                <p className="text-lg font-semibold text-primary">
                   Rp {Intl.NumberFormat("id-ID").format(product.Harga)}
                 </p>
                 {/* <p className="text-sm text-gray-400 line-through">
@@ -122,7 +122,7 @@ export default async function RecommendationComp() {
                     <i className="fas fa-star"></i>
                   </span>
                 </div>
-                <div className="text-xs text-gray-500 ml-3">(150)</div>
+                <div className="ml-3 text-xs text-gray-500">(150)</div>
               </div> */}
             <Link
               href={
@@ -132,7 +132,7 @@ export default async function RecommendationComp() {
               title="Hubungi Saya"
               rel="noopener"
               target="_blank"
-              className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
+              className="block w-full py-1 text-center text-white transition rounded-b bg-primary border-primary hover:bg-transparent hover:text-primary"
             >
               Order
             </Link>

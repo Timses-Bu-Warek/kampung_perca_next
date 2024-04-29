@@ -60,7 +60,7 @@ body {
 }
 
 .imageBackgroundCarousel {
-  background: linear-gradient(0deg, rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url("/img/bg-no-overlay.png");
+  background: linear-gradient(0deg, rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url("/img/bg-no-overlay.webp");
   background-size: cover;
 }
 .dropdown:hover .dropdown-menu {
