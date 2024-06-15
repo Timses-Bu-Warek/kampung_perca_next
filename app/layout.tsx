@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     title: "Kampung Perca Sindangsari Kota Bogor",
   },
   description:
-    "Website Resmi Kampung Perca Sindangsari, Desa Wisata di Kota Bogor, menghasilkan oleh-oleh khas dengan memanfaatkan kain perca. Inisiatif Pemerintah Kota Bogor untuk memajukan kampung tematik.",
+    "Desa Wisata Kampung Perca Sindangsari menyediakan aneka kerajinan dari kain perca. Inisiatif Pemerintah Kota Bogor untuk memajukan kampung tematik.",
   alternates: {
     canonical: `https://kampungperca.id/`,
   },
