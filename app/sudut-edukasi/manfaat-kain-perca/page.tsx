@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/app/components/breadcrumbs";
-import FotoContoh from "@/public/img/contoh.jpg";
-import FotoManfaat from "@/public/img/manfaat.jpg";
-import FotoPotensi from "@/public/img/potensi.jpg";
+import FotoContoh from "@/public/img/contoh.webp";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,18 +30,18 @@ export const metadata: Metadata = {
 export default function Manfaat() {
   return (
     <div>
-      <section className="bg-white border-b py-8">
+      <section className="py-8 bg-white border-b">
         <Breadcrumbs
           params={{
             slug: "Sudut Edukasi",
           }}
         />
-        <h1 className="w-full mb-6 my-2 text-4xl font-montserrat font-bold text-center text-secondary">
+        <h1 className="w-full my-2 mb-6 text-4xl font-bold text-center font-montserrat text-secondary">
           Sudut Edukasi
         </h1>
 
         {/* Konten kain perca */}
-        <div className="container my-24 mx-auto md:px-6">
+        <div className="container mx-auto my-24 md:px-6">
           <section className="mb-32">
             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
               <div className="flex flex-wrap items-center">
@@ -63,7 +61,7 @@ export default function Manfaat() {
                     <h2 className="mb-4 text-2xl font-bold">
                       Manfaat Kain Perca
                     </h2>
-                    <p className="mb-6 text-neutral-800 text-justify">
+                    <p className="mb-6 text-justify text-neutral-800">
                       Kain perca adalah potongan-potongan kain kecil yang
                       tersisa dari proyek jahitan atau tekstil lainnya. Meskipun
                       ukurannya kecil, kain perca memiliki beragam manfaat dan
@@ -133,72 +131,72 @@ export default function Manfaat() {
 
       {/* edukasi lainnya */}
       <section className="bg-white border-b py-14">
-        <div className="container mx-auto flex flex-wrap pt-9 pb-12">
+        <div className="container flex flex-wrap pb-12 mx-auto pt-9">
           <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-secondary font-montserrat">
             Edukasi Lainnya
           </h1>
           <div className="w-full mb-4">
-            <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            <div className="w-64 h-1 py-0 mx-auto my-0 rounded-t opacity-25 gradient"></div>
           </div>
-          <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
+          <div className="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
+            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+              <div className="w-full px-6 text-xl font-bold text-gray-800 font-montserrat">
                 Potensi Kain Perca di Kota Bogor
               </div>
-              <p className="text-gray-800 text-base px-6 mb-5 font-inter">
+              <p className="px-6 mb-5 text-base text-gray-800 font-inter">
                 Potensi kain perca di Kota Bogor terletak pada penggunaan
                 kreatif dalam industri kerajinan tangan dan pembuatan produk
                 unik seperti quilting, tas, dan lainnya.
               </p>
             </div>
-            <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
               <div className="flex items-center justify-start">
                 <Link
                   href="/sudut-edukasi/potensi-kain-perca"
-                  className="mx-auto lg:mx-0 gradient text-secondary font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out font-inter"
+                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-none focus:shadow-outline hover:scale-105 font-inter"
                 >
                   Lihat
                 </Link>
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
+          <div className="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
+            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+              <div className="w-full px-6 text-xl font-bold text-gray-800 font-montserrat">
                 Apa itu Kain Perca ?
               </div>
-              <p className="text-gray-800 text-base px-6 mb-5 font-inter ">
+              <p className="px-6 mb-5 text-base text-gray-800 font-inter ">
                 Kain perca adalah potongan kecil sisa kain yang digunakan dalam
                 kerajinan tangan atau quilting untuk menciptakan berbagai proyek
                 kreatif.
               </p>
             </div>
-            <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
               <div className="flex items-center justify-center">
                 <Link
                   href="/sudut-edukasi"
-                  className="mx-auto lg:mx-0 gradient text-secondary font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out font-inter"
+                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-none focus:shadow-outline hover:scale-105 font-inter"
                 >
                   Lihat
                 </Link>
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-            <div className="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-              <div className="w-full font-bold text-xl text-gray-800 px-6 font-montserrat">
+          <div className="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
+            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+              <div className="w-full px-6 text-xl font-bold text-gray-800 font-montserrat">
                 Dampak Positif Kain Perca
               </div>
-              <p className="text-gray-800 text-base px-6 mb-5 font-inter">
+              <p className="px-6 mb-5 text-base text-gray-800 font-inter">
                 Penggunaan kain perca memiliki dampak positif yang signifikan
                 dalam praktik jahitan dan kerajinan
               </p>
             </div>
-            <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
+            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
               <div className="flex items-center justify-end">
                 <Link
                   href="/sudut-edukasi/dampak-positif-kain-perca"
-                  className="mx-auto lg:mx-0 gradient text-secondary font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out font-inter"
+                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-none focus:shadow-outline hover:scale-105 font-inter"
                 >
                   Lihat
                 </Link>

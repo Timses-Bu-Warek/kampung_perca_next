@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import useSWR from "swr";
 import { useParams } from "next/navigation";
-import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
+import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
 import { SetStateAction, useState } from "react";
 import Breadcrumbs from "@/app/components/breadcrumbs";
 import RecommendationComp from "@/app/components/RecommendationComp";
@@ -127,27 +127,27 @@ export default function DetailedProduct() {
           )}
           {/* <div className="grid grid-cols-5 gap-4 mt-4">
                         <img
-                            src="/img/Produk/rekomen.jpg"
+                            src="/img/Produk/rekomen.webp"
                             className="w-full border cursor-pointer border-primary"
                             alt="Rekomen"
                         />
                         <img
-                            src="/img/Produk/rekomen.jpg"
+                            src="/img/Produk/rekomen.webp"
                             className="w-full border cursor-pointer"
                             alt="Rekomen"
                         />
                         <img
-                            src="/img/Produk/rekomen.jpg"
+                            src="/img/Produk/rekomen.webp"
                             className="w-full border cursor-pointer"
                             alt="Rekomen"
                         />
                         <img
-                            src="/img/Produk/rekomen.jpg"
+                            src="/img/Produk/rekomen.webp"
                             className="w-full border cursor-pointer"
                             alt="Rekomen"
                         />
                         <img
-                            src="/img/Produk/rekomen.jpg"
+                            src="/img/Produk/rekomen.webp"
                             className="w-full border cursor-pointer"
                             alt="Rekomen"
                         />

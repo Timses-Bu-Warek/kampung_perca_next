@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/app/components/breadcrumbs";
-import FotoContoh from "@/public/img/contoh.jpg";
-import FotoManfaat from "@/public/img/manfaat.jpg";
-import FotoPotensi from "@/public/img/potensi.jpg";
+import FotoContoh from "@/public/img/contoh.webp";
+import FotoManfaat from "@/public/img/manfaat.webp";
+import FotoPotensi from "@/public/img/potensi.webp";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

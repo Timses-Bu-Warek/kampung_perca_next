@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 // import getAllProducts from "@/lib/getAllProducts";
 import getSearchProducts from "@/lib/getSearchProducts";
-import ImageContoh from "@/public/img/Produk/contoh_baju.jpg";
+import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
 
 import CldImage from '@/app/components/CldImage';
 
@@ -54,7 +54,7 @@ export default async function ProductCompSearch({
             )}
             {/* {console.log(product.FotoProduk)} */}
             {/* <Image
-              src="/img/Produk/contoh_baju.jpg"
+              src="/img/Produk/contoh_baju.webp"
               alt="Baju Perca"
               width={150}
               height={150}
