@@ -215,10 +215,10 @@ export default function Home() {
                 Lokasi Kampung Perca
               </h1>
               <p className="mb-8 text-justify text-gray-600 font-inter">
-                Kampung Perca terletak di perkampungan yang padat penduduk,
-                yaitu disebuah gang yang bernama Gang Raden Alibasyah, tepat di
-                Jalan Raya Wangun Atas RT 004 / RW 001, Kelurahan Sindangsari,
-                Kecamatan Bogor Timur, Kota Bogor, Jawa Barat.
+                Kampung Perca berada di kawasan padat penduduk, tepatnya di Gang
+                Raden Alibasyah, Jalan Raya Wangun Atas RT 004 / RW 001,
+                Kelurahan Sindangsari, Kecamatan Bogor Timur, Kota Bogor, Jawa
+                Barat.
               </p>
               <br />
               <br />
