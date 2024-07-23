@@ -96,7 +96,7 @@ export default function Home() {
 
       <div className="container mx-auto my-24 md:px-6">
         {/*  ads section  */}
-        {/* <div className="container pb-16 mb-16">
+        <div className="container pb-16 mb-16">
           <Link
             href="https://ibik.ac.id"
             target="_blank"
@@ -113,7 +113,7 @@ export default function Home() {
               className="w-full rounded-md shadow-md"
             />
           </Link>
-        </div> */}
+        </div>
         {/*  end ads section  */}
 
         {/* vid */}
