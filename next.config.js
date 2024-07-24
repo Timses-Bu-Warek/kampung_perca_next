@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "pakar.stakcdn.com",
+        hostname: "pakuanraya.com",
         port: "",
-        pathname: "/app/assets/**",
+        pathname: "/wp-content/uploads/**",
       },
     ],
   },
