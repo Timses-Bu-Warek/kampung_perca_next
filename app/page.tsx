@@ -151,7 +151,7 @@ export default function Home() {
             <div className="w-full mb-12 lg:mb-0 lg:w-5/12">
               <div className="flex lg:py-12">
                 <Image
-                  src="https://pakar.stakcdn.com/app/assets/2021/12/17130606/IMG-20211217-WA0042.jpg"
+                  src="https://pakuanraya.com/wp-content/uploads/2021/12/IMG-20211217-WA0042.jpg"
                   className="z-0 w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]"
                   alt="image"
                   width={500}
