@@ -1,10 +1,17 @@
+// pages/sudut_edukasi.tsx
 import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
 import FotoContoh from "@/public/img/contoh.webp";
-import { Metadata } from "next";
+import dynamic from "next/dynamic";
+import React, { Suspense } from "react";
 
-export const metadata: Metadata = {
+const StructuredData = dynamic(() => import("../components/StructuredData"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+
+const metadata = {
   title: "Kain Perca adalah ?",
   description:
     "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
@@ -24,9 +31,36 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function Sudut_edukasi() {
+const Sudut_edukasi = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.kampungperca.id/sudut-edukasi",
+    },
+    headline: "Kain Perca adalah ?",
+    description:
+      "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
+    image: "https://www.kampungperca.id/img/contoh.webp",
+    author: {
+      "@type": "Person",
+      name: "Kampung Perca Sindangsari",
+      url: "https://www.kampungperca.id/author",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Kampung Perca Sindangsari",
+    },
+    datePublished: "2024-07-25",
+    dateModified: "2024-07-25",
+  };
+
   return (
     <div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <StructuredData data={structuredData} />
+      </Suspense>
       <section className="py-8 bg-white border-b">
         <Breadcrumbs
           params={{
@@ -170,4 +204,6 @@ export default function Sudut_edukasi() {
       </section>
     </div>
   );
-}
+};
+
+export default Sudut_edukasi;
