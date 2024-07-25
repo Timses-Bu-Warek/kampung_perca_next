@@ -102,6 +102,7 @@ export default function DetailedProduct() {
           {data.FotoProduk ? (
             <CldImage
               width={500}
+              loading="lazy"
               height={500}
               src={data.FotoProduk}
               alt={data.NamaProduk}
