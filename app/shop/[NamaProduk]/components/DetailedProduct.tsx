@@ -123,6 +123,7 @@ export default function DetailedProduct() {
               height={500}
               sizes="100vw"
               className="w-full h-auto"
+              loading="lazy"
               alt="Contoh Produk"
             />
           )}
