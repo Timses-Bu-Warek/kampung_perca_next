@@ -82,6 +82,7 @@ const Sudut_edukasi = () => {
                     width={500}
                     height={500}
                     placeholder="blur"
+                    loading="lazy"
                     sizes="100vw"
                     alt="Trendy Pants and Shoes"
                     className="w-full h-auto rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"

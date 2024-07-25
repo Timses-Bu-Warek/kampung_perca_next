@@ -157,6 +157,7 @@ export default function Home() {
                 width={500}
                 height={500}
                 placeholder="blur"
+                loading="lazy"
                 sizes="100vw"
                 alt="Sistem Informasi Kampung Perca di bawah binaan IBI Kesatuan"
                 className="w-full rounded-md shadow-md"
@@ -206,6 +207,7 @@ export default function Home() {
                     width={500}
                     height={500}
                     sizes="100vw"
+                    loading="lazy"
                     style={{
                       width: "100%",
                       height: "auto",

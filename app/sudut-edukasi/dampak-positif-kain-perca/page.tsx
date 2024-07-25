@@ -53,6 +53,7 @@ export default function Dampak() {
                     width={500}
                     height={500}
                     placeholder="blur"
+                    loading="lazy"
                     sizes="100vw"
                     alt="Trendy Pants and Shoes"
                     className="w-full h-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
