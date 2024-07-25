@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description:
     "Desa Wisata Kampung Perca Sindangsari menawarkan beragam kerajinan unik dari kain perca yang penuh warna. Sebagai inisiatif dari Pemerintah Kota Bogor, kampung tematik ini bertujuan untuk mempromosikan budaya lokal dan kreativitas masyarakat. Kunjungi kami untuk pengalaman wisata yang inspiratif dan penuh keindahan!",
   alternates: {
-    canonical: `https://kampungperca.id/`,
+    canonical: `https://www.kampungperca.id/`,
   },
   // instruksi untuk pengindeksan oleh mesin pencari,
   robots: {

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
   alternates: {
-    canonical: `/sudut-edukasi`,
+    canonical: `https://www.kampungperca.id/`,
   },
   robots: {
     index: true,
