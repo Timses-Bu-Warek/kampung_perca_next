@@ -5,7 +5,7 @@ import FotoContoh from "@/public/img/contoh.webp";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Apa itu kain perca ?",
+  title: "Kain Perca adalah ?",
   description:
     "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
   robots: {
@@ -56,7 +56,7 @@ export default function Sudut_edukasi() {
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
                   <div className="px-6 py-12 md:px-12">
                     <h2 className="mb-4 text-2xl font-bold">
-                      Apa itu Kain Perca ?
+                      Pengertian Kain Perca
                     </h2>
                     <p className="mb-6 text-justify text-neutral-800">
                       Kain perca adalah potongan-potongan kecil atau sisa-sisa
