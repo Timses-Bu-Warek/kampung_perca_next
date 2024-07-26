@@ -4,7 +4,7 @@ import Link from "next/link";
 import getSearchProducts from "@/lib/getSearchProducts";
 import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
 
-import CldImage from '@/app/components/CldImage';
+import CldImage from "@/app/components/CldImage";
 
 export default async function ProductCompSearch({
   params,
@@ -36,6 +36,7 @@ export default async function ProductCompSearch({
                 alt={product.NamaProduk}
                 className="w-full min-h-[200px]"
               />
+            ) : (
               // <Image
               //   src={product.FotoProduk}
               //   alt={product.NamaProduk}
@@ -43,7 +44,6 @@ export default async function ProductCompSearch({
               //   height={100}
               //   className="w-full min-h-[200px]"
               // />
-            ) : (
               <Image
                 src={ImageContoh}
                 alt={product.NamaProduk}
@@ -87,8 +87,8 @@ export default async function ProductCompSearch({
                   product.NamaProduk.length <= 8
                     ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
                     : product.NamaProduk.length >= 15
-                      ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
-                      : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
+                    ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                    : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                 }
               >
                 {product.NamaProduk}
@@ -129,7 +129,7 @@ export default async function ProductCompSearch({
               product.NamaProduk
             }
             title="Hubungi Saya"
-            rel="noopener"
+            rel="noopener noreferrer"
             target="_blank"
             className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
           >

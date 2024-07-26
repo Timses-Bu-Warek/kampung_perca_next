@@ -3,15 +3,15 @@ import Link from "next/link";
 import getAllProducts from "@/lib/getAllProducts";
 import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
 
-import { v2 as cloudinary } from 'cloudinary';
-import CldImage from '@/app/components/CldImage';
+import { v2 as cloudinary } from "cloudinary";
+import CldImage from "@/app/components/CldImage";
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
-})
+});
 
 export default async function ProductComp() {
   const productsData: Promise<Products[]> = getAllProducts();
@@ -36,6 +36,7 @@ export default async function ProductComp() {
                 alt={product.NamaProduk}
                 className="w-full min-h-[200px]"
               />
+            ) : (
               // <Image
               //   src={product.FotoProduk}
               //   alt={product.NamaProduk}
@@ -43,7 +44,6 @@ export default async function ProductComp() {
               //   height={100}
               //   className="w-full min-h-[200px]"
               // />
-            ) : (
               <Image
                 src={ImageContoh}
                 alt={product.NamaProduk}
@@ -88,8 +88,8 @@ export default async function ProductComp() {
                     product.NamaProduk.length <= 8
                       ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
                       : product.NamaProduk.length >= 15
-                        ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
-                        : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
+                      ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                      : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                   }
                 >
                   {product.NamaProduk}
@@ -130,7 +130,7 @@ export default async function ProductComp() {
                 product.NamaProduk
               }
               title="Hubungi Saya"
-              rel="noopener"
+              rel="noopener noreferrer"
               target="_blank"
               className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
             >

@@ -223,7 +223,7 @@ export default function DetailedProduct() {
             <Link
               href={waAPI}
               title="Hubungi Saya"
-              rel="noopener"
+              rel="noopener noreferrer"
               target="_blank"
               className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium text-white uppercase transition border rounded bg-primary border-primary md:w-40 font-inter hover:bg-transparent hover:text-primary"
               passHref
@@ -251,6 +251,8 @@ export default function DetailedProduct() {
               <Link
                 href="https://www.instagram.com/kampungperca_kotabogor/"
                 className="w-8 h-8 hover:text-gray-500"
+                target="_blank"
+                rel="noopener noreferrer"
                 passHref
               >
                 <i className="fab fa-instagram"></i>{" "}
