@@ -45,8 +45,7 @@ const Sudut_edukasi = () => {
     image: "https://www.kampungperca.id/img/contoh.webp",
     author: {
       "@type": "Person",
-      name: "Kampung Perca Sindangsari",
-      url: "https://www.kampungperca.id/author",
+      name: "Kampung Perca Kota Bogor",
     },
     publisher: {
       "@type": "Organization",

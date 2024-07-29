@@ -5,6 +5,7 @@ import FotoContoh from "@/public/img/contoh.webp";
 import FotoManfaat from "@/public/img/manfaat.webp";
 import FotoPotensi from "@/public/img/potensi.webp";
 import { Metadata } from "next";
+import StructuredData from "@/app/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Potensi Kain Perca di Kota Bogor",
@@ -29,9 +30,33 @@ export const metadata: Metadata = {
   ],
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.kampungperca.id/sudut-edukasi/potensi-kain-perca",
+  },
+  headline: "Potensi Kain Perca di Kota Bogor",
+  description:
+    "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal.",
+  image: "https://www.kampungperca.id/img/potensi.webp", // URL gambar utama
+  author: {
+    "@type": "Person",
+    name: "Kampung Perca Kota Bogor", // Nama penulis
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Kampung Perca Kota Bogor",
+  },
+  datePublished: "2024-07-29", // Tanggal publikasi
+  dateModified: "2024-07-29", // Tanggal terakhir diubah
+};
+
 export default function Potensi() {
   return (
     <div>
+      <StructuredData data={structuredData} />
       <section className="bg-white border-b py-8">
         <Breadcrumbs
           params={{
@@ -114,13 +139,6 @@ export default function Potensi() {
                         perca dapat digunakan dalam proyek kolaborasi dengan
                         desainer lokal. Ini bisa menghasilkan koleksi unik yang
                         berfokus pada keberlanjutan dan kreativitas.
-                      </li>
-                      <li className="mb-2">
-                        <b>Kampanye Lingkungan dan Sosial:</b> Penggunaan kain
-                        perca juga dapat menjadi bagian dari kampanye lingkungan
-                        dan sosial. Ini dapat meningkatkan kesadaran akan
-                        praktik berkelanjutan, pengurangan limbah, dan
-                        pentingnya daur ulang dalam masyarakat.
                       </li>
                       <li className="mb-2">
                         <b>Kampanye Lingkungan dan Sosial:</b> Penggunaan kain

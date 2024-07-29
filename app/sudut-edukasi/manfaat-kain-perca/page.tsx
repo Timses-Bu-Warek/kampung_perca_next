@@ -3,6 +3,7 @@ import Image from "next/image";
 import Breadcrumbs from "@/app/components/breadcrumbs";
 import FotoContoh from "@/public/img/contoh.webp";
 import { Metadata } from "next";
+import StructuredData from "@/app/components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Manfaat Kain Perca",
@@ -27,9 +28,33 @@ export const metadata: Metadata = {
   ],
 };
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://www.kampungperca.id/sudut-edukasi/manfaat-kain-perca",
+  },
+  headline: "Manfaat Kain Perca",
+  description:
+    "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal.",
+  image: "https://www.kampungperca.id/img/contoh.webp", // URL gambar utama
+  author: {
+    "@type": "Person",
+    name: "Kampung Perca Kota Bogor", // Nama penulis
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Kampung Perca Kota Bogor",
+  },
+  datePublished: "2024-07-29", // Tanggal publikasi
+  dateModified: "2024-07-29", // Tanggal terakhir diubah
+};
+
 export default function Manfaat() {
   return (
     <div>
+      <StructuredData data={structuredData} />
       <section className="py-8 bg-white border-b">
         <Breadcrumbs
           params={{
