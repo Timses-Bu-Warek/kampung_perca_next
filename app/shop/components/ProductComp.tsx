@@ -30,11 +30,12 @@ export default async function ProductComp() {
           <div className="relative">
             {product.FotoProduk ? (
               <CldImage
-                width={100}
-                height={100}
+                width={0}
+                height={0}
+                sizes="100vw"
                 src={product.FotoProduk}
                 alt={product.NamaProduk}
-                className="w-full min-h-[200px]"
+                className="w-full h-80 object-cover"
               />
             ) : (
               // <Image
@@ -47,19 +48,12 @@ export default async function ProductComp() {
               <Image
                 src={ImageContoh}
                 alt={product.NamaProduk}
-                width={100}
-                height={100}
-                className="w-full min-h-full"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-full h-80 object-cover"
               />
             )}
-            {/* {console.log(product.FotoProduk)} */}
-            {/* <Image
-              src="/img/Produk/contoh_baju.webp"
-              alt="Baju Perca"
-              width={150}
-              height={150}
-              className="w-full"
-            /> */}
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
               <Link
                 href={`/shop/${product.NamaProduk}`}

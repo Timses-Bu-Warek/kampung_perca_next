@@ -29,11 +29,13 @@ export default async function RecommendationComp() {
           <div className="relative">
             {product.FotoProduk ? (
               <CldImage
-                width={100}
-                height={100}
+                width={0}
+                height={0}
+                sizes="100vw"
+                loading="lazy"
                 src={product.FotoProduk}
                 alt={product.NamaProduk}
-                className="w-full min-h-[200px]"
+                className="w-full h-80 object-cover"
               />
             ) : (
               // <Image
@@ -46,9 +48,10 @@ export default async function RecommendationComp() {
               <Image
                 src={ImageContoh}
                 alt={product.NamaProduk}
-                width={100}
-                height={100}
-                className="w-full min-h-full"
+                width={0}
+                height={0}
+                sizes="100vw"
+                className="w-full h-80 object-cover"
               />
             )}
             {/* {console.log(product.FotoProduk)} */}

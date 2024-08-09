@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { Metadata } from "next";
 import Image from "next/image";
@@ -10,7 +10,7 @@ import Breadcrumbs from "@/app/components/breadcrumbs";
 import { useSearchParams } from "next/navigation";
 import ProductsSearchBar from "../components/ProductsSearchBar";
 import { Suspense, useCallback } from "react";
-import Loading from "./loading"
+import Loading from "./loading";
 import { ProductSortSearch } from "../components/ProductSortSearch";
 
 // export const metadata: Metadata = {
@@ -18,31 +18,29 @@ import { ProductSortSearch } from "../components/ProductSortSearch";
 //   description: "Beli produk kampung perca",
 // };
 
-
 export default function Shop() {
-
   // Return as Object (so must be converted! Convertion can read below)
   // console.log("searchParams: " + searchParams)
 
-  // Retrieve Key from searchParams 
+  // Retrieve Key from searchParams
   // Example: /shop/search?NamaProduk=tas
   // retrive NamaProduk
   // let searchQueryKeys : any = Object.keys(searchParams);
   // console.log("searchQueryKeys: " + searchQueryKeys)
 
-  // Retrieve Values from searchParams 
+  // Retrieve Values from searchParams
   // Example: /shop/search?NamaProduk=tas
   // retrive tas
   // const searchQueryValues: any = Object.values(searchParams);
   // console.log("searchQueryValues: " + searchQueryValues)
 
-  // Retrieve Entries (key, values) from searchParams 
+  // Retrieve Entries (key, values) from searchParams
   // Example: /shop/search?NamaProduk=tas
   // retrive NamaProduk,tas
   // const searchQueryEntries: any = Object.entries(searchParams);
   // console.log("searchQueryEntries: " + searchQueryEntries)
 
-  const searchParams: any = useSearchParams()!
+  const searchParams: any = useSearchParams()!;
 
   const searchNamaProdukValues: any = searchParams.get("NamaProduk");
   const sortValues: any = searchParams.get("sort");
@@ -51,9 +49,11 @@ export default function Shop() {
     <Suspense fallback={<Loading />}>
       <main>
         {/* <!-- breadcrums --> */}
-        <Breadcrumbs params={{
-          slug: "Shop"
-        }} />
+        <Breadcrumbs
+          params={{
+            slug: "Shop",
+          }}
+        />
         {/* <!-- end breadcrums --> */}
 
         {/* <!-- shop wrapper --> */}
@@ -304,10 +304,12 @@ export default function Shop() {
             {/* <!-- sorting end --> */}
 
             {/* <!-- produk grid --> */}
-            <ProductCompSearch params={{
-              NamaProduk: searchNamaProdukValues,
-              sort: sortValues
-            }} />
+            <ProductCompSearch
+              params={{
+                NamaProduk: searchNamaProdukValues,
+                sort: sortValues,
+              }}
+            />
 
             {/* <!-- end produk grid --> */}
           </div>
