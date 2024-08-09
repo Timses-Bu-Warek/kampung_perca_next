@@ -14,6 +14,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "../styles/fontawesome-free-6.5.2-web/css/fontawesome.css";
 import "../styles/fontawesome-free-6.5.2-web/css/brands.css";
 import "../styles/fontawesome-free-6.5.2-web/css/solid.css";
+import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 // import ReactModal from 'react-modal'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -70,22 +71,23 @@ export default function RootLayout({
             content="x7_XAorWrs5rebRXh7_DFkCMkj_vERwQnyulU71tNRI"
           />
         </Head>
-        <Script
-          src="https://static.elfsight.com/platform/platform.js"
-          data-use-service-core
-          defer
-        ></Script>
         {/* <Script
             src="https://kit.fontawesome.com/e8fc9e0274.js"
             crossOrigin="anonymous"
           ></Script> */}
         <body>
-          <div className="elfsight-app-856283f3-91d0-45b5-bd6a-f60a74918f8f"></div>
           <Header />
           {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
           {children}
           <Link href="#" passHref>
             <FloatingButton />
+          </Link>
+          <Link
+            href={
+              "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau tanya seputar produk Kampung Perca"
+            }
+          >
+            <WhatsAppFloatingButton />
           </Link>
           <Footer />
           <SpeedInsights />
