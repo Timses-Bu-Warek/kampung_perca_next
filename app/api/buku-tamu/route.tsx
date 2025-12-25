@@ -8,12 +8,12 @@ import { NextRequest, NextResponse } from "next/server";
 import { limiter } from "../config/limiter";
 
 type BukuTamu = {
-  nama: "",
-  provinsi: "",
-  kota: "",
-  gender: "",
-  umur: number
-}
+  nama: "";
+  provinsi: "";
+  kota: "";
+  gender: "";
+  umur: number;
+};
 
 // export async function GET(request : Request) {
 //   const { searchParams } = new URL(request.url);
@@ -36,12 +36,12 @@ type BukuTamu = {
 // }
 
 export async function POST(request: Request) {
-  const cookiesBukuTamu = cookies()
+  const cookiesBukuTamu = await cookies();
   const threeDay = 1000 * 60 * 60 * 24 * 3;
-  cookiesBukuTamu.set({name: 'isBukuTamu', value: 'true', secure: true }, )
-  const origin = request.headers.get('origin')
+  cookiesBukuTamu.set({ name: "isBukuTamu", value: "true", secure: true });
+  const origin = request.headers.get("origin");
 
-  const remaining = await limiter.removeTokens(1)
+  const remaining = await limiter.removeTokens(1);
   // console.log('remaining: ', remaining)
 
   try {
@@ -57,21 +57,18 @@ export async function POST(request: Request) {
         status: 429,
         statusText: "Too Many Requests",
         headers: {
-          'Access-Control-Allow-Origin': origin || '*',
-          'Content-Type': 'text/plain',
-        }
-      })
+          "Access-Control-Allow-Origin": origin || "*",
+          "Content-Type": "text/plain",
+        },
+      });
     }
     return new NextResponse(JSON.stringify(allProducts), {
       headers: {
-        'Access-Control-Allow-Origin': origin || "*",
-        'Content-Type': 'application/json',
-      }
-    })
-
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "application/json",
+      },
+    });
   } catch (error) {
-    return new Response("Failed to fetch all prompts", { status: 500 })
+    return new Response("Failed to fetch all prompts", { status: 500 });
   }
 }
-
-

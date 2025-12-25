@@ -1,10 +1,7 @@
 import "../styles/globals.css";
-import { Inter } from "next/font/google";
 import Head from "next/head";
-import Script from "next/script";
 import Header from "./header";
 import { Metadata } from "next";
-import ModalBukuTamu from "./components/ModalBukuTamu";
 import FloatingButton from "./components/FloatingButton";
 import Link from "next/link";
 import { cookies } from "next/headers";
@@ -55,12 +52,12 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cookiesBukuTamu = cookies();
+  const cookiesBukuTamu = await cookies();
   let isFilled = cookiesBukuTamu.has("isBukuTamu");
   return (
     <>
