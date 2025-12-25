@@ -164,8 +164,8 @@ export default function Manfaat() {
           <div className="w-full mb-4">
             <div className="w-64 h-1 py-0 mx-auto my-0 rounded-t opacity-25 gradient"></div>
           </div>
-          <div className="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
-            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+          <div className="flex flex-col grow shrink w-full p-6 md:w-1/3">
+            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow-sm">
               <div className="w-full px-6 text-xl font-bold text-gray-800 font-montserrat">
                 Potensi Kain Perca di Kota Bogor
               </div>
@@ -175,19 +175,19 @@ export default function Manfaat() {
                 unik seperti quilting, tas, dan lainnya.
               </p>
             </div>
-            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
+            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
               <div className="flex items-center justify-start">
                 <Link
                   href="/sudut-edukasi/potensi-kain-perca"
-                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-none focus:shadow-outline hover:scale-105 font-inter"
+                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-hidden focus:shadow-outline hover:scale-105 font-inter"
                 >
                   Lihat
                 </Link>
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
-            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+          <div className="flex flex-col grow shrink w-full p-6 md:w-1/3">
+            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow-sm">
               <div className="w-full px-6 text-xl font-bold text-gray-800 font-montserrat">
                 Apa itu Kain Perca ?
               </div>
@@ -197,19 +197,19 @@ export default function Manfaat() {
                 kreatif.
               </p>
             </div>
-            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
+            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
               <div className="flex items-center justify-center">
                 <Link
                   href="/sudut-edukasi"
-                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-none focus:shadow-outline hover:scale-105 font-inter"
+                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-hidden focus:shadow-outline hover:scale-105 font-inter"
                 >
                   Lihat
                 </Link>
               </div>
             </div>
           </div>
-          <div className="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
-            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+          <div className="flex flex-col grow shrink w-full p-6 md:w-1/3">
+            <div className="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow-sm">
               <div className="w-full px-6 text-xl font-bold text-gray-800 font-montserrat">
                 Dampak Positif Kain Perca
               </div>
@@ -218,11 +218,11 @@ export default function Manfaat() {
                 dalam praktik jahitan dan kerajinan
               </p>
             </div>
-            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
+            <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
               <div className="flex items-center justify-end">
                 <Link
                   href="/sudut-edukasi/dampak-positif-kain-perca"
-                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-none focus:shadow-outline hover:scale-105 font-inter"
+                  className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-hidden focus:shadow-outline hover:scale-105 font-inter"
                 >
                   Lihat
                 </Link>

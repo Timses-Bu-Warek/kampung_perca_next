@@ -22,7 +22,7 @@ export default async function RecommendationComp() {
     <div className="flex flex-col gap-6 md:grid md:grid-cols-4">
       {recProducts.map((product) => (
         <div
-          className="flex flex-col justify-between overflow-hidden bg-white rounded shadow group"
+          className="flex flex-col justify-between overflow-hidden bg-white rounded-sm shadow-sm group"
           key={product.ProdukID}
         >
           {/* <!-- produk image --> */}

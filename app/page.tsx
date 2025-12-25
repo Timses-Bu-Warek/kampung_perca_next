@@ -67,7 +67,7 @@ export default function Home() {
       <main>
         {/*  Banner  */}
         <div className="bg-center bg-no-repeat bg-cover py-36 imageBackgroundCarousel">
-          <div className="p-5 text-white z-[2] mt-[-5rem] lg:ml-9">
+          <div className="p-5 text-white z-2 -mt-20 lg:ml-9">
             <h1 className="mb-4 text-5xl font-bold capitalize font-montserrat">
               Menjelajahi Keindahan Kampung Perca Sindangsari: Keunikan Tradisi
               dan Kehidupan Lokal.
@@ -106,7 +106,7 @@ export default function Home() {
         {/*  features  */}
         {/* <div className="container py-16">
         <div className="flex flex-col justify-center w-10/12 gap-6 mx-auto md:grid md:grid-cols-3">
-          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-sm border-primary">
+          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-xs border-primary">
             <i
               className="object-contain fa-solid fa-truck"
               style={{ fontSize: "2rem" }}
@@ -118,7 +118,7 @@ export default function Home() {
               <p className="text-gray-500 text-sx">order over IDR5000</p>
             </span>
           </div>
-          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-sm border-primary">
+          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-xs border-primary">
             <i
               className="object-contain fa-solid fa-hand-holding-dollar"
               style={{ fontSize: "2rem" }}
@@ -130,7 +130,7 @@ export default function Home() {
               <p className="text-gray-500 text-sx">30 days money return</p>
             </span>
           </div>
-          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-sm border-primary">
+          <div className="flex items-center justify-center gap-5 px-3 py-6 border rounded-xs border-primary">
             <i
               className="object-contain fa-solid fa-clock"
               style={{ fontSize: "2rem" }}
@@ -170,7 +170,7 @@ export default function Home() {
           <h1 className="items-center justify-center w-full mb-6 text-4xl font-bold text-center font-montserrat text-secondary">
             Peresmian Kampung Perca
           </h1>
-          <div className="mb-32 sm:max-w-sm md:max-w-screen-md lg:h-96 lg:translate-x-48">
+          <div className="mb-32 sm:max-w-sm md:max-w-(--breakpoint-md) lg:h-96 lg:translate-x-48">
             <YoutubeFacade
               id="TRoKZ-4m5C0"
               title="Video Kunjungan Kampung Perca"
@@ -296,7 +296,7 @@ export default function Home() {
           Shop by Categories
         </h2>
         <div className="grid grid-cols-3 gap-3">
-          <div className="relative overflow-hidden rounded-sm group">
+          <div className="relative overflow-hidden rounded-xs group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
@@ -305,7 +305,7 @@ export default function Home() {
               passHref
             >Baju</Link>
           </div>
-          <div className="relative overflow-hidden rounded-sm group">
+          <div className="relative overflow-hidden rounded-xs group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
@@ -314,7 +314,7 @@ export default function Home() {
               passHref
             >Baju</Link>
           </div>
-          <div className="relative overflow-hidden rounded-sm group">
+          <div className="relative overflow-hidden rounded-xs group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
@@ -323,7 +323,7 @@ export default function Home() {
               passHref
             >Baju</Link>
           </div>
-          <div className="relative overflow-hidden rounded-sm group">
+          <div className="relative overflow-hidden rounded-xs group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
@@ -332,7 +332,7 @@ export default function Home() {
               passHref
             >Baju</Link>
           </div>
-          <div className="relative overflow-hidden rounded-sm group">
+          <div className="relative overflow-hidden rounded-xs group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"
@@ -341,7 +341,7 @@ export default function Home() {
               passHref
             >Baju</Link>
           </div>
-          <div className="relative overflow-hidden rounded-sm group">
+          <div className="relative overflow-hidden rounded-xs group">
             <Image src={Baju_Categories} alt="Baju" className="w-full" />
             <Link
               href="#"

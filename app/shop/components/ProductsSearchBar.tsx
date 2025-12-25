@@ -25,7 +25,7 @@ export default function ProductsSearchBar() {
         </span>
         <input
           type="text"
-          className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-none"
+          className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-hidden"
           placeholder="Cari"
           value={search}
           onChange={(e) => setSearch(e.target.value)}

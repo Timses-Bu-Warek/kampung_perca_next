@@ -115,7 +115,7 @@ export default function ModalBukuTamu() {
                     type="text"
                     name="nama"
                     id="fname"
-                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
+                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
                     required
                     value={data.nama}
                     onChange={handleChange}
@@ -133,7 +133,7 @@ export default function ModalBukuTamu() {
                       name="provinsi"
                       id="provinsi"
                       required
-                      className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
+                      className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
                       value={data.provinsi}
                       onChange={handleChange}
                     />
@@ -148,7 +148,7 @@ export default function ModalBukuTamu() {
                       name="kota"
                       id="kota"
                       required
-                      className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
+                      className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
                       value={data.kota}
                       onChange={handleChange}
                     />
@@ -169,7 +169,7 @@ export default function ModalBukuTamu() {
                     required
                     value={data.umur}
                     onChange={handleChange}
-                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
+                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
                   />
                 </div>
                 <div id="gender" className="mb-6 text-sm">
@@ -211,7 +211,7 @@ export default function ModalBukuTamu() {
                     type="text"
                     name="kesanPesan"
                     id="kPesan"
-                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-sm border-slate-300 outline-primary"
+                    className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
                     required
                     value={data.kesanPesan}
                     onChange={handleChange}
@@ -221,14 +221,14 @@ export default function ModalBukuTamu() {
               <div className="flex items-center justify-end p-3 border-t w-100">
                 <button
                   type="reset"
-                  className="px-3 py-1 mr-1 text-white bg-red-600 rounded hover:bg-red-700 font-inter"
+                  className="px-3 py-1 mr-1 text-white bg-red-600 rounded-sm hover:bg-red-700 font-inter"
                   onClick={() => setData(initState)}
                 >
                   Reset
                 </button>
                 <button
                   type="submit"
-                  className="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700 font-inter"
+                  className="px-3 py-1 text-white bg-blue-600 rounded-sm hover:bg-blue-700 font-inter"
                 >
                   Submit
                 </button>
@@ -240,13 +240,13 @@ export default function ModalBukuTamu() {
           <div className="flex items-center justify-end p-3 border-t w-100">
             <button
               type="reset"
-              className="px-3 py-1 mr-1 text-white bg-red-600 rounded hover:bg-red-700 font-inter"
+              className="px-3 py-1 mr-1 text-white bg-red-600 rounded-sm hover:bg-red-700 font-inter"
             >
               Reset
             </button>
             <button
               type="submit"
-              className="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700 font-inter"
+              className="px-3 py-1 text-white bg-blue-600 rounded-sm hover:bg-blue-700 font-inter"
             >
               Submit
             </button>

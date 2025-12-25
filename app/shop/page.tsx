@@ -66,7 +66,7 @@ export default function Shop() {
       {/* <!-- shop wrapper --> */}
       <div className="container grid items-start gap-6 pt-4 pb-16 md:grid-cols-4">
         {/* <!-- side bar --> */}
-        <div className="col-span-1 px-4 pb-6 bg-white rounded shadow">
+        <div className="col-span-1 px-4 pb-6 bg-white rounded-sm shadow-sm">
           <div className="space-y-5 divide-y divide-gray-200">
             {/* <!-- search --> */}
             <ProductsSearchBar />
@@ -83,7 +83,7 @@ export default function Shop() {
                   <input
                     type="checkbox"
                     id="cat-1"
-                    className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                    className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
                   <label
                     htmlFor="cat-1"
@@ -97,7 +97,7 @@ export default function Shop() {
                   <input
                     type="checkbox"
                     id="cat-2"
-                    className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                    className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
                   <label
                     htmlFor="cat-2"
@@ -111,7 +111,7 @@ export default function Shop() {
                   <input
                     type="checkbox"
                     id="cat-3"
-                    className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                    className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
                   <label
                     htmlFor="cat-3"
@@ -125,7 +125,7 @@ export default function Shop() {
                   <input
                     type="checkbox"
                     id="cat-4"
-                    className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                    className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
                   <label
                     htmlFor="cat-4"
@@ -150,7 +150,7 @@ export default function Shop() {
                 <input
                   type="checkbox"
                   id="cat-5"
-                  className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                  className="rounded-xs cursor-pointer text-primary focus:ring-0"
                 />
                 <label htmlFor="cat-5" className="ml-3 text-gray-600 cursor-pointer"
                   >Opsi 1</label>
@@ -160,7 +160,7 @@ export default function Shop() {
                 <input
                   type="checkbox"
                   id="cat-6"
-                  className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                  className="rounded-xs cursor-pointer text-primary focus:ring-0"
                 />
                 <label htmlFor="cat-6" className="ml-3 text-gray-600 cursor-pointer"
                   >Opsi 2</label>
@@ -170,7 +170,7 @@ export default function Shop() {
                 <input
                   type="checkbox"
                   id="cat-7"
-                  className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                  className="rounded-xs cursor-pointer text-primary focus:ring-0"
                 />
                 <label htmlFor="cat-7" className="ml-3 text-gray-600 cursor-pointer"
                   >Opsi 3</label>
@@ -180,7 +180,7 @@ export default function Shop() {
                 <input
                   type="checkbox"
                   id="cat-8"
-                  className="rounded-sm cursor-pointer text-primary focus:ring-0"
+                  className="rounded-xs cursor-pointer text-primary focus:ring-0"
                 />
                 <label htmlFor="cat-8" className="ml-3 text-gray-600 cursor-pointer"
                   >Opsi 4</label>
@@ -198,13 +198,13 @@ export default function Shop() {
               <div className="flex items-center mt-4">
                 <input
                   type="text"
-                  className="w-full px-3 py-1 text-sm text-gray-600 border-gray-300 rounded shadow-sm focus:border-primary focus:ring-0"
+                  className="w-full px-3 py-1 text-sm text-gray-600 border-gray-300 rounded-sm shadow-xs focus:border-primary focus:ring-0"
                   placeholder="min"
                 />
                 <span className="mx-3 text-gray-500">-</span>
                 <input
                   type="text"
-                  className="w-full px-3 py-1 text-sm text-gray-600 border-gray-300 rounded shadow-sm focus:border-primary focus:ring-0"
+                  className="w-full px-3 py-1 text-sm text-gray-600 border-gray-300 rounded-sm shadow-xs focus:border-primary focus:ring-0"
                   placeholder="max"
                 />
               </div>
@@ -226,7 +226,7 @@ export default function Shop() {
                   />
                   <label
                     htmlFor="size-xs"
-                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-sm shadow-sm cursor-pointer flexl"
+                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-xs shadow-xs cursor-pointer flexl"
                   >
                     XS
                   </label>
@@ -240,7 +240,7 @@ export default function Shop() {
                   />
                   <label
                     htmlFor="size-s"
-                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-sm shadow-sm cursor-pointer flexl"
+                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-xs shadow-xs cursor-pointer flexl"
                   >
                     S
                   </label>
@@ -254,7 +254,7 @@ export default function Shop() {
                   />
                   <label
                     htmlFor="size-m"
-                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-sm shadow-sm cursor-pointer flexl"
+                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-xs shadow-xs cursor-pointer flexl"
                   >
                     M
                   </label>
@@ -268,7 +268,7 @@ export default function Shop() {
                   />
                   <label
                     htmlFor="size-l"
-                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-sm shadow-sm cursor-pointer flexl"
+                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-xs shadow-xs cursor-pointer flexl"
                   >
                     L
                   </label>
@@ -282,7 +282,7 @@ export default function Shop() {
                   />
                   <label
                     htmlFor="size-xl"
-                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-sm shadow-sm cursor-pointer flexl"
+                    className="items-center justify-center w-6 h-6 text-xs text-gray-600 border border-gray-200 rounded-xs shadow-xs cursor-pointer flexl"
                   >
                     XL
                   </label>
@@ -300,10 +300,10 @@ export default function Shop() {
             <ProductSort />
 
             <div className="flex gap-2 ml-auto sm:hidden">
-              <div className="flex items-center justify-center w-10 text-white border rounded cursor-pointer border-primary h-9 bg-primary">
+              <div className="flex items-center justify-center w-10 text-white border rounded-sm cursor-pointer border-primary h-9 bg-primary">
                 <i className="fas fa-th"></i>
               </div>
-              <div className="flex items-center justify-center w-10 text-gray-600 border border-gray-300 rounded cursor-pointer sm:hidden h-9">
+              <div className="flex items-center justify-center w-10 text-gray-600 border border-gray-300 rounded-sm cursor-pointer sm:hidden h-9">
                 <i className="fas fa-list"></i>
               </div>
             </div>

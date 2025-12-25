@@ -23,7 +23,7 @@ export default async function ProductComp() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {products.map((product) => (
         <div
-          className="bg-white shadow rounded overflow-hidden group flex justify-between flex-col"
+          className="bg-white shadow-sm rounded-sm overflow-hidden group flex justify-between flex-col"
           key={product.ProdukID}
         >
           {/* <!-- produk image --> */}

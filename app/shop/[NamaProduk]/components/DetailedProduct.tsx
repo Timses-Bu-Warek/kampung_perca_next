@@ -225,14 +225,14 @@ export default function DetailedProduct() {
               title="Hubungi Saya"
               rel="noopener noreferrer"
               target="_blank"
-              className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium text-white uppercase transition border rounded bg-primary border-primary md:w-40 font-inter hover:bg-transparent hover:text-primary"
+              className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium text-white uppercase transition border rounded-sm bg-primary border-primary md:w-40 font-inter hover:bg-transparent hover:text-primary"
               passHref
             >
               <i className="fas fa-shopping-bag"></i>Order
             </Link>
             {/* <Link
                             href="#"
-                            className="flex items-center gap-2 px-8 py-2 font-medium text-gray-600 uppercase transition border border-gray-300 rounded font-inter hover:text-primary"
+                            className="flex items-center gap-2 px-8 py-2 font-medium text-gray-600 uppercase transition border border-gray-300 rounded-sm font-inter hover:text-primary"
                             passHref
                         >
                             <i className="fas fa-heart"></i>like

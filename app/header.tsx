@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    // <header className="mb-0 shadow-sm sticky top-0 bg-transparent z-40">
+    // <header className="mb-0 shadow-xs sticky top-0 bg-transparent z-40">
     <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-white">
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start text-primary">
@@ -18,7 +18,7 @@ export default function Header() {
             <b>Kampung Perca</b>
           </Link>
           <button
-            className="text-primary cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+            className="text-primary cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded-sm bg-transparent block lg:hidden outline-hidden focus:outline-hidden"
             type="button"
             title="menuButton"
             onClick={() => setNavbarOpen(!navbarOpen)}
@@ -28,7 +28,7 @@ export default function Header() {
         </div>
         <div
           className={
-            "lg:flex flex-grow items-center md:space-x-32" +
+            "lg:flex grow items-center md:space-x-32" +
             (navbarOpen ? " flex" : " hidden")
           }
         >
