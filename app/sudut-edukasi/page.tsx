@@ -3,13 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
 import FotoContoh from "@/public/img/contoh.webp";
-import dynamic from "next/dynamic";
-import React, { Suspense } from "react";
-
-const StructuredData = dynamic(() => import("../components/StructuredData"), {
-  ssr: false,
-  loading: () => <p>Loading...</p>,
-});
+import { Suspense } from "react";
+import StructuredData from "../components/StructuredData";
 
 const metadata = {
   title: "Kain Perca adalah ?",
