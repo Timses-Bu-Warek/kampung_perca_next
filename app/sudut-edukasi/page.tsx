@@ -8,7 +8,7 @@ import FotoContoh from '@/public/img/contoh.webp';
 import Breadcrumbs from '../components/breadcrumbs';
 import StructuredData from '../components/StructuredData';
 
-const metadata = {
+export const metadata = {
   description:
     'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal',
   keywords: [
@@ -25,7 +25,7 @@ const metadata = {
     index: true,
     nocache: true,
   },
-  title: 'Kain Perca adalah ?',
+  title: 'Sudut Edukasi - Kampung Perca Sindangsari Kota Bogor',
 };
 
 const Sudut_edukasi = () => {
