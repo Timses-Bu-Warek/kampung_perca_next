@@ -1,4 +1,5 @@
 "use client";
+
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Link from "next/link";
@@ -11,8 +12,6 @@ import QuantityComp from "./QuantityComp";
 import SizeComp from "./SizeComp";
 import CldImage from "@/app/components/CldImage";
 import { serverEnvironment } from "@/lib/env/server";
-
-// export const dynamic = 'force-dynamic';
 
 const fetcher = async (address: string) => {
   const response = await fetch(
