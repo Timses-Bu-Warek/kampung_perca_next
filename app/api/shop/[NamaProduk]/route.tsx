@@ -4,13 +4,12 @@
 // contoh: http://localhost:3000/api/shop/Baju%20Pangsi
 
 import { connectToDatabase } from "@/lib/mongo";
-import { NextRequest, NextResponse } from "next/server";
-import { ObjectId } from "mongodb";
+import { NextResponse } from "next/server";
 
 // export async function GET(request : Request, context : { params : {id: number} }) {
 export async function GET(
   request: Request,
-  context: { params: Promise<{ NamaProduk: string }> }
+  context: { params: Promise<{ NamaProduk: string }> },
 ) {
   // const { searchParams } = new URL(request.url);
   // const API_SECRET_KEY = searchParams.get("API_SECRET_KEY")
