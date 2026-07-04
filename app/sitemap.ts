@@ -13,7 +13,7 @@ export default async function sitemap() {
 	const productUrls =
 		product?.map((products: { NamaProduk: any }) => {
 			return {
-				url: `${baseUrl}shop/${products.NamaProduk}`,
+				url: `${baseUrl}shop/${products?.NamaProduk}`,
 				lastModified: new Date(),
 			};
 		}) ?? [];
