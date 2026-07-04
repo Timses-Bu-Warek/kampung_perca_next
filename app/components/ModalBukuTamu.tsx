@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent, ChangeEvent } from "react";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 
 type BukuTamu = {
@@ -35,24 +35,24 @@ export default function ModalBukuTamu() {
     const res =
       process.env.NODE_ENV === "production"
         ? await fetch("https://www.kampungperca.id/api/buku-tamu", {
-          method: "POST",
-          headers: {
-            'Access-Control-Allow-Origin': origin || '*',
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nama,
-            provinsi,
-            kota,
-            gender,
-            umur,
-            kesanPesan,
-          }),
-        })
+            method: "POST",
+            headers: {
+              "Access-Control-Allow-Origin": origin || "*",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              nama,
+              provinsi,
+              kota,
+              gender,
+              umur,
+              kesanPesan,
+            }),
+          })
         : await fetch("http://localhost:3000/api/buku-tamu", {
             method: "POST",
             headers: {
-              'Access-Control-Allow-Origin': origin || '*',
+              "Access-Control-Allow-Origin": origin || "*",
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
@@ -72,7 +72,7 @@ export default function ModalBukuTamu() {
   };
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const nama = e.target.name;
 
