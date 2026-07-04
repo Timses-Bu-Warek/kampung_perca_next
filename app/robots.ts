@@ -1,3 +1,4 @@
+import { serverEnvironment } from "@/lib/env/server";
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -8,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://www.kampungperca.id/sitemap.xml",
+    sitemap: `${serverEnvironment.BASE_URL}/sitemap.xml`,
   };
 }
