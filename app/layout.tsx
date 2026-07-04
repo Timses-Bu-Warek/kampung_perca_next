@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import Header from "./header";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import FloatingButton from "./components/FloatingButton";
 import Link from "next/link";
 import { cookies } from "next/headers";
