@@ -2,29 +2,27 @@
 // http://localhost:3000/api/shop/search?=[NamaProduk]
 // https://kampung-perca.vercel.app/api/shop/search?=[NamaProduk]
 
+import { serverEnvironment } from "@/lib/env/server";
 import { connectToDatabase } from "@/lib/mongo";
-import { MongoClient, Filter } from "mongodb";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { request } from "urllib";
 
 // console.log("Nama Produk: " + nama);
 
-const ATLAS_API_BASE_URL = "https://cloud.mongodb.com/api/atlas/v1.0"
-const ATLAS_PROJECT_ID = process.env.MONGODB_ATLAS_PROJECT_ID
-const ATLAS_CLUSTER_NAME = process.env.MONGODB_ATLAS_CLUSTER_NAME
-const ATLAS_CLUSTER_API_URL = `${ATLAS_API_BASE_URL}/groups/${ATLAS_PROJECT_ID}/clusters/${ATLAS_CLUSTER_NAME}`
-const ATLAS_SEARCH_INDEX_API_URL = `${ATLAS_CLUSTER_API_URL}/fts/indexes`
+const ATLAS_API_BASE_URL = "https://cloud.mongodb.com/api/atlas/v1.0";
+const ATLAS_PROJECT_ID = serverEnvironment.MONGODB_ATLAS_PROJECT_ID;
+const ATLAS_CLUSTER_NAME = serverEnvironment.MONGODB_ATLAS_CLUSTER;
+const ATLAS_CLUSTER_API_URL = `${ATLAS_API_BASE_URL}/groups/${ATLAS_PROJECT_ID}/clusters/${ATLAS_CLUSTER_NAME}`;
+const ATLAS_SEARCH_INDEX_API_URL = `${ATLAS_CLUSTER_API_URL}/fts/indexes`;
 
-const ATLAS_API_PUBLIC_KEY = process.env.MONGODB_ATLAS_PUBLIC_KEY
-const ATLAS_API_PRIVATE_KEY = process.env.MONGODB_ATLAS_PRIVATE_KEY
-const DIGEST_AUTH = `${ATLAS_API_PUBLIC_KEY}:${ATLAS_API_PRIVATE_KEY}`
+const ATLAS_API_PUBLIC_KEY = serverEnvironment.MONGODB_ATLAS_PUBLIC_KEY;
+const ATLAS_API_PRIVATE_KEY = serverEnvironment.MONGODB_ATLAS_PRIVATE_KEY;
+const DIGEST_AUTH = `${ATLAS_API_PUBLIC_KEY}:${ATLAS_API_PRIVATE_KEY}`;
 
-const USER_SEARCH_INDEX_NAME = 'user_search'
-const USER_AUTOCOMPLETE_INDEX_NAME = 'user_autocomplete'
+const USER_SEARCH_INDEX_NAME = "user_search";
+const USER_AUTOCOMPLETE_INDEX_NAME = "user_autocomplete";
 
-const pipeline = []
-
-
+const pipeline = [];
 
 // export async function GET(request: Request) {
 //   try {
@@ -64,7 +62,6 @@ const pipeline = []
 
 //   const pipeline = []
 
-
 //     pipeline.push({
 //       $search: {
 //         index: USER_SEARCH_INDEX_NAME,
@@ -96,66 +93,112 @@ const pipeline = []
 
 export async function GET(request: Request) {
   // const searchQuery = req.query.query as string
-  const origin = request.headers.get('origin')
+  const origin = request.headers.get("origin");
   const { searchParams } = new URL(request.url);
-  const searchQueryNamaProduk = searchParams.get("NamaProduk")
-  const searchQuerySort = searchParams.get("sort")
+  const searchQueryNamaProduk = searchParams.get("NamaProduk");
+  const searchQuerySort = searchParams.get("sort");
 
   const client = await connectToDatabase();
   const db = client.db("KampungPercaDB");
   const collection = db.collection("products");
   // const collection = db.collection<products>("products")
-  await collection.createIndexes([{ name: 'NamaProduk_text', key: { NamaProduk: 'text' } }])
-  if ((!searchQuerySort || searchQuerySort === "default")&& searchQueryNamaProduk) {
-    const result = await collection.find({ NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } }).toArray()
+  await collection.createIndexes([
+    { name: "NamaProduk_text", key: { NamaProduk: "text" } },
+  ]);
+  if (
+    (!searchQuerySort || searchQuerySort === "default") &&
+    searchQueryNamaProduk
+  ) {
+    const result = await collection
+      .find({ NamaProduk: { $regex: searchQueryNamaProduk, $options: "i" } })
+      .toArray();
     return new NextResponse(JSON.stringify(result), {
       headers: {
-        'Access-Control-Allow-Origin': origin || "*",
-        'Content-Type': 'application/json',
-      }
-    })
-  } else if ((!searchQuerySort || searchQuerySort === "default") && !searchQueryNamaProduk) {
-    const result = await collection.aggregate([{ $sort: { NamaProduk: 1 } }]).toArray()
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "application/json",
+      },
+    });
+  } else if (
+    (!searchQuerySort || searchQuerySort === "default") &&
+    !searchQueryNamaProduk
+  ) {
+    const result = await collection
+      .aggregate([{ $sort: { NamaProduk: 1 } }])
+      .toArray();
     return new NextResponse(JSON.stringify(result), {
       headers: {
-        'Access-Control-Allow-Origin': origin || "*",
-        'Content-Type': 'application/json',
-      }
-    })
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "application/json",
+      },
+    });
   } else if (searchQuerySort === "lowHigh" && searchQueryNamaProduk) {
-    const result = await collection.aggregate([{ $match: { NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } } }, { $sort: { Harga: 1 } }]).toArray()
+    const result = await collection
+      .aggregate([
+        {
+          $match: {
+            NamaProduk: { $regex: searchQueryNamaProduk, $options: "i" },
+          },
+        },
+        { $sort: { Harga: 1 } },
+      ])
+      .toArray();
     return new NextResponse(JSON.stringify(result), {
       headers: {
-        'Access-Control-Allow-Origin': origin || "*",
-        'Content-Type': 'application/json',
-      }
-    })
-  } 
-  else if (searchQuerySort === "lowHigh" && !searchQueryNamaProduk) {
-    const result = await collection.aggregate([{ $sort: { Harga: 1 } }]).toArray()
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "application/json",
+      },
+    });
+  } else if (searchQuerySort === "lowHigh" && !searchQueryNamaProduk) {
+    const result = await collection
+      .aggregate([{ $sort: { Harga: 1 } }])
+      .toArray();
     return new NextResponse(JSON.stringify(result), {
       headers: {
-        'Access-Control-Allow-Origin': origin || "*",
-        'Content-Type': 'application/json',
-      }
-    })
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "application/json",
+      },
+    });
   } else if (searchQuerySort === "highLow" && searchQueryNamaProduk) {
-    const result = await collection.aggregate([{ $match: { NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } } }, { $sort: { Harga: -1 } }]).toArray()
+    const result = await collection
+      .aggregate([
+        {
+          $match: {
+            NamaProduk: { $regex: searchQueryNamaProduk, $options: "i" },
+          },
+        },
+        { $sort: { Harga: -1 } },
+      ])
+      .toArray();
     return new NextResponse(JSON.stringify(result), {
       headers: {
-        'Access-Control-Allow-Origin': origin || "*",
-        'Content-Type': 'application/json',
-      }
-    })
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "application/json",
+      },
+    });
   } else if (searchQuerySort === "highLow" && !searchQueryNamaProduk) {
-    const result = await collection.aggregate([{ $match: { NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } } }, { $sort: { Harga: -1 } }]).toArray()
+    const result = await collection
+      .aggregate([
+        {
+          $match: {
+            NamaProduk: { $regex: searchQueryNamaProduk, $options: "i" },
+          },
+        },
+        { $sort: { Harga: -1 } },
+      ])
+      .toArray();
     return new NextResponse(JSON.stringify(result), {
       headers: {
-        'Access-Control-Allow-Origin': origin || "*",
-        'Content-Type': 'application/json',
-      }
-    })
+        "Access-Control-Allow-Origin": origin || "*",
+        "Content-Type": "application/json",
+      },
+    });
   }
+  return new NextResponse(JSON.stringify([]), {
+    headers: {
+      "Access-Control-Allow-Origin": origin || "*",
+      "Content-Type": "application/json",
+    },
+  });
 }
 // async function createSearchIndex() {
 //   const userSearchIndex = await findIndexByName(USER_SEARCH_INDEX_NAME)
@@ -230,28 +273,22 @@ export async function GET(request: Request) {
 //   }
 // }
 
-
-
-
-
-
-
 async function findIndexByName(indexName: string) {
   const allIndexesResponse = await request(
     `${ATLAS_SEARCH_INDEX_API_URL}/KampungPercaDB/products`,
     {
-      dataType: 'json',
-      contentType: 'application/json',
-      method: 'GET',
+      dataType: "json",
+      contentType: "application/json",
+      method: "GET",
       digestAuth: DIGEST_AUTH,
-    }
-  )
+    },
+  );
 
-  return (allIndexesResponse.data as any[]).find((i) => i.name === indexName)
+  return (allIndexesResponse.data as any[]).find((i) => i.name === indexName);
 }
 
 async function upsertSearchIndex() {
-  const userSearchIndex = await findIndexByName(USER_SEARCH_INDEX_NAME)
+  const userSearchIndex = await findIndexByName(USER_SEARCH_INDEX_NAME);
   if (!userSearchIndex) {
     await request(ATLAS_SEARCH_INDEX_API_URL, {
       data: {
@@ -263,10 +300,10 @@ async function upsertSearchIndex() {
           dynamic: true,
         },
       },
-      dataType: 'json',
-      contentType: 'application/json',
-      method: 'POST',
+      dataType: "json",
+      contentType: "application/json",
+      method: "POST",
       digestAuth: DIGEST_AUTH,
-    })
+    });
   }
 }
