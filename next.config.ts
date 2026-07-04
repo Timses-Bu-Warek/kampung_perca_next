@@ -13,20 +13,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-const siteUrl = process.env['BASE_URL'];
-
-module.exports = {
-  generateRobotsTxt: true,
-  // tambahkan sitemap ke plugins
-  plugins: [
-    {
-      options: {
-        baseUrl: siteUrl,
-      },
-      resolve: 'next-sitemap',
-    },
-  ],
-  siteUrl,
-};
-
-module.exports = nextConfig;
+export default nextConfig;
