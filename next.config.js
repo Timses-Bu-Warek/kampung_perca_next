@@ -12,7 +12,7 @@ const nextConfig = {
   },
 };
 
-const siteUrl = 'https://kampungperca.id/';
+const siteUrl = process.env['BASE_URL'];
 
 module.exports = {
   generateRobotsTxt: true,
