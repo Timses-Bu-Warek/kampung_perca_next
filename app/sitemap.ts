@@ -5,7 +5,7 @@ export default async function sitemap() {
 	const baseUrl =
 		process.env.NODE_ENV === "production"
 			? serverEnvironment.BASE_URL
-			: "http://localhost:3000/";
+			: "http://localhost:3000";
 
 	//Get All Post
 	const product = await getAllProducts();
@@ -13,7 +13,7 @@ export default async function sitemap() {
 	const productUrls =
 		product?.map((products: { NamaProduk: any }) => {
 			return {
-				url: `${baseUrl}shop/${products?.NamaProduk}`,
+				url: `${baseUrl}/shop/${products?.NamaProduk}`,
 				lastModified: new Date(),
 			};
 		}) ?? [];
