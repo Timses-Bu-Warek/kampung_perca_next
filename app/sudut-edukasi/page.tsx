@@ -5,6 +5,7 @@ import Breadcrumbs from "../components/breadcrumbs";
 import FotoContoh from "@/public/img/contoh.webp";
 import { Suspense } from "react";
 import StructuredData from "../components/StructuredData";
+import { serverEnvironment } from "@/lib/env/server";
 
 const metadata = {
   title: "Kain Perca adalah ?",
@@ -32,12 +33,12 @@ const Sudut_edukasi = () => {
     "@type": "Article",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://www.kampungperca.id/sudut-edukasi",
+      "@id": `${serverEnvironment.BASE_URL}/sudut-edukasi`,
     },
     headline: "Kain Perca adalah ?",
     description:
       "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
-    image: "https://www.kampungperca.id/img/contoh.webp",
+    image: `${serverEnvironment.BASE_URL}/img/contoh.webp`,
     author: {
       "@type": "Person",
       name: "Kampung Perca Kota Bogor",
