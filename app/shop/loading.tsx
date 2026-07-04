@@ -1,12 +1,14 @@
-import Skeleton from "react-loading-skeleton";
-import Breadcrumbs from "../components/breadcrumbs";
+import Skeleton from 'react-loading-skeleton';
+import Breadcrumbs from '../components/breadcrumbs';
 
 export default function Loading() {
+  const newArray = [...Array(30)];
+
   return (
     <main className="container mx-auto">
       <Breadcrumbs
         params={{
-          slug: "Shop",
+          slug: 'Shop',
         }}
       />
       <div className="container grid items-start gap-6 pt-4 pb-16 md:grid-cols-4">
@@ -15,7 +17,11 @@ export default function Loading() {
         </div>
         <div className="col-span-3">
           <div className="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Skeleton count={30} />
+            {newArray.map((_, index) => (
+              <div key={index}>
+                <Skeleton height={300} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
