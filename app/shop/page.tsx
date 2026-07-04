@@ -4,13 +4,14 @@ import Breadcrumbs from "@/app/components/breadcrumbs";
 
 import ProductsSearchBar from "./components/ProductsSearchBar";
 import { ProductSort } from "./components/ProductSort";
+import { serverEnvironment } from "@/lib/env/server";
 
 export const metadata: Metadata = {
   title: "Beli Produk",
   description:
     "Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.",
   alternates: {
-    canonical: `https://www.kampungperca.id/`,
+    canonical: `${serverEnvironment.BASE_URL}/shop`,
   },
   robots: {
     index: true,
