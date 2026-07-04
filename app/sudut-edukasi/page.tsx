@@ -25,7 +25,7 @@ export const metadata = {
     index: true,
     nocache: true,
   },
-  title: 'Sudut Edukasi - Kampung Perca Sindangsari Kota Bogor',
+  title: 'Sudut Edukasi',
 };
 
 const Sudut_edukasi = () => {
