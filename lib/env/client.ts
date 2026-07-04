@@ -1,7 +1,7 @@
 import { createEnv } from "@t3-oss/env-nextjs";
 import { z } from "zod";
  
-export const env = createEnv({
+export const clientEnvironment = createEnv({
   client: {
     NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: z.string().min(1),
     NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET: z.string().min(1),
