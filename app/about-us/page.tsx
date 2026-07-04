@@ -4,7 +4,7 @@ import Image from "next/image";
 import Breadcrumbs from "../components/breadcrumbs";
 import SO from "@/public/img/SO.webp";
 import FotoManfaat from "@/public/img/kp_perca.webp";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 // import MyMapComponent from "./MyMapComponent";
 
