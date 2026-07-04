@@ -1,11 +1,8 @@
 import Image from "next/image";
 import FotoBinaanIBIK from "@/public/img/ads.webp";
 import Link from "next/link";
-import ReactModal from "react-modal";
-import ModalBukuTamu from "./components/ModalBukuTamu";
 import RecommendationComp from "./components/RecommendationComp";
 import NewArrivalComp from "./components/NewArrivalComp";
-import { Metadata } from "next";
 import YoutubeFacade from "./components/youtubefacade";
 import Head from "next/head";
 
