@@ -34,7 +34,7 @@ export default function ModalBukuTamu() {
     // Send data to API Route
     const res =
       process.env.NODE_ENV === "production"
-        ? await fetch("https://www.kampungperca.id/api/buku-tamu", {
+        ? await fetch("/api/buku-tamu", {
             method: "POST",
             headers: {
               "Access-Control-Allow-Origin": origin || "*",
