@@ -12,6 +12,7 @@ import "../styles/fontawesome-free-6.5.2-web/css/fontawesome.css";
 import "../styles/fontawesome-free-6.5.2-web/css/brands.css";
 import "../styles/fontawesome-free-6.5.2-web/css/solid.css";
 import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
+import { serverEnvironment } from "@/lib/env/server";
 // import ReactModal from 'react-modal'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   description:
     "Kampung Perca adalah desa wisata kampung tematik di Sindangsari, Kota Bogor. Desa ini memproduksi kerajinan unik dari kain perca yang penuh warna, mempromosikan budaya lokal dan kreativitas masyarakat.",
   alternates: {
-    canonical: `https://www.kampungperca.id/`,
+    canonical: serverEnvironment.BASE_URL,
   },
   // instruksi untuk pengindeksan oleh mesin pencari,
   robots: {
