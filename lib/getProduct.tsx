@@ -1,12 +1,14 @@
 import "server-only";
-import { serverEnvironment } from "./env/server";
+import { connectToDatabase } from "./mongo";
 
-export default async function getProduct(NamaProduk: string) {
-  const res = await fetch(
-    `${serverEnvironment.BASE_URL}/api/shop/${NamaProduk}`,
-  );
+export default async function getProduct(productName: string) {
+  const client = await connectToDatabase();
 
-  if (!res.ok) throw new Error("Failed to fetch products data");
+  const db = client.db("KampungPercaDB");
 
-  return res.json();
+  const product = await db
+    .collection("products")
+    .findOne({ NamaProduk: productName });
+
+  return product;
 }
