@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-// import getAllProducts from "@/lib/getAllProducts";
 import getSearchProducts from "@/lib/getSearchProducts";
 import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
 
@@ -13,7 +12,7 @@ export default async function ProductCompSearch({
 }) {
   const productsData: Promise<Products[]> = getSearchProducts(
     params.NamaProduk,
-    params.sort
+    params.sort,
   );
 
   const products = await productsData;
@@ -87,8 +86,8 @@ export default async function ProductCompSearch({
                   product.NamaProduk.length <= 8
                     ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
                     : product.NamaProduk.length >= 15
-                    ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
-                    : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
+                      ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                      : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                 }
               >
                 {product.NamaProduk}
