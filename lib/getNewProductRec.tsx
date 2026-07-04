@@ -1,12 +1,12 @@
-import "server-only";
-import { connectToDatabase } from "./mongo";
+import 'server-only';
+import { connectToDatabase } from './mongo';
 
 export default async function getNewProductRec() {
   const client = await connectToDatabase();
-  const db = client.db("KampungPercaDB");
+  const db = client.db('KampungPercaDB');
 
   const products = await db
-    .collection("products")
+    .collection('products')
     .aggregate([{ $sort: { ProdukID: -1 } }])
     .limit(4)
     .toArray();

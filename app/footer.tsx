@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { CopyrightYear } from "./_components/copyright-year";
+import Link from 'next/link';
+import { CopyrightYear } from './_components/copyright-year';
 
 export default function Footer() {
   return (
@@ -97,10 +97,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           target="_blank"
         >
-          <span className="cursor-pointer">
-            {" "}
-            {""}Kampung Perca Sindangsari Kota Bogor
-          </span>
+          <span className="cursor-pointer"> {''}Kampung Perca Sindangsari Kota Bogor</span>
         </Link>
       </div>
     </div>

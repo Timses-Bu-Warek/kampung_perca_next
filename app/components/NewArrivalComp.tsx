@@ -1,14 +1,14 @@
-import { v2 as cloudinary } from "cloudinary";
-import Image from "next/image";
-import Link from "next/link";
-import CldImage from "@/app/components/CldImage";
-import getNewProductRec from "@/lib/getNewProductRec";
-import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
+import { v2 as cloudinary } from 'cloudinary';
+import Image from 'next/image';
+import Link from 'next/link';
+import CldImage from '@/app/components/CldImage';
+import getNewProductRec from '@/lib/getNewProductRec';
+import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 
 cloudinary.config({
-  api_key: process.env["CLOUDINARY_API_KEY"],
-  api_secret: process.env["CLOUDINARY_API_SECRET"],
-  cloud_name: process.env["NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"],
+  api_key: process.env['CLOUDINARY_API_KEY'],
+  api_secret: process.env['CLOUDINARY_API_SECRET'],
+  cloud_name: process.env['NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME'],
   secure: true,
 });
 
@@ -23,17 +23,17 @@ export default async function NewArrivalComp() {
       {recProducts.map((product) => (
         <div
           className="flex flex-col justify-between overflow-hidden bg-white rounded-sm shadow-sm group"
-          key={product["ProdukID"]}
+          key={product['ProdukID']}
         >
           {/* <!-- produk image --> */}
           <div className="relative">
-            {product["FotoProduk"] ? (
+            {product['FotoProduk'] ? (
               <CldImage
-                alt={product["NamaProduk"]}
+                alt={product['NamaProduk']}
                 className="w-full h-80 object-cover"
                 height={0}
                 sizes="100vw"
-                src={product["FotoProduk"]}
+                src={product['FotoProduk']}
                 width={0}
               />
             ) : (
@@ -45,7 +45,7 @@ export default async function NewArrivalComp() {
               //   className="w-full min-h-[200px]"
               // />
               <Image
-                alt={product["NamaProduk"]}
+                alt={product['NamaProduk']}
                 className="w-full h-80 object-cover"
                 height={0}
                 sizes="100vw"
@@ -64,7 +64,7 @@ export default async function NewArrivalComp() {
             <div className="absolute inset-0 flex items-center justify-center gap-2 transition bg-black opacity-0 bg-opacity-40 group-hover:opacity-100">
               <Link
                 className="flex items-center justify-center h-8 text-lg text-white transition rounded-full w-9 bg-primary hover:bg-gray-800"
-                href={`/shop/${product["NamaProduk"]}`}
+                href={`/shop/${product['NamaProduk']}`}
                 passHref
               >
                 <i className="fas fa-search"></i>
@@ -83,22 +83,22 @@ export default async function NewArrivalComp() {
           {/* <!-- produk konten --> */}
           <div className="">
             <div className="px-4 pt-4 pb-3">
-              <Link href={`/shop/${product["NamaProduk"]}`} passHref>
+              <Link href={`/shop/${product['NamaProduk']}`} passHref>
                 <h4
                   className={
-                    product["NamaProduk"].length <= 8
+                    product['NamaProduk'].length <= 8
                       ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
-                      : product["NamaProduk"].length >= 15
+                      : product['NamaProduk'].length >= 15
                         ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
                         : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                   }
                 >
-                  {product["NamaProduk"]}
+                  {product['NamaProduk']}
                 </h4>
               </Link>
               <div className="flex items-baseline mb-1 space-x-2 font-inter">
                 <p className="text-lg font-semibold text-primary">
-                  Rp {Intl.NumberFormat("id-ID").format(product["Harga"])}
+                  Rp {Intl.NumberFormat('id-ID').format(product['Harga'])}
                 </p>
                 {/* <p className="text-sm text-gray-400 line-through">
                   Rp. 123.000
@@ -128,8 +128,8 @@ export default async function NewArrivalComp() {
             <Link
               className="block w-full py-1 text-center text-white transition rounded-b bg-primary border-primary hover:bg-transparent hover:text-primary"
               href={
-                "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
-                product["NamaProduk"]
+                'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
+                product['NamaProduk']
               }
               rel="noopener noreferrer"
               target="_blank"

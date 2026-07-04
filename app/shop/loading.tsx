@@ -1,12 +1,12 @@
-import Skeleton from "react-loading-skeleton";
-import Breadcrumbs from "../components/breadcrumbs";
+import Skeleton from 'react-loading-skeleton';
+import Breadcrumbs from '../components/breadcrumbs';
 
 export default function Loading() {
   return (
     <main>
       <Breadcrumbs
         params={{
-          slug: "Shop",
+          slug: 'Shop',
         }}
       />
       <div className="container grid items-start gap-6 pt-4 pb-16 md:grid-cols-4">
