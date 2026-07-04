@@ -1,3 +1,5 @@
+import { serverEnvironment } from "./env/server";
+
 export default async function getSearchProducts(
   namaProdukParams: string | null,
   sortParams: string | null,
@@ -5,15 +7,19 @@ export default async function getSearchProducts(
   // const { searchParams } = new URL(request.url);
   // const nama = searchParams.get("NamaProduk")
   if (namaProdukParams && !sortParams) {
-    const res = await fetch(`/api/shop/search?NamaProduk=${namaProdukParams}`);
+    const res = await fetch(
+      `${serverEnvironment.BASE_URL}/api/shop/search?NamaProduk=${namaProdukParams}`,
+    );
     return responseJSON(res);
   } else if (namaProdukParams && sortParams) {
     const res = await fetch(
-      `/api/shop/search?NamaProduk=${namaProdukParams}&sort=${sortParams}`,
+      `${serverEnvironment.BASE_URL}/api/shop/search?NamaProduk=${namaProdukParams}&sort=${sortParams}`,
     );
     return responseJSON(res);
   } else if (!namaProdukParams && sortParams) {
-    const res = await fetch(`/api/shop/search?sort=${sortParams}`);
+    const res = await fetch(
+      `${serverEnvironment.BASE_URL}/api/shop/search?sort=${sortParams}`,
+    );
     return responseJSON(res);
   }
 }

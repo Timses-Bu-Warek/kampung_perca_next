@@ -1,7 +1,9 @@
+import { serverEnvironment } from "./env/server";
+
 export default async function getNewProductRec() {
   // const API_SECRET_KEY = process.env.API_SECRET_KEY;
 
-  const res = await fetch(`/api/newRec`, {
+  const res = await fetch(`${serverEnvironment.BASE_URL}/api/newRec`, {
     cache: "no-cache",
   });
 
