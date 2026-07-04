@@ -25,7 +25,7 @@ export const metadata = {
     index: true,
     nocache: true,
   },
-  title: 'Sudut Edukasi',
+  title: 'Pengertian Kain Perca',
 };
 
 const Sudut_edukasi = () => {
