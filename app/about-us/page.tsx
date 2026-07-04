@@ -1,10 +1,10 @@
-import Script from 'next/script';
-import Link from 'next/link';
-import Image from 'next/image';
-import Breadcrumbs from '../components/breadcrumbs';
-import SO from '@/public/img/SO.webp';
-import FotoManfaat from '@/public/img/kp_perca.webp';
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import Script from 'next/script';
+import FotoManfaat from '@/public/img/kp_perca.webp';
+import SO from '@/public/img/SO.webp';
+import Breadcrumbs from '../components/breadcrumbs';
 
 // import MyMapComponent from "./MyMapComponent";
 
@@ -24,17 +24,11 @@ import type { Metadata } from 'next';
 // const center: google.maps.LatLngLiteral = {lat: -6.652811848908671, lng: 106.8458424490772};
 
 export const metadata: Metadata = {
-  title: 'Tentang',
-  description:
-    'Kampung Perca merupakan salah satu kampung wisata yang mempunyai konsep pemberdayaan masyarakat terutama perempuan dan ibu-ibu rumah tangga.',
   alternates: {
     canonical: `/about-us`,
   },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-  },
+  description:
+    'Kampung Perca merupakan salah satu kampung wisata yang mempunyai konsep pemberdayaan masyarakat terutama perempuan dan ibu-ibu rumah tangga.',
   keywords: [
     'Kampung Perca',
     'kerajinan dari kain',
@@ -48,6 +42,12 @@ export const metadata: Metadata = {
     'kain perca kerajinan',
     'kerajinan dari bahan kain perca',
   ],
+  robots: {
+    follow: true,
+    index: true,
+    nocache: true,
+  },
+  title: 'Tentang',
 };
 
 export default function About_us() {
@@ -71,18 +71,18 @@ export default function About_us() {
               Struktur Organisasi
             </h1>
             <Image
-              src={SO}
               alt="Struktur Organisasi"
-              width={700}
-              height={475}
-              placeholder="blur"
-              loading="lazy"
-              sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
               className="shadow-xl shadow-gray-400 rounded-xl"
+              height={475}
+              loading="lazy"
+              placeholder="blur"
+              sizes="100vw"
+              src={SO}
+              style={{
+                height: 'auto',
+                width: '100%',
+              }}
+              width={700}
             />
           </div>
           <div className="container mx-auto my-24 md:px-6">
@@ -91,14 +91,14 @@ export default function About_us() {
                 <div className="flex flex-wrap items-center">
                   <div className=" lg:flex lg:w-6/12 xl:w-4/12">
                     <Image
-                      src={FotoManfaat}
-                      width={500}
-                      height={500}
-                      placeholder="blur"
-                      loading="lazy"
-                      sizes="100vw"
                       alt="Trendy Pants and Shoes"
                       className="w-full h-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                      height={500}
+                      loading="lazy"
+                      placeholder="blur"
+                      sizes="100vw"
+                      src={FotoManfaat}
+                      width={500}
                     />
                   </div>
                   <div className="w-full lg:w-6/12 xl:w-8/12">

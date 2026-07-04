@@ -3,10 +3,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
         hostname: 'pakuanraya.com',
-        port: '',
         pathname: '/wp-content/uploads/**',
+        port: '',
+        protocol: 'https',
       },
     ],
   },
@@ -15,17 +15,17 @@ const nextConfig = {
 const siteUrl = 'https://kampungperca.id/';
 
 module.exports = {
-  siteUrl,
   generateRobotsTxt: true,
   // tambahkan sitemap ke plugins
   plugins: [
     {
-      resolve: 'next-sitemap',
       options: {
         baseUrl: siteUrl,
       },
+      resolve: 'next-sitemap',
     },
   ],
+  siteUrl,
 };
 
 module.exports = nextConfig;

@@ -1,14 +1,14 @@
+import { v2 as cloudinary } from 'cloudinary';
 import Image from 'next/image';
 import Link from 'next/link';
+import CldImage from '@/app/components/CldImage';
 import getNewProductRec from '@/lib/getNewProductRec';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
-import { v2 as cloudinary } from 'cloudinary';
-import CldImage from '@/app/components/CldImage';
 
 cloudinary.config({
-  cloud_name: process.env['NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME'],
   api_key: process.env['CLOUDINARY_API_KEY'],
   api_secret: process.env['CLOUDINARY_API_SECRET'],
+  cloud_name: process.env['NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME'],
   secure: true,
 });
 
@@ -29,12 +29,12 @@ export default async function NewArrivalComp() {
           <div className="relative">
             {product.FotoProduk ? (
               <CldImage
-                width={0}
+                alt={product.NamaProduk}
+                className="w-full h-80 object-cover"
                 height={0}
                 sizes="100vw"
                 src={product.FotoProduk}
-                alt={product.NamaProduk}
-                className="w-full h-80 object-cover"
+                width={0}
               />
             ) : (
               // <Image
@@ -45,12 +45,12 @@ export default async function NewArrivalComp() {
               //   className="w-full min-h-[200px]"
               // />
               <Image
-                src={ImageContoh}
                 alt={product.NamaProduk}
-                width={0}
+                className="w-full h-80 object-cover"
                 height={0}
                 sizes="100vw"
-                className="w-full h-80 object-cover"
+                src={ImageContoh}
+                width={0}
               />
             )}
             {/* {console.log(product.FotoProduk)} */}
@@ -63,8 +63,8 @@ export default async function NewArrivalComp() {
             /> */}
             <div className="absolute inset-0 flex items-center justify-center gap-2 transition bg-black opacity-0 bg-opacity-40 group-hover:opacity-100">
               <Link
-                href={`/shop/${product.NamaProduk}`}
                 className="flex items-center justify-center h-8 text-lg text-white transition rounded-full w-9 bg-primary hover:bg-gray-800"
+                href={`/shop/${product.NamaProduk}`}
                 passHref
               >
                 <i className="fas fa-search"></i>
@@ -126,14 +126,14 @@ export default async function NewArrivalComp() {
                 <div className="ml-3 text-xs text-gray-500">(150)</div>
               </div> */}
             <Link
+              className="block w-full py-1 text-center text-white transition rounded-b bg-primary border-primary hover:bg-transparent hover:text-primary"
               href={
                 'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
                 product.NamaProduk
               }
-              title="Hubungi Saya"
-              target="_blank"
               rel="noopener noreferrer"
-              className="block w-full py-1 text-center text-white transition rounded-b bg-primary border-primary hover:bg-transparent hover:text-primary"
+              target="_blank"
+              title="Hubungi Saya"
             >
               Order
             </Link>

@@ -18,16 +18,16 @@ export default function SizeComp(context: { params: { dataUkuran: any; chooseUku
         {context.params.dataUkuran.map((size: any) => (
           <div className="size-selector" key={size}>
             <input
-              type="radio"
-              name="size"
               className="hidden"
               id={'size-' + size}
-              value={size}
+              name="size"
               onChange={() => handlePilihUkuran(size)}
+              type="radio"
+              value={size}
             />
             <label
-              htmlFor={'size-' + size}
               className="text-lg border border-gray-200 rounded-xs h-6 w-6 flexl items-center justify-center cursor-pointer shadow-xs text-gray-600"
+              htmlFor={'size-' + size}
             >
               {size}
             </label>

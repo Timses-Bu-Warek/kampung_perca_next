@@ -1,21 +1,16 @@
 // pages/sudut_edukasi.tsx
-import Link from 'next/link';
+
 import Image from 'next/image';
-import Breadcrumbs from '../components/breadcrumbs';
-import FotoContoh from '@/public/img/contoh.webp';
+import Link from 'next/link';
 import { Suspense } from 'react';
-import StructuredData from '../components/StructuredData';
 import { serverEnvironment } from '@/lib/env/server';
+import FotoContoh from '@/public/img/contoh.webp';
+import Breadcrumbs from '../components/breadcrumbs';
+import StructuredData from '../components/StructuredData';
 
 const metadata = {
-  title: 'Kain Perca adalah ?',
   description:
     'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal',
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-  },
   keywords: [
     'Dampak Positif Pengelolaan Kain Perca',
     'Potensi Kain Perca di Kota Bogor',
@@ -25,30 +20,36 @@ const metadata = {
     'Kain Perca',
     'Manfaat Kain Perca,',
   ],
+  robots: {
+    follow: true,
+    index: true,
+    nocache: true,
+  },
+  title: 'Kain Perca adalah ?',
 };
 
 const Sudut_edukasi = () => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${serverEnvironment.BASE_URL}/sudut-edukasi`,
-    },
-    headline: 'Kain Perca adalah ?',
-    description:
-      'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal',
-    image: `${serverEnvironment.BASE_URL}/img/contoh.webp`,
     author: {
       '@type': 'Person',
       name: 'Kampung Perca Kota Bogor',
+    },
+    dateModified: '2024-07-25',
+    datePublished: '2024-07-25',
+    description:
+      'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal',
+    headline: 'Kain Perca adalah ?',
+    image: `${serverEnvironment.BASE_URL}/img/contoh.webp`,
+    mainEntityOfPage: {
+      '@id': `${serverEnvironment.BASE_URL}/sudut-edukasi`,
+      '@type': 'WebPage',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Kampung Perca Sindangsari',
     },
-    datePublished: '2024-07-25',
-    dateModified: '2024-07-25',
   };
 
   return (
@@ -73,14 +74,14 @@ const Sudut_edukasi = () => {
               <div className="flex flex-wrap items-center">
                 <div className="hidden shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12">
                   <Image
-                    src={FotoContoh}
-                    width={500}
-                    height={500}
-                    placeholder="blur"
-                    loading="lazy"
-                    sizes="100vw"
                     alt="Trendy Pants and Shoes"
                     className="w-full h-auto rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                    height={500}
+                    loading="lazy"
+                    placeholder="blur"
+                    sizes="100vw"
+                    src={FotoContoh}
+                    width={500}
                   />
                 </div>
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
@@ -138,8 +139,8 @@ const Sudut_edukasi = () => {
             <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
               <div className="flex items-center justify-start">
                 <Link
-                  href="/sudut-edukasi/potensi-kain-perca"
                   className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-hidden focus:shadow-outline hover:scale-105 font-inter"
+                  href="/sudut-edukasi/potensi-kain-perca"
                 >
                   Lihat
                 </Link>
@@ -159,8 +160,8 @@ const Sudut_edukasi = () => {
             <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
               <div className="flex items-center justify-center">
                 <Link
-                  href="/sudut-edukasi/dampak-positif-kain-perca"
                   className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-hidden focus:shadow-outline hover:scale-105 font-inter"
+                  href="/sudut-edukasi/dampak-positif-kain-perca"
                 >
                   Lihat
                 </Link>
@@ -180,8 +181,8 @@ const Sudut_edukasi = () => {
             <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
               <div className="flex items-center justify-end">
                 <Link
-                  href="/sudut-edukasi/manfaat-kain-perca"
                   className="px-8 py-4 mx-auto my-6 font-bold transition duration-300 ease-in-out transform rounded-full shadow-lg lg:mx-0 gradient text-secondary focus:outline-hidden focus:shadow-outline hover:scale-105 font-inter"
+                  href="/sudut-edukasi/manfaat-kain-perca"
                 >
                   Lihat
                 </Link>

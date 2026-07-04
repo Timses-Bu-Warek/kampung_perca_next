@@ -2,9 +2,9 @@
 // http://localhost:3000/api/buku-tamu
 // https://kampung-perca.vercel.app/api/buku-tamu
 
-import { connectToDatabase } from '@/lib/mongo';
 import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
+import { connectToDatabase } from '@/lib/mongo';
 import { limiter } from '../config/limiter';
 
 type BukuTamu = {
@@ -38,7 +38,7 @@ type BukuTamu = {
 export async function POST(request: Request) {
   const cookiesBukuTamu = await cookies();
   const threeDay = 1000 * 60 * 60 * 24 * 3;
-  cookiesBukuTamu.set({ name: 'isBukuTamu', value: 'true', secure: true });
+  cookiesBukuTamu.set({ name: 'isBukuTamu', secure: true, value: 'true' });
   const origin = request.headers.get('origin');
 
   const remaining = await limiter.removeTokens(1);
@@ -54,12 +54,12 @@ export async function POST(request: Request) {
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     if (remaining < 0) {
       return new NextResponse(null, {
-        status: 429,
-        statusText: 'Too Many Requests',
         headers: {
           'Access-Control-Allow-Origin': origin || '*',
           'Content-Type': 'text/plain',
         },
+        status: 429,
+        statusText: 'Too Many Requests',
       });
     }
     return new NextResponse(JSON.stringify(allProducts), {

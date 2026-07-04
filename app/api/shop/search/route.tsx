@@ -2,10 +2,10 @@
 // http://localhost:3000/api/shop/search?=[NamaProduk]
 // https://kampung-perca.vercel.app/api/shop/search?=[NamaProduk]
 
-import { serverEnvironment } from '@/lib/env/server';
-import { connectToDatabase } from '@/lib/mongo';
 import { NextResponse } from 'next/server';
 import { request } from 'urllib';
+import { serverEnvironment } from '@/lib/env/server';
+import { connectToDatabase } from '@/lib/mongo';
 
 // console.log("Nama Produk: " + nama);
 
@@ -102,10 +102,10 @@ export async function GET(request: Request) {
   const db = client.db('KampungPercaDB');
   const collection = db.collection('products');
   // const collection = db.collection<products>("products")
-  await collection.createIndexes([{ name: 'NamaProduk_text', key: { NamaProduk: 'text' } }]);
+  await collection.createIndexes([{ key: { NamaProduk: 'text' }, name: 'NamaProduk_text' }]);
   if ((!searchQuerySort || searchQuerySort === 'default') && searchQueryNamaProduk) {
     const result = await collection
-      .find({ NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' } })
+      .find({ NamaProduk: { $options: 'i', $regex: searchQueryNamaProduk } })
       .toArray();
     return new NextResponse(JSON.stringify(result), {
       headers: {
@@ -126,7 +126,7 @@ export async function GET(request: Request) {
       .aggregate([
         {
           $match: {
-            NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' },
+            NamaProduk: { $options: 'i', $regex: searchQueryNamaProduk },
           },
         },
         { $sort: { Harga: 1 } },
@@ -151,7 +151,7 @@ export async function GET(request: Request) {
       .aggregate([
         {
           $match: {
-            NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' },
+            NamaProduk: { $options: 'i', $regex: searchQueryNamaProduk },
           },
         },
         { $sort: { Harga: -1 } },
@@ -168,7 +168,7 @@ export async function GET(request: Request) {
       .aggregate([
         {
           $match: {
-            NamaProduk: { $regex: searchQueryNamaProduk, $options: 'i' },
+            NamaProduk: { $options: 'i', $regex: searchQueryNamaProduk },
           },
         },
         { $sort: { Harga: -1 } },
@@ -265,10 +265,10 @@ async function findIndexByName(indexName: string) {
   const allIndexesResponse = await request(
     `${ATLAS_SEARCH_INDEX_API_URL}/KampungPercaDB/products`,
     {
-      dataType: 'json',
       contentType: 'application/json',
-      method: 'GET',
+      dataType: 'json',
       digestAuth: DIGEST_AUTH,
+      method: 'GET',
     },
   );
 
@@ -279,19 +279,19 @@ async function upsertSearchIndex() {
   const userSearchIndex = await findIndexByName(USER_SEARCH_INDEX_NAME);
   if (!userSearchIndex) {
     await request(ATLAS_SEARCH_INDEX_API_URL, {
+      contentType: 'application/json',
       data: {
-        name: USER_SEARCH_INDEX_NAME,
-        database: 'KampungPercaDB',
         collectionName: 'products',
+        database: 'KampungPercaDB',
         // https://www.mongodb.com/docs/atlas/atlas-search/index-definitions/#syntax
         mappings: {
           dynamic: true,
         },
+        name: USER_SEARCH_INDEX_NAME,
       },
       dataType: 'json',
-      contentType: 'application/json',
-      method: 'POST',
       digestAuth: DIGEST_AUTH,
+      method: 'POST',
     });
   }
 }

@@ -1,11 +1,11 @@
-import ProductCompSearch from '../components/ProductCompSearch';
-import Breadcrumbs from '@/app/components/breadcrumbs';
-import ProductsSearchBar from '../components/ProductsSearchBar';
-import { Suspense } from 'react';
-import Loading from './loading';
-import { ProductSortSearch } from '../components/ProductSortSearch';
-import type { SearchParameters } from '@/lib/types/search-parameters';
 import { createSearchParamsCache, parseAsString } from 'nuqs/server';
+import { Suspense } from 'react';
+import Breadcrumbs from '@/app/components/breadcrumbs';
+import type { SearchParameters } from '@/lib/types/search-parameters';
+import ProductCompSearch from '../components/ProductCompSearch';
+import { ProductSortSearch } from '../components/ProductSortSearch';
+import ProductsSearchBar from '../components/ProductsSearchBar';
+import Loading from './loading';
 
 // export const metadata: Metadata = {
 //   title: "Shop Kampung Perca Products",
@@ -75,44 +75,44 @@ export default async function Shop({
                   {/* <!-- single category --> */}
                   <div className="flex items-center">
                     <input
-                      type="checkbox"
-                      id="cat-1"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
+                      id="cat-1"
+                      type="checkbox"
                     />
-                    <label htmlFor="cat-1" className="text-gray-600 ml-3 cursor-pointer">
+                    <label className="text-gray-600 ml-3 cursor-pointer" htmlFor="cat-1">
                       Baju
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(15)</div> */}
                   </div>
                   <div className="flex items-center">
                     <input
-                      type="checkbox"
-                      id="cat-2"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
+                      id="cat-2"
+                      type="checkbox"
                     />
-                    <label htmlFor="cat-2" className="text-gray-600 ml-3 cursor-pointer">
+                    <label className="text-gray-600 ml-3 cursor-pointer" htmlFor="cat-2">
                       Celana
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(20)</div> */}
                   </div>
                   <div className="flex items-center">
                     <input
-                      type="checkbox"
-                      id="cat-3"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
+                      id="cat-3"
+                      type="checkbox"
                     />
-                    <label htmlFor="cat-3" className="text-gray-600 ml-3 cursor-pointer">
+                    <label className="text-gray-600 ml-3 cursor-pointer" htmlFor="cat-3">
                       Tas
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(30)</div> */}
                   </div>
                   <div className="flex items-center">
                     <input
-                      type="checkbox"
-                      id="cat-4"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
+                      id="cat-4"
+                      type="checkbox"
                     />
-                    <label htmlFor="cat-4" className="text-gray-600 ml-3 cursor-pointer">
+                    <label className="text-gray-600 ml-3 cursor-pointer" htmlFor="cat-4">
                       Souvenir
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(40)</div> */}
@@ -177,15 +177,15 @@ export default async function Shop({
                 <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium pt-6">Price</h3>
                 <div className="mt-4 flex items-center">
                   <input
-                    type="text"
                     className="w-full border-gray-300 focus:border-primary focus:ring-0 px-3 py-1 text-gray-600 text-sm shadow-xs rounded-sm"
                     placeholder="min"
+                    type="text"
                   />
                   <span className="mx-3 text-gray-500">-</span>
                   <input
-                    type="text"
                     className="w-full border-gray-300 focus:border-primary focus:ring-0 px-3 py-1 text-gray-600 text-sm shadow-xs rounded-sm"
                     placeholder="max"
+                    type="text"
                   />
                 </div>
               </div>

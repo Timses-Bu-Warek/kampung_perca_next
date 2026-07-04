@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function ProductsSearchBar() {
   const [search, setSearch] = useState('');
@@ -23,12 +23,12 @@ export default function ProductsSearchBar() {
           <i className="fas fa-search"></i>
         </span>
         <input
-          type="search"
           className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-hidden"
-          placeholder="Cari"
-          value={search}
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleKeyDown}
+          placeholder="Cari"
+          type="search"
+          value={search}
         />
         <button className="bg-primary border border-primary text-white px-4 rounded-r-md hover:bg-transparent hover:text-primary transition">
           Cari

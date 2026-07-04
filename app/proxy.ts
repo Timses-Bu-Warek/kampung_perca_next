@@ -1,5 +1,5 @@
-import { serverEnvironment } from '@/lib/env/server';
 import { NextResponse } from 'next/server';
+import { serverEnvironment } from '@/lib/env/server';
 
 const allowedOrigins =
   process.env.NODE_ENV === 'production' ? [serverEnvironment.BASE_URL] : ['http://localhost:3000'];
@@ -10,11 +10,11 @@ export function middleware(request: Request) {
 
   if (origin && !allowedOrigins.includes(origin)) {
     return new NextResponse(null, {
-      status: 400,
-      statusText: 'Bad Request',
       headers: {
         'Content-Type': 'text/plain',
       },
+      status: 400,
+      statusText: 'Bad Request',
     });
   }
 

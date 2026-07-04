@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="  text-center">
         <h1 className="text-4xl font-semibold mb-4">Oops!</h1>
         <p className="text-gray-600">Mohon maaf, website tujuanmu belum tersedia.</p>
-        <a href="/" className="mt-4 text-blue-500 hover:underline">
+        <a className="mt-4 text-blue-500 hover:underline" href="/">
           Back to Home
         </a>
       </div>

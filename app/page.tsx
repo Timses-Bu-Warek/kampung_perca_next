@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import FotoBinaanIBIK from '@/public/img/ads.webp';
-import Link from 'next/link';
-import RecommendationComp from './components/RecommendationComp';
-import NewArrivalComp from './components/NewArrivalComp';
-import YoutubeFacade from './components/youtubefacade';
 import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 import { serverEnvironment } from '@/lib/env/server';
+import FotoBinaanIBIK from '@/public/img/ads.webp';
+import NewArrivalComp from './components/NewArrivalComp';
+import RecommendationComp from './components/RecommendationComp';
+import YoutubeFacade from './components/youtubefacade';
 
 export default function Home() {
   // sessionStorage.setItem("halo", "true")
@@ -18,47 +18,47 @@ export default function Home() {
     <>
       <Head>
         <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Kampung Perca Sindangsari',
-              url: serverEnvironment.BASE_URL,
               contactPoint: {
                 '@type': 'ContactPoint',
-                telephone: '+62-123-456-7890',
-                contactType: 'Customer Service',
                 areaServed: 'ID',
                 availableLanguage: 'Indonesian',
+                contactType: 'Customer Service',
+                telephone: '+62-123-456-7890',
               },
+              name: 'Kampung Perca Sindangsari',
+              url: serverEnvironment.BASE_URL,
             }),
           }}
+          type="application/ld+json"
         />
         <script
-          type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Place',
-              name: 'Kampung Perca Sindangsari',
               address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Gang Raden Alibasyah, Jalan Raya Wangun Atas RT 004 / RW 001',
+                addressCountry: 'ID',
                 addressLocality: 'Bogor',
                 addressRegion: 'Jawa Barat',
                 postalCode: '12345',
-                addressCountry: 'ID',
+                streetAddress: 'Gang Raden Alibasyah, Jalan Raya Wangun Atas RT 004 / RW 001',
               },
               geo: {
                 '@type': 'GeoCoordinates',
                 latitude: '-6.6528261650365375',
                 longitude: '106.84323757484158',
               },
-              url: serverEnvironment.BASE_URL,
+              name: 'Kampung Perca Sindangsari',
               telephone: '+62-123-456-7890',
+              url: serverEnvironment.BASE_URL,
             }),
           }}
+          type="application/ld+json"
         />
       </Head>
       <main>
@@ -72,11 +72,11 @@ export default function Home() {
               Kampung Perca Sindangsari, sebuah kampung tematik baru yang menambahkan destinasi
               wisata di kota Bogor dan merupakan binaan
               <Link
+                className="text-primary"
                 href="https://www.ibik.ac.id/"
+                passHref
                 rel="noopener noreferrer"
                 target="_blank"
-                className="text-primary"
-                passHref
               >
                 {' '}
                 Institut Bisnis dan Informatika Kesatuan Bogor.
@@ -86,10 +86,10 @@ export default function Home() {
             </p>
             <div className="mt-12">
               <Link
-                href="/shop"
-                rel="noopener noreferrer"
                 className="px-8 py-3 font-medium text-white transition border rounded-md bg-primary border-primary hover:bg-transparent hover:text-primary font-inter"
+                href="/shop"
                 passHref
+                rel="noopener noreferrer"
               >
                 Shop at Kampung Perca
               </Link>
@@ -141,16 +141,16 @@ export default function Home() {
         <div className="container mx-auto my-24 md:px-6">
           {/*  ads section  */}
           <div className="container pb-16 mb-16">
-            <Link href="https://ibik.ac.id" target="_blank" rel="noopener noreferrer" passHref>
+            <Link href="https://ibik.ac.id" passHref rel="noopener noreferrer" target="_blank">
               <Image
-                src={FotoBinaanIBIK}
-                width={500}
-                height={500}
-                placeholder="blur"
-                loading="lazy"
-                sizes="100vw"
                 alt="Sistem Informasi Kampung Perca di bawah binaan IBI Kesatuan"
                 className="w-full rounded-md shadow-md"
+                height={500}
+                loading="lazy"
+                placeholder="blur"
+                sizes="100vw"
+                src={FotoBinaanIBIK}
+                width={500}
               />
             </Link>
           </div>
@@ -173,10 +173,10 @@ export default function Home() {
             <h4 className="items-center justify-center italic text-center text-black font-inter">
               Sumber :{' '}
               <a
-                href="https://www.youtube.com/@bimaarya1921"
-                target="_blank"
-                rel="noreferrer noopener"
                 className="font-bold text-blue-500"
+                href="https://www.youtube.com/@bimaarya1921"
+                rel="noreferrer noopener"
+                target="_blank"
               >
                 Channel Youtube Bima Arya tahun 2022
               </a>
@@ -188,17 +188,17 @@ export default function Home() {
               <div className="w-full mb-12 lg:mb-0 lg:w-5/12">
                 <div className="flex lg:py-12">
                   <Image
-                    src="https://pakuanraya.com/wp-content/uploads/2021/12/IMG-20211217-WA0042.jpg"
-                    className="z-0 w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]"
                     alt="image"
-                    width={500}
+                    className="z-0 w-full rounded-lg shadow-lg dark:shadow-black/20 lg:ml-[50px]"
                     height={500}
-                    sizes="100vw"
                     loading="lazy"
+                    sizes="100vw"
+                    src="https://pakuanraya.com/wp-content/uploads/2021/12/IMG-20211217-WA0042.jpg"
                     style={{
-                      width: '100%',
                       height: 'auto',
+                      width: '100%',
                     }}
+                    width={500}
                   />
                 </div>
               </div>
@@ -226,7 +226,7 @@ export default function Home() {
             </div>
           </section>
           <div className="flex flex-col-reverse flex-wrap mb-32 sm:flex-row">
-            <div id="map" className="w-full p-1 mt-6 sm:w-1/2 ">
+            <div className="w-full p-1 mt-6 sm:w-1/2 " id="map">
               {/* <MyApp />    */}
               {/* <Script
                     async
@@ -234,15 +234,15 @@ export default function Home() {
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2z_q_YqnXOw5K6mrDt4_57-0rYPpPr1c&callback=initMap"
                 ></Script> */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.9523697293466!2d106.84323757484158!3d-6.6528261650365375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c94d3ea29d31%3A0xac59c511b4fc118b!2sKampung%20Perca%20Sindangsari!5e0!3m2!1sid!2sid!4v1691401977911!5m2!1sid!2sid"
                 // width="480"
                 // height="202"
                 // style={{ border: 0 }}
                 allowFullScreen={false}
-                loading="lazy"
-                title="Map Kota Bogor"
-                referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full shadow-xl shadow-gray-400 rounded-xl"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.9523697293466!2d106.84323757484158!3d-6.6528261650365375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c94d3ea29d31%3A0xac59c511b4fc118b!2sKampung%20Perca%20Sindangsari!5e0!3m2!1sid!2sid!4v1691401977911!5m2!1sid!2sid"
+                title="Map Kota Bogor"
               ></iframe>
             </div>
             <div className="w-full p-6 mt-6 sm:w-1/2">
@@ -262,9 +262,9 @@ export default function Home() {
                 <Link
                   className="text-pink-500 underline"
                   href="https://goo.gl/maps/igidBQGP7yiBDYer5"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   passHref
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Maps
                 </Link>

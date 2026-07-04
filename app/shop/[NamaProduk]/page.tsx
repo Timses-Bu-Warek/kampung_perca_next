@@ -1,8 +1,8 @@
-import { serverEnvironment } from '@/lib/env/server';
-import DetailedProduct from './components/DetailedProduct';
-import getProduct from '@/lib/getProduct';
 import { Suspense } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import { serverEnvironment } from '@/lib/env/server';
+import getProduct from '@/lib/getProduct';
+import DetailedProduct from './components/DetailedProduct';
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({
@@ -16,17 +16,10 @@ export async function generateMetadata({
 
   // mengembalikan objek metadata yang terdiri dari title, description, alternates, robots, dan keywords.
   return {
-    // Nilai title diisi dengan nilai dari decoded NamaProduk
-    title: `${decodedNamaProduk}`,
-    description: `Keterangan: ${params.Keterangan}`,
     alternates: {
       canonical: `${serverEnvironment.BASE_URL}/shop/${params.NamaProduk}`,
     },
-    robots: {
-      index: true,
-      follow: true,
-      nocache: true,
-    },
+    description: `Keterangan: ${params.Keterangan}`,
     keywords: [
       'Jual Alas Mangkuk Perca',
       'Jual Appron Perca',
@@ -44,6 +37,13 @@ export async function generateMetadata({
       'Jual Baju Tidur Perca',
       'Jual Tas Perca',
     ],
+    robots: {
+      follow: true,
+      index: true,
+      nocache: true,
+    },
+    // Nilai title diisi dengan nilai dari decoded NamaProduk
+    title: `${decodedNamaProduk}`,
   };
 }
 

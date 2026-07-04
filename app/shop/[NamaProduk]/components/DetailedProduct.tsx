@@ -2,15 +2,15 @@
 
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import Link from 'next/link';
 import Image from 'next/image';
-import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
+import Link from 'next/link';
 import { type SetStateAction, use, useState } from 'react';
 import Breadcrumbs from '@/app/components/breadcrumbs';
-import QuantityComp from './QuantityComp';
-import SizeComp from './SizeComp';
 import CldImage from '@/app/components/CldImage';
 import type getProduct from '@/lib/getProduct';
+import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
+import QuantityComp from './QuantityComp';
+import SizeComp from './SizeComp';
 
 export default function DetailedProduct({
   productName,
@@ -76,12 +76,12 @@ export default function DetailedProduct({
         <div className="md:col-span-2">
           {product['FotoProduk'] ? (
             <CldImage
-              width={500}
-              loading="lazy"
-              height={500}
-              src={product['FotoProduk']}
               alt={product['NamaProduk']}
               className="w-full min-h-[200px]"
+              height={500}
+              loading="lazy"
+              src={product['FotoProduk']}
+              width={500}
             />
           ) : (
             // <Image
@@ -93,13 +93,13 @@ export default function DetailedProduct({
             //   alt={data.NamaProduk}
             // />
             <Image
+              alt="Contoh Produk"
+              className="w-full h-auto"
+              height={500}
+              loading="lazy"
+              sizes="100vw"
               src={ImageContoh}
               width={500}
-              height={500}
-              sizes="100vw"
-              className="w-full h-auto"
-              loading="lazy"
-              alt="Contoh Produk"
             />
           )}
           {/* <div className="grid grid-cols-5 gap-4 mt-4">
@@ -175,8 +175,8 @@ export default function DetailedProduct({
             {product['Ukuran'] ? (
               <SizeComp
                 params={{
-                  dataUkuran: product['Ukuran'],
                   chooseUkuran: chooseUkuran,
+                  dataUkuran: product['Ukuran'],
                 }}
               />
             ) : (
@@ -196,12 +196,12 @@ export default function DetailedProduct({
           {/* <!-- cart button --> */}
           <div className="flex gap-3 pb-5 mt-6 text-center border-b border-gray-200">
             <Link
+              className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium text-white uppercase transition border rounded-sm bg-primary border-primary md:w-40 font-inter hover:bg-transparent hover:text-primary"
               href={waAPI}
-              title="Hubungi Saya"
+              passHref
               rel="noopener noreferrer"
               target="_blank"
-              className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium text-white uppercase transition border rounded-sm bg-primary border-primary md:w-40 font-inter hover:bg-transparent hover:text-primary"
-              passHref
+              title="Hubungi Saya"
             >
               <i className="fas fa-shopping-bag"></i>Order
             </Link>
@@ -222,11 +222,11 @@ export default function DetailedProduct({
             </span>
             <span>
               <Link
-                href="https://www.instagram.com/kampungperca_kotabogor/"
                 className="w-8 h-8 hover:text-gray-500"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://www.instagram.com/kampungperca_kotabogor/"
                 passHref
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <i className="fab fa-instagram"></i>{' '}
               </Link>

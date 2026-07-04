@@ -1,15 +1,14 @@
+import { v2 as cloudinary } from 'cloudinary';
 import Image from 'next/image';
 import Link from 'next/link';
+import CldImage from '@/app/components/CldImage';
 import getAllProducts from '@/lib/getAllProducts';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 
-import { v2 as cloudinary } from 'cloudinary';
-import CldImage from '@/app/components/CldImage';
-
 cloudinary.config({
-  cloud_name: process.env['NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME'],
   api_key: process.env['CLOUDINARY_API_KEY'],
   api_secret: process.env['CLOUDINARY_API_SECRET'],
+  cloud_name: process.env['NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME'],
   secure: true,
 });
 
@@ -29,28 +28,28 @@ export default async function ProductComp() {
           <div className="relative">
             {product['FotoProduk'] ? (
               <CldImage
-                width={0}
-                height={0}
-                sizes="100vw"
-                src={product['FotoProduk']}
                 alt={product['NamaProduk']}
                 className="w-full h-80 object-cover"
+                height={0}
                 loading="lazy"
+                sizes="100vw"
+                src={product['FotoProduk']}
+                width={0}
               />
             ) : (
               <Image
-                src={ImageContoh}
                 alt={product['NamaProduk']}
-                width={0}
+                className="w-full h-80 object-cover"
                 height={0}
                 sizes="100vw"
-                className="w-full h-80 object-cover"
+                src={ImageContoh}
+                width={0}
               />
             )}
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
               <Link
-                href={`/shop/${product['NamaProduk']}`}
                 className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                href={`/shop/${product['NamaProduk']}`}
                 passHref
               >
                 <i className="fas fa-search"></i>
@@ -112,14 +111,14 @@ export default async function ProductComp() {
                 <div className="text-xs text-gray-500 ml-3">(150)</div>
               </div> */}
             <Link
+              className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
               href={
                 'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
                 product['NamaProduk']
               }
-              title="Hubungi Saya"
               rel="noopener noreferrer"
               target="_blank"
-              className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
+              title="Hubungi Saya"
             >
               Order
             </Link>

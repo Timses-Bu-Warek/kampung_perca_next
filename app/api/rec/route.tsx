@@ -2,8 +2,8 @@
 // http://localhost:3000/api/home
 // https://kampung-perca.vercel.app/api/home
 
-import { connectToDatabase } from '@/lib/mongo';
 import { NextRequest, NextResponse } from 'next/server';
+import { connectToDatabase } from '@/lib/mongo';
 
 export async function GET(request: Request) {
   // const { searchParams } = new URL(request.url);

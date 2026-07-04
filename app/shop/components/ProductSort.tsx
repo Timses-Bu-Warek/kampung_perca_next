@@ -1,7 +1,7 @@
 'use client';
-import { useCallback } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useCallback } from 'react';
 
 export function ProductSort() {
   const pathname = usePathname();
@@ -29,8 +29,8 @@ export function ProductSort() {
             <span className="mr-1">Urut berdasarkan</span>
             <svg
               className="fill-current h-4 w-4"
-              xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{' '}
             </svg>

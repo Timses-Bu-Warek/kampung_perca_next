@@ -1,23 +1,17 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import Breadcrumbs from '@/app/components/breadcrumbs';
-import FotoPotensi from '@/public/img/potensi.webp';
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import Breadcrumbs from '@/app/components/breadcrumbs';
 import StructuredData from '@/app/components/StructuredData';
 import { serverEnvironment } from '@/lib/env/server';
+import FotoPotensi from '@/public/img/potensi.webp';
 
 export const metadata: Metadata = {
-  title: 'Potensi Kain Perca di Kota Bogor',
-  description:
-    'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal',
   alternates: {
     canonical: `${serverEnvironment.BASE_URL}/sudut-edukasi/potensi-kain-perca`,
   },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-  },
+  description:
+    'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal',
   keywords: [
     'Dampak Positif Pengelolaan Kain Perca',
     'Potensi Kain Perca di Kota Bogor',
@@ -27,29 +21,35 @@ export const metadata: Metadata = {
     'Kain Perca',
     'Manfaat Kain Perca',
   ],
+  robots: {
+    follow: true,
+    index: true,
+    nocache: true,
+  },
+  title: 'Potensi Kain Perca di Kota Bogor',
 };
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': `${serverEnvironment.BASE_URL}/sudut-edukasi/potensi-kain-perca`,
-  },
-  headline: 'Potensi Kain Perca di Kota Bogor',
-  description:
-    'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal.',
-  image: `${serverEnvironment.BASE_URL}/img/potensi.webp`, // URL gambar utama
   author: {
     '@type': 'Person',
     name: 'Kampung Perca Kota Bogor', // Nama penulis
+  },
+  dateModified: '2024-07-29', // Tanggal terakhir diubah
+  datePublished: '2024-07-29', // Tanggal publikasi
+  description:
+    'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal.',
+  headline: 'Potensi Kain Perca di Kota Bogor',
+  image: `${serverEnvironment.BASE_URL}/img/potensi.webp`, // URL gambar utama
+  mainEntityOfPage: {
+    '@id': `${serverEnvironment.BASE_URL}/sudut-edukasi/potensi-kain-perca`,
+    '@type': 'WebPage',
   },
   publisher: {
     '@type': 'Organization',
     name: 'Kampung Perca Kota Bogor',
   },
-  datePublished: '2024-07-29', // Tanggal publikasi
-  dateModified: '2024-07-29', // Tanggal terakhir diubah
 };
 
 export default function Potensi() {
@@ -73,14 +73,14 @@ export default function Potensi() {
               <div className="flex items-center">
                 <div className=" lg:flex lg:w-6/12 xl:w-4/12">
                   <Image
-                    src={FotoPotensi}
-                    width={500}
-                    height={500}
-                    placeholder="blur"
-                    loading="lazy"
-                    sizes="100vw"
                     alt="Trendy Pants and Shoes"
                     className="w-full h-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg"
+                    height={500}
+                    loading="lazy"
+                    placeholder="blur"
+                    sizes="100vw"
+                    src={FotoPotensi}
+                    width={500}
                   />
                 </div>
                 <div className="w-full lg:w-6/12 xl:w-8/12">
@@ -170,8 +170,8 @@ export default function Potensi() {
             <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-sm p-6">
               <div className="flex items-center justify-start">
                 <Link
-                  href="/sudut-edukasi/dampak-positif-kain-perca"
                   className="mx-auto lg:mx-0 gradient text-secondary font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-hidden focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out font-inter"
+                  href="/sudut-edukasi/dampak-positif-kain-perca"
                 >
                   Lihat
                 </Link>
@@ -191,8 +191,8 @@ export default function Potensi() {
             <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-sm p-6">
               <div className="flex items-center justify-center">
                 <Link
-                  href="/sudut-edukasi"
                   className="mx-auto lg:mx-0 gradient text-secondary font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-hidden focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out font-inter"
+                  href="/sudut-edukasi"
                 >
                   Lihat
                 </Link>
@@ -212,8 +212,8 @@ export default function Potensi() {
             <div className="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-sm p-6">
               <div className="flex items-center justify-end">
                 <Link
-                  href="/sudut-edukasi/manfaat-kain-perca"
                   className="mx-auto lg:mx-0 gradient text-secondary font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-hidden focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out font-inter"
+                  href="/sudut-edukasi/manfaat-kain-perca"
                 >
                   Lihat
                 </Link>

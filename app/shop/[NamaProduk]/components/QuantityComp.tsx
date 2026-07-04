@@ -22,9 +22,9 @@ export default function QuantityComp(context: { params: { quantity: any } }) {
       <h3 className="pt-4 text-gray-800 uppercase font-inter">Quantity</h3>
       <div className="flex text-gray-600 border border-gray-300 divide-x divide-gray-300 w-max">
         <button
-          type="button"
           className="flex items-center justify-center w-full h-8 text-lg cursor-pointer select-none md:w-8"
           onClick={decreaseQuantity}
+          type="button"
         >
           -
         </button>
@@ -33,9 +33,9 @@ export default function QuantityComp(context: { params: { quantity: any } }) {
           {quantity}
         </div>
         <button
-          type="button"
           className="flex items-center justify-center w-full h-8 text-lg cursor-pointer select-none md:w-8"
           onClick={increaseQuantity}
+          type="button"
         >
           +
         </button>

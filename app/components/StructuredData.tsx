@@ -1,6 +1,7 @@
 // components/StructuredData.tsx
-import React from 'react';
+
 import Head from 'next/head';
+import type React from 'react';
 
 interface StructuredDataProps {
   data: Record<string, any>;
@@ -10,8 +11,8 @@ const StructuredData: React.FC<StructuredDataProps> = ({ data }) => {
   return (
     <Head>
       <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+        type="application/ld+json"
       />
     </Head>
   );

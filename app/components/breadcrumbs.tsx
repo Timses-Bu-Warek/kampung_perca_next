@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Breadcrumbs(context: { params: { slug: string } }) {
   return (
     <div className="container py-4 flex items-center gap-4">
-      <Link href="/" className="text-primary text-base" passHref>
+      <Link className="text-primary text-base" href="/" passHref>
         <i className="fas fa-home"></i>
       </Link>
       <span className="text-sm text-gray-400">

@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import CldImage from '@/app/components/CldImage';
 import getSearchProducts from '@/lib/getSearchProducts';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
-
-import CldImage from '@/app/components/CldImage';
 
 export default async function ProductCompSearch({
   params,
@@ -26,11 +25,11 @@ export default async function ProductCompSearch({
           <div className="relative">
             {product.FotoProduk ? (
               <CldImage
-                width={100}
-                height={100}
-                src={product.FotoProduk}
                 alt={product.NamaProduk}
                 className="w-full min-h-[200px]"
+                height={100}
+                src={product.FotoProduk}
+                width={100}
               />
             ) : (
               // <Image
@@ -41,11 +40,11 @@ export default async function ProductCompSearch({
               //   className="w-full min-h-[200px]"
               // />
               <Image
-                src={ImageContoh}
                 alt={product.NamaProduk}
-                width={100}
-                height={100}
                 className="w-full min-h-full"
+                height={100}
+                src={ImageContoh}
+                width={100}
               />
             )}
             {/* {console.log(product.FotoProduk)} */}
@@ -58,8 +57,8 @@ export default async function ProductCompSearch({
             /> */}
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
               <Link
-                href={`/shop/${product.NamaProduk}`}
                 className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
+                href={`/shop/${product.NamaProduk}`}
                 passHref
               >
                 <i className="fas fa-search"></i>
@@ -120,14 +119,14 @@ export default async function ProductCompSearch({
               </div> */}
           </div>
           <Link
+            className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
             href={
               'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
               product.NamaProduk
             }
-            title="Hubungi Saya"
             rel="noopener noreferrer"
             target="_blank"
-            className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
+            title="Hubungi Saya"
           >
             Order
           </Link>

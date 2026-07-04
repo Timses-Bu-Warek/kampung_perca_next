@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, type FormEvent, type ChangeEvent } from 'react';
 import { useRouter } from 'next/navigation';
+import { type ChangeEvent, type FormEvent, useState } from 'react';
 
 type BukuTamu = {
   nama: string;
@@ -13,12 +13,12 @@ type BukuTamu = {
 };
 
 const initState: BukuTamu = {
+  gender: '',
+  kesanPesan: '',
+  kota: '',
   nama: '',
   provinsi: '',
-  kota: '',
-  gender: '',
   umur: 0,
-  kesanPesan: '',
 };
 
 export default function ModalBukuTamu() {
@@ -35,34 +35,34 @@ export default function ModalBukuTamu() {
     const res =
       process.env.NODE_ENV === 'production'
         ? await fetch('/api/buku-tamu', {
-            method: 'POST',
+            body: JSON.stringify({
+              gender,
+              kesanPesan,
+              kota,
+              nama,
+              provinsi,
+              umur,
+            }),
             headers: {
               'Access-Control-Allow-Origin': origin || '*',
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              nama,
-              provinsi,
-              kota,
-              gender,
-              umur,
-              kesanPesan,
-            }),
+            method: 'POST',
           })
         : await fetch('http://localhost:3000/api/buku-tamu', {
-            method: 'POST',
+            body: JSON.stringify({
+              gender,
+              kesanPesan,
+              kota,
+              nama,
+              provinsi,
+              umur,
+            }),
             headers: {
               'Access-Control-Allow-Origin': origin || '*',
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-              nama,
-              provinsi,
-              kota,
-              gender,
-              umur,
-              kesanPesan,
-            }),
+            method: 'POST',
           });
     router.refresh();
     // Simulate a loading state for 2 seconds
@@ -91,7 +91,7 @@ export default function ModalBukuTamu() {
             : ` block bg-slate-50 p-6 rounded-xl w-90`
         }
       >
-        <form onSubmit={handleSubmit} action="">
+        <form action="" onSubmit={handleSubmit}>
           {/* Render the spinner if loading is true */}
           {isLoading ? (
             <div className="border-4 border-solid rounded-full animate-spin h-14 w-14 border-t-slate-500 border-l-slate-50" />
@@ -102,129 +102,129 @@ export default function ModalBukuTamu() {
                 <span className="font-bold text-primary"> Kampung Perca🌼</span>
               </h1>
               <h2 className="mt-4 mb-4 text-sm font-inter">Harap mengisi buku tamu di bawah ya</h2>
-              <div id="fullname" className="flex flex-col">
-                <div id="firstname" className="w-full mr-1">
-                  <label htmlFor="fname" className="text-sm">
+              <div className="flex flex-col" id="fullname">
+                <div className="w-full mr-1" id="firstname">
+                  <label className="text-sm" htmlFor="fname">
                     Nama
                   </label>
                   <input
-                    type="text"
-                    name="nama"
-                    id="fname"
                     className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
-                    required
-                    value={data.nama}
+                    id="fname"
+                    name="nama"
                     onChange={handleChange}
+                    required
+                    type="text"
+                    value={data.nama}
                   />
                 </div>
 
-                <div id="alamat_lengkap" className="flex flex-row mt-2">
-                  <div id="provinsiDiv" className="w-1/2 mr-1">
-                    <label htmlFor="provinsi" className="text-sm">
+                <div className="flex flex-row mt-2" id="alamat_lengkap">
+                  <div className="w-1/2 mr-1" id="provinsiDiv">
+                    <label className="text-sm" htmlFor="provinsi">
                       Provinsi
                     </label>
                     <input
-                      placeholder="Tulis Asal Provinsi Anda"
-                      type="text"
-                      name="provinsi"
-                      id="provinsi"
-                      required
                       className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
-                      value={data.provinsi}
+                      id="provinsi"
+                      name="provinsi"
                       onChange={handleChange}
+                      placeholder="Tulis Asal Provinsi Anda"
+                      required
+                      type="text"
+                      value={data.provinsi}
                     />
                   </div>
-                  <div id="kotaDiv" className="w-1/2 mb-4 mr-1">
-                    <label htmlFor="kota" className="text-sm">
+                  <div className="w-1/2 mb-4 mr-1" id="kotaDiv">
+                    <label className="text-sm" htmlFor="kota">
                       Kota
                     </label>
                     <input
-                      placeholder="Tulis Asal Kota Anda"
-                      type="text"
-                      name="kota"
-                      id="kota"
-                      required
                       className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
-                      value={data.kota}
+                      id="kota"
+                      name="kota"
                       onChange={handleChange}
+                      placeholder="Tulis Asal Kota Anda"
+                      required
+                      type="text"
+                      value={data.kota}
                     />
                   </div>
                 </div>
               </div>
 
-              <div id="usia" className="flex flex-col mt-2 md:flex-row">
-                <div id="ageDiv" className="w-full mr-1 md:w-1/2">
-                  <label htmlFor="age" className="text-sm">
+              <div className="flex flex-col mt-2 md:flex-row" id="usia">
+                <div className="w-full mr-1 md:w-1/2" id="ageDiv">
+                  <label className="text-sm" htmlFor="age">
                     Usia
                   </label>
                   <input
-                    placeholder="Masukkan usia anda"
-                    type="number"
-                    name="umur"
-                    id="umur"
-                    required
-                    value={data.umur}
-                    onChange={handleChange}
                     className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
+                    id="umur"
+                    name="umur"
+                    onChange={handleChange}
+                    placeholder="Masukkan usia anda"
+                    required
+                    type="number"
+                    value={data.umur}
                   />
                 </div>
-                <div id="gender" className="mb-6 text-sm">
+                <div className="mb-6 text-sm" id="gender">
                   <p className="mt-2">Jenis Kelamin</p>
                   <label htmlFor="Laki-Laki">
                     Laki-Laki
                     <input
-                      type="radio"
-                      name="gender"
-                      id="Laki-Laki"
-                      required
-                      value="Laki-Laki"
-                      onChange={handleChange}
                       className="mx-1 text-sm"
+                      id="Laki-Laki"
+                      name="gender"
+                      onChange={handleChange}
+                      required
+                      type="radio"
+                      value="Laki-Laki"
                       // checked
                     />
                   </label>
                   <label htmlFor="Perempuan">
                     Perempuan
                     <input
-                      type="radio"
-                      name="gender"
-                      id="Perempuan"
                       className="mx-1 text-sm"
-                      required
-                      value="Perempuan"
+                      id="Perempuan"
+                      name="gender"
                       onChange={handleChange}
+                      required
+                      type="radio"
+                      value="Perempuan"
                       // checked
                     />
                   </label>
                 </div>
               </div>
-              <div id="kesanPesan" className="flex flex-row">
-                <div id="kesan" className="w-full mr-1">
-                  <label htmlFor="kPesan" className="text-sm">
+              <div className="flex flex-row" id="kesanPesan">
+                <div className="w-full mr-1" id="kesan">
+                  <label className="text-sm" htmlFor="kPesan">
                     Kesan dan Pesan
                   </label>
                   <input
-                    type="text"
-                    name="kesanPesan"
-                    id="kPesan"
                     className="w-full h-8 pl-2 text-sm bg-transparent border rounded-md shadow-xs border-slate-300 outline-primary"
-                    required
-                    value={data.kesanPesan}
+                    id="kPesan"
+                    name="kesanPesan"
                     onChange={handleChange}
+                    required
+                    type="text"
+                    value={data.kesanPesan}
                   />
                 </div>
               </div>
               <div className="flex items-center justify-end p-3 border-t w-100">
                 <button
-                  type="reset"
                   className="px-3 py-1 mr-1 text-white bg-red-600 rounded-sm hover:bg-red-700 font-inter"
                   onClick={() => setData(initState)}
+                  type="reset"
                 >
                   Reset
                 </button>
                 <button
-                  type="submit"
                   className="px-3 py-1 text-white bg-blue-600 rounded-sm hover:bg-blue-700 font-inter"
+                  type="submit"
                 >
                   Submit
                 </button>

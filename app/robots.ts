@@ -1,12 +1,12 @@
-import { serverEnvironment } from '@/lib/env/server';
 import type { MetadataRoute } from 'next';
+import { serverEnvironment } from '@/lib/env/server';
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: '*',
         allow: '/',
+        userAgent: '*',
       },
     ],
     sitemap: `${serverEnvironment.BASE_URL}/sitemap.xml`,

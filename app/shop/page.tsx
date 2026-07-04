@@ -1,22 +1,15 @@
 import type { Metadata } from 'next';
-import ProductComp from './components/ProductComp';
 import Breadcrumbs from '@/app/components/breadcrumbs';
-
-import ProductsSearchBar from './components/ProductsSearchBar';
-import { ProductSort } from './components/ProductSort';
 import { serverEnvironment } from '@/lib/env/server';
+import ProductComp from './components/ProductComp';
+import { ProductSort } from './components/ProductSort';
+import ProductsSearchBar from './components/ProductsSearchBar';
 
 export const metadata: Metadata = {
-  title: 'Beli Produk',
-  description: 'Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.',
   alternates: {
     canonical: `${serverEnvironment.BASE_URL}/shop`,
   },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-  },
+  description: 'Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.',
   keywords: [
     'Jual Alas Mangkuk Perca',
     'Jual Appron Perca',
@@ -46,6 +39,12 @@ export const metadata: Metadata = {
     'Jual Baju Tidur Perca',
     'Jual Tas Perca',
   ],
+  robots: {
+    follow: true,
+    index: true,
+    nocache: true,
+  },
+  title: 'Beli Produk',
 };
 
 export default function Shop() {
@@ -75,44 +74,44 @@ export default function Shop() {
                 {/* <!-- single category --> */}
                 <div className="flex items-center">
                   <input
-                    type="checkbox"
-                    id="cat-1"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
+                    id="cat-1"
+                    type="checkbox"
                   />
-                  <label htmlFor="cat-1" className="ml-3 text-gray-600 cursor-pointer">
+                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-1">
                     Baju
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(15)</div> */}
                 </div>
                 <div className="flex items-center">
                   <input
-                    type="checkbox"
-                    id="cat-2"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
+                    id="cat-2"
+                    type="checkbox"
                   />
-                  <label htmlFor="cat-2" className="ml-3 text-gray-600 cursor-pointer">
+                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-2">
                     Celana
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(20)</div> */}
                 </div>
                 <div className="flex items-center">
                   <input
-                    type="checkbox"
-                    id="cat-3"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
+                    id="cat-3"
+                    type="checkbox"
                   />
-                  <label htmlFor="cat-3" className="ml-3 text-gray-600 cursor-pointer">
+                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-3">
                     Tas
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(30)</div> */}
                 </div>
                 <div className="flex items-center">
                   <input
-                    type="checkbox"
-                    id="cat-4"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
+                    id="cat-4"
+                    type="checkbox"
                   />
-                  <label htmlFor="cat-4" className="ml-3 text-gray-600 cursor-pointer">
+                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-4">
                     Souvenir
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(40)</div> */}
@@ -177,15 +176,15 @@ export default function Shop() {
               <h3 className="pt-6 mb-3 text-xl font-medium text-gray-800 uppercase">Price</h3>
               <div className="flex items-center mt-4">
                 <input
-                  type="text"
                   className="w-full px-3 py-1 text-sm text-gray-600 border-gray-300 rounded-sm shadow-xs focus:border-primary focus:ring-0"
                   placeholder="min"
+                  type="text"
                 />
                 <span className="mx-3 text-gray-500">-</span>
                 <input
-                  type="text"
                   className="w-full px-3 py-1 text-sm text-gray-600 border-gray-300 rounded-sm shadow-xs focus:border-primary focus:ring-0"
                   placeholder="max"
+                  type="text"
                 />
               </div>
             </div>

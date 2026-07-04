@@ -1,5 +1,5 @@
 'use client';
-import { CldImage as NextCldImage, type CldImageProps } from 'next-cloudinary';
+import { type CldImageProps, CldImage as NextCldImage } from 'next-cloudinary';
 
 const CldImage = (props: CldImageProps) => {
   return <NextCldImage {...props} />;
