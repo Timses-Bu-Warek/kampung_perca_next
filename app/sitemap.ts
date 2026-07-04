@@ -3,7 +3,7 @@ import getAllProducts from "@/lib/getAllProducts";
 export default async function sitemap() {
 	const baseUrl =
 		process.env.NODE_ENV === "production"
-			? process.env["BASE_URL"]
+			? "https://kampungperca.vercel.app"
 			: "http://localhost:3000/";
 
 	//Get All Post
