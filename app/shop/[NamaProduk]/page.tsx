@@ -1,3 +1,4 @@
+import { serverEnvironment } from "@/lib/env/server";
 import DetailedProduct from "./components/DetailedProduct";
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
@@ -18,7 +19,7 @@ export async function generateMetadata({
     title: `${decodedNamaProduk}`,
     description: `Keterangan: ${params.Keterangan}`,
     alternates: {
-      canonical: `https://www.kampungperca.id/`,
+      canonical: `${serverEnvironment.BASE_URL}/shop/${params.NamaProduk}`,
     },
     robots: {
       index: true,
