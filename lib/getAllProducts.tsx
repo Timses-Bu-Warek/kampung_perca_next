@@ -1,7 +1,9 @@
+import { serverEnvironment } from "./env/server";
+
 export default async function getAllProducts() {
   // const API_SECRET_KEY = process.env.API_SECRET_KEY;
 
-  const res = await fetch(`/api/shop`, {
+  const res = await fetch(`${serverEnvironment.BASE_URL}/api/shop`, {
     next: { revalidate: 10 },
   });
 

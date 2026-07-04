@@ -1,9 +1,10 @@
 import getAllProducts from "@/lib/getAllProducts";
+import { serverEnvironment } from "@/lib/env/server";
 
 export default async function sitemap() {
 	const baseUrl =
 		process.env.NODE_ENV === "production"
-			? "https://kampungperca.vercel.app"
+			? serverEnvironment.BASE_URL
 			: "http://localhost:3000/";
 
 	//Get All Post
