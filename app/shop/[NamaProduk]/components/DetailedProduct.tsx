@@ -6,18 +6,18 @@ import Image from "next/image";
 import useSWR from "swr";
 import { useParams } from "next/navigation";
 import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
-import { SetStateAction, useState } from "react";
+import { type SetStateAction, useState } from "react";
 import Breadcrumbs from "@/app/components/breadcrumbs";
-import RecommendationComp from "@/app/components/RecommendationComp";
 import QuantityComp from "./QuantityComp";
 import SizeComp from "./SizeComp";
 import CldImage from "@/app/components/CldImage";
+import { serverEnvironment } from "@/lib/env/server";
 
 // export const dynamic = 'force-dynamic';
 
 const fetcher = async (address: string) => {
   const response = await fetch(
-    address + "?API_SECRET_KEY=" + process.env.API_SECRET_KEY
+    address + "?API_SECRET_KEY=" + serverEnvironment.API_SECRET_KEY,
   );
   // const data = await response.json()
   // return data
