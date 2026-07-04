@@ -1,12 +1,8 @@
-import { Metadata } from "next";
-import getAllProducts from "@/lib/getAllProducts";
+import type { Metadata } from "next";
 import ProductComp from "./components/ProductComp";
 import Breadcrumbs from "@/app/components/breadcrumbs";
 
-import getSearchProducts from "@/lib/getSearchProducts";
 import ProductsSearchBar from "./components/ProductsSearchBar";
-import { Suspense } from "react";
-import Loading from "./shopLoading";
 import { ProductSort } from "./components/ProductSort";
 
 export const metadata: Metadata = {
