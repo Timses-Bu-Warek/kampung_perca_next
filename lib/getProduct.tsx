@@ -1,9 +1,10 @@
-export default async function getProduct(NamaProduk : string, API_SECRET_KEY : string) {
-    const res = process.env.NODE_ENV === 'production' ?
-        await fetch (`https://www.kampungperca.id/api/shop/${NamaProduk}?=${API_SECRET_KEY}`) :
-        await fetch (`http://localhost:3000/api/shop/${NamaProduk}?=${API_SECRET_KEY}`)
+export default async function getProduct(
+  NamaProduk: string,
+  API_SECRET_KEY: string,
+) {
+  const res = await fetch(`/api/shop/${NamaProduk}?=${API_SECRET_KEY}`);
 
-    if (!res.ok) throw new Error('Failed to fetch products data')
+  if (!res.ok) throw new Error("Failed to fetch products data");
 
-    return res.json();
+  return res.json();
 }
