@@ -44,7 +44,8 @@ export async function GET(
       return NextResponse.json({ message: "Gagal memuat produk", status: 500 });
     }
   } catch (error) {
-    // console.log(error);
-    return NextResponse.json({ message: "Cannot make connection" });
+    return NextResponse.json({
+      message: `Cannot make connection, ${error instanceof Error ? error.message : "Unknown error"}`,
+    });
   }
 }
