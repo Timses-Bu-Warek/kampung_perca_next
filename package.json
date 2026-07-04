@@ -13,6 +13,7 @@
     "@bradgarropy/next-google-analytics": "^1.0.2",
     "@googlemaps/js-api-loader": "^2.0.2",
     "@googlemaps/react-wrapper": "^1.2.0",
+    "@t3-oss/env-nextjs": "^0.13.10",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/jquery": "^3.5.33",
@@ -41,9 +42,11 @@
     "tailwindcss": "^4.1.18",
     "types": "^0.1.1",
     "typescript": "^5.9.3",
-    "urllib": "^4.9.0"
+    "urllib": "^4.9.0",
+    "zod": "^4.2.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.10",
     "@types/google.maps": "^3.58.1",
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"
