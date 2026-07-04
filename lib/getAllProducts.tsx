@@ -1,19 +1,14 @@
-import { serverEnvironment } from "./env/server";
+import "server-only";
+import { connectToDatabase } from "./mongo";
 
 export default async function getAllProducts() {
-  // const API_SECRET_KEY = process.env.API_SECRET_KEY;
+  const client = await connectToDatabase();
+  const db = client.db("KampungPercaDB");
 
-  const res = await fetch(`${serverEnvironment.BASE_URL}/api/shop`, {
-    next: { revalidate: 10 },
-  });
-
-  const products = await res.json();
-
-  if (!res.ok)
-    return {
-      error: true,
-      message: "Failed to fetch products data",
-    };
+  const products = await db
+    .collection("products")
+    .aggregate([{ $sort: { NamaProduk: 1 } }])
+    .toArray();
 
   return products;
 }
