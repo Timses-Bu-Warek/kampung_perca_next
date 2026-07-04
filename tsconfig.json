@@ -32,7 +32,7 @@
     // "noResolve": false,
     // "noUncheckedSideEffectImports": false,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     },
     "resolveJsonModule": true,
     // "resolvePackageJsonExports": false,
