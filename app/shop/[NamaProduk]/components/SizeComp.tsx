@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function SizeComp({
   sizeList,
 }: Readonly<{
   sizeList: any;
 }>) {
-  const [ukuran, setUkuran] = useState("");
+  const [ukuran, setUkuran] = useState('');
 
   const handlePilihUkuran = (ukuran: any) => {
     setUkuran(ukuran);
@@ -22,7 +22,7 @@ export default function SizeComp({
           <div className="size-selector" key={size}>
             <input
               className="hidden"
-              id={"size-" + size}
+              id={'size-' + size}
               name="size"
               onChange={() => handlePilihUkuran(size)}
               type="radio"
@@ -30,7 +30,7 @@ export default function SizeComp({
             />
             <label
               className="text-lg border border-gray-200 rounded-xs h-6 w-6 flexl items-center justify-center cursor-pointer shadow-xs text-gray-600"
-              htmlFor={"size-" + size}
+              htmlFor={'size-' + size}
             >
               {size}
             </label>

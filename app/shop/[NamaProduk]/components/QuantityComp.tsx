@@ -1,12 +1,9 @@
-"use client";
+'use client';
 
-import { parseAsInteger, useQueryState } from "nuqs";
+import { parseAsInteger, useQueryState } from 'nuqs';
 
 export default function QuantityComp() {
-  const [quantity, setQuantity] = useQueryState(
-    "quantity",
-    parseAsInteger.withDefault(1),
-  );
+  const [quantity, setQuantity] = useQueryState('quantity', parseAsInteger.withDefault(1));
 
   function increaseQuantity() {
     setQuantity((quantity: number) => quantity + 1);

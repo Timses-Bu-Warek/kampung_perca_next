@@ -1,10 +1,10 @@
-import { Suspense } from "react";
-import Skeleton from "react-loading-skeleton";
-import { serverEnvironment } from "@/lib/env/server";
-import getProduct from "@/lib/getProduct";
-import DetailedProduct from "./components/DetailedProduct";
-import type { SearchParameters } from "@/lib/types/search-parameters";
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import { serverEnvironment } from '@/lib/env/server';
+import getProduct from '@/lib/getProduct';
+import type { SearchParameters } from '@/lib/types/search-parameters';
+import DetailedProduct from './components/DetailedProduct';
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({
@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { NamaProduk } = await params;
   //nilai dari NamaProduk di-decode dengan menggunakan decodeURIComponent dan mengganti spasi (%20) dengan spasi normal.
-  const decodedNamaProduk = decodeURIComponent(NamaProduk.replace("%20", " "));
+  const decodedNamaProduk = decodeURIComponent(NamaProduk.replace('%20', ' '));
 
   const product = await getProduct(NamaProduk);
 
@@ -24,25 +24,25 @@ export async function generateMetadata({
     alternates: {
       canonical: `${serverEnvironment.BASE_URL}/shop/${NamaProduk}`,
     },
-    description: product?.["description"]
-      ? `Keterangan: ${product?.["description"]}`
+    description: product?.['description']
+      ? `Keterangan: ${product?.['description']}`
       : `Produk ${decodedNamaProduk} tersedia di Kampung Perca. Dapatkan produk berkualitas dengan harga terbaik di sini!`,
     keywords: [
-      "Jual Alas Mangkuk Perca",
-      "Jual Appron Perca",
-      "Jual Baju Pangsi",
-      "Jual Cempal Ayam",
-      "Jual Dompet Koin",
-      "Jual Gantungan Kunci",
-      "Jual Goodie Bag Perca",
-      "Jual Masker Perca",
-      "Jual Lap tangan",
-      "Jual Outer Perca",
-      "Jual Rompi Perca",
-      "Jual Totopong",
-      "Jual Tempat tisu perca",
-      "Jual Baju Tidur Perca",
-      "Jual Tas Perca",
+      'Jual Alas Mangkuk Perca',
+      'Jual Appron Perca',
+      'Jual Baju Pangsi',
+      'Jual Cempal Ayam',
+      'Jual Dompet Koin',
+      'Jual Gantungan Kunci',
+      'Jual Goodie Bag Perca',
+      'Jual Masker Perca',
+      'Jual Lap tangan',
+      'Jual Outer Perca',
+      'Jual Rompi Perca',
+      'Jual Totopong',
+      'Jual Tempat tisu perca',
+      'Jual Baju Tidur Perca',
+      'Jual Tas Perca',
     ],
     robots: {
       follow: true,
