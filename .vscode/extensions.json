@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "vitest.explorer",
+    "aaron-bond.better-comments",
+    "biomejs.biome",
+    "SonarSource.sonarlint-vscode"
+  ]
+}
