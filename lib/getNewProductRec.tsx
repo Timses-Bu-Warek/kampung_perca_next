@@ -1,15 +1,15 @@
-import { serverEnvironment } from './env/server';
+import "server-only";
+import { connectToDatabase } from "./mongo";
 
 export default async function getNewProductRec() {
-  // const API_SECRET_KEY = process.env.API_SECRET_KEY;
+  const client = await connectToDatabase();
+  const db = client.db("KampungPercaDB");
 
-  const res = await fetch(`${serverEnvironment.BASE_URL}/api/newRec`, {
-    cache: 'no-cache',
-  });
-
-  const products = await res.json();
-
-  if (!res.ok) throw new Error('Failed to fetch products data');
+  const products = await db
+    .collection("products")
+    .aggregate([{ $sort: { ProdukID: -1 } }])
+    .limit(4)
+    .toArray();
 
   return products;
 }
