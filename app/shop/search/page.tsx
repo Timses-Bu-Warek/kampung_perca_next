@@ -1,19 +1,22 @@
-"use client";
-
 import ProductCompSearch from "../components/ProductCompSearch";
 import Breadcrumbs from "@/app/components/breadcrumbs";
-import { useSearchParams } from "next/navigation";
 import ProductsSearchBar from "../components/ProductsSearchBar";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { ProductSortSearch } from "../components/ProductSortSearch";
+import type { SearchParameters } from "@/lib/types/search-parameters";
+import { createSearchParamsCache, parseAsString } from "nuqs/server";
 
 // export const metadata: Metadata = {
 //   title: "Shop Kampung Perca Products",
 //   description: "Beli produk kampung perca",
 // };
 
-export default function Shop() {
+export default async function Shop({
+  searchParams,
+}: Readonly<{
+  searchParams: SearchParameters;
+}>) {
   // Return as Object (so must be converted! Convertion can read below)
   // console.log("searchParams: " + searchParams)
 
@@ -35,10 +38,15 @@ export default function Shop() {
   // const searchQueryEntries: any = Object.entries(searchParams);
   // console.log("searchQueryEntries: " + searchQueryEntries)
 
-  const searchParams: any = useSearchParams()!;
+  const searchParameters = await searchParams;
 
-  const searchNamaProdukValues: any = searchParams.get("NamaProduk");
-  const sortValues: any = searchParams.get("sort");
+  const search = createSearchParamsCache({
+    NamaProduk: parseAsString,
+    sort: parseAsString,
+  }).parse(searchParameters);
+
+  const searchNamaProdukValues = search.NamaProduk;
+  const sortValues = search.sort;
 
   return (
     <Suspense fallback={<Loading />}>
