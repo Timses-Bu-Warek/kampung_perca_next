@@ -5,6 +5,7 @@ import RecommendationComp from "./components/RecommendationComp";
 import NewArrivalComp from "./components/NewArrivalComp";
 import YoutubeFacade from "./components/youtubefacade";
 import Head from "next/head";
+import { serverEnvironment } from "@/lib/env/server";
 
 export default function Home() {
   // sessionStorage.setItem("halo", "true")
@@ -23,7 +24,7 @@ export default function Home() {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Kampung Perca Sindangsari",
-              url: "https://www.kampungperca.id",
+              url: serverEnvironment.BASE_URL,
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+62-123-456-7890",
@@ -55,7 +56,7 @@ export default function Home() {
                 latitude: "-6.6528261650365375",
                 longitude: "106.84323757484158",
               },
-              url: "https://www.kampungperca.id",
+              url: serverEnvironment.BASE_URL,
               telephone: "+62-123-456-7890",
             }),
           }}
