@@ -23,7 +23,7 @@ export default function ProductsSearchBar() {
           <i className="fas fa-search"></i>
         </span>
         <input
-          type="text"
+          type="search"
           className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-hidden"
           placeholder="Cari"
           value={search}
