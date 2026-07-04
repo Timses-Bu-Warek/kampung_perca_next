@@ -9,7 +9,7 @@ export async function generateMetadata({
 }) {
   //nilai dari NamaProduk di-decode dengan menggunakan decodeURIComponent dan mengganti spasi (%20) dengan spasi normal.
   const decodedNamaProduk = decodeURIComponent(
-    params.NamaProduk.replace("%20", " ")
+    params.NamaProduk.replace("%20", " "),
   );
 
   // mengembalikan objek metadata yang terdiri dari title, description, alternates, robots, dan keywords.
@@ -46,17 +46,17 @@ export async function generateMetadata({
 }
 
 //merender halaman produk berdasarkan parameter yang diterima dari URL.
-export default function DynamicNameProduct({
+export default async function DynamicNameProduct({
   params,
-}: {
-  //menerima props params yang berisi parameter dari URL, khususnya NamaProduk.
-  params: { NamaProduk: string };
-}) {
+}: Readonly<{
+  params: Promise<{ NamaProduk: string }>;
+}>) {
+  const { NamaProduk } = await params;
   return (
     <main>
       <div>
         {/* merender komponen DetailedProduct, yang bertanggung jawab untuk menampilkan detail produk. */}
-        <DetailedProduct />
+        <DetailedProduct productName={NamaProduk} />
       </div>
     </main>
   );
