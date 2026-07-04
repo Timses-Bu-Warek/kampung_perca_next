@@ -1,44 +1,44 @@
-import { v2 as cloudinary } from "cloudinary";
-import Image from "next/image";
-import Link from "next/link";
-import CldImage from "@/app/components/CldImage";
-import getAllProducts from "@/lib/getAllProducts";
-import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
+import { v2 as cloudinary } from 'cloudinary';
+import Image from 'next/image';
+import Link from 'next/link';
+import CldImage from '@/app/components/CldImage';
+import type getSearchProducts from '@/lib/getSearchProducts';
+import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 
 cloudinary.config({
-  api_key: process.env["CLOUDINARY_API_KEY"],
-  api_secret: process.env["CLOUDINARY_API_SECRET"],
-  cloud_name: process.env["NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"],
+  api_key: process.env['CLOUDINARY_API_KEY'],
+  api_secret: process.env['CLOUDINARY_API_SECRET'],
+  cloud_name: process.env['NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME'],
   secure: true,
 });
 
-export default async function ProductComp() {
-  const productsData = getAllProducts();
-
-  const products = await productsData;
-
+export default async function ProductComp({
+  products,
+}: Readonly<{
+  products: Awaited<ReturnType<typeof getSearchProducts>>;
+}>) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {products.map((product) => (
         <div
           className="bg-white shadow-sm rounded-sm overflow-hidden group flex justify-between flex-col"
-          key={product["_id"]}
+          key={product._id}
         >
           {/* <!-- produk image --> */}
           <div className="relative">
-            {product["FotoProduk"] ? (
+            {product.FotoProduk ? (
               <CldImage
-                alt={product["NamaProduk"]}
+                alt={product.NamaProduk}
                 className="w-full h-80 object-cover"
                 height={0}
                 loading="lazy"
                 sizes="100vw"
-                src={product["FotoProduk"]}
+                src={product.FotoProduk}
                 width={0}
               />
             ) : (
               <Image
-                alt={product["NamaProduk"]}
+                alt={product.NamaProduk}
                 className="w-full h-80 object-cover"
                 height={0}
                 sizes="100vw"
@@ -49,7 +49,7 @@ export default async function ProductComp() {
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
               <Link
                 className="text-white text-lg w-9 h-8 rounded-full bg-primary flex items-center justify-center hover:bg-gray-800 transition"
-                href={`/shop/${product["NamaProduk"]}`}
+                href={`/shop/${product['NamaProduk']}`}
                 passHref
               >
                 <i className="fas fa-search"></i>
@@ -68,22 +68,22 @@ export default async function ProductComp() {
           {/* <!-- produk konten --> */}
           <div className="">
             <div className="pt-4 pb-3 px-4">
-              <Link href={`/shop/${product["NamaProduk"]}`} passHref>
+              <Link href={`/shop/${product.NamaProduk}`} passHref>
                 <h4
                   className={
-                    product["NamaProduk"].length <= 8
+                    product.NamaProduk.length <= 8
                       ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
-                      : product["NamaProduk"].length >= 15
+                      : product.NamaProduk.length >= 15
                         ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
                         : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                   }
                 >
-                  {product["NamaProduk"]}
+                  {product.NamaProduk}
                 </h4>
               </Link>
               <div className="flex items-baseline mb-1 space-x-2 font-inter">
                 <p className="text-lg text-primary font-semibold">
-                  Rp {Intl.NumberFormat("id-ID").format(product["Harga"])}
+                  Rp {Intl.NumberFormat('id-ID').format(product['Harga'])}
                 </p>
                 {/* <p className="text-sm text-gray-400 line-through">
                   Rp. 123.000
@@ -113,8 +113,8 @@ export default async function ProductComp() {
             <Link
               className="block w-full py-1 text-center text-white bg-primary border-primary rounded-b hover:bg-transparent hover:text-primary transition"
               href={
-                "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
-                product["NamaProduk"]
+                'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
+                product.NamaProduk
               }
               rel="noopener noreferrer"
               target="_blank"

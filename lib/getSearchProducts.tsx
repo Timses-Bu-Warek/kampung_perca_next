@@ -1,29 +1,53 @@
-import { serverEnvironment } from './env/server';
+import 'server-only';
+import { connectToDatabase } from './mongo';
 
 export default async function getSearchProducts(
-  namaProdukParams: string | null,
-  sortParams: string | null,
+  namaProdukParams: string | null | undefined,
+  sortParams: string | null | undefined,
 ) {
-  // const { searchParams } = new URL(request.url);
-  // const nama = searchParams.get("NamaProduk")
-  if (namaProdukParams && !sortParams) {
-    const res = await fetch(
-      `${serverEnvironment.BASE_URL}/api/shop/search?NamaProduk=${namaProdukParams}`,
-    );
-    return responseJSON(res);
-  } else if (namaProdukParams && sortParams) {
-    const res = await fetch(
-      `${serverEnvironment.BASE_URL}/api/shop/search?NamaProduk=${namaProdukParams}&sort=${sortParams}`,
-    );
-    return responseJSON(res);
-  } else if (!namaProdukParams && sortParams) {
-    const res = await fetch(`${serverEnvironment.BASE_URL}/api/shop/search?sort=${sortParams}`);
-    return responseJSON(res);
-  }
-}
+  const client = await connectToDatabase();
+  const db = client.db('KampungPercaDB');
+  const collection = db.collection<Products>('products');
+  // const collection = db.collection<products>("products")
+  await collection.createIndexes([{ key: { NamaProduk: 'text' }, name: 'NamaProduk_text' }]);
+  if ((!sortParams || sortParams === 'default') && namaProdukParams) {
+    const result = await collection
+      .find({ NamaProduk: { $options: 'i', $regex: namaProdukParams } })
+      .toArray();
+    return result;
+  } else if ((!sortParams || sortParams === 'default') && !namaProdukParams) {
+    const result = await collection.aggregate<Products>([{ $sort: { NamaProduk: 1 } }]).toArray();
 
-export async function responseJSON(res: Response) {
-  const products = await res.json();
-  if (!res.ok) throw new Error('Failed to fetch products data');
-  return products;
+    return result;
+  } else if (sortParams === 'lowHigh' && namaProdukParams) {
+    const result = await collection
+      .aggregate<Products>([
+        {
+          $match: {
+            NamaProduk: { $options: 'i', $regex: namaProdukParams },
+          },
+        },
+        { $sort: { Harga: 1 } },
+      ])
+      .toArray();
+
+    return result;
+  } else if (sortParams === 'lowHigh' && !namaProdukParams) {
+    const result = await collection.aggregate<Products>([{ $sort: { Harga: 1 } }]).toArray();
+
+    return result;
+  } else {
+    const result = await collection
+      .aggregate<Products>([
+        {
+          $match: {
+            NamaProduk: { $options: 'i', $regex: namaProdukParams },
+          },
+        },
+        { $sort: { Harga: -1 } },
+      ])
+      .toArray();
+
+    return result;
+  }
 }

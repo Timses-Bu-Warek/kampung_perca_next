@@ -14,6 +14,8 @@ import '../styles/fontawesome-free-6.5.2-web/css/solid.css';
 import { serverEnvironment } from '@/lib/env/server';
 import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
+
 // import ReactModal from 'react-modal'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -75,19 +77,21 @@ export default async function RootLayout({
             crossOrigin="anonymous"
           ></Script> */}
         <body>
-          <Header />
-          {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
-          {children}
-          <FloatingButton />
-          <Link
-            href={
-              'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau tanya seputar produk Kampung Perca'
-            }
-          >
-            <WhatsAppFloatingButton />
-          </Link>
-          <Footer />
-          <SpeedInsights />
+          <NuqsAdapter>
+            <Header />
+            {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
+            {children}
+            <FloatingButton />
+            <Link
+              href={
+                'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau tanya seputar produk Kampung Perca'
+              }
+            >
+              <WhatsAppFloatingButton />
+            </Link>
+            <Footer />
+            <SpeedInsights />
+          </NuqsAdapter>
         </body>
       </html>
       <GoogleAnalytics measurementId="G-SNY7F7KQKF" />
