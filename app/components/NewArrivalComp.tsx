@@ -6,9 +6,9 @@ import { v2 as cloudinary } from "cloudinary";
 import CldImage from "@/app/components/CldImage";
 
 cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: process.env["NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"],
+  api_key: process.env["CLOUDINARY_API_KEY"],
+  api_secret: process.env["CLOUDINARY_API_SECRET"],
   secure: true,
 });
 
@@ -89,8 +89,8 @@ export default async function NewArrivalComp() {
                     product.NamaProduk.length <= 8
                       ? `uppercase font-medium font-montserrat text-lg mb-2 text-gray-800 hover:text-primary transition`
                       : product.NamaProduk.length >= 15
-                      ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
-                      : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
+                        ? `uppercase font-medium font-montserrat text-base mb-2 text-gray-800 hover:text-primary transition`
+                        : `uppercase font-medium font-montserrat text-sm mb-2 text-gray-800 hover:text-primary transition`
                   }
                 >
                   {product.NamaProduk}
