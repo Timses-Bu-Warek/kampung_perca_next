@@ -1,15 +1,10 @@
 "use client";
 
-import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-
-import getAllProducts from "@/lib/getAllProducts";
 import ProductCompSearch from "../components/ProductCompSearch";
 import Breadcrumbs from "@/app/components/breadcrumbs";
 import { useSearchParams } from "next/navigation";
 import ProductsSearchBar from "../components/ProductsSearchBar";
-import { Suspense, useCallback } from "react";
+import { Suspense } from "react";
 import Loading from "./loading";
 import { ProductSortSearch } from "../components/ProductSortSearch";
 
