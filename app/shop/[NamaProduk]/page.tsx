@@ -57,7 +57,8 @@ export default async function DynamicNameProduct({
 }>) {
   const { NamaProduk } = await params;
 
-  const product = getProduct(NamaProduk);
+  const productPromise = getProduct(NamaProduk);
+
   return (
     <main>
       <div>
@@ -68,7 +69,10 @@ export default async function DynamicNameProduct({
             </div>
           }
         >
-          <DetailedProduct productName={NamaProduk} />
+          <DetailedProduct
+            productName={NamaProduk}
+            productPromise={productPromise}
+          />
         </Suspense>
       </div>
     </main>
