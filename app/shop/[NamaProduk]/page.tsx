@@ -1,5 +1,8 @@
 import { serverEnvironment } from "@/lib/env/server";
 import DetailedProduct from "./components/DetailedProduct";
+import getProduct from "@/lib/getProduct";
+import { Suspense } from "react";
+import Skeleton from "react-loading-skeleton";
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({
@@ -53,11 +56,20 @@ export default async function DynamicNameProduct({
   params: Promise<{ NamaProduk: string }>;
 }>) {
   const { NamaProduk } = await params;
+
+  const product = getProduct(NamaProduk);
   return (
     <main>
       <div>
-        {/* merender komponen DetailedProduct, yang bertanggung jawab untuk menampilkan detail produk. */}
-        <DetailedProduct productName={NamaProduk} />
+        <Suspense
+          fallback={
+            <div>
+              <Skeleton />
+            </div>
+          }
+        >
+          <DetailedProduct productName={NamaProduk} />
+        </Suspense>
       </div>
     </main>
   );
