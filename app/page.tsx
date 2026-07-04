@@ -179,6 +179,7 @@ export default function Home() {
               src="https://www.youtube.com/embed/TRoKZ-4m5C0"
               // width="990"
               // height="400"
+              loading="lazy"
               className="justify-center aspect-video w-full h-full mb-6 shadow-xl shadow-gray-400 rounded-xl"
             ></iframe>
             <h4 className="items-center justify-center italic text-center text-black font-inter">
