@@ -4,7 +4,6 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Link from "next/link";
 import Image from "next/image";
 import useSWR from "swr";
-import { useParams } from "next/navigation";
 import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
 import { type SetStateAction, useState } from "react";
 import Breadcrumbs from "@/app/components/breadcrumbs";
@@ -34,7 +33,6 @@ export default function DetailedProduct({
   const chooseQuantity = (quantity: SetStateAction<number>) => {
     setQuantity(quantity);
   };
-  const [name, setName] = useState(productName);
   const [ukuran, setUkuran] = useState("");
 
   const chooseUkuran = (ukuran: any) => {
@@ -71,7 +69,7 @@ export default function DetailedProduct({
       "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
       quantity +
       " " +
-      name +
+      productName +
       " dengan ukuran " +
       ukuran;
   } else {
@@ -79,7 +77,7 @@ export default function DetailedProduct({
       "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
       quantity +
       " " +
-      name;
+      productName;
   }
 
   // const productsData: Promise<Products> = getProduct(NamaProduk);
