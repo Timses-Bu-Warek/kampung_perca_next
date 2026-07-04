@@ -1,9 +1,12 @@
-'use client';
-import { useState } from 'react';
+"use client";
 
-export default function QuantityComp(context: { params: { quantity: any } }) {
-  const [quantity, setQuantity] = useState(1);
-  context.params.quantity(quantity);
+import { parseAsInteger, useQueryState } from "nuqs";
+
+export default function QuantityComp() {
+  const [quantity, setQuantity] = useQueryState(
+    "quantity",
+    parseAsInteger.withDefault(1),
+  );
 
   function increaseQuantity() {
     setQuantity((quantity: number) => quantity + 1);
@@ -35,7 +38,6 @@ export default function QuantityComp(context: { params: { quantity: any } }) {
         <button
           className="flex items-center justify-center w-full h-8 text-lg cursor-pointer select-none md:w-8"
           onClick={increaseQuantity}
-          type="button"
         >
           +
         </button>

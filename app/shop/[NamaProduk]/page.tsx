@@ -1,8 +1,14 @@
-import { Suspense } from 'react';
-import Skeleton from 'react-loading-skeleton';
-import { serverEnvironment } from '@/lib/env/server';
-import getProduct from '@/lib/getProduct';
-import DetailedProduct from './components/DetailedProduct';
+import { Suspense } from "react";
+import Skeleton from "react-loading-skeleton";
+import { serverEnvironment } from "@/lib/env/server";
+import getProduct from "@/lib/getProduct";
+import DetailedProduct from "./components/DetailedProduct";
+import type { SearchParameters } from "@/lib/types/search-parameters";
+import {
+  createSearchParamsCache,
+  parseAsInteger,
+  parseAsString,
+} from "nuqs/server";
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({
@@ -12,7 +18,9 @@ export async function generateMetadata({
   params: { NamaProduk: string; Keterangan: string };
 }) {
   //nilai dari NamaProduk di-decode dengan menggunakan decodeURIComponent dan mengganti spasi (%20) dengan spasi normal.
-  const decodedNamaProduk = decodeURIComponent(params.NamaProduk.replace('%20', ' '));
+  const decodedNamaProduk = decodeURIComponent(
+    params.NamaProduk.replace("%20", " "),
+  );
 
   // mengembalikan objek metadata yang terdiri dari title, description, alternates, robots, dan keywords.
   return {
@@ -21,21 +29,21 @@ export async function generateMetadata({
     },
     description: `Keterangan: ${params.Keterangan}`,
     keywords: [
-      'Jual Alas Mangkuk Perca',
-      'Jual Appron Perca',
-      'Jual Baju Pangsi',
-      'Jual Cempal Ayam',
-      'Jual Dompet Koin',
-      'Jual Gantungan Kunci',
-      'Jual Goodie Bag Perca',
-      'Jual Masker Perca',
-      'Jual Lap tangan',
-      'Jual Outer Perca',
-      'Jual Rompi Perca',
-      'Jual Totopong',
-      'Jual Tempat tisu perca',
-      'Jual Baju Tidur Perca',
-      'Jual Tas Perca',
+      "Jual Alas Mangkuk Perca",
+      "Jual Appron Perca",
+      "Jual Baju Pangsi",
+      "Jual Cempal Ayam",
+      "Jual Dompet Koin",
+      "Jual Gantungan Kunci",
+      "Jual Goodie Bag Perca",
+      "Jual Masker Perca",
+      "Jual Lap tangan",
+      "Jual Outer Perca",
+      "Jual Rompi Perca",
+      "Jual Totopong",
+      "Jual Tempat tisu perca",
+      "Jual Baju Tidur Perca",
+      "Jual Tas Perca",
     ],
     robots: {
       follow: true,
@@ -50,12 +58,20 @@ export async function generateMetadata({
 //merender halaman produk berdasarkan parameter yang diterima dari URL.
 export default async function DynamicNameProduct({
   params,
+  searchParams,
 }: Readonly<{
   params: Promise<{ NamaProduk: string }>;
+  searchParams: SearchParameters;
 }>) {
   const { NamaProduk } = await params;
+  const searchParameters = await searchParams;
 
-  const productPromise = getProduct(NamaProduk);
+  const search = createSearchParamsCache({
+    quantity: parseAsInteger,
+    size: parseAsString,
+  }).parse;
+
+  const product = await getProduct(NamaProduk);
 
   return (
     <main>
@@ -67,7 +83,7 @@ export default async function DynamicNameProduct({
             </div>
           }
         >
-          <DetailedProduct productName={NamaProduk} productPromise={productPromise} />
+          <DetailedProduct product={product} />
         </Suspense>
       </div>
     </main>
