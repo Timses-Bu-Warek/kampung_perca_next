@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumbs from "@/app/components/breadcrumbs";
 import FotoContoh from "@/public/img/contoh.webp";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import StructuredData from "@/app/components/StructuredData";
 
 export const metadata: Metadata = {
