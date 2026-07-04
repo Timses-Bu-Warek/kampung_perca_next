@@ -45,17 +45,10 @@ export default function DetailedProduct({
   // }
 
   const address = `/api/shop/${productName}`;
-  const NamaProduk = productName;
   // const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(address, fetcher);
-  // const { data, error } = useSWR(getProduct(NamaProduk));
-
-  // console.log("address: " + address)
-  // console.log("fetcher: " + fetcher)
-  // console.log("data: " + data);
 
   if (error) return <div>Failed to fetch product</div>;
-  // if (!data) return <div>Loading....</div>
   if (!data)
     return (
       <div>
