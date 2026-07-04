@@ -1,59 +1,60 @@
-import type { Metadata } from 'next';
-import Breadcrumbs from '@/app/components/breadcrumbs';
-import { serverEnvironment } from '@/lib/env/server';
-import ProductComp from './components/ProductComp';
-import { ProductSort } from './components/ProductSort';
-import ProductsSearchBar from './components/ProductsSearchBar';
+import type { Metadata } from "next";
+import Breadcrumbs from "@/app/components/breadcrumbs";
+import { serverEnvironment } from "@/lib/env/server";
+import ProductComp from "./components/ProductComp";
+import { ProductSort } from "./components/ProductSort";
+import ProductsSearchBar from "./components/ProductsSearchBar";
 
 export const metadata: Metadata = {
   alternates: {
     canonical: `${serverEnvironment.BASE_URL}/shop`,
   },
-  description: 'Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.',
+  description:
+    "Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.",
   keywords: [
-    'Jual Alas Mangkuk Perca',
-    'Jual Appron Perca',
-    'Jual Baju Anak Perca',
-    'Jual Baju Pangsi',
-    'Jual Baju Tidur Perca',
-    'Jual Bantal Duduk',
-    'Jual Bantal Kursi',
-    'Jual Blouse Perca',
-    'Jual Cempal Ayam',
-    'Jual Daster',
-    'Jual Dompet Koin',
-    'Jual Gantungan Kunci',
-    'Jual Goodie Bag Perca',
-    'Jual Ikat Rambut',
-    'Jual Keset Bentuk',
-    'Jual Masker Perca',
-    'Jual Lap tangan',
-    'Jual Outer Perca',
-    'Jual Pouch',
-    'Jual Rok Perca',
-    'Jual Rompi Perca',
-    'Jual Baju Tidur Perca',
-    'Jual Totopong',
-    'Jual Notebook',
-    'Jual Tempat tisu perca',
-    'Jual Baju Tidur Perca',
-    'Jual Tas Perca',
+    "Jual Alas Mangkuk Perca",
+    "Jual Appron Perca",
+    "Jual Baju Anak Perca",
+    "Jual Baju Pangsi",
+    "Jual Baju Tidur Perca",
+    "Jual Bantal Duduk",
+    "Jual Bantal Kursi",
+    "Jual Blouse Perca",
+    "Jual Cempal Ayam",
+    "Jual Daster",
+    "Jual Dompet Koin",
+    "Jual Gantungan Kunci",
+    "Jual Goodie Bag Perca",
+    "Jual Ikat Rambut",
+    "Jual Keset Bentuk",
+    "Jual Masker Perca",
+    "Jual Lap tangan",
+    "Jual Outer Perca",
+    "Jual Pouch",
+    "Jual Rok Perca",
+    "Jual Rompi Perca",
+    "Jual Baju Tidur Perca",
+    "Jual Totopong",
+    "Jual Notebook",
+    "Jual Tempat tisu perca",
+    "Jual Baju Tidur Perca",
+    "Jual Tas Perca",
   ],
   robots: {
     follow: true,
     index: true,
     nocache: true,
   },
-  title: 'Beli Produk',
+  title: "Beli Produk",
 };
 
 export default function Shop() {
   return (
-    <main>
+    <main className="container mx-auto">
       {/* <!-- breadcrums --> */}
       <Breadcrumbs
         params={{
-          slug: 'Shop',
+          slug: "Shop",
         }}
       />
       {/* <!-- end breadcrums --> */}
@@ -69,7 +70,9 @@ export default function Shop() {
 
             {/* <!-- category filter --> */}
             <div className="hidden">
-              <h3 className="mb-3 text-xl font-medium text-gray-800 uppercase">Categories</h3>
+              <h3 className="mb-3 text-xl font-medium text-gray-800 uppercase">
+                Categories
+              </h3>
               <div className="space-y-2">
                 {/* <!-- single category --> */}
                 <div className="flex items-center">
@@ -78,7 +81,10 @@ export default function Shop() {
                     id="cat-1"
                     type="checkbox"
                   />
-                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-1">
+                  <label
+                    className="ml-3 text-gray-600 cursor-pointer"
+                    htmlFor="cat-1"
+                  >
                     Baju
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(15)</div> */}
@@ -89,7 +95,10 @@ export default function Shop() {
                     id="cat-2"
                     type="checkbox"
                   />
-                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-2">
+                  <label
+                    className="ml-3 text-gray-600 cursor-pointer"
+                    htmlFor="cat-2"
+                  >
                     Celana
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(20)</div> */}
@@ -100,7 +109,10 @@ export default function Shop() {
                     id="cat-3"
                     type="checkbox"
                   />
-                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-3">
+                  <label
+                    className="ml-3 text-gray-600 cursor-pointer"
+                    htmlFor="cat-3"
+                  >
                     Tas
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(30)</div> */}
@@ -111,7 +123,10 @@ export default function Shop() {
                     id="cat-4"
                     type="checkbox"
                   />
-                  <label className="ml-3 text-gray-600 cursor-pointer" htmlFor="cat-4">
+                  <label
+                    className="ml-3 text-gray-600 cursor-pointer"
+                    htmlFor="cat-4"
+                  >
                     Souvenir
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(40)</div> */}
@@ -173,7 +188,9 @@ export default function Shop() {
 
             {/* <!-- price filter --> */}
             <div className="hidden pt-4">
-              <h3 className="pt-6 mb-3 text-xl font-medium text-gray-800 uppercase">Price</h3>
+              <h3 className="pt-6 mb-3 text-xl font-medium text-gray-800 uppercase">
+                Price
+              </h3>
               <div className="flex items-center mt-4">
                 <input
                   className="w-full px-3 py-1 text-sm text-gray-600 border-gray-300 rounded-sm shadow-xs focus:border-primary focus:ring-0"
