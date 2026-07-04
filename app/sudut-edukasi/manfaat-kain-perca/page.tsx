@@ -4,13 +4,14 @@ import Breadcrumbs from "@/app/components/breadcrumbs";
 import FotoContoh from "@/public/img/contoh.webp";
 import type { Metadata } from "next";
 import StructuredData from "@/app/components/StructuredData";
+import { serverEnvironment } from "@/lib/env/server";
 
 export const metadata: Metadata = {
   title: "Manfaat Kain Perca",
   description:
     "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
   alternates: {
-    canonical: `https://www.kampungperca.id/`,
+    canonical: `${serverEnvironment.BASE_URL}/sudut-edukasi/manfaat-kain-perca`,
   },
   robots: {
     index: true,
@@ -33,12 +34,12 @@ const structuredData = {
   "@type": "Article",
   mainEntityOfPage: {
     "@type": "WebPage",
-    "@id": "https://www.kampungperca.id/sudut-edukasi/manfaat-kain-perca",
+    "@id": `${serverEnvironment.BASE_URL}/sudut-edukasi/manfaat-kain-perca`,
   },
   headline: "Manfaat Kain Perca",
   description:
     "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal.",
-  image: "https://www.kampungperca.id/img/contoh.webp", // URL gambar utama
+  image: `${serverEnvironment.BASE_URL}/img/contoh.webp`, // URL gambar utama
   author: {
     "@type": "Person",
     name: "Kampung Perca Kota Bogor", // Nama penulis
