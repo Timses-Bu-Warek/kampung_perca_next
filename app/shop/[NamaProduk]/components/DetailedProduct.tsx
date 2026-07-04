@@ -24,31 +24,33 @@ const fetcher = async (address: string) => {
   return response.json();
 };
 
-export default function DetailedProduct() {
-  const params = useParams<{ NamaProduk: string }>();
-
+export default function DetailedProduct({
+  productName,
+}: Readonly<{
+  productName: string;
+}>) {
   const [quantity, setQuantity] = useState(1);
 
   const chooseQuantity = (quantity: SetStateAction<number>) => {
     setQuantity(quantity);
   };
-  const [name, setName] = useState(params.NamaProduk);
+  const [name, setName] = useState(productName);
   const [ukuran, setUkuran] = useState("");
 
   const chooseUkuran = (ukuran: any) => {
     setUkuran(ukuran);
   };
 
-  // const fetcher = getProduct(params.NamaProduk)
+  // const fetcher = getProduct(NamaProduk)
   // const fetcher = async(url: string) => {
   //      fetch(url).then(r => r.json())
   // }
 
-  const address = `/api/shop/${params.NamaProduk}`;
-  const NamaProduk = params.NamaProduk;
+  const address = `/api/shop/${productName}`;
+  const NamaProduk = productName;
   // const fetcher = (url: string) => fetch(url).then((res) => res.json());
   const { data, error } = useSWR(address, fetcher);
-  // const { data, error } = useSWR(getProduct(params.NamaProduk));
+  // const { data, error } = useSWR(getProduct(NamaProduk));
 
   // console.log("address: " + address)
   // console.log("fetcher: " + fetcher)
@@ -80,7 +82,7 @@ export default function DetailedProduct() {
       name;
   }
 
-  // const productsData: Promise<Products> = getProduct(params.NamaProduk);
+  // const productsData: Promise<Products> = getProduct(NamaProduk);
   // const detailedProduct = useSWR(productsData);
   // const detailedProduct = await productsData;
   // console.log(detailedProduct);
