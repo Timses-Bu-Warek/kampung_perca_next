@@ -1,19 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
-import getSearchProducts from "@/lib/getSearchProducts";
-import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
+import Image from 'next/image';
+import Link from 'next/link';
+import getSearchProducts from '@/lib/getSearchProducts';
+import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 
-import CldImage from "@/app/components/CldImage";
+import CldImage from '@/app/components/CldImage';
 
 export default async function ProductCompSearch({
   params,
 }: {
   params: { NamaProduk: string | null; sort: string | null };
 }) {
-  const productsData: Promise<Products[]> = getSearchProducts(
-    params.NamaProduk,
-    params.sort,
-  );
+  const productsData: Promise<Products[]> = getSearchProducts(params.NamaProduk, params.sort);
 
   const products = await productsData;
   // console.log(products);
@@ -95,7 +92,7 @@ export default async function ProductCompSearch({
             </Link>
             <div className="flex items-baseline mb-1 space-x-2 font-inter">
               <p className="text-lg text-primary font-semibold">
-                Rp {Intl.NumberFormat("id-ID").format(product.Harga)}
+                Rp {Intl.NumberFormat('id-ID').format(product.Harga)}
               </p>
               {/* <p className="text-sm text-gray-400 line-through">
                   Rp. 123.000
@@ -124,7 +121,7 @@ export default async function ProductCompSearch({
           </div>
           <Link
             href={
-              "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
+              'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
               product.NamaProduk
             }
             title="Hubungi Saya"

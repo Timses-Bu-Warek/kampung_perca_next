@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
-import ProductComp from "./components/ProductComp";
-import Breadcrumbs from "@/app/components/breadcrumbs";
+import type { Metadata } from 'next';
+import ProductComp from './components/ProductComp';
+import Breadcrumbs from '@/app/components/breadcrumbs';
 
-import ProductsSearchBar from "./components/ProductsSearchBar";
-import { ProductSort } from "./components/ProductSort";
-import { serverEnvironment } from "@/lib/env/server";
+import ProductsSearchBar from './components/ProductsSearchBar';
+import { ProductSort } from './components/ProductSort';
+import { serverEnvironment } from '@/lib/env/server';
 
 export const metadata: Metadata = {
-  title: "Beli Produk",
-  description:
-    "Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.",
+  title: 'Beli Produk',
+  description: 'Beli Produk Perca di Kampung Perca Sindangsari. Murah dan Berkualitas.',
   alternates: {
     canonical: `${serverEnvironment.BASE_URL}/shop`,
   },
@@ -19,33 +18,33 @@ export const metadata: Metadata = {
     nocache: true,
   },
   keywords: [
-    "Jual Alas Mangkuk Perca",
-    "Jual Appron Perca",
-    "Jual Baju Anak Perca",
-    "Jual Baju Pangsi",
-    "Jual Baju Tidur Perca",
-    "Jual Bantal Duduk",
-    "Jual Bantal Kursi",
-    "Jual Blouse Perca",
-    "Jual Cempal Ayam",
-    "Jual Daster",
-    "Jual Dompet Koin",
-    "Jual Gantungan Kunci",
-    "Jual Goodie Bag Perca",
-    "Jual Ikat Rambut",
-    "Jual Keset Bentuk",
-    "Jual Masker Perca",
-    "Jual Lap tangan",
-    "Jual Outer Perca",
-    "Jual Pouch",
-    "Jual Rok Perca",
-    "Jual Rompi Perca",
-    "Jual Baju Tidur Perca",
-    "Jual Totopong",
-    "Jual Notebook",
-    "Jual Tempat tisu perca",
-    "Jual Baju Tidur Perca",
-    "Jual Tas Perca",
+    'Jual Alas Mangkuk Perca',
+    'Jual Appron Perca',
+    'Jual Baju Anak Perca',
+    'Jual Baju Pangsi',
+    'Jual Baju Tidur Perca',
+    'Jual Bantal Duduk',
+    'Jual Bantal Kursi',
+    'Jual Blouse Perca',
+    'Jual Cempal Ayam',
+    'Jual Daster',
+    'Jual Dompet Koin',
+    'Jual Gantungan Kunci',
+    'Jual Goodie Bag Perca',
+    'Jual Ikat Rambut',
+    'Jual Keset Bentuk',
+    'Jual Masker Perca',
+    'Jual Lap tangan',
+    'Jual Outer Perca',
+    'Jual Pouch',
+    'Jual Rok Perca',
+    'Jual Rompi Perca',
+    'Jual Baju Tidur Perca',
+    'Jual Totopong',
+    'Jual Notebook',
+    'Jual Tempat tisu perca',
+    'Jual Baju Tidur Perca',
+    'Jual Tas Perca',
   ],
 };
 
@@ -55,7 +54,7 @@ export default function Shop() {
       {/* <!-- breadcrums --> */}
       <Breadcrumbs
         params={{
-          slug: "Shop",
+          slug: 'Shop',
         }}
       />
       {/* <!-- end breadcrums --> */}
@@ -71,9 +70,7 @@ export default function Shop() {
 
             {/* <!-- category filter --> */}
             <div className="hidden">
-              <h3 className="mb-3 text-xl font-medium text-gray-800 uppercase">
-                Categories
-              </h3>
+              <h3 className="mb-3 text-xl font-medium text-gray-800 uppercase">Categories</h3>
               <div className="space-y-2">
                 {/* <!-- single category --> */}
                 <div className="flex items-center">
@@ -82,10 +79,7 @@ export default function Shop() {
                     id="cat-1"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
-                  <label
-                    htmlFor="cat-1"
-                    className="ml-3 text-gray-600 cursor-pointer"
-                  >
+                  <label htmlFor="cat-1" className="ml-3 text-gray-600 cursor-pointer">
                     Baju
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(15)</div> */}
@@ -96,10 +90,7 @@ export default function Shop() {
                     id="cat-2"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
-                  <label
-                    htmlFor="cat-2"
-                    className="ml-3 text-gray-600 cursor-pointer"
-                  >
+                  <label htmlFor="cat-2" className="ml-3 text-gray-600 cursor-pointer">
                     Celana
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(20)</div> */}
@@ -110,10 +101,7 @@ export default function Shop() {
                     id="cat-3"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
-                  <label
-                    htmlFor="cat-3"
-                    className="ml-3 text-gray-600 cursor-pointer"
-                  >
+                  <label htmlFor="cat-3" className="ml-3 text-gray-600 cursor-pointer">
                     Tas
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(30)</div> */}
@@ -124,10 +112,7 @@ export default function Shop() {
                     id="cat-4"
                     className="rounded-xs cursor-pointer text-primary focus:ring-0"
                   />
-                  <label
-                    htmlFor="cat-4"
-                    className="ml-3 text-gray-600 cursor-pointer"
-                  >
+                  <label htmlFor="cat-4" className="ml-3 text-gray-600 cursor-pointer">
                     Souvenir
                   </label>
                   {/* <div className="ml-auto text-sm text-gray-600">(40)</div> */}
@@ -189,9 +174,7 @@ export default function Shop() {
 
             {/* <!-- price filter --> */}
             <div className="hidden pt-4">
-              <h3 className="pt-6 mb-3 text-xl font-medium text-gray-800 uppercase">
-                Price
-              </h3>
+              <h3 className="pt-6 mb-3 text-xl font-medium text-gray-800 uppercase">Price</h3>
               <div className="flex items-center mt-4">
                 <input
                   type="text"

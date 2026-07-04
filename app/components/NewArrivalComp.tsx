@@ -1,14 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
-import getNewProductRec from "@/lib/getNewProductRec";
-import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
-import { v2 as cloudinary } from "cloudinary";
-import CldImage from "@/app/components/CldImage";
+import Image from 'next/image';
+import Link from 'next/link';
+import getNewProductRec from '@/lib/getNewProductRec';
+import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
+import { v2 as cloudinary } from 'cloudinary';
+import CldImage from '@/app/components/CldImage';
 
 cloudinary.config({
-  cloud_name: process.env["NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME"],
-  api_key: process.env["CLOUDINARY_API_KEY"],
-  api_secret: process.env["CLOUDINARY_API_SECRET"],
+  cloud_name: process.env['NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME'],
+  api_key: process.env['CLOUDINARY_API_KEY'],
+  api_secret: process.env['CLOUDINARY_API_SECRET'],
   secure: true,
 });
 
@@ -98,7 +98,7 @@ export default async function NewArrivalComp() {
               </Link>
               <div className="flex items-baseline mb-1 space-x-2 font-inter">
                 <p className="text-lg font-semibold text-primary">
-                  Rp {Intl.NumberFormat("id-ID").format(product.Harga)}
+                  Rp {Intl.NumberFormat('id-ID').format(product.Harga)}
                 </p>
                 {/* <p className="text-sm text-gray-400 line-through">
                   Rp. 123.000
@@ -127,7 +127,7 @@ export default async function NewArrivalComp() {
               </div> */}
             <Link
               href={
-                "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
+                'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
                 product.NamaProduk
               }
               title="Hubungi Saya"

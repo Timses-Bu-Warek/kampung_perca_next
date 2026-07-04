@@ -1,8 +1,8 @@
-import { serverEnvironment } from "@/lib/env/server";
-import DetailedProduct from "./components/DetailedProduct";
-import getProduct from "@/lib/getProduct";
-import { Suspense } from "react";
-import Skeleton from "react-loading-skeleton";
+import { serverEnvironment } from '@/lib/env/server';
+import DetailedProduct from './components/DetailedProduct';
+import getProduct from '@/lib/getProduct';
+import { Suspense } from 'react';
+import Skeleton from 'react-loading-skeleton';
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({
@@ -12,9 +12,7 @@ export async function generateMetadata({
   params: { NamaProduk: string; Keterangan: string };
 }) {
   //nilai dari NamaProduk di-decode dengan menggunakan decodeURIComponent dan mengganti spasi (%20) dengan spasi normal.
-  const decodedNamaProduk = decodeURIComponent(
-    params.NamaProduk.replace("%20", " "),
-  );
+  const decodedNamaProduk = decodeURIComponent(params.NamaProduk.replace('%20', ' '));
 
   // mengembalikan objek metadata yang terdiri dari title, description, alternates, robots, dan keywords.
   return {
@@ -30,21 +28,21 @@ export async function generateMetadata({
       nocache: true,
     },
     keywords: [
-      "Jual Alas Mangkuk Perca",
-      "Jual Appron Perca",
-      "Jual Baju Pangsi",
-      "Jual Cempal Ayam",
-      "Jual Dompet Koin",
-      "Jual Gantungan Kunci",
-      "Jual Goodie Bag Perca",
-      "Jual Masker Perca",
-      "Jual Lap tangan",
-      "Jual Outer Perca",
-      "Jual Rompi Perca",
-      "Jual Totopong",
-      "Jual Tempat tisu perca",
-      "Jual Baju Tidur Perca",
-      "Jual Tas Perca",
+      'Jual Alas Mangkuk Perca',
+      'Jual Appron Perca',
+      'Jual Baju Pangsi',
+      'Jual Cempal Ayam',
+      'Jual Dompet Koin',
+      'Jual Gantungan Kunci',
+      'Jual Goodie Bag Perca',
+      'Jual Masker Perca',
+      'Jual Lap tangan',
+      'Jual Outer Perca',
+      'Jual Rompi Perca',
+      'Jual Totopong',
+      'Jual Tempat tisu perca',
+      'Jual Baju Tidur Perca',
+      'Jual Tas Perca',
     ],
   };
 }
@@ -69,10 +67,7 @@ export default async function DynamicNameProduct({
             </div>
           }
         >
-          <DetailedProduct
-            productName={NamaProduk}
-            productPromise={productPromise}
-          />
+          <DetailedProduct productName={NamaProduk} productPromise={productPromise} />
         </Suspense>
       </div>
     </main>

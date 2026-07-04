@@ -1,7 +1,7 @@
-import { RateLimiter } from "limiter";
+import { RateLimiter } from 'limiter';
 
 export const limiter = new RateLimiter({
   tokensPerInterval: 5,
-  interval: "min",
+  interval: 'min',
   fireImmediately: true,
 });

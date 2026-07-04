@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState, type FormEvent, type ChangeEvent } from "react";
-import { useRouter } from "next/navigation";
+import { useState, type FormEvent, type ChangeEvent } from 'react';
+import { useRouter } from 'next/navigation';
 
 type BukuTamu = {
   nama: string;
@@ -13,12 +13,12 @@ type BukuTamu = {
 };
 
 const initState: BukuTamu = {
-  nama: "",
-  provinsi: "",
-  kota: "",
-  gender: "",
+  nama: '',
+  provinsi: '',
+  kota: '',
+  gender: '',
   umur: 0,
-  kesanPesan: "",
+  kesanPesan: '',
 };
 
 export default function ModalBukuTamu() {
@@ -33,12 +33,12 @@ export default function ModalBukuTamu() {
 
     // Send data to API Route
     const res =
-      process.env.NODE_ENV === "production"
-        ? await fetch("/api/buku-tamu", {
-            method: "POST",
+      process.env.NODE_ENV === 'production'
+        ? await fetch('/api/buku-tamu', {
+            method: 'POST',
             headers: {
-              "Access-Control-Allow-Origin": origin || "*",
-              "Content-Type": "application/json",
+              'Access-Control-Allow-Origin': origin || '*',
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               nama,
@@ -49,11 +49,11 @@ export default function ModalBukuTamu() {
               kesanPesan,
             }),
           })
-        : await fetch("http://localhost:3000/api/buku-tamu", {
-            method: "POST",
+        : await fetch('http://localhost:3000/api/buku-tamu', {
+            method: 'POST',
             headers: {
-              "Access-Control-Allow-Origin": origin || "*",
-              "Content-Type": "application/json",
+              'Access-Control-Allow-Origin': origin || '*',
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               nama,
@@ -71,9 +71,7 @@ export default function ModalBukuTamu() {
     setIsLoading(false);
   };
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const nama = e.target.name;
 
     setData((prevData) => ({
@@ -103,9 +101,7 @@ export default function ModalBukuTamu() {
                 Selamat Datang di
                 <span className="font-bold text-primary"> Kampung Perca🌼</span>
               </h1>
-              <h2 className="mt-4 mb-4 text-sm font-inter">
-                Harap mengisi buku tamu di bawah ya
-              </h2>
+              <h2 className="mt-4 mb-4 text-sm font-inter">Harap mengisi buku tamu di bawah ya</h2>
               <div id="fullname" className="flex flex-col">
                 <div id="firstname" className="w-full mr-1">
                   <label htmlFor="fname" className="text-sm">

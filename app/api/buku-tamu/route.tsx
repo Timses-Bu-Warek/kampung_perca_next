@@ -2,16 +2,16 @@
 // http://localhost:3000/api/buku-tamu
 // https://kampung-perca.vercel.app/api/buku-tamu
 
-import { connectToDatabase } from "@/lib/mongo";
-import { cookies } from "next/headers";
-import { NextRequest, NextResponse } from "next/server";
-import { limiter } from "../config/limiter";
+import { connectToDatabase } from '@/lib/mongo';
+import { cookies } from 'next/headers';
+import { NextRequest, NextResponse } from 'next/server';
+import { limiter } from '../config/limiter';
 
 type BukuTamu = {
-  nama: "";
-  provinsi: "";
-  kota: "";
-  gender: "";
+  nama: '';
+  provinsi: '';
+  kota: '';
+  gender: '';
   umur: number;
 };
 
@@ -38,37 +38,37 @@ type BukuTamu = {
 export async function POST(request: Request) {
   const cookiesBukuTamu = await cookies();
   const threeDay = 1000 * 60 * 60 * 24 * 3;
-  cookiesBukuTamu.set({ name: "isBukuTamu", value: "true", secure: true });
-  const origin = request.headers.get("origin");
+  cookiesBukuTamu.set({ name: 'isBukuTamu', value: 'true', secure: true });
+  const origin = request.headers.get('origin');
 
   const remaining = await limiter.removeTokens(1);
   // console.log('remaining: ', remaining)
 
   try {
     const client = await connectToDatabase();
-    const db = client.db("KampungPercaDB");
+    const db = client.db('KampungPercaDB');
     const data: BukuTamu = await request.json();
 
-    const allProducts = await db.collection("Visitors").insertOne(data);
+    const allProducts = await db.collection('Visitors').insertOne(data);
 
     // return new Response(JSON.stringify(allProducts), { status: 200 });
     if (remaining < 0) {
       return new NextResponse(null, {
         status: 429,
-        statusText: "Too Many Requests",
+        statusText: 'Too Many Requests',
         headers: {
-          "Access-Control-Allow-Origin": origin || "*",
-          "Content-Type": "text/plain",
+          'Access-Control-Allow-Origin': origin || '*',
+          'Content-Type': 'text/plain',
         },
       });
     }
     return new NextResponse(JSON.stringify(allProducts), {
       headers: {
-        "Access-Control-Allow-Origin": origin || "*",
-        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': origin || '*',
+        'Content-Type': 'application/json',
       },
     });
   } catch (error) {
-    return new Response("Failed to fetch all prompts", { status: 500 });
+    return new Response('Failed to fetch all prompts', { status: 500 });
   }
 }

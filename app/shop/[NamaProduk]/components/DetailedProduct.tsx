@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-import Link from "next/link";
-import Image from "next/image";
-import ImageContoh from "@/public/img/Produk/contoh_baju.webp";
-import { type SetStateAction, use, useState } from "react";
-import Breadcrumbs from "@/app/components/breadcrumbs";
-import QuantityComp from "./QuantityComp";
-import SizeComp from "./SizeComp";
-import CldImage from "@/app/components/CldImage";
-import type getProduct from "@/lib/getProduct";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import Link from 'next/link';
+import Image from 'next/image';
+import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
+import { type SetStateAction, use, useState } from 'react';
+import Breadcrumbs from '@/app/components/breadcrumbs';
+import QuantityComp from './QuantityComp';
+import SizeComp from './SizeComp';
+import CldImage from '@/app/components/CldImage';
+import type getProduct from '@/lib/getProduct';
 
 export default function DetailedProduct({
   productName,
@@ -25,7 +25,7 @@ export default function DetailedProduct({
   const chooseQuantity = (quantity: SetStateAction<number>) => {
     setQuantity(quantity);
   };
-  const [ukuran, setUkuran] = useState("");
+  const [ukuran, setUkuran] = useState('');
 
   const chooseUkuran = (ukuran: any) => {
     setUkuran(ukuran);
@@ -39,19 +39,19 @@ export default function DetailedProduct({
     );
 
   let waAPI;
-  if (product["Ukuran"]) {
+  if (product['Ukuran']) {
     waAPI =
-      "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
+      'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
       quantity +
-      " " +
+      ' ' +
       productName +
-      " dengan ukuran " +
+      ' dengan ukuran ' +
       ukuran;
   } else {
     waAPI =
-      "https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : " +
+      'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
       quantity +
-      " " +
+      ' ' +
       productName;
   }
 
@@ -65,7 +65,7 @@ export default function DetailedProduct({
       <div className="container flex items-center gap-4 py-4">
         <Breadcrumbs
           params={{
-            slug: product["NamaProduk"],
+            slug: product['NamaProduk'],
           }}
         />
       </div>
@@ -74,13 +74,13 @@ export default function DetailedProduct({
       {/* <!-- product view --> */}
       <div className="container flex flex-col gap-6 md:grid md:grid-cols-4">
         <div className="md:col-span-2">
-          {product["FotoProduk"] ? (
+          {product['FotoProduk'] ? (
             <CldImage
               width={500}
               loading="lazy"
               height={500}
-              src={product["FotoProduk"]}
-              alt={product["NamaProduk"]}
+              src={product['FotoProduk']}
+              alt={product['NamaProduk']}
               className="w-full min-h-[200px]"
             />
           ) : (
@@ -133,7 +133,7 @@ export default function DetailedProduct({
         {/* <!-- produk konten --> */}
         <div className="md:col-span-2">
           <h2 className="mb-2 text-3xl font-semibold uppercase font-montserrat">
-            {product["NamaProduk"]}
+            {product['NamaProduk']}
           </h2>
           {/* <div className="flex items-center mb-3">
                         <div className="flex gap-1 text-sm text-yellow-400">
@@ -148,7 +148,7 @@ export default function DetailedProduct({
           <div className="space-y-2">
             <p className="space-x-2 font-semibold text-gray-800 font-inter">
               <span>Avilability : </span>
-              {product["FotoProduk"] ? (
+              {product['FotoProduk'] ? (
                 <span className="text-green-600">In Stock</span>
               ) : (
                 <span className="text-red-600">Out of Stock</span>
@@ -160,27 +160,27 @@ export default function DetailedProduct({
             </p>
             <p className="space-x-2 font-semibold text-gray-800 font-inter">
               <span>Category : </span>
-              <span className="text-gray-600">{product["Kategori"]}</span>
+              <span className="text-gray-600">{product['Kategori']}</span>
             </p>
           </div>
           <div className="flex items-baseline mt-4 mb-1 space-x-2 font-inter">
             <p className="text-xl font-semibold text-primary">
-              Rp {Intl.NumberFormat("id-ID").format(product["Harga"])}
+              Rp {Intl.NumberFormat('id-ID').format(product['Harga'])}
             </p>
             {/* <p className="text-base text-gray-400 line-through">Rp. 123.000</p> */}
           </div>
-          <p className="mt-4 text-gray-600">{product["Keterangan"]}</p>
+          <p className="mt-4 text-gray-600">{product['Keterangan']}</p>
           <div className="grid grid-cols-2 md:block">
             {/* <!-- size --> */}
-            {product["Ukuran"] ? (
+            {product['Ukuran'] ? (
               <SizeComp
                 params={{
-                  dataUkuran: product["Ukuran"],
+                  dataUkuran: product['Ukuran'],
                   chooseUkuran: chooseUkuran,
                 }}
               />
             ) : (
-              ""
+              ''
             )}
             {/* <!-- end size --> */}
 
@@ -218,9 +218,7 @@ export default function DetailedProduct({
           {/* <!-- social share --> */}
           <div className="flex gap-3 mt-4">
             <span>
-              <p className="flex items-center justify-center text-gray-400">
-                Find Us
-              </p>
+              <p className="flex items-center justify-center text-gray-400">Find Us</p>
             </span>
             <span>
               <Link
@@ -230,7 +228,7 @@ export default function DetailedProduct({
                 rel="noopener noreferrer"
                 passHref
               >
-                <i className="fab fa-instagram"></i>{" "}
+                <i className="fab fa-instagram"></i>{' '}
               </Link>
             </span>
           </div>
@@ -246,7 +244,7 @@ export default function DetailedProduct({
           Product Detail
         </h3>
         <div className="w-3/5 pt-4">
-          <div className="space-y-3 text-gray-600">{product["Keterangan"]}</div>
+          <div className="space-y-3 text-gray-600">{product['Keterangan']}</div>
           {/* <!-- table detail --> */}
           {/* <table
                         className="mt-6 text-sm text-left text-gray-600 border-collapse table-auto"

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { useState } from "react";
+import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -27,10 +27,7 @@ export default function Header() {
           </button>
         </div>
         <div
-          className={
-            "lg:flex grow items-center md:space-x-32" +
-            (navbarOpen ? " flex" : " hidden")
-          }
+          className={'lg:flex grow items-center md:space-x-32' + (navbarOpen ? ' flex' : ' hidden')}
         >
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
             <li className="nav-item">

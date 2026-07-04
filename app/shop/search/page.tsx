@@ -1,11 +1,11 @@
-import ProductCompSearch from "../components/ProductCompSearch";
-import Breadcrumbs from "@/app/components/breadcrumbs";
-import ProductsSearchBar from "../components/ProductsSearchBar";
-import { Suspense } from "react";
-import Loading from "./loading";
-import { ProductSortSearch } from "../components/ProductSortSearch";
-import type { SearchParameters } from "@/lib/types/search-parameters";
-import { createSearchParamsCache, parseAsString } from "nuqs/server";
+import ProductCompSearch from '../components/ProductCompSearch';
+import Breadcrumbs from '@/app/components/breadcrumbs';
+import ProductsSearchBar from '../components/ProductsSearchBar';
+import { Suspense } from 'react';
+import Loading from './loading';
+import { ProductSortSearch } from '../components/ProductSortSearch';
+import type { SearchParameters } from '@/lib/types/search-parameters';
+import { createSearchParamsCache, parseAsString } from 'nuqs/server';
 
 // export const metadata: Metadata = {
 //   title: "Shop Kampung Perca Products",
@@ -54,7 +54,7 @@ export default async function Shop({
         {/* <!-- breadcrums --> */}
         <Breadcrumbs
           params={{
-            slug: "Shop",
+            slug: 'Shop',
           }}
         />
         {/* <!-- end breadcrums --> */}
@@ -70,9 +70,7 @@ export default async function Shop({
 
               {/* <!-- category filter --> */}
               <div className="hidden">
-                <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">
-                  Categories
-                </h3>
+                <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium">Categories</h3>
                 <div className="space-y-2">
                   {/* <!-- single category --> */}
                   <div className="flex items-center">
@@ -81,10 +79,7 @@ export default async function Shop({
                       id="cat-1"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
                     />
-                    <label
-                      htmlFor="cat-1"
-                      className="text-gray-600 ml-3 cursor-pointer"
-                    >
+                    <label htmlFor="cat-1" className="text-gray-600 ml-3 cursor-pointer">
                       Baju
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(15)</div> */}
@@ -95,10 +90,7 @@ export default async function Shop({
                       id="cat-2"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
                     />
-                    <label
-                      htmlFor="cat-2"
-                      className="text-gray-600 ml-3 cursor-pointer"
-                    >
+                    <label htmlFor="cat-2" className="text-gray-600 ml-3 cursor-pointer">
                       Celana
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(20)</div> */}
@@ -109,10 +101,7 @@ export default async function Shop({
                       id="cat-3"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
                     />
-                    <label
-                      htmlFor="cat-3"
-                      className="text-gray-600 ml-3 cursor-pointer"
-                    >
+                    <label htmlFor="cat-3" className="text-gray-600 ml-3 cursor-pointer">
                       Tas
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(30)</div> */}
@@ -123,10 +112,7 @@ export default async function Shop({
                       id="cat-4"
                       className="text-primary focus:ring-0 rounded-xs cursor-pointer"
                     />
-                    <label
-                      htmlFor="cat-4"
-                      className="text-gray-600 ml-3 cursor-pointer"
-                    >
+                    <label htmlFor="cat-4" className="text-gray-600 ml-3 cursor-pointer">
                       Souvenir
                     </label>
                     {/* <div className="ml-auto text-gray-600 text-sm">(40)</div> */}
@@ -188,9 +174,7 @@ export default async function Shop({
 
               {/* <!-- price filter --> */}
               <div className="hidden pt-4">
-                <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium pt-6">
-                  Price
-                </h3>
+                <h3 className="text-xl text-gray-800 mb-3 uppercase font-medium pt-6">Price</h3>
                 <div className="mt-4 flex items-center">
                   <input
                     type="text"

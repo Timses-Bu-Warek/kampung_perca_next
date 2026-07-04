@@ -1,6 +1,6 @@
 // components/StructuredData.tsx
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
 interface StructuredDataProps {
   data: Record<string, any>;

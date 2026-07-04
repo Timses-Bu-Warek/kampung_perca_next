@@ -1,7 +1,7 @@
-"use client";
-import { useCallback } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
-import Link from "next/link";
+'use client';
+import { useCallback } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 
 export function ProductSortSearch() {
   const pathname = usePathname();
@@ -29,14 +29,14 @@ export function ProductSortSearch() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
-              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{' '}
             </svg>
           </button>
           <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
             <li className="">
               <Link
                 className="rounded-t bg-primary text-white  hover:bg-white hover:text-primary py-2 px-4 block whitespace-no-wrap"
-                href={pathname + "?" + createQueryString("sort", "default")}
+                href={pathname + '?' + createQueryString('sort', 'default')}
                 passHref
               >
                 Urutan Default
@@ -45,7 +45,7 @@ export function ProductSortSearch() {
             <li className="">
               <Link
                 className="bg-primary text-white  hover:bg-white hover:text-primary py-2 px-4 block whitespace-no-wrap"
-                href={pathname + "?" + createQueryString("sort", "lowHigh")}
+                href={pathname + '?' + createQueryString('sort', 'lowHigh')}
                 passHref
               >
                 Harga Rendah ke Tinggi
@@ -54,7 +54,7 @@ export function ProductSortSearch() {
             <li className="">
               <Link
                 className="rounded-b bg-primary text-white  hover:bg-white hover:text-primary py-2 px-4 block whitespace-no-wrap"
-                href={pathname + "?" + createQueryString("sort", "highLow")}
+                href={pathname + '?' + createQueryString('sort', 'highLow')}
                 passHref
               >
                 Harga Tinggi ke Rendah

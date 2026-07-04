@@ -1,15 +1,15 @@
-import Link from "next/link";
-import Image from "next/image";
-import Breadcrumbs from "@/app/components/breadcrumbs";
-import FotoContoh from "@/public/img/contoh.webp";
-import type { Metadata } from "next";
-import StructuredData from "@/app/components/StructuredData";
-import { serverEnvironment } from "@/lib/env/server";
+import Link from 'next/link';
+import Image from 'next/image';
+import Breadcrumbs from '@/app/components/breadcrumbs';
+import FotoContoh from '@/public/img/contoh.webp';
+import type { Metadata } from 'next';
+import StructuredData from '@/app/components/StructuredData';
+import { serverEnvironment } from '@/lib/env/server';
 
 export const metadata: Metadata = {
-  title: "Manfaat Kain Perca",
+  title: 'Manfaat Kain Perca',
   description:
-    "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal",
+    'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal',
   alternates: {
     canonical: `${serverEnvironment.BASE_URL}/sudut-edukasi/manfaat-kain-perca`,
   },
@@ -19,37 +19,37 @@ export const metadata: Metadata = {
     nocache: true,
   },
   keywords: [
-    "Dampak Positif Pengelolaan Kain Perca",
-    "Potensi Kain Perca di Kota Bogor",
-    "Apa itu Kain Perca ?",
-    "Kain Perca adalah",
-    "Perca",
-    "Kain Perca",
-    "Manfaat Kain Perca",
+    'Dampak Positif Pengelolaan Kain Perca',
+    'Potensi Kain Perca di Kota Bogor',
+    'Apa itu Kain Perca ?',
+    'Kain Perca adalah',
+    'Perca',
+    'Kain Perca',
+    'Manfaat Kain Perca',
   ],
 };
 
 const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Article",
+  '@context': 'https://schema.org',
+  '@type': 'Article',
   mainEntityOfPage: {
-    "@type": "WebPage",
-    "@id": `${serverEnvironment.BASE_URL}/sudut-edukasi/manfaat-kain-perca`,
+    '@type': 'WebPage',
+    '@id': `${serverEnvironment.BASE_URL}/sudut-edukasi/manfaat-kain-perca`,
   },
-  headline: "Manfaat Kain Perca",
+  headline: 'Manfaat Kain Perca',
   description:
-    "Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal.",
+    'Kain perca adalah potongan-potongan kecil atau sisa-sisa kain. Dampak Positif Pengelolaan Kain Perca adalah membantu mengurangi limbah tekstil. Potensi Kain Perca di Kota Bogor dapat bervariasi tergantung pada faktor-faktor seperti pasar lokal.',
   image: `${serverEnvironment.BASE_URL}/img/contoh.webp`, // URL gambar utama
   author: {
-    "@type": "Person",
-    name: "Kampung Perca Kota Bogor", // Nama penulis
+    '@type': 'Person',
+    name: 'Kampung Perca Kota Bogor', // Nama penulis
   },
   publisher: {
-    "@type": "Organization",
-    name: "Kampung Perca Kota Bogor",
+    '@type': 'Organization',
+    name: 'Kampung Perca Kota Bogor',
   },
-  datePublished: "2024-07-29", // Tanggal publikasi
-  dateModified: "2024-07-29", // Tanggal terakhir diubah
+  datePublished: '2024-07-29', // Tanggal publikasi
+  dateModified: '2024-07-29', // Tanggal terakhir diubah
 };
 
 export default function Manfaat() {
@@ -59,7 +59,7 @@ export default function Manfaat() {
       <section className="py-8 bg-white border-b">
         <Breadcrumbs
           params={{
-            slug: "Sudut Edukasi",
+            slug: 'Sudut Edukasi',
           }}
         />
         <h1 className="w-full my-2 mb-6 text-4xl font-bold text-center font-montserrat text-secondary">
@@ -85,66 +85,54 @@ export default function Manfaat() {
                 </div>
                 <div className="w-full shrink-0 grow-0 basis-auto lg:w-6/12 xl:w-8/12">
                   <div className="px-6 py-12 md:px-12">
-                    <h2 className="mb-4 text-2xl font-bold">
-                      Manfaat Kain Perca
-                    </h2>
+                    <h2 className="mb-4 text-2xl font-bold">Manfaat Kain Perca</h2>
                     <p className="mb-6 text-justify text-neutral-800">
-                      Kain perca adalah potongan-potongan kain kecil yang
-                      tersisa dari proyek jahitan atau tekstil lainnya. Meskipun
-                      ukurannya kecil, kain perca memiliki beragam manfaat dan
-                      kegunaan, antara lain:
+                      Kain perca adalah potongan-potongan kain kecil yang tersisa dari proyek
+                      jahitan atau tekstil lainnya. Meskipun ukurannya kecil, kain perca memiliki
+                      beragam manfaat dan kegunaan, antara lain:
                     </p>
                     <ul className="ml-1 text-justify list-decimal">
                       <li className="text-justify">
-                        <b>Proyek Jahitan Kecil:</b> Kain perca sangat berguna
-                        untuk proyek-proyek jahitan kecil seperti pembuatan
-                        boneka, bantal, atau aksesori kecil lainnya. Dengan
-                        memanfaatkan kain perca, Anda dapat menghindari
-                        pemborosan kain yang berlebihan.
+                        <b>Proyek Jahitan Kecil:</b> Kain perca sangat berguna untuk proyek-proyek
+                        jahitan kecil seperti pembuatan boneka, bantal, atau aksesori kecil lainnya.
+                        Dengan memanfaatkan kain perca, Anda dapat menghindari pemborosan kain yang
+                        berlebihan.
                       </li>
                       <li className="text-justify">
-                        <b>Patchwork:</b> Kain perca adalah bahan dasar yang
-                        sangat umum digunakan dalam seni patchwork. Patchwork
-                        adalah teknik menyusun potongan-potongan kain menjadi
-                        pola tertentu untuk membuat selimut, taplak meja, atau
+                        <b>Patchwork:</b> Kain perca adalah bahan dasar yang sangat umum digunakan
+                        dalam seni patchwork. Patchwork adalah teknik menyusun potongan-potongan
+                        kain menjadi pola tertentu untuk membuat selimut, taplak meja, atau
                         barang-barang dekoratif lainnya.
                       </li>
                       <li className="text-justify">
-                        <b>Quilting:</b> Dalam quilting, kain perca digunakan
-                        untuk membuat blok-blok kecil yang kemudian disatukan
-                        menjadi selimut atau karya seni tekstil lainnya. Kain
-                        perca memungkinkan Anda untuk menciptakan desain yang
-                        rumit dan berwarna-warni tanpa harus membeli kain dalam
-                        jumlah besar.
+                        <b>Quilting:</b> Dalam quilting, kain perca digunakan untuk membuat
+                        blok-blok kecil yang kemudian disatukan menjadi selimut atau karya seni
+                        tekstil lainnya. Kain perca memungkinkan Anda untuk menciptakan desain yang
+                        rumit dan berwarna-warni tanpa harus membeli kain dalam jumlah besar.
                       </li>
                       <li className="text-justify">
-                        <b>Pengujian Pola:</b>Kain perca sangat berguna untuk
-                        menguji pola baru sebelum Anda menggunakan kain yang
-                        lebih mahal. Dengan menggunakan kain perca, Anda dapat
-                        memastikan bahwa pola Anda sesuai dengan ukuran dan
-                        bentuk yang diinginkan sebelum memotong kain yang lebih
-                        berharga.
+                        <b>Pengujian Pola:</b>Kain perca sangat berguna untuk menguji pola baru
+                        sebelum Anda menggunakan kain yang lebih mahal. Dengan menggunakan kain
+                        perca, Anda dapat memastikan bahwa pola Anda sesuai dengan ukuran dan bentuk
+                        yang diinginkan sebelum memotong kain yang lebih berharga.
                       </li>
                       <li className="text-justify">
-                        <b>Seni dan Kerajinan:</b>Kain perca juga dapat
-                        digunakan dalam berbagai proyek seni dan kerajinan,
-                        seperti membuat kartu ucapan, hiasan dinding, atau bunga
-                        kain. Potongan-potongan kain kecil ini dapat dijahit,
-                        direkatkan, atau dihias sesuai dengan kreativitas Anda.
+                        <b>Seni dan Kerajinan:</b>Kain perca juga dapat digunakan dalam berbagai
+                        proyek seni dan kerajinan, seperti membuat kartu ucapan, hiasan dinding,
+                        atau bunga kain. Potongan-potongan kain kecil ini dapat dijahit, direkatkan,
+                        atau dihias sesuai dengan kreativitas Anda.
                       </li>
                       <ul className="text-justify">
-                        <b>Memperbaiki Pakaian:</b>Kain perca dapat digunakan
-                        untuk memperbaiki lubang atau kerusakan kecil pada
-                        pakaian atau tekstil lainnya. Dengan memilih kain perca
-                        yang sesuai dengan warna dan tekstur pakaian Anda, Anda
+                        <b>Memperbaiki Pakaian:</b>Kain perca dapat digunakan untuk memperbaiki
+                        lubang atau kerusakan kecil pada pakaian atau tekstil lainnya. Dengan
+                        memilih kain perca yang sesuai dengan warna dan tekstur pakaian Anda, Anda
                         dapat membuat perbaikan yang tidak mencolok.
                       </ul>
                       <li className="text-justify">
-                        <b>Penghematan:</b> Dengan menggunakan kain perca, Anda
-                        dapat menghemat uang yang biasanya akan Anda keluarkan
-                        untuk membeli kain baru. Selain itu, penggunaan kain
-                        perca juga membantu mengurangi limbah tekstil dan
-                        mendukung praktik daur ulang.
+                        <b>Penghematan:</b> Dengan menggunakan kain perca, Anda dapat menghemat uang
+                        yang biasanya akan Anda keluarkan untuk membeli kain baru. Selain itu,
+                        penggunaan kain perca juga membantu mengurangi limbah tekstil dan mendukung
+                        praktik daur ulang.
                       </li>
                     </ul>
                   </div>
@@ -171,9 +159,8 @@ export default function Manfaat() {
                 Potensi Kain Perca di Kota Bogor
               </div>
               <p className="px-6 mb-5 text-base text-gray-800 font-inter">
-                Potensi kain perca di Kota Bogor terletak pada penggunaan
-                kreatif dalam industri kerajinan tangan dan pembuatan produk
-                unik seperti quilting, tas, dan lainnya.
+                Potensi kain perca di Kota Bogor terletak pada penggunaan kreatif dalam industri
+                kerajinan tangan dan pembuatan produk unik seperti quilting, tas, dan lainnya.
               </p>
             </div>
             <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
@@ -193,9 +180,8 @@ export default function Manfaat() {
                 Apa itu Kain Perca ?
               </div>
               <p className="px-6 mb-5 text-base text-gray-800 font-inter ">
-                Kain perca adalah potongan kecil sisa kain yang digunakan dalam
-                kerajinan tangan atau quilting untuk menciptakan berbagai proyek
-                kreatif.
+                Kain perca adalah potongan kecil sisa kain yang digunakan dalam kerajinan tangan
+                atau quilting untuk menciptakan berbagai proyek kreatif.
               </p>
             </div>
             <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">
@@ -215,8 +201,8 @@ export default function Manfaat() {
                 Dampak Positif Kain Perca
               </div>
               <p className="px-6 mb-5 text-base text-gray-800 font-inter">
-                Penggunaan kain perca memiliki dampak positif yang signifikan
-                dalam praktik jahitan dan kerajinan
+                Penggunaan kain perca memiliki dampak positif yang signifikan dalam praktik jahitan
+                dan kerajinan
               </p>
             </div>
             <div className="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow-sm">

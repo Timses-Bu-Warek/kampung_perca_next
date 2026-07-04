@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -60,10 +60,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             passHref
           >
-            <span className="cursor-pointer">
-              {" "}
-              {""}Kampung Perca Sindangsari Kota Bogor
-            </span>
+            <span className="cursor-pointer"> {''}Kampung Perca Sindangsari Kota Bogor</span>
           </Link>
         </div>
       </div>

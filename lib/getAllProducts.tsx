@@ -1,12 +1,12 @@
-import "server-only";
-import { connectToDatabase } from "./mongo";
+import 'server-only';
+import { connectToDatabase } from './mongo';
 
 export default async function getAllProducts() {
   const client = await connectToDatabase();
-  const db = client.db("KampungPercaDB");
+  const db = client.db('KampungPercaDB');
 
   const products = await db
-    .collection("products")
+    .collection('products')
     .aggregate([{ $sort: { NamaProduk: 1 } }])
     .toArray();
 

@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function ProductsSearchBar() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const router = useRouter();
   const getSearchProducts = async (e: any) => {
     e.preventDefault();
     router.push(`/shop/search?NamaProduk=${search}`);
   };
   const handleKeyDown = (event: any) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       // Get input value
       getSearchProducts(event);
     }
