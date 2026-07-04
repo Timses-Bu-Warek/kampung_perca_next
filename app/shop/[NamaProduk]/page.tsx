@@ -4,6 +4,7 @@ import { serverEnvironment } from "@/lib/env/server";
 import getProduct from "@/lib/getProduct";
 import DetailedProduct from "./components/DetailedProduct";
 import type { SearchParameters } from "@/lib/types/search-parameters";
+import type { Metadata } from "next";
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({
@@ -11,7 +12,7 @@ export async function generateMetadata({
 }: {
   //menerima objek params yang berisi parameter dari URL,
   params: Promise<{ NamaProduk: string }>;
-}) {
+}): Promise<Metadata> {
   const { NamaProduk } = await params;
   //nilai dari NamaProduk di-decode dengan menggunakan decodeURIComponent dan mengganti spasi (%20) dengan spasi normal.
   const decodedNamaProduk = decodeURIComponent(NamaProduk.replace("%20", " "));
