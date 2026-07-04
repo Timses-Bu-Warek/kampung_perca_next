@@ -1,7 +1,8 @@
+import { serverEnvironment } from "@/lib/env/server"
 import { NextResponse } from "next/server"
 
 const allowedOrigins = process.env.NODE_ENV === 'production'
-    ? ['https://www.kampungperca.id']
+    ? [serverEnvironment.BASE_URL]
     : ['http://localhost:3000']
 
 export function middleware(request: Request) {
