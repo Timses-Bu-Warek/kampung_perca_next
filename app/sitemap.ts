@@ -8,15 +8,14 @@ export default async function sitemap() {
 			: "http://localhost:3000";
 
 	//Get All Post
-	// const product = await getAllProducts();
-	// console.log(product);
-	// const productUrls =
-	// 	product?.map((products: { NamaProduk: any }) => {
-	// 		return {
-	// 			url: `${baseUrl}/shop/${products?.NamaProduk}`,
-	// 			lastModified: new Date(),
-	// 		};
-	// 	}) ?? [];
+	const product = await getAllProducts();
+	const productUrls =
+		product?.map((products) => {
+			return {
+				url: `${baseUrl}/shop/${products?.["NamaProduk"]}`,
+				lastModified: new Date(),
+			};
+		}) ?? [];
 
 	return [
 		{
@@ -47,6 +46,6 @@ export default async function sitemap() {
 			url: `${baseUrl}/sudut-edukasi/manfaat-kain-perca`,
 			lastModified: new Date(),
 		},
-		// ...productUrls,
+		...productUrls,
 	];
 }
