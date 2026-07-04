@@ -4,30 +4,28 @@ import { serverEnvironment } from "@/lib/env/server";
 import getProduct from "@/lib/getProduct";
 import DetailedProduct from "./components/DetailedProduct";
 import type { SearchParameters } from "@/lib/types/search-parameters";
-import {
-  createSearchParamsCache,
-  parseAsInteger,
-  parseAsString,
-} from "nuqs/server";
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({
   params,
 }: {
   //menerima objek params yang berisi parameter dari URL,
-  params: { NamaProduk: string; Keterangan: string };
+  params: Promise<{ NamaProduk: string }>;
 }) {
+  const { NamaProduk } = await params;
   //nilai dari NamaProduk di-decode dengan menggunakan decodeURIComponent dan mengganti spasi (%20) dengan spasi normal.
-  const decodedNamaProduk = decodeURIComponent(
-    params.NamaProduk.replace("%20", " "),
-  );
+  const decodedNamaProduk = decodeURIComponent(NamaProduk.replace("%20", " "));
+
+  const product = await getProduct(NamaProduk);
 
   // mengembalikan objek metadata yang terdiri dari title, description, alternates, robots, dan keywords.
   return {
     alternates: {
-      canonical: `${serverEnvironment.BASE_URL}/shop/${params.NamaProduk}`,
+      canonical: `${serverEnvironment.BASE_URL}/shop/${NamaProduk}`,
     },
-    description: `Keterangan: ${params.Keterangan}`,
+    description: product?.["description"]
+      ? `Keterangan: ${product?.["description"]}`
+      : `Produk ${decodedNamaProduk} tersedia di Kampung Perca. Dapatkan produk berkualitas dengan harga terbaik di sini!`,
     keywords: [
       "Jual Alas Mangkuk Perca",
       "Jual Appron Perca",
@@ -58,18 +56,11 @@ export async function generateMetadata({
 //merender halaman produk berdasarkan parameter yang diterima dari URL.
 export default async function DynamicNameProduct({
   params,
-  searchParams,
 }: Readonly<{
   params: Promise<{ NamaProduk: string }>;
   searchParams: SearchParameters;
 }>) {
   const { NamaProduk } = await params;
-  const searchParameters = await searchParams;
-
-  const search = createSearchParamsCache({
-    quantity: parseAsInteger,
-    size: parseAsString,
-  }).parse;
 
   const product = await getProduct(NamaProduk);
 
