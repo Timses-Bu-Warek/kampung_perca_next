@@ -353,7 +353,7 @@ export default function Home() {
         {/*  end categories  */}
 
         {/*  produk wrapper  */}
-        <div className="container pb-16">
+        <div className="container mx-auto pb-16">
           <h2 className="mb-6 text-2xl font-bold text-gray-800 uppercase font-montserrat">
             New Arrival
           </h2>
@@ -364,7 +364,7 @@ export default function Home() {
         {/*  end produk wrapper  */}
 
         {/*  produk recommended  */}
-        <div className="container pb-16">
+        <div className="container mx-auto pb-16">
           <h2 className="mb-6 text-2xl font-bold text-gray-800 uppercase font-montserrat">
             Recommended for you
           </h2>
