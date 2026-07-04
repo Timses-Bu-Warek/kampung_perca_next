@@ -1,6 +1,7 @@
 import { MongoClient } from "mongodb";
+import { serverEnvironment } from "./env/server";
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = serverEnvironment.MONGODB_URI;
 
 export async function connectToDatabase() {
   if (!MONGODB_URI) {
