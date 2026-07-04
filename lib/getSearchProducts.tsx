@@ -36,7 +36,7 @@ export default async function getSearchProducts(
     const result = await collection.aggregate<Products>([{ $sort: { Harga: 1 } }]).toArray();
 
     return result;
-  } else {
+  } else if (sortParams === 'highLow' && namaProdukParams) {
     const result = await collection
       .aggregate<Products>([
         {
@@ -47,6 +47,10 @@ export default async function getSearchProducts(
         { $sort: { Harga: -1 } },
       ])
       .toArray();
+
+    return result;
+  } else {
+    const result = await collection.aggregate<Products>([{ $sort: { Harga: -1 } }]).toArray();
 
     return result;
   }
