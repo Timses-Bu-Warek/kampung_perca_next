@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { type ChangeEvent, type FormEvent, useState } from 'react';
+import { type ChangeEvent, type SubmitEvent, useState } from 'react';
 
 type BukuTamu = {
   nama: string;
@@ -21,12 +21,12 @@ const initState: BukuTamu = {
   umur: 0,
 };
 
-export default function ModalBukuTamu() {
+export default function GuestBookModal() {
   const [data, setData] = useState(initState);
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log(JSON.stringify(data));
     const { nama, provinsi, kota, gender, umur, kesanPesan } = data;
