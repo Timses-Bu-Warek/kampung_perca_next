@@ -15,8 +15,6 @@ export default function QuantityComp() {
     }
   }
 
-  // console.log("Quantity params: ", context.params.quantity);
-
   return (
     <div className="mt-4">
       <h3 className="pt-4 text-gray-800 uppercase font-inter">Quantity</h3>
@@ -35,6 +33,7 @@ export default function QuantityComp() {
         <button
           className="flex items-center justify-center w-full h-8 text-lg cursor-pointer select-none md:w-8"
           onClick={increaseQuantity}
+          type="button"
         >
           +
         </button>
