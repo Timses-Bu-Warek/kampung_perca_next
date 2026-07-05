@@ -26,27 +26,27 @@ export function ProductSort() {
             </svg>
           </button>
           <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
-            <li className="">
+            <li className="bg-blue-500 text-white hover:bg-white hover:text-blue-500">
               <button
-                className="rounded-t bg-primary text-white  hover:bg-white hover:text-primary py-2 px-4 block whitespace-no-wrap"
+                className="rounded-t bg-primary py-2 px-4 block whitespace-no-wrap"
                 onClick={() => setSort('default')}
                 type="button"
               >
                 Urutan Default
               </button>
             </li>
-            <li className="">
+            <li className="bg-blue-500 text-white hover:bg-white hover:text-blue-500">
               <button
-                className="bg-primary text-white  hover:bg-white hover:text-primary py-2 px-4 block whitespace-no-wrap"
+                className="bg-primary py-2 px-4 block whitespace-no-wrap"
                 onClick={() => setSort('lowHigh')}
                 type="button"
               >
                 Harga Rendah ke Tinggi
               </button>
             </li>
-            <li className="">
+            <li className="bg-blue-500 text-white hover:bg-white hover:text-blue-500">
               <button
-                className="rounded-b bg-primary text-white  hover:bg-white hover:text-primary py-2 px-4 block whitespace-no-wrap"
+                className="rounded-b bg-primary py-2 px-4 block whitespace-no-wrap"
                 onClick={() => setSort('highLow')}
                 type="button"
               >
