@@ -22,10 +22,6 @@ export default function DetailedProduct({
       </div>
     );
 
-  // const productsData: Promise<Products> = getProduct(NamaProduk);
-  // const detailedProduct = useSWR(productsData);
-  // const detailedProduct = await productsData;
-  // console.log(detailedProduct);
   return (
     <main>
       {/* <!-- breadcrums --> */}
