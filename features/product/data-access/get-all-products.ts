@@ -1,14 +1,13 @@
 import 'server-only';
-import { connectToDatabase } from './mongo';
+import { connectToDatabase } from '../../../lib/mongo';
 
-export default async function getNewProductRec() {
+export default async function getAllProducts() {
   const client = await connectToDatabase();
   const db = client.db('KampungPercaDB');
 
   const products = await db
     .collection('products')
-    .aggregate([{ $sort: { ProdukID: -1 } }])
-    .limit(4)
+    .aggregate([{ $sort: { NamaProduk: 1 } }])
     .toArray();
 
   return products;

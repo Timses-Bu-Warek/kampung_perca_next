@@ -1,5 +1,5 @@
+import getAllProducts from '@/features/product/data-access/get-all-products';
 import { serverEnvironment } from '@/lib/env/server';
-import getAllProducts from '@/lib/getAllProducts';
 
 export default async function sitemap() {
   const baseUrl =

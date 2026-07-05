@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { parseAsInteger, parseAsString, useQueryState } from 'nuqs';
-import type getProduct from '@/lib/getProduct';
+import type getProduct from '@/features/product/data-access/get-product';
 
 export function LinkOrder({
   productName,

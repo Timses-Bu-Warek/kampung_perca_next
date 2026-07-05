@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { createSearchParamsCache, parseAsString } from 'nuqs/server';
 import Breadcrumbs from '@/app/_components/breadcrumbs';
+import getSearchProducts from '@/features/product/data-access/get-search-products';
 import { serverEnvironment } from '@/lib/env/server';
-import getSearchProducts from '@/lib/getSearchProducts';
 import type { SearchParameters } from '@/lib/types/search-parameters';
 import ProductComp from './_components/product-comp';
 import { ProductSort } from './_components/product-sort';

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import getProduct from '@/features/product/data-access/get-product';
 import { serverEnvironment } from '@/lib/env/server';
-import getProduct from '@/lib/getProduct';
 import type { SearchParameters } from '@/lib/types/search-parameters';
 import DetailedProduct from './_components/detailed-product';
 
