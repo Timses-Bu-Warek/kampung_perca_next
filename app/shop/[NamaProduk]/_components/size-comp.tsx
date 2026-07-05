@@ -5,11 +5,11 @@ import { parseAsString, useQueryState } from 'nuqs';
 export default function SizeComp({
   sizeList,
 }: Readonly<{
-  sizeList: any;
+  sizeList: string[];
 }>) {
   const [ukuran, setUkuran] = useQueryState('size', parseAsString.withDefault(''));
 
-  const handlePilihUkuran = (ukuran: any) => {
+  const handlePilihUkuran = (ukuran: string) => {
     setUkuran(ukuran);
   };
 
@@ -18,9 +18,10 @@ export default function SizeComp({
       <h3 className="text-gray-800 uppercase font-inter pt-4">Size</h3>
 
       <div className="flex items-center gap-2">
-        {sizeList.map((size: any) => (
+        {sizeList.map((size: string) => (
           <div className="size-selector" key={size}>
             <input
+              checked={ukuran === size}
               className="hidden"
               id={'size-' + size}
               name="size"
