@@ -3,8 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { serverEnvironment } from '@/lib/env/server';
 import FotoBinaanIBIK from '@/public/img/ads.webp';
-import NewArrivalComp from './_components/new-arrival-comp';
-import RecommendationComp from './_components/recommendation-comp';
+import NewArrivalSection from './_components/new-arrival-section';
+import RecommendationSection from './_components/recommendation-section';
 
 export default function Home() {
   // sessionStorage.setItem("halo", "true")
@@ -345,13 +345,13 @@ export default function Home() {
           <h2 className="mb-6 text-2xl font-bold text-gray-800 uppercase font-montserrat">
             New Arrival
           </h2>
-          <NewArrivalComp />
+          <NewArrivalSection />
         </div>
         <div className="container mx-auto pb-16">
           <h2 className="mb-6 text-2xl font-bold text-gray-800 uppercase font-montserrat">
             Recommended for you
           </h2>
-          <RecommendationComp />
+          <RecommendationSection />
         </div>
       </main>
     </>

@@ -1,7 +1,7 @@
 import { v2 as cloudinary } from 'cloudinary';
 import Image from 'next/image';
 import Link from 'next/link';
-import getNewProductRec from '@/features/product/data-access/get-new-product-rec';
+import getProductRec from '@/features/product/data-access/get-product-rec';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 import CldImage from './cloudinary/cld-image';
 
@@ -12,8 +12,8 @@ cloudinary.config({
   secure: true,
 });
 
-export default async function NewArrivalComp() {
-  const recData = getNewProductRec();
+export default async function RecommendationSection() {
+  const recData = getProductRec();
 
   const recProducts = await recData;
   // console.log(products);
@@ -32,6 +32,7 @@ export default async function NewArrivalComp() {
                 alt={product['NamaProduk']}
                 className="w-full h-80 object-cover"
                 height={0}
+                loading="lazy"
                 sizes="100vw"
                 src={product['FotoProduk']}
                 width={0}
