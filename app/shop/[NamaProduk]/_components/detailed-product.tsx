@@ -171,6 +171,15 @@ export default function DetailedProduct({
               >
                 <i className="fab fa-instagram"></i>{' '}
               </Link>
+              <Link
+                className="w-8 h-8 hover:text-gray-500"
+                href="https://www.tiktok.com/@kampungperca"
+                passHref
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <i className="fa-brands fa-tiktok"></i>{' '}
+              </Link>
             </span>
           </div>
           {/* <!-- end social share --> */}
