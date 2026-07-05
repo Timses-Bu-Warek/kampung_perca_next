@@ -16,7 +16,7 @@ export function LinkOrder({
   const [size] = useQueryState('size', parseAsString.withDefault(''));
 
   let waAPI: string;
-  if (product?.['Ukuran']) {
+  if (product?.Ukuran) {
     waAPI =
       'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau pesan : ' +
       quantity +
