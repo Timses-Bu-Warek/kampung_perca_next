@@ -4,7 +4,7 @@ import Breadcrumbs from '@/app/_components/breadcrumbs';
 import getSearchProducts from '@/features/product/data-access/get-search-products';
 import { serverEnvironment } from '@/lib/env/server';
 import type { SearchParameters } from '@/lib/types/search-parameters';
-import ProductComp from './_components/product-comp';
+import ProductGrid from './_components/product-grid';
 import { ProductSort } from './_components/product-sort';
 import ProductsSearchBar from './_components/products-search-bar';
 
@@ -306,7 +306,7 @@ export default async function Shop({
           {/* <!-- sorting end --> */}
 
           {/* <!-- produk grid --> */}
-          <ProductComp products={products} />
+          <ProductGrid products={products} />
           {/* <!-- end produk grid --> */}
         </div>
       </div>

@@ -12,7 +12,7 @@ cloudinary.config({
   secure: true,
 });
 
-export default async function ProductComp({
+export default async function ProductGrid({
   products,
 }: Readonly<{
   products: Awaited<ReturnType<typeof getSearchProducts>>;
