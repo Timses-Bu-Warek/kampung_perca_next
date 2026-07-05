@@ -3,7 +3,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import Breadcrumbs from '@/app/_components/breadcrumbs';
-import CldImage from '@/app/_components/CldImage';
+import CldImage from '@/app/_components/cloudinary/cld-image';
 import type getProduct from '@/features/product/data-access/get-product';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 import { LinkOrder } from './link-order';
