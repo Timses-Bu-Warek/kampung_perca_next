@@ -1,11 +1,19 @@
 'use client';
 
 import { parseAsString, useQueryState } from 'nuqs';
+import { type ChangeEvent, useCallback } from 'react';
 
 export default function ProductsSearchBar() {
   const [search, setSearch] = useQueryState(
     'q',
     parseAsString.withDefault('').withOptions({ shallow: false }),
+  );
+
+  const handleSearchInputChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement, HTMLInputElement>) => {
+      setSearch(event.target.value);
+    },
+    [setSearch],
   );
 
   return (
@@ -16,7 +24,7 @@ export default function ProductsSearchBar() {
         </span>
         <input
           className="w-full bg-white border border-primary border-r-0 pl-12 rounded-l-md focus:outline-hidden"
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={handleSearchInputChange}
           placeholder="Cari"
           type="search"
           value={search}
