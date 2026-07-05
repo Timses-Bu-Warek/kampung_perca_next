@@ -31,7 +31,14 @@ export function LinkOrder({
       ' ' +
       productName;
   }
-  return (
+  return product?.Ukuran && !size ? (
+    <div
+      className="flex items-center justify-center w-full gap-2 px-8 py-2 bg-gray-500 cursor-not-allowed font-medium uppercase transition-all border rounded-sm bg-primary md:w-40"
+      title="Hubungi Saya"
+    >
+      <i className="fas fa-shopping-bag"></i>Order
+    </div>
+  ) : (
     <Link
       className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium uppercase transition-all border rounded-sm bg-primary md:w-40"
       href={waAPI}
