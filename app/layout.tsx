@@ -4,7 +4,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import Head from 'next/head';
 import { cookies } from 'next/headers';
-import Link from 'next/link';
 import FloatingButton from './_components/floating-button';
 import Footer from './footer';
 import Header from './header';
@@ -82,13 +81,7 @@ export default async function RootLayout({
             {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
             {children}
             <FloatingButton />
-            <Link
-              href={
-                'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau tanya seputar produk Kampung Perca'
-              }
-            >
-              <WhatsAppFloatingButton />
-            </Link>
+            <WhatsAppFloatingButton />
             <Footer />
             <SpeedInsights />
           </NuqsAdapter>
