@@ -1,5 +1,7 @@
 import { v2 as cloudinary } from 'cloudinary';
+import Image from 'next/image';
 import Link from 'next/link';
+import CldImage from '@/app/_components/cloudinary/cld-image';
 import type getSearchProducts from '@/features/product/data-access/get-search-products';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 
