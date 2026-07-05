@@ -22,7 +22,6 @@ export default async function RecommendationSection() {
           className="flex flex-col justify-between overflow-hidden bg-white rounded-sm shadow-sm group"
           key={product['_id']}
         >
-          {/* <!-- produk image --> */}
           <div className="relative">
             {product['FotoProduk'] ? (
               <CldImage
@@ -35,13 +34,6 @@ export default async function RecommendationSection() {
                 width={0}
               />
             ) : (
-              // <Image
-              //   src={product.FotoProduk}
-              //   alt={product.NamaProduk}
-              //   width={100}
-              //   height={100}
-              //   className="w-full min-h-[200px]"
-              // />
               <Image
                 alt={product['NamaProduk']}
                 className="w-full h-80 object-cover"
@@ -51,14 +43,6 @@ export default async function RecommendationSection() {
                 width={0}
               />
             )}
-            {/* {console.log(product.FotoProduk)} */}
-            {/* <Image
-              src="/img/Produk/contoh_baju.webp"
-              alt="Baju Perca"
-              width={150}
-              height={150}
-              className="w-full"
-            /> */}
             <div className="absolute inset-0 flex items-center justify-center gap-2 transition bg-black opacity-0 bg-opacity-40 group-hover:opacity-100">
               <Link
                 className="flex items-center justify-center h-8 text-lg text-white transition rounded-full w-9 bg-primary hover:bg-gray-800"
@@ -76,10 +60,7 @@ export default async function RecommendationSection() {
                 </Link> */}
             </div>
           </div>
-          {/* <!-- produk image --> */}
-
-          {/* <!-- produk konten --> */}
-          <div className="">
+          <div>
             <div className="px-4 pt-4 pb-3">
               <Link href={`/shop/${product['NamaProduk']}`} passHref>
                 <h4
@@ -98,9 +79,6 @@ export default async function RecommendationSection() {
                 <p className="text-lg font-semibold text-primary">
                   Rp {Intl.NumberFormat('id-ID').format(product['Harga'])}
                 </p>
-                {/* <p className="text-sm text-gray-400 line-through">
-                  Rp. 123.000
-                </p> */}
               </div>
             </div>
             {/* <div className="flex items-center">
@@ -136,7 +114,6 @@ export default async function RecommendationSection() {
               Order
             </Link>
           </div>
-          {/* <!-- produk konten --> */}
         </div>
       ))}
     </section>

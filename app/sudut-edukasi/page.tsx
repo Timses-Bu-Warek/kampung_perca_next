@@ -68,8 +68,6 @@ const Sudut_edukasi = () => {
             Sudut Edukasi
           </h1>
         </div>
-
-        {/* Konten kain perca */}
         <div className="container mx-auto my-24 md:px-6">
           <section className="mb-32">
             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
@@ -116,10 +114,7 @@ const Sudut_edukasi = () => {
             </div>
           </section>
         </div>
-        {/* end content kain perca */}
       </section>
-
-      {/* edukasi lainnya */}
       <section className="bg-white border-b py-14">
         <div className="container flex flex-wrap pb-12 mx-auto pt-9">
           <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-secondary font-montserrat">

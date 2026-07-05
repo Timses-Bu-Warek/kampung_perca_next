@@ -65,8 +65,6 @@ export default function Potensi() {
         <h1 className="w-full mb-6 my-2 text-4xl font-montserrat font-bold text-center text-secondary">
           Sudut Edukasi
         </h1>
-
-        {/* Konten kain perca */}
         <div className="container my-24 mx-auto md:px-6">
           <section className="mb-32">
             <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
@@ -145,10 +143,7 @@ export default function Potensi() {
             </div>
           </section>
         </div>
-        {/* end content kain perca */}
       </section>
-
-      {/* edukasi lainnya */}
       <section className="bg-white border-b py-14">
         <div className="container mx-auto flex flex-wrap pt-9 pb-12">
           <h1 className="w-full my-2 text-4xl font-bold leading-tight text-center text-secondary font-montserrat">

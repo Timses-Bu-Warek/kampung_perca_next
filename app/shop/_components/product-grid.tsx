@@ -1,7 +1,5 @@
 import { v2 as cloudinary } from 'cloudinary';
-import Image from 'next/image';
 import Link from 'next/link';
-import CldImage from '@/app/_components/cloudinary/cld-image';
 import type getSearchProducts from '@/features/product/data-access/get-search-products';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 
@@ -24,7 +22,6 @@ export default async function ProductGrid({
           className="bg-white shadow-sm rounded-sm overflow-hidden group flex justify-between flex-col"
           key={product._id}
         >
-          {/* <!-- produk image --> */}
           <div className="relative">
             {product.FotoProduk ? (
               <CldImage
@@ -63,9 +60,6 @@ export default async function ProductGrid({
                 </Link> */}
             </div>
           </div>
-          {/* <!-- produk image --> */}
-
-          {/* <!-- produk konten --> */}
           <div className="">
             <div className="pt-4 pb-3 px-4">
               <Link href={`/shop/${product.NamaProduk}`} passHref>
@@ -85,9 +79,6 @@ export default async function ProductGrid({
                 <p className="text-lg text-primary font-semibold">
                   Rp {Intl.NumberFormat('id-ID').format(product['Harga'])}
                 </p>
-                {/* <p className="text-sm text-gray-400 line-through">
-                  Rp. 123.000
-                </p> */}
               </div>
             </div>
             {/* <div className="flex items-center">
@@ -123,7 +114,6 @@ export default async function ProductGrid({
               Order
             </Link>
           </div>
-          {/* <!-- produk konten --> */}
         </div>
       ))}
     </div>

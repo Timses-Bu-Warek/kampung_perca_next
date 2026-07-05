@@ -15,11 +15,8 @@ import WhatsAppFloatingLink from './_components/whatsapp-floating-link';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
-// import ReactModal from 'react-modal'
-
 // const inter = Inter({ subsets: ['latin'] })
 
-// Mendefinisikan variabel metadata yang berisi metadata untuk situs web.
 export const metadata: Metadata = {
   alternates: {
     canonical: serverEnvironment.BASE_URL,
