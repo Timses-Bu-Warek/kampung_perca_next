@@ -23,9 +23,9 @@ export default function DetailedProduct({
     );
 
   return (
-    <main>
+    <main className="container mx-auto">
       {/* <!-- breadcrums --> */}
-      <div className="container flex items-center gap-4 py-4">
+      <div className=" flex items-center gap-4 py-4">
         <Breadcrumbs
           params={{
             slug: product.NamaProduk,
