@@ -1,13 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { parseAsString, useQueryState } from 'nuqs';
 
 export default function SizeComp({
   sizeList,
 }: Readonly<{
   sizeList: any;
 }>) {
-  const [ukuran, setUkuran] = useState('');
+  const [ukuran, setUkuran] = useQueryState('size', parseAsString.withDefault(''));
 
   const handlePilihUkuran = (ukuran: any) => {
     setUkuran(ukuran);
