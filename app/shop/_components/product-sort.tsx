@@ -26,9 +26,9 @@ export function ProductSort() {
             </svg>
           </button>
           <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
-            <li className="bg-blue-500 text-white hover:bg-white hover:text-blue-500">
+            <li className="bg-blue-500 text-center  text-white hover:bg-white hover:text-blue-500">
               <button
-                className="rounded-t bg-primary py-2 px-4 block whitespace-no-wrap"
+                className="rounded-t bg-primary text-center w-full py-2 px-4 block whitespace-no-wrap"
                 onClick={() => setSort('default')}
                 type="button"
               >
