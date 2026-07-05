@@ -6,7 +6,7 @@ export default async function getProduct(productName: string) {
 
   const db = client.db('KampungPercaDB');
 
-  const product = await db.collection('products').findOne({ NamaProduk: productName });
+  const product = await db.collection<Products>('products').findOne({ NamaProduk: productName });
 
   return product;
 }
