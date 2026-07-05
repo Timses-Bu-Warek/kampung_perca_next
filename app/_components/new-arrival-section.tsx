@@ -16,7 +16,7 @@ export default async function NewArrivalSection() {
   const recProducts = await getNewProductRec();
 
   return (
-    <div className="flex flex-col gap-6 md:grid md:grid-cols-4">
+    <section className="flex flex-col gap-6 md:grid md:grid-cols-4">
       {recProducts.map((product) => (
         <div
           className="flex flex-col justify-between overflow-hidden bg-white rounded-sm shadow-sm group"
@@ -138,6 +138,6 @@ export default async function NewArrivalSection() {
           {/* <!-- produk konten --> */}
         </div>
       ))}
-    </div>
+    </section>
   );
 }
