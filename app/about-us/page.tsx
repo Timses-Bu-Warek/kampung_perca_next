@@ -4,23 +4,6 @@ import FotoManfaat from '@/public/img/kp_perca.webp';
 import SO from '@/public/img/SO.webp';
 import Breadcrumbs from '../_components/breadcrumbs';
 
-// import MyMapComponent from "./MyMapComponent";
-
-// import { Wrapper, Status } from "@googlemaps/react-wrapper";
-
-// const render = (status: Status) => {
-//     return <h1>{status}</h1>;
-//   };
-
-// const MyApp = () => (
-//     <Wrapper apiKey={"YOUR_API_KEY"} render={render}>
-//       <MyMapComponent center={center} zoom={0} />
-//     </Wrapper>
-//   );
-
-// let map: google.maps.Map;
-// const center: google.maps.LatLngLiteral = {lat: -6.652811848908671, lng: 106.8458424490772};
-
 export const metadata: Metadata = {
   alternates: {
     canonical: `/about-us`,
@@ -205,9 +188,6 @@ export default function About_us() {
           </div>
         </div>
       </section>
-      {/* <!-- end tentang kami --> */}
-
-      {/* <!-- artikel --> */}
     </main>
   );
 }
