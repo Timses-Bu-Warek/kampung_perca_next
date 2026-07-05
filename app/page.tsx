@@ -1,11 +1,10 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { serverEnvironment } from "@/lib/env/server";
-import FotoBinaanIBIK from "@/public/img/ads.webp";
-import NewArrivalComp from "./components/NewArrivalComp";
-import RecommendationComp from "./components/RecommendationComp";
-import YoutubeFacade from "./components/youtubefacade";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { serverEnvironment } from '@/lib/env/server';
+import FotoBinaanIBIK from '@/public/img/ads.webp';
+import NewArrivalComp from './_components/new-arrival-comp';
+import RecommendationComp from './_components/recommendation-comp';
 
 export default function Home() {
   // sessionStorage.setItem("halo", "true")
@@ -20,16 +19,16 @@ export default function Home() {
         <script
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
               contactPoint: {
-                "@type": "ContactPoint",
-                areaServed: "ID",
-                availableLanguage: "Indonesian",
-                contactType: "Customer Service",
-                telephone: "+62-123-456-7890",
+                '@type': 'ContactPoint',
+                areaServed: 'ID',
+                availableLanguage: 'Indonesian',
+                contactType: 'Customer Service',
+                telephone: '+62-123-456-7890',
               },
-              name: "Kampung Perca Sindangsari",
+              name: 'Kampung Perca Sindangsari',
               url: serverEnvironment.BASE_URL,
             }),
           }}
@@ -38,24 +37,23 @@ export default function Home() {
         <script
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Place",
+              '@context': 'https://schema.org',
+              '@type': 'Place',
               address: {
-                "@type": "PostalAddress",
-                addressCountry: "ID",
-                addressLocality: "Bogor",
-                addressRegion: "Jawa Barat",
-                postalCode: "12345",
-                streetAddress:
-                  "Gang Raden Alibasyah, Jalan Raya Wangun Atas RT 004 / RW 001",
+                '@type': 'PostalAddress',
+                addressCountry: 'ID',
+                addressLocality: 'Bogor',
+                addressRegion: 'Jawa Barat',
+                postalCode: '12345',
+                streetAddress: 'Gang Raden Alibasyah, Jalan Raya Wangun Atas RT 004 / RW 001',
               },
               geo: {
-                "@type": "GeoCoordinates",
-                latitude: "-6.6528261650365375",
-                longitude: "106.84323757484158",
+                '@type': 'GeoCoordinates',
+                latitude: '-6.6528261650365375',
+                longitude: '106.84323757484158',
               },
-              name: "Kampung Perca Sindangsari",
-              telephone: "+62-123-456-7890",
+              name: 'Kampung Perca Sindangsari',
+              telephone: '+62-123-456-7890',
               url: serverEnvironment.BASE_URL,
             }),
           }}
@@ -67,12 +65,11 @@ export default function Home() {
         <div className="bg-center bg-no-repeat bg-cover py-36 imageBackgroundCarousel">
           <div className="p-5 text-white z-2 -mt-20 lg:ml-9">
             <h1 className="mb-4 text-5xl font-bold capitalize font-montserrat">
-              Menjelajahi Keindahan Kampung Perca Sindangsari: Keunikan Tradisi
-              dan Kehidupan Lokal.
+              Menjelajahi Keindahan Kampung Perca Sindangsari: Keunikan Tradisi dan Kehidupan Lokal.
             </h1>
             <p className="max-w-4xl py-5 text-base font-inter">
-              Kampung Perca Sindangsari, sebuah kampung tematik baru yang
-              menambahkan destinasi wisata di kota Bogor dan merupakan binaan
+              Kampung Perca Sindangsari, sebuah kampung tematik baru yang menambahkan destinasi
+              wisata di kota Bogor dan merupakan binaan
               <Link
                 className="text-primary"
                 href="https://www.ibik.ac.id/"
@@ -80,12 +77,11 @@ export default function Home() {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                {" "}
+                {' '}
                 Institut Bisnis dan Informatika Kesatuan Bogor.
               </Link>
               <br />
-              Berlokasi di Kelurahan Sindangsari Kecamatan Bogor Timur, Kota
-              Bogor
+              Berlokasi di Kelurahan Sindangsari Kecamatan Bogor Timur, Kota Bogor
             </p>
             <div className="mt-12">
               <Link
@@ -144,12 +140,7 @@ export default function Home() {
         <div className="container mx-auto my-24 md:px-6">
           {/*  ads section  */}
           <div className="container pb-16 mb-16">
-            <Link
-              href="https://ibik.ac.id"
-              passHref
-              rel="noopener noreferrer"
-              target="_blank"
-            >
+            <Link href="https://ibik.ac.id" passHref rel="noopener noreferrer" target="_blank">
               <Image
                 alt="Sistem Informasi Kampung Perca di bawah binaan IBI Kesatuan"
                 className="w-full rounded-md shadow-md"
@@ -175,15 +166,15 @@ export default function Home() {
             /> */}
 
             <iframe
-              title="Video Kunjungan Kampung Perca"
-              src="https://www.youtube.com/embed/TRoKZ-4m5C0"
+              className="justify-center aspect-video w-full h-full mb-6 shadow-xl shadow-gray-400 rounded-xl"
               // width="990"
               // height="400"
               loading="lazy"
-              className="justify-center aspect-video w-full h-full mb-6 shadow-xl shadow-gray-400 rounded-xl"
+              src="https://www.youtube.com/embed/TRoKZ-4m5C0"
+              title="Video Kunjungan Kampung Perca"
             ></iframe>
             <h4 className="items-center justify-center italic text-center text-black font-inter">
-              Sumber :{" "}
+              Sumber :{' '}
               <a
                 className="font-bold text-blue-500"
                 href="https://www.youtube.com/@bimaarya1921"
@@ -207,8 +198,8 @@ export default function Home() {
                     sizes="100vw"
                     src="https://pakuanraya.com/wp-content/uploads/2021/12/IMG-20211217-WA0042.jpg"
                     style={{
-                      height: "auto",
-                      width: "100%",
+                      height: 'auto',
+                      width: '100%',
                     }}
                     width={500}
                   />
@@ -222,16 +213,14 @@ export default function Home() {
                       Kampung Perca Sindangsari Kota Bogor
                     </h1>
                     <p className="pb-2 mb-8 text-justify lg:pb-0">
-                      Kampung Perca merupakan desa wisata Kota Bogor (kampung
-                      tematik) yang memproduksi berbagai barang kerajinan dari
-                      kain perca. Desa Wisata Kota Bogor, Kampung Perca yang
-                      berlokasi di Kelurahan Sindangsari, Kecamatan Bogor Timur
-                      dideklarasikan sebagai Kampung Gerakan Masyarakat Hidup
-                      dan Sehat (Germas). <br /> <br />
-                      Latar belakang lahirnya Kampung Perca pun tak lepas dari
-                      kebijakan pemerintah menerapakan pembatasan mobilitas
-                      warga saat pandemi covid. Hal ini menyebabkan melambatnya
-                      aktivitas perekonomian masyarakat, bahkan PHK terjadi di
+                      Kampung Perca merupakan desa wisata Kota Bogor (kampung tematik) yang
+                      memproduksi berbagai barang kerajinan dari kain perca. Desa Wisata Kota Bogor,
+                      Kampung Perca yang berlokasi di Kelurahan Sindangsari, Kecamatan Bogor Timur
+                      dideklarasikan sebagai Kampung Gerakan Masyarakat Hidup dan Sehat (Germas).{' '}
+                      <br /> <br />
+                      Latar belakang lahirnya Kampung Perca pun tak lepas dari kebijakan pemerintah
+                      menerapakan pembatasan mobilitas warga saat pandemi covid. Hal ini menyebabkan
+                      melambatnya aktivitas perekonomian masyarakat, bahkan PHK terjadi di
                       mana-mana.
                     </p>
                   </div>
@@ -265,10 +254,9 @@ export default function Home() {
                   Lokasi Kampung Perca
                 </h1>
                 <p className="mb-8 text-justify text-gray-600 font-inter">
-                  Kampung Perca adalah desa wisata tematik di Kota Bogor yang
-                  terletak di Gang Raden Alibasyah, Jalan Raya Wangun Atas RT
-                  004 / RW 001, Kelurahan Sindangsari, Kecamatan Bogor Timur,
-                  Kota Bogor, Jawa Barat. Di sini, berbagai barang kerajinan
+                  Kampung Perca adalah desa wisata tematik di Kota Bogor yang terletak di Gang Raden
+                  Alibasyah, Jalan Raya Wangun Atas RT 004 / RW 001, Kelurahan Sindangsari,
+                  Kecamatan Bogor Timur, Kota Bogor, Jawa Barat. Di sini, berbagai barang kerajinan
                   dari kain perca diproduksi di tengah kawasan padat penduduk.
                 </p>
                 <br />

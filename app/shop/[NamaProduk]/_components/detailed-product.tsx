@@ -2,13 +2,13 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import Breadcrumbs from '@/app/components/breadcrumbs';
-import CldImage from '@/app/components/CldImage';
+import Breadcrumbs from '@/app/_components/breadcrumbs';
+import CldImage from '@/app/_components/CldImage';
 import type getProduct from '@/lib/getProduct';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 import { LinkOrder } from './link-order';
-import QuantityComp from './QuantityComp';
-import SizeComp from './SizeComp';
+import QuantityComp from './quantity-comp';
+import SizeComp from './size-comp';
 
 export default function DetailedProduct({
   product,

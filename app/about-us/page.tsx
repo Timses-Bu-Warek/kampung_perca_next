@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import FotoManfaat from '@/public/img/kp_perca.webp';
 import SO from '@/public/img/SO.webp';
-import Breadcrumbs from '../components/breadcrumbs';
+import Breadcrumbs from '../_components/breadcrumbs';
 
 // import MyMapComponent from "./MyMapComponent";
 

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Breadcrumbs from '@/app/components/breadcrumbs';
-import StructuredData from '@/app/components/StructuredData';
+import Breadcrumbs from '@/app/_components/breadcrumbs';
+import StructuredData from '@/app/_components/structured-data';
 import { serverEnvironment } from '@/lib/env/server';
 import FotoPotensi from '@/public/img/potensi.webp';
 

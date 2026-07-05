@@ -5,14 +5,14 @@ import type { Metadata } from 'next';
 import Head from 'next/head';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
-import FloatingButton from './components/FloatingButton';
+import FloatingButton from './_components/floating-button';
 import Footer from './footer';
 import Header from './header';
 import '../styles/fontawesome-free-6.5.2-web/css/fontawesome.css';
 import '../styles/fontawesome-free-6.5.2-web/css/brands.css';
 import '../styles/fontawesome-free-6.5.2-web/css/solid.css';
 import { serverEnvironment } from '@/lib/env/server';
-import WhatsAppFloatingButton from './components/WhatsAppFloatingButton';
+import WhatsAppFloatingButton from './_components/whatsapp-floating-button';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 

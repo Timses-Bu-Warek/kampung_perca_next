@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import CldImage from '@/app/components/CldImage';
+import CldImage from '@/app/_components/CldImage';
 import getSearchProducts from '@/lib/getSearchProducts';
 import ImageContoh from '@/public/img/Produk/contoh_baju.webp';
 

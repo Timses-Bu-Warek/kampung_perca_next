@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { createSearchParamsCache, parseAsString } from 'nuqs/server';
-import Breadcrumbs from '@/app/components/breadcrumbs';
+import Breadcrumbs from '@/app/_components/breadcrumbs';
 import { serverEnvironment } from '@/lib/env/server';
 import getSearchProducts from '@/lib/getSearchProducts';
 import type { SearchParameters } from '@/lib/types/search-parameters';
-import ProductComp from './components/ProductComp';
-import { ProductSort } from './components/ProductSort';
-import ProductsSearchBar from './components/ProductsSearchBar';
+import ProductComp from './_components/product-comp';
+import { ProductSort } from './_components/product-sort';
+import ProductsSearchBar from './_components/products-search-bar';
 
 export const metadata: Metadata = {
   alternates: {

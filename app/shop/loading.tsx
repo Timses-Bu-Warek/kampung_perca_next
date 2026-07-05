@@ -1,5 +1,5 @@
 import Skeleton from 'react-loading-skeleton';
-import Breadcrumbs from '../components/breadcrumbs';
+import Breadcrumbs from '../_components/breadcrumbs';
 
 export default function Loading() {
   const newArray = [...Array(30)];

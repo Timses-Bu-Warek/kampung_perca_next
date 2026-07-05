@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import { serverEnvironment } from '@/lib/env/server';
 import FotoContoh from '@/public/img/contoh.webp';
-import Breadcrumbs from '../components/breadcrumbs';
-import StructuredData from '../components/StructuredData';
+import Breadcrumbs from '../_components/breadcrumbs';
+import StructuredData from '../_components/structured-data';
 
 export const metadata = {
   description:

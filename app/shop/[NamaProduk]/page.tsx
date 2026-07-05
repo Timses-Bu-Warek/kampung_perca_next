@@ -4,7 +4,7 @@ import Skeleton from 'react-loading-skeleton';
 import { serverEnvironment } from '@/lib/env/server';
 import getProduct from '@/lib/getProduct';
 import type { SearchParameters } from '@/lib/types/search-parameters';
-import DetailedProduct from './components/DetailedProduct';
+import DetailedProduct from './_components/detailed-product';
 
 // menghasilkan metadata berdasarkan parameter yang diterima dari URL.
 export async function generateMetadata({

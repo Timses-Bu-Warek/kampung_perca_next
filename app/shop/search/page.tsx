@@ -1,10 +1,10 @@
 import { createSearchParamsCache, parseAsString } from 'nuqs/server';
 import { Suspense } from 'react';
-import Breadcrumbs from '@/app/components/breadcrumbs';
+import Breadcrumbs from '@/app/_components/breadcrumbs';
 import type { SearchParameters } from '@/lib/types/search-parameters';
-import ProductCompSearch from '../components/ProductCompSearch';
-import { ProductSortSearch } from '../components/ProductSortSearch';
-import ProductsSearchBar from '../components/ProductsSearchBar';
+import { ProductSortSearch } from '../_components/product-sort-search';
+import ProductCompSearch from '../_components/product-comp-search';
+import ProductsSearchBar from '../_components/products-search-bar';
 import Loading from './loading';
 
 // export const metadata: Metadata = {
