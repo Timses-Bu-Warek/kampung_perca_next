@@ -68,7 +68,6 @@ export default function Footer() {
           >
             <svg
               height="18"
-              id="Layer_1"
               version="1.1"
               viewBox="0 0 109.59 122.88"
               width="18"
@@ -76,6 +75,7 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
               y="0px"
             >
+              <title>Shopee</title>
               <style type="text/css"></style>
               <g>
                 <path
