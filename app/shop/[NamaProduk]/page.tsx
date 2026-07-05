@@ -1,6 +1,4 @@
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
-import Skeleton from 'react-loading-skeleton';
 import getProduct from '@/features/product/data-access/get-product';
 import { serverEnvironment } from '@/lib/env/server';
 import type { SearchParameters } from '@/lib/types/search-parameters';
@@ -68,15 +66,7 @@ export default async function DynamicNameProduct({
   return (
     <main>
       <div>
-        <Suspense
-          fallback={
-            <div>
-              <Skeleton />
-            </div>
-          }
-        >
-          <DetailedProduct product={product} />
-        </Suspense>
+        <DetailedProduct product={product} />
       </div>
     </main>
   );
