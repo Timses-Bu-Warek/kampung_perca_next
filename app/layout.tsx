@@ -11,7 +11,7 @@ import '../styles/fontawesome-free-6.5.2-web/css/fontawesome.css';
 import '../styles/fontawesome-free-6.5.2-web/css/brands.css';
 import '../styles/fontawesome-free-6.5.2-web/css/solid.css';
 import { serverEnvironment } from '@/lib/env/server';
-import WhatsAppFloatingButton from './_components/whatsapp-floating-button';
+import WhatsAppFloatingLink from './_components/whatsapp-floating-link';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
@@ -81,7 +81,7 @@ export default async function RootLayout({
             {/* {isFilled === true ? "" : <ModalBukuTamu />} */}
             {children}
             <FloatingButton />
-            <WhatsAppFloatingButton />
+            <WhatsAppFloatingLink />
             <Footer />
             <SpeedInsights />
           </NuqsAdapter>

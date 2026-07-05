@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function WhatsAppFloatingButton() {
+export default function WhatsAppFloatingLink() {
   return (
     <Link
       className="fixed z-20 bottom-10 right-6 px-3 bg-green-400 w-auto h-10 rounded-3xl drop-shadow-lg flex justify-center font-montserrat items-center text-white text-sm hover:bg-green-600 hover:drop-shadow-2xl hover:animate-bounce duration-600 scroll-auto"
