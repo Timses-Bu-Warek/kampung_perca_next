@@ -1,10 +1,14 @@
 import 'server-only';
+import { cacheLife } from 'next/cache';
 import { connectToDatabase } from '../../../lib/mongo';
 
 export default async function getSearchProducts(
   namaProdukParams: string | null | undefined,
   sortParams: string | null | undefined,
 ) {
+  'use cache';
+  cacheLife('hours');
+
   const client = await connectToDatabase();
   const db = client.db('KampungPercaDB');
   const collection = db.collection<Products>('products');
