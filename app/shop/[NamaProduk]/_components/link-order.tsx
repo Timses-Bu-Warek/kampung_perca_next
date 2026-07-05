@@ -33,7 +33,7 @@ export function LinkOrder({
   }
   return (
     <Link
-      className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium text-white uppercase transition border rounded-sm bg-primary border-primary md:w-40 font-inter hover:bg-transparent hover:text-primary"
+      className="flex items-center justify-center w-full gap-2 px-8 py-2 font-medium uppercase transition-all border rounded-sm bg-primary md:w-40"
       href={waAPI}
       passHref
       rel="noopener noreferrer"
