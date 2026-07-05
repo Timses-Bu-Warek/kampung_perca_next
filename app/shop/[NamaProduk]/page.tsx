@@ -24,8 +24,8 @@ export async function generateMetadata({
     alternates: {
       canonical: `${serverEnvironment.BASE_URL}/shop/${NamaProduk}`,
     },
-    description: product?.['description']
-      ? `Keterangan: ${product?.['description']}`
+    description: product?.Keterangan
+      ? `Keterangan: ${product.Keterangan}`
       : `Produk ${decodedNamaProduk} tersedia di Kampung Perca. Dapatkan produk berkualitas dengan harga terbaik di sini!`,
     keywords: [
       'Jual Alas Mangkuk Perca',
