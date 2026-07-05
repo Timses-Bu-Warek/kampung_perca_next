@@ -1,6 +1,13 @@
+import Link from 'next/link';
+
 export default function WhatsAppFloatingButton() {
   return (
-    <div className="fixed z-20 bottom-10 right-6 px-3 bg-green-400 w-auto h-10 rounded-3xl drop-shadow-lg flex justify-center font-montserrat items-center text-white text-sm hover:bg-green-600 hover:drop-shadow-2xl hover:animate-bounce duration-600 scroll-auto">
+    <Link
+      className="fixed z-20 bottom-10 right-6 px-3 bg-green-400 w-auto h-10 rounded-3xl drop-shadow-lg flex justify-center font-montserrat items-center text-white text-sm hover:bg-green-600 hover:drop-shadow-2xl hover:animate-bounce duration-600 scroll-auto"
+      href={
+        'https://api.whatsapp.com/send/?phone=6285810096563&text=Hai kak, aku mau tanya seputar produk Kampung Perca'
+      }
+    >
       <span className="[&>svg]:h-5 [&>svg]:w-5">
         <svg fill="currentColor" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
           <title>WhatsApp</title>
@@ -8,6 +15,6 @@ export default function WhatsAppFloatingButton() {
         </svg>
       </span>
       <span> &nbsp; Pesan Sekarang! </span>
-    </div>
+    </Link>
   );
 }
